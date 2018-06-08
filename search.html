@@ -1,0 +1,41 @@
+---
+layout: search
+title: Search
+permalink: /search
+---
+<div class="bg-light bg-bottom-border">
+<div class="container">
+<div class="row">
+	<div class="col-lg-12 gantry-width-block rt-left">
+		<h1>Search results for <span id="search-result-term" class="rt-accent-color1"></span></h1>
+
+        <ul id="search-results"></ul>
+
+<script>
+  window.store = {
+    {% for post in site.posts %}
+      "{{ post.url | slugify }}": {
+        "title": "{{ post.title | xml_escape }}",
+        "author": "{{ post.author | xml_escape }}",
+        "category": "{{ post.category | xml_escape }}",
+        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+        "url": "{{ post.url | xml_escape }}"
+      },
+    {% endfor %}
+    {% for page in site.pages %}
+      "{{ page.url | slugify }}": {
+        "title": "{{ page.title | xml_escape }}",
+        "author": "{{ page.author | xml_escape }}",
+        "category": "{{ page.category | xml_escape }}",
+        "content": {{ page.content | strip_html | strip_newlines | jsonify }},
+        "url": "{{ page.url | xml_escape }}"
+      },
+    {% endfor %}
+  };
+</script>
+<script src="/scripts/search.js"></script>
+
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,1247 @@
+
+@import "_const.scss";
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+/*************************************
+    base
+*************************************/
+
+*
+{
+    margin: 0;
+    padding: 0;
+    border: none;
+    -webkit-text-size-adjust: 100%;
+}
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+}
+
+body
+{
+    word-wrap: break-word;
+}
+
+a
+{
+    color: $c_main;
+
+    &:hover
+    {
+        text-decoration: none;
+    }
+}
+
+img
+{
+    vertical-align: bottom
+}
+
+li 
+{
+    list-style: none;
+}
+
+input, select
+{
+    vertical-align: middle;
+}
+
+.embed-responsive-anyratio
+{
+  position: relative;
+  display: inline-block;
+}
+
+.responsive-video
+{
+    max-width: 100%;
+    height: auto;
+}
+
+/*************************************
+    font
+*************************************/
+
+html { font-size: 62.5%; }
+
+#x_wrap
+{
+    &, input, textarea, select
+    {
+        font-family: $EnFamily, $JaFamily;
+        text-rendering: optimizeLegibility;
+        font-size: 15px;
+        font-size: 1.5rem;
+        font-smooth: always;
+        letter-spacing: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: $c_text;
+
+        @media ( max-width: $w_under_ipad )
+        {
+            font-size: 13px;
+            font-size: 1.3rem;
+        }
+    }
+
+    &, textarea
+    {
+        line-height: 1.8;
+    }
+
+    input, select
+    {
+        line-height: 3;
+    }
+
+    &.lang_ja
+    {
+        &, input, textarea, select
+        {
+            font-size: 14px;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+        }
+    }
+}
+
+/*************************************
+    wrap
+*************************************/
+
+#x_wrap
+{
+    width: 100%;
+    min-height: 100%;
+    padding-top: 54px;
+    padding-bottom: 118px;
+    box-sizing: border-box;
+    position: relative;
+    background: #ffffff;
+    
+    .svg_footer
+    {
+        width: 845px;
+        height: 845px;
+        position: absolute;
+        left: 50%;
+        background: url(../../images/svg/polygon.svg) no-repeat;
+        background-size: 1690px 1690px;
+
+        @media ( max-width: $w_max )
+        {
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            left: auto;
+        }
+
+        @media ( max-width: $w_under_iphone )
+        {
+            width: 20px;
+            height: 20px;
+        }
+        
+        &.top       { top: 0; }
+        &.bottom    { bottom: 0; }
+
+        &.left
+        {
+            margin-left: -1485px;
+
+            @media ( max-width: $w_max )
+            {
+                left: 0;
+                margin-left: 0;
+            }
+        }
+
+        &.right
+        {
+            margin-left: 640px;
+
+            @media ( max-width: $w_max )
+            {
+                right: 0;
+                margin-left: 0;
+            }
+        }
+
+        &.top.left      { background-position: 0 100%; }
+        &.top.right     { background-position: 100% 100%; }
+        &.bottom.left   { background-position: 0 0; }
+        &.bottom.right  { background-position: 100% 0; }
+    }
+}
+
+/*************************************
+    contents
+*************************************/
+
+div.x_body
+{
+    $w2: 1024px;
+    $w3: 850px;
+
+    //----------
+
+    width: 100%;
+    max-width: 2970px;
+    overflow: hidden;
+    position: relative;
+    margin: 50px auto 80px;
+    
+    background: $c_border;
+
+    @media ( max-width: $w_under_iphone )
+    {
+        margin-bottom: 60px;
+    }
+
+    div.x_bg
+    {
+        min-height: 720px;
+        overflow: hidden;
+        background: url(../../images/top/svg/bg.svg) repeat 50% 0;
+        background-size: 1400px 998px;
+
+        @media ( max-width: $w_max )
+        {
+            min-height: auto;
+            padding: 0 36px;
+        }
+
+        @media ( max-width: $w_under_iphone )
+        {
+            padding: 0 20px;
+        }
+
+        div.culumns
+        {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+
+            &.auto
+            {
+                width: auto;
+                max-width: 100%;
+            }
+
+            div.x_halfColumn
+            {
+                display: table-cell;
+                width: 50%;
+                box-sizing: border-box;
+
+                &.left      { padding-right: 40px; }
+                &.right     { padding-left: 40px; }
+
+                @media ( max-width: $w_under_ipad )
+                {
+                    &.left      { padding-right: 15px; }
+                    &.right     { padding-left: 15px; }
+                }
+
+                @media ( max-width: $w_under_iphone )
+                {
+                    display: block;
+                    width: 100%;
+
+                    &.left      { padding-right: 0; }
+                    &.right     { padding-left: 0; }
+                }
+            }
+
+            div.x_oneThirdColumn
+            {
+                display: table-cell;
+                border-right: 1px dotted $c_url;
+
+                &.first
+                {
+                    border-left: 1px dotted $c_url;
+                }
+
+                p 
+                {
+                    margin-bottom: 0;
+                }
+            }
+
+            @media ( max-width: $w_under_ipad )
+            {
+                display: block;
+                table-layout: auto;
+
+                div.x_halfColumn
+                {
+                    display: block;
+                    width: 100%;
+
+                    &.left      { padding-right: 0; }
+                    &.right     { padding-left: 0; }
+
+                    &.right div.x_list
+                    {
+                        border-top: none;
+                        box-shadow: none;
+                    }
+                }
+
+                div.x_oneThirdColumn
+                {
+                    display: block;
+                    border: none;
+                    border-bottom: 1px dotted $c_url;
+
+                    &.first
+                    {
+                        border-left: none;
+                        border-top: 1px dotted $c_url;
+                    }
+                }
+            }
+        }
+
+        div.noMargin div.culumns
+        {
+            @media ( max-width: $w_under_iphone )
+            {
+                div.x_halfColumn.left
+                {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        div.x_container
+        {
+            max-width: 1160px;
+            padding: 60px 0;
+            margin: 0 auto;
+
+            @media ( max-width: $w_under_iphone )
+            {
+                padding: 40px 0;
+            }
+
+            &.culumns
+            {
+                @media ( max-width: $w_under_ipad )
+                {
+                    display: block;
+                }
+
+                div.x_mainColumn
+                {
+                    display: table-cell;
+                    padding: 0 106px 0 0;
+
+                    @media ( max-width: $w_under_ipad )
+                    {
+                        display: block;
+                        padding: 0;
+                    }
+
+                    div.x_halfColumn
+                    {
+                        display: block;
+                        float: left;
+
+                        &.left      { padding-right: 15px; }
+                        &.right     { padding-left: 15px; }
+
+                        @media ( max-width: $w2 )
+                        {
+                            display: block;
+                            width: 100%;
+
+                            &.left      { padding-right: 0; }
+                            &.right     { padding-left: 0; }
+                        }
+
+                        @media ( max-width: $w_under_ipad )
+                        {
+                            width: 50%;
+                            float: left;
+
+                            &.left      { padding-right: 15px; }
+                            &.right     { padding-left: 15px; }
+                        }
+
+                        @media ( max-width: $w_under_iphone )
+                        {
+                            display: block;
+                            width: 100%;
+
+                            &.left      { padding-right: 0; }
+                            &.right     { padding-left: 0; }
+                        }
+                    }
+                }
+
+                //
+                // Right Column
+                //
+                div.x_subColumn
+                {
+                    display: table-cell;
+                    width: 260px;
+                    padding: 0;
+                    overflow: hidden;
+
+                    @media ( max-width: $w2 )
+                    {
+                        width: 200px;
+                    }
+
+                    @media ( max-width: $w_under_ipad )
+                    {
+                        display: block;
+                        width: 100%;
+                        padding-top: 60px;
+                    }
+
+                    div.x_subBlock
+                    {
+                        margin-bottom: 60px;
+
+                        //
+                        // Caption in Right Column
+                        //
+                        h3
+                        {
+                            display: block;
+                            padding: 4px 10px;
+                            border: none;
+                            margin: 0 0 0.8em;
+                            font-size: 18px;
+                            font-size: 1.8rem;
+                            line-height: 1;
+                            text-align: left;
+
+                            @media ( max-width: $w_under_ipad )
+                            {
+                                padding: 0;
+                                margin-bottom: 0.6em;
+                            }
+
+                            @media ( max-width: $w_under_iphone )
+                            {
+                                font-size: 18px;
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }
+
+                    //
+                    // Cell in Right Column
+                    //
+                    div.x_subColumnCell
+                    {
+                        @media ( max-width: $w_under_ipad )
+                        {
+                            width: 50%;
+                            float: left;
+
+                            &.left div.x_subBlock   { padding-right: 20px; }
+                            &.right div.x_subBlock  { padding-left: 20px; }
+                        }
+
+                        @media ( max-width: $w_under_iphone )
+                        {
+                            width: 100%;
+                            float: none;
+
+                            &.left div.x_subBlock   { padding-right: 0; }
+                            &.right div.x_subBlock  { padding-left: 0; }
+                        }
+                    }
+                }
+            }
+
+            div.x_middleBox
+            {
+                max-width: 920px;
+                margin: 0 auto;
+            }
+
+            div.x_hiddenArea
+            {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            div.x_floatArea
+            {
+                width: 110%;
+                overflow: hidden;
+                position: relative;
+                font-size: 0;
+
+                div[data-container="block"],
+                div.ccm-area-drag-area
+                {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                div.x_floatAreaBox
+                {
+                    display: inline-block;
+                    width: 332px;
+                    margin-right: 82px;
+                    vertical-align: top;
+                    font-size: 15px;
+                    font-size: 1.5rem;
+
+                    @media ( max-width: $w_under_ipad )
+                    {
+                        font-size: 13px;
+                        font-size: 1.3rem;
+                    }
+                }
+
+                @media ( max-width: 1262px )
+                {
+                    width: 864px;
+                    margin: 0 auto;
+
+                    div.x_floatAreaBox
+                    {
+                        margin: 0 50px;
+                    }
+                }
+
+                @media ( max-width: 956px )
+                {
+                    max-width: 737px;
+                    width: 100%;
+
+                    div.x_floatAreaBox
+                    {
+                        width: 50%;
+                        box-sizing: border-box;
+                        margin: 0;
+
+                        &:nth-child(even)   { padding-left: 5%; }
+                        &:nth-child(odd)    { padding-right: 5%; }
+                    }
+                }
+
+                @media ( max-width: $w_under_ipad )
+                {
+                    div.x_floatAreaBox,
+                    div[data-container="block"],
+                    div.ccm-area-drag-area
+                    {
+                        display: block;
+                    }
+
+                    div.x_floatAreaBox
+                    {
+                        width: 100%;
+                        overflow: hidden;
+
+                        &:nth-child(even)   { padding-left: 0; }
+                        &:nth-child(odd)    { padding-right: 0; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.x_editMode div
+{
+    &.x_halfColumn, &.x_oneThirdColumn, &.x_buttonBox,
+    &.x_floatArea, &.x_floatAreaBox,
+    &.xy_culumn
+    {
+        padding-bottom: 50px;
+    }
+
+    &.x_hiddenArea
+    {
+        overflow: visible;
+    }
+}
+
+div.x_body
+{
+    //
+    // Heading
+    //
+    /*h3
+    {
+        display: table;
+        padding: 0.1em 0.4em;
+        border: 3px solid $c_main;
+        margin: 0 auto 1em;
+        font-size: 42px;
+        font-size: 4.2rem;
+        font-weight: normal;
+        line-height: 1.2;
+        text-align: center;
+        color: $c_main;
+
+        @media ( max-width: $w_under_iphone )
+        {
+            font-size: 28px;
+            font-size: 2.8rem;
+        }
+
+        strong
+        {
+            font-size: 143%;
+            font-weight: normal;
+        }
+    }
+
+    //
+    // Subhead
+    //
+    h4
+    {
+        margin-bottom: 1em;
+        font-size: 24px;
+        font-size: 2.4rem;
+        font-weight: normal;
+
+        span 
+        {
+            color: $c_main;
+
+            &.angleBracket
+            {
+                display: inline-block;
+                padding: 0 20px;
+                background-image: url(../../images/svg/bracket_left.svg), url(../../images/svg/bracket_right.svg);
+                background-repeat: no-repeat, no-repeat;
+                background-position: 0 50%, 100% 50%;
+                background-size: 33px 100px, 33px 100px;
+                line-height: 1.2em;
+            }
+        }
+
+        @media ( max-width: $w_under_iphone )
+        {
+            font-size: 20px;
+            font-size: 2rem;
+        }
+
+        &.xi_anchorPoint
+        {
+            padding-top: 3.5em;
+            font-size: 20px;
+            font-size: 2rem;
+
+            @media ( max-width: $w_under_iphone )
+            {
+                padding-top: 2.5em;
+                font-size: 18px;
+                font-size: 1.8rem;
+            }
+
+            span
+            {
+                display: block;
+                padding: 3px 20px;
+                background: #e6e6e6;
+                color: $c_text;
+            }
+        }
+    }
+
+    h5
+    {
+        font-size: 20px;
+        font-size: 2rem;
+        font-weight: normal;
+        color: $c_main;
+        text-decoration: underline;
+
+        @media ( max-width: $w_under_iphone )
+        {
+            font-size: 18px;
+            font-size: 1.8rem;
+        }
+    }*/
+
+    p 
+    {
+        margin-bottom: 1.3em;
+    }
+
+    span.more
+    {
+        white-space: nowrap;
+    }
+
+    span.xi_blank
+    {
+        display: inline-block;
+        width: 16px;
+        height: 1em;
+        min-height: 11px;
+        overflow: hidden;
+        background: url(../../images/svg/icon_blank.svg) no-repeat 0 50%;
+        background-size: 14px 11px;
+        vertical-align: text-top;
+        text-indent: 100%;
+        white-space: nowrap;
+    }
+
+    a span.xi_blank
+    {
+        background-image: url(../../images/svg/icon_blank_gray.svg);
+    }
+
+    span.xi_exclamation
+    {
+        display: inline-block;
+        width: 1em;
+        height: 1.8em;
+        overflow: hidden;
+        background: url(../../images/svg/icon_error.svg) no-repeat 0 50%;
+        background-size: 100% auto;
+        vertical-align: bottom;
+        text-indent: 100%;
+        white-space: nowrap;
+    }
+
+    span.xi_prev
+    {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.3em;
+        overflow: hidden;
+        background: url(../../images/svg/arrow_r_red_6.svg) no-repeat 0 50%;
+        background-size: 24px 80px;
+        text-indent: 100%;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    span.note 
+    {
+        color: $c_url;
+    }
+
+    ul, ol
+    {
+        padding-left: 2em;
+
+        li 
+        {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    ul li   { list-style: disc; }
+    ol li   { list-style: decimal; }
+
+    hr 
+    {
+        border-top: initial;
+        border-bottom: 1px solid $c_border;
+        box-shadow: 0 1px #ffffff;
+        margin: 2.5em 0;
+    }
+
+    div.noMargin hr
+    {
+        margin: 0 0 1px 0;
+    }
+
+    div.dot hr
+    {
+        height: 35px;
+        border: none;
+        box-shadow: none;
+        margin-top: 1em;
+        background: url(../../images/svg/hr_dot.svg) repeat-y 50% 0;
+        background-size: 7px 14px;
+    }
+
+    img 
+    {
+        max-width: 100%;
+        height: auto;
+    }
+
+    code 
+    {
+        font-family: $EnFamily;
+        padding: 2px 4px;
+        border-radius: 2px;
+        background: #f9f2f4;
+        color: $c_main;
+        font-size: 90%;
+    }
+
+    input[type="text"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="email"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="number"],
+    textarea
+    {
+        display: inline-block;
+        padding: 0 1em;
+        border: 1px solid $c_border;
+        border-radius: 2px;
+        outline: none;
+        box-sizing: border-box;
+        box-shadow: inset 0 8px 12px -8px rgba(1,1,1,0.1);
+        background: #ffffff;
+        color: $c_text;
+        -webkit-appearance: none;
+    }
+
+    textarea
+    {
+        padding: 0.5em 1em;
+    }
+
+    table
+    {
+        border: 1px solid $c_border;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 auto;
+
+        th, td 
+        {
+            padding: 1em 2em;
+            border: 1px solid $c_border;
+        }
+
+        th 
+        {
+            text-align: center;
+            background: $c_hoverBG;
+            font-weight: normal;
+        }
+
+        td 
+        {
+            background: #ffffff;
+        }
+
+        @media ( max-width: $w_under_iphone )
+        {
+            &
+            {
+                display: block;
+                overflow: hidden;
+                border-bottom: none;
+
+                tbody, tr 
+                {
+                    display: block;
+                    width: 100%;
+                }
+
+                th, td 
+                {
+                    display: block;
+                    border: none;
+                    border-bottom: 1px solid $c_border;
+                }
+            }
+        }
+    }
+
+    /*************************************
+        Attention
+    *************************************/
+
+    div.x_attention
+    {
+        padding: 0.8em 1em 0;
+        border: 3px solid $c_main;
+
+        p 
+        {
+            margin-bottom: 0.8em;
+        }
+    }
+
+    /*************************************
+        Bullet Point
+    *************************************/
+
+    div.x_bulletPoint
+    {
+        h4
+        {
+            margin: 1.5em 0 0.5em;
+        }
+
+        ul, ol 
+        {
+            padding-left: 40px;
+            margin-bottom: 1.5em;
+
+            @media ( max-width: $w_under_iphone )
+            {
+                padding-left: 20px;
+            }
+
+            li 
+            {
+                margin-bottom: 1em;
+            }
+        }
+
+        ul li 
+        {
+            list-style-position: outside;
+        }
+    }
+
+    /*************************************
+        No Entry
+    *************************************/
+
+    div.x_nothing
+    {
+        padding: 1.5em;
+        border-radius: 2px;
+        background: $c_hoverBG;
+        text-align: center;
+        color: $c_urlHover;
+    }
+
+    div.x_subColumnCell
+    {
+        div.x_nothing
+        {
+            padding: 0.8em;
+        }
+    }
+
+    /*************************************
+        List Border
+    *************************************/
+
+    div.x_list
+    {
+        border-top: 1px solid #ffffff;
+        box-shadow: 0 -1px $c_border;
+        margin: 1px 0;
+    }
+
+    /*************************************
+        Coming Soon
+    *************************************/
+
+    div.x_comingsoon
+    {
+        padding: 1em 20px 0;
+        border: 3px solid $c_text;
+
+        h4 
+        {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#x_wrap
+{
+    div.x_internalLinks
+    {
+        ul 
+        {
+            padding: 0;
+            border-top: 1px solid #ffffff;
+            box-shadow: 0 -1px $c_border;
+
+            li 
+            {
+                list-style: none;
+                border-bottom: 1px solid $c_border;
+                box-shadow: 0 1px #ffffff;
+                margin-bottom: 0;
+
+                a 
+                {
+                    display: block;
+                    padding: 0.6em 20px;
+                    text-decoration: none;
+                    color: $c_text;
+
+                    &:hover
+                    {
+                        background-color: $c_hoverBG;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*************************************
+        Blog (list and inner pages)
+*************************************/
+
+.xk-blog-article{
+    margin-bottom: 50px;
+    @media (max-width: $screen-md){
+        margin-bottom: 25px;
+    }
+    .xk-blog-article-image{
+        height: 170px;
+        padding: 0;
+        img{
+            max-width: 100%;
+            max-height: 100% !important;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    div.entry-content p{
+        display: inline;
+    }
+    .xk-more-link{
+        text-decoration: underline;
+        position: relative;
+        display: inline-block;
+        margin-left: 10px;
+        @media (max-width: $screen-md){
+            margin-left: 0;
+        }
+    }   
+    .xk-blog-article-description{
+        padding-left: 30px;
+        h1.title{
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .entry-content{
+            margin-top: 0;
+            margin-bottom: 7px;
+        }
+    }   
+}
+.xk-aside-posts{
+    background: transparent;
+    padding: 0 5px;
+    float: right;
+}
+.xk-aside-title{
+    color: #111111;
+    font-size: 25px;
+    padding: 7px 0;
+    border-bottom: 1px solid $c_log5;
+    margin-bottom: 15px;
+
+}
+.xk-no-horizontal-padding{
+    padding-right: 0;
+    padding-left: 0;
+}
+.xk-aside-posts-item{
+    padding-bottom: 6px;
+    border-bottom: 1px solid $c_log5;
+    margin: 0 0 15px 0;
+    min-height: 70px;
+    .xk-aside-posts-image{
+        max-width: 50px;
+        max-height: 50px;
+        object-fit: cover;
+        object-position: top center;
+    }
+    .xk-aside-posts-title{
+        font-size: 16px;
+        font-family: $EnFamily, $JaFamily;
+        margin-bottom: 5px;
+        a{
+            color: #000;
+            &:hover{
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+    }
+    .xk-aside-posts-date{
+        color: $c_log5;
+        font-size: 14px;        
+    }
+}
+.xk-clear,
+.clear{
+    clear: both;
+}
+
+.xk-blog-post-meta .share{
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+    position: relative;
+    top: 3px;
+}
+.xk-blog-article-image img{
+    width: auto;
+    max-width: 100%;
+}
+.xk-bottom-divider{
+    padding: 25px 0 55px 0;
+    border-top: 2px solid #CCCCCC;
+}
+article.post .entry-content{
+    margin-bottom: 0;
+}
+.xk-gdc{
+    margin: 50px auto;
+    padding: 30px 0px;
+    text-align: center;
+    border-bottom: thin solid #818F97;
+    border-top: thin solid #818F97;
+}
+.xk-no-image-icons{
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 35px);
+    left: 0;
+    text-align: center;
+    z-index: 9;     
+    font-size: 35px;
+    color: #fff;
+}
+.xk-aside-posts-item .xk-no-image{
+    height: 50px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
+    span{
+        font-size: 15px;
+        top: calc(50% - 15px);
+    }
+}
+.addthis_button_facebook_share{
+    margin-right: 5px;
+}
+.xk-index-posts-list h1.title{
+    margin-bottom: 5px;
+    margin-top: -7px;
+    margin-left: -4px;
+
+}
+.xk-index-posts-list .entry-content{
+    margin-top: 0;
+}
+/*************************************
+    remove all titles from the summaries,
+    we used css-rules, because liquid templates
+    doesn't supports regexp filter =(
+*************************************/
+.xk-blog-article .entry-content>*,
+.xk-blog-article .entry-content img,
+.xk-blog-article .entry-content a{
+  display: none;
+}
+.xk-blog-article .entry-content a.xk-more-link{
+  display: inline;
+  
+}
+.xk-blog-content.col-md-8{
+    margin-top: 0;
+    padding-top: 0;
+}
+.xk-blog-article-image{
+    margin-bottom: 40px;
+    float: left;
+}
+@media (max-width: $screen-md){
+    .xk-mobile-flex-container{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;        
+        .xk-mobile-flex-column{
+            min-width: 110px;
+            .xk-blog-article-image{
+                height: auto;
+                img{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+.selection{
+    .select2-selection{
+        height: 39px;
+        padding: 6px 12px;
+        font-size: 16px;
+        border: 1px solid #dcdcdc;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        border-radius: 2px;
+    }
+    .select2-selection__arrow{
+        height: 39px !important;
+    }
+}
+#contact-form .btn-success{
+    margin-left: 15px;
+}
+@media (max-width: $screen-sm){
+    .xk-mobile-flex-column-description{
+        padding-left: 15px;
+    }
+}
+.legal_link{
+    font-size: 23px;
+}
+div.x_body div.pdx-licensing{
+    p{
+        margin-bottom: 0.8em;
+        &+ul{
+            margin-top: calc(-1.6em/2);
+            li{
+                margin-bottom: -0.15em;
+            }
+		}
+        &+ol{
+            margin-top: calc(-1.6em/2);
+            li{
+                margin-bottom: -0.15em;
+            }
+        }
+    }
+}
+@import "common/_head.scss";
+@import "common/_foot.scss";
+@import "common/_title.scss";
+@import "common/_button.scss";
+@import "common/_pageList.scss";
+@import "common/_pager.scss";
+@import "common/_extra.scss";

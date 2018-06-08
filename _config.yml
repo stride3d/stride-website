@@ -1,0 +1,36 @@
+# Site Settings
+title: Xenko Game Engine
+author: Xenko Team
+description: Xenko Game Engine
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://xenko.com" # the base hostname & protocol for your site
+
+exclude: ['Gemfile*', '_deploy', '.*', '_jekyll']
+
+# Github repository
+# github_user: SiliconStudio
+# github_repo_url: https://github.com/SiliconStudio/SiliconStudio.github.io/
+
+# Twitter
+twitter_user: xenko3d
+twitter_tweet_button: true
+
+# Disqus Comments
+disqus_short_name: paradox3d
+disqus_show_comment_count: true
+
+# Google Analytics
+googlega: 'UA-35991323-1'
+
+# Jekyll settings
+permalink: /blog/:title/
+# try to fix excerpt separator
+excerpt_separator: <!--more-->
+# excerpt_link: Read More...
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+

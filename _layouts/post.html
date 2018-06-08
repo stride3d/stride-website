@@ -1,0 +1,15 @@
+---
+layout: blog
+single: true
+---
+{% include post_tags.html %}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">{% include article.html %}</article>
+
+{% if site.disqus_short_name and page.comments != false %}
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+</section>
+{% endif %}
+
+

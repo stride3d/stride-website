@@ -1,0 +1,163 @@
+
+#x_wrap
+{
+	$arrow: url(../images/svg/arrow_red_8.svg);
+	$arrow_hover: url(../images/svg/arrow_white_8.svg);
+
+	//----------
+
+	div.xb_common
+	{
+		display: block;
+		max-width: 100%;
+		border: 1px solid $c_border;
+		box-sizing: border-box;
+		position: relative;
+		margin: 0 auto;
+		background: $arrow_hover no-repeat 95% 50% $c_main; 
+		cursor: pointer;
+
+		p 
+		{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: $arrow no-repeat 95% 50% #ffffff;
+			text-indent: 100%;
+			white-space: nowrap;
+			
+			transition: height 0.1s linear, top 0.1s linear;
+			-webkit-transition: height 0.1s linear, top 0.1s linear;
+		}
+
+		a, input[type="button"], input[type="submit"]
+		{
+			display: block;
+			width: 100%;
+			box-sizing: border-box;
+			overflow: hidden;
+			position: relative;
+			background: none;
+			font-size: 16px;
+			font-size: 1.6rem;
+			line-height: 1.2;
+			text-decoration: none;
+			text-align: center;
+			color: $c_text;
+			cursor: pointer;
+			
+			transition: color 0.1s linear;
+			-webkit-transition: color 0.1s linear;
+		}
+
+		span.xi_github 
+		{
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+			overflow: hidden;
+			background: url(../images/svg/github.svg) no-repeat 0 0;
+			background-size: 100% 100%;
+			vertical-align: middle;
+			text-align: left;
+			text-indent: 100%;
+			white-space: nowrap;
+		}
+
+		&:hover
+		{
+			p 
+			{
+				height: 0;
+				top: 50%;
+			}
+
+			a, input[type="button"], input[type="submit"]
+			{
+				color: #ffffff;
+			}
+		}
+
+		&.xb_type_short
+		{
+			display: inline-block;
+			width: 240px;
+			margin: 0;
+
+			a, input[type="button"], input[type="submit"]
+			{
+				padding: 0.8em 44px 0.8em 15px;
+			}
+		}
+
+		&.xb_type_legibly
+		{
+			width: 340px;
+
+			a, input[type="button"], input[type="submit"]
+			{
+				padding: 0.4em 48px 0.4em 14px;
+				font-size: 24px;
+				font-size: 2.4rem;
+			}
+		}
+
+		&.xb_type_long, &.xb_type_large
+		{
+			width: 520px;
+
+			a, input[type="button"], input[type="submit"]
+			{
+				padding: 1.1em 66px 1.1em 30px;
+			}
+		}
+
+		&.xb_type_large
+		{
+			a, input[type="button"], input[type="submit"]
+			{
+				font-size: 20px;
+				font-size: 2rem;
+			}
+		}
+
+		@media ( max-width: $w_under_ipad )
+		{
+			&.xb_type_short, &.xb_type_legibly, &.xb_type_long, &.xb_type_large
+			{
+				background-size: 49.5px 150px;
+
+				p 
+				{
+					background-size: 49.5px 150px;
+				}
+
+				a, input[type="button"], input[type="submit"]
+				{
+					padding: 1em 15% 1em 6%;
+					font-size: 14px;
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+
+	div.x_buttonBox
+	{
+		width: 100%;
+		text-align: center;
+
+		div.xb_common
+		{
+			&.xb_type_long, &.xb_type_large
+			{
+				display: inline-block;
+				margin: 0 10px 20px;
+			}
+		}
+	}
+}

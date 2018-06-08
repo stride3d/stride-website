@@ -1,0 +1,45 @@
+
+@import "_const.scss";
+
+#x_wrap
+{
+	.svg_footer
+	{
+		background-image: url(../images/top/svg/polygon.svg);
+	}
+
+	div.x_body
+	{
+		div.x_bg
+		{
+			min-height: 1690px;
+			padding: 60px 0 0 0;
+			background-image: url(../images/top/svg/bg_light.svg);
+
+			@media ( max-width: $w_max )
+			{
+				min-height: 0;
+			}
+			
+			div.x_container
+			{
+				@media ( max-width: $w_max )
+				{
+					padding: 0 36px;
+				}
+
+				@media ( max-width: $w_under_iphone )
+				{
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+}
+
+
+@import "top/_mainview.scss";
+@import "top/_welcome.scss";
+@import "top/_sns.scss";
+@import "top/_pricing.scss";
+@import "top/_welcome-campaign.scss";

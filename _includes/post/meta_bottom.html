@@ -1,0 +1,9 @@
+<div class="xk-blog-post-meta xk-bottom-divider">
+	<span class="fa fa-calendar"></span> {% include post/date.html %}{{ time }}
+	&nbsp; <span class="fa fa-pencil"></span> By {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %} {% include post/tags.html %}
+	{% if index != true %}
+		{% unless page.sharing == false %}
+			{% include post/sharing.html %}
+		{% endunless %}
+	{% endif %}
+</div>

@@ -1,0 +1,12 @@
+{% for feature in site.data.features[features_current] %}
+    {% include feature_block.html %}
+
+    {% assign loopindex_mod2 = forloop.index | modulo: 2 %}
+    {% if loopindex_mod2 == 0 %}
+    <div class="clearfix visible-md-block"></div>
+    {% endif %}
+    {% assign loopindex_mod3 = forloop.index | modulo: 3 %}
+    {% if loopindex_mod3 == 0 %}
+    <div class="clearfix visible-lg-block"></div>
+    {% endif %}
+{% endfor %}

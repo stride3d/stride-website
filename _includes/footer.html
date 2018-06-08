@@ -1,0 +1,75 @@
+	<div id="x_foot">
+		<div class="x_totop"><a href="#x_wrap">To Top</a></div>
+		<div class="x_footBody">
+			<div class="x_container">
+				<div id="x_foot_sitemap">
+                    <ul>
+                       <li><a href="/features">Features</a></li>
+                       <li><a href="/blog">Blog</a></li>
+                       <li><a href="http://doc.xenko.com/latest">Documentation</a></li>
+                       <li><a href="/community">Community</a></li>
+                    </ul>
+                    <ul>
+                       <li><a href="/faq">FAQ</a></li>
+                       <li><a href="/download/">Download</a></li>
+                       <li><a href="/legal">Legal</a></li>
+                       <li><a href="https://trello.com/b/FwbjOjjB/xenko-roadmap">Roadmap</a></li>
+                    </ul>
+				</div>
+				<div class="x_subContainer">
+					<a href="http://www.siliconstudio.co.jp/en/">
+                         <p class="x_add">
+                        </p>
+                    </a>
+					<ul class="x_sns">
+						<li class="facebook"><a href="https://www.facebook.com/xenko3d" target="_blank">Facebook</a></li>
+						<li class="twitter"><a href="https://twitter.com/xenko3d" target="_blank">Twitter</a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCfP5ubydYEslNRtacmZBjuQ" target="_blank">YouTube</a></li>
+						<li class="rss"><a href="/feed.xml"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<ul class="x_siteInfo container">
+				<li><a href="/contact">Contact us</a></li>
+				<li><a href="/legal/privacy-policy" target="_blank">Privacy Policy</a></li>
+				<li class="xk-footer-middle-link"><a href="/legal/tokusho" target="_blank">特定商取引法に基づく表示</a></li>
+			</ul>
+			
+			<p class="x_copyRight">&copy;Silicon Studio Corp., all rights reserved.</p>
+			<svg class="top left svg_footer"></svg>
+			<svg class="top right svg_footer"></svg>
+		</div>
+	</div>
+{% if layout.menu == "blog" %}
+ {% include disqus.html %}
+{% endif %}
+<script>
+	{% if site.googlega %}
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+	__gaTracker('create', '{{ site.googlega }}', 'auto');
+	__gaTracker('send', 'pageview');
+	{% endif %}
+
+  $(document).ready(function() {
+	$('.image-popup').magnificPopup({type: 'image',closeOnContentClick: true, disableOn: 992 }); 
+	$('.video-popup').magnificPopup({
+        type: 'inline',
+        disableOn: 992,
+        closeOnContentClick: false,
+        callbacks: {
+          open: function() {
+            this.content.children('video')[0].play();
+          },
+          close: function() {
+            this.content.children('video')[0].pause();
+            this.content.children('video')[0].currentTime = 0;
+          }
+        }
+    });
+	$('.bxslider').bxSlider({ auto: true, controls: false });
+  });
+</script>
