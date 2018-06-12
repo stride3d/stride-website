@@ -1,0 +1,1554 @@
+diff --git a/_includes/head.html b/_includes/head.html
+index 12aee35..a7e6c3a 100644
+--- a/_includes/head.html
++++ b/_includes/head.html
+@@ -16,8 +16,8 @@
+   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml" />
+   <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
+   <script src="{{ site.baseurl}}/scripts/site.js" type="text/javascript"></script>
+-  {% if  page.image %}
+-    <meta property="og:image" content="{{ page.image }}"/>
++  {% if page.sns_image %}
++    <meta property="og:image" content="{{ page.sns_image }}"/>
+   {% else %}
+     <meta property="og:image" content="/images/og/ogp.jpg">
+   {% endif %}
+diff --git a/_includes/image b/_includes/image
+new file mode 100644
+index 0000000..59c0f03
+--- /dev/null
++++ b/_includes/image
+@@ -0,0 +1 @@
++{% if include.no-paragraph %}<span class="pull-right">{% if include.no-maximize %}<span> <span >  <img src="{{ include.src }}" {% if include.width %} width="{{ include.width }}" {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %} /> </span></span>{% else %}<a href="{{ include.src }}" class="image-popup"> <span >  <span class="zoom-in"></span>  <img src="{{ include.src }}" {% if include.width %} width="{{ include.width }}" {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %} /> </span></a>{% endif %}</span>{% else %}<p><span> {% if include.no-maximize %} <span>  <span ><img src="{{ include.src }}" {% if include.width %} width="{{ include.width }}" {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %} /></span></span>{% else %}<a href="{{ include.src }}" class="image-popup"><span ><span class="zoom-in"></span><img src="{{ include.src }}" {% if include.width %} width="{{ include.width }}" {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %} /></span></a>{% endif %}</span></p><div style="clear: both;"></div>{% endif %}
+\ No newline at end of file
+diff --git a/_includes/video b/_includes/video
+new file mode 100644
+index 0000000..e24d1d3
+--- /dev/null
++++ b/_includes/video
+@@ -0,0 +1,2 @@
++{% if include.no-autoplay %}{% assign autoplay = false %}{% else %}{% assign autoplay = true %}{% endif %}{% if include.no-paragraph %}<span>{% if include.no-maximize %}<span>    <span class="embed-responsive-anyratio">    <span class="video-play-button"></span>    <video class="responsive-video" loop preload="none" poster="/{{ include.src }}.jpg" {% if include.no-autoplay!=true %} autoplay {% endif %} {% if include.width %} width="{{ include.width }}"     {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %} >        <source src="/{{ include.src }}.mp4" type="video/mp4">    </video>    </span></span>{% else %} <a href="#{{ include.src | replace: '/','' | replace:'..',''}}" class="video-popup">    <span class="embed-responsive-anyratio">        <span class="video-play-button"></span>        <video class="responsive-video" loop preload="none" poster="/{{ include.src }}.jpg" {% if autoplay %} autoplay {% endif %} {% if include.width %} width="{{ include.width }}"         {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %}  onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">            <source src="/{{ include.src }}.mp4" type="video/mp4">        </video>        <span class="zoom-in"></span>    </span></a>{% endif %}</span>{% else %}<p>    {% if include.no-maximize %}    <span>        <span class="embed-responsive-anyratio">        <span class="video-play-button"></span>        <video class="responsive-video" loop preload="none" poster="/{{ include.src }}.jpg" {% if include.no-autoplay!=true %} autoplay {% endif %} {% if include.width %} width="{{ include.width }}"         {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %} >            <source src="/{{ include.src }}.mp4" type="video/mp4">        </video>        </span>    </span>    {% else %}     <a href="#{{ include.src | replace: '/','' | replace:'..','' }}" class="video-popup">        <span class="embed-responsive-anyratio">            <span class="video-play-button"></span>            <video class="responsive-video" loop preload="none" poster="/{{ include.src }}.jpg" {% if autoplay %} autoplay {% endif %} {% if include.width %} width="{{ include.width }}"             {% endif %} {% if include.height %} height="{{ include.height }}" {% endif %}  onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">                <source src="/{{ include.src }}.mp4" type="video/mp4">            </video>            <span class="zoom-in"></span>        </span>    </a>    {% endif %}</p>{% endif %}
++<div id="{{ include.src | replace: '/','' | replace:'..','' }}" class="mfp-video mfp-hide embed-responsive-anyratio">    <video class="responsive-video" loop preload="none" controls="" >        <source src="/{{ include.src }}.mp4" type="video/mp4">    </video></div>
+\ No newline at end of file
+diff --git a/_includes/video.html b/_includes/video.html
+deleted file mode 100644
+index 25ae2d8..0000000
+--- a/_includes/video.html
++++ /dev/null
+@@ -1,41 +0,0 @@
+-{% if include.no-paragraph %}
+-<div class="embed-responsive-anyratio"><div class="video-play-button"></div>    
+-    <video 
+-        class="responsive-video"
+-        loop
+-        preload="none"
+-        poster="/{{ include.src }}.jpg"
+-        {% if include.no-autoplay!=true %}
+-            autoplay
+-        {% endif %}
+-        {% if include.width %} 
+-            width="{{ include.width }}"
+-        {% endif %}
+-         {% if include.height %} 
+-            height="{{ include.height }}"
+-        {% endif %}> 
+-        <source src="/{{ include.src }}.mp4" type="video/mp4">
+-    </video>
+-</div>
+-{% else %}
+-<p>
+-    <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-        <video 
+-            class="responsive-video"
+-            loop
+-            preload="none"
+-            poster="/{{ include.src }}.jpg"
+-            {% if include.no-autoplay!=true %}
+-                autoplay
+-            {% endif %}
+-            {% if include.width %} 
+-                width="{{ include.width }}"
+-            {% endif %}
+-             {% if include.height %} 
+-                height="{{ include.height }}"
+-            {% endif %}>
+-            <source src="/{{ include.src }}.mp4" type="video/mp4">
+-        </video>
+-    </div>
+-</p>
+-{% endif %}
+\ No newline at end of file
+diff --git a/_posts/2014-09-06-new-version-1-0-alpha.html b/_posts/2014-09-06-new-version-1-0-alpha.html
+index a79a2e3..c6c5e07 100644
+--- a/_posts/2014-09-06-new-version-1-0-alpha.html
++++ b/_posts/2014-09-06-new-version-1-0-alpha.html
+@@ -9,9 +9,7 @@ image_thumb: /images/blog/release-1.0-alpha/thumb.jpg
+ 
+ <p>A new version is available for download. Run the Xenko Studio to download and install the latest version.</p>
+ 
+-<p>
+-<img src="/images/blog/release-1.0-a07/XenkoStudio_1_0_0_alpha07.jpg"/>
+-</p>
++{% include image src="../../images/blog/release-1.0-a/XenkoStudio_1_0_0_alpha07.jpg" no-maximaze="true" %}
+ 
+ <h3>In Progress</h3>
+ <ul>
+diff --git a/_posts/2014-10-17-new-version-open-sourcing.html b/_posts/2014-10-17-new-version-open-sourcing.html
+index 23829c7..cb2d3ea 100644
+--- a/_posts/2014-10-17-new-version-open-sourcing.html
++++ b/_posts/2014-10-17-new-version-open-sourcing.html
+@@ -33,11 +33,7 @@ feel free to contact us at contact@xenko.com</p>
+ It allows us to use your changes in the commercial version, and relicense code easily (in case we decide to go MIT at some point for example).</p>
+ <p>Otherwise you are free to fork, as long as you maintain GPL v3 License.</p>
+ <h1>New Platforms</h1>
+-<div class="pull-right">
+-	<a href="/images/blog/release-1.0-b1/UpdatePlatforms.png" title="Update Platforms" class="image-popup">
+-		<div class="rt-image"><div class="zoom-in"></div><img src="/images/blog/release-1.0-b1/UpdatePlatforms_thumb.jpg"></div>
+-	</a>
+-</div>
++{% include image src="../../images/blog/release-1.0-b1/UpdatePlatforms_thumb.jpg" no-paragraph="true" %}
+ <p>We are also pushing a new release <code>1.0.0-beta01</code>. This release is most notably adding support for two new platforms:</p>
+ <ul>
+ <li>Windows RT/Store</li>
+@@ -55,11 +51,7 @@ It allows us to use your changes in the commercial version, and relicense code e
+ </ul>
+ <p>You will be able to upgrade the platforms on your existing project by simply using the contextual menu <code>Update Package\Update Platforms</code> on a package in Xenko Studio.</p>
+ <h1>New Samples</h1>
+-<div class="pull-right">
+-	<a href="/images/blog/release-1.0-b1/SimpleTerrain.jpg" title="Simple Terrain Sample" class="image-popup">
+-		<div class="rt-image"><div class="zoom-in"></div><img src="/images/blog/release-1.0-b1/SimpleTerrain_thumb.jpg"></div>
+-	</a>
+-</div>
++{% include image src="../../images/blog/release-1.0-b1/SimpleTerrain_thumb.jpg" no-paragraph="true" %}
+ <p>We are also delivering 3 new samples:</p>
+ <ul>
+ <li><strong>SimpleTerrain</strong> that demonstrates how to generate an entity model/mesh at runtime by displaying a heightmap terrain</li>
+diff --git a/_posts/2014-11-11-forums-opened-new-release-with-cubemap-image-based-lighting.html b/_posts/2014-11-11-forums-opened-new-release-with-cubemap-image-based-lighting.html
+index 9b1e7ff..0a9fde2 100644
+--- a/_posts/2014-11-11-forums-opened-new-release-with-cubemap-image-based-lighting.html
++++ b/_posts/2014-11-11-forums-opened-new-release-with-cubemap-image-based-lighting.html
+@@ -12,7 +12,7 @@ image_thumb: /images/blog/release-1.0-beta3/CubemapIBLSample_thumb.jpg
+ 
+ <h2>Cubemap Image-Based lighting</h2>
+ 
+-<p><img src="/images/blog/release-1.0-beta3/CubemapIBLSample.jpg"/></p>
++{% include image src="../../images/blog/release-1.0-a/XenkoStudio_1_0_0_alpha07.jpg" no-maximaze="true" %}
+ <p>Over the next few months, on top of working on a level editor, we also want to improve the rendering quality. We know Xenko can scale well from mobile to high-end and we want to prove it!</p>
+ <p>As part of this effort, this release includes image-based reflection lighting, with parallax correction.</p>
+ <p>It supports multiple cubemaps: they will be accumulated during a specific deferred rendering step, similar to prelight rendering.</p>
+diff --git a/_posts/2015-03-05-gdc-2015-scene-editor-new-rendering.html b/_posts/2015-03-05-gdc-2015-scene-editor-new-rendering.html
+index 13e5c5e..3c77587 100644
+--- a/_posts/2015-03-05-gdc-2015-scene-editor-new-rendering.html
++++ b/_posts/2015-03-05-gdc-2015-scene-editor-new-rendering.html
+@@ -25,9 +25,7 @@ image_thumb: /images/blog/GDC2015/xenko_gdc_thumb.png
+ <p>We will also release shortly a video showing the rendering of a Robot with the new PBR material system and post effects that we presented here at GDC.</p>
+ 
+ <div style="text-align: center;">
+-	<a href="/images/blog/GDC2015/pbr_robot.jpg" title="Materials Physically Based Rendering" class="image-popup">
+-		<div class="rt-image"><div class="zoom-in"></div><img src="/images/blog/GDC2015/pbr_robot_thumb.jpg"></div>
+-	</a>
++	{% include image src="../../images/blog/GDC2015/pbr_robot_thumb.jpg" no-paragraph="true" %}
+ </div>
+ 
+ <p>Stay tuned!</p>
+diff --git a/_posts/2015-04-28-new-version-1-1-0-beta-physically-based-rendering-and-scene-editor.html b/_posts/2015-04-28-new-version-1-1-0-beta-physically-based-rendering-and-scene-editor.html
+index 88debc6..1660108 100644
+--- a/_posts/2015-04-28-new-version-1-1-0-beta-physically-based-rendering-and-scene-editor.html
++++ b/_posts/2015-04-28-new-version-1-1-0-beta-physically-based-rendering-and-scene-editor.html
+@@ -7,9 +7,7 @@ image_thumb: /images/blog/release-1.1/robot_editor_thumb.jpg
+ 
+ <p>Everyone in the Xenko team have been working hard to bring you the new features and tools. We are proud to announce that Xenko 1.1.0β version is now available for download.</p>
+ 
+-<p>
+-<img src="/images/blog/release-1.1/robot_editor.jpg"/>
+-</p>
++{% include image src="../../images/blog/release-1.1/robot_editor.jpg" no-maximize="true" %}
+ 
+ <p>Here are the new features on the new and updated version:</p>
+ 
+diff --git a/_posts/2015-07-30-github-migration-history-and-live-commits.html b/_posts/2015-07-30-github-migration-history-and-live-commits.html
+index 717e93c..8846bbb 100644
+--- a/_posts/2015-07-30-github-migration-history-and-live-commits.html
++++ b/_posts/2015-07-30-github-migration-history-and-live-commits.html
+@@ -12,5 +12,5 @@ image_thumb: /images/blog/github/Octocat.png
+ <p>We decided to spend some time automatizing this commit filtering process and applying it on the last year of history (since 1.0.0-beta01).</p>
+ <p>This history is now <b>live</b> on our <a href="https://github.com/SiliconStudio/xenko">GitHub repository</a>, and you can expect almost daily commits from now on!</p>
+ <p>We are very excited to make our development more transparent and visible to the community!</p>
+-<a href="https://github.com/SiliconStudio/xenko/commits/master" target="_blank"><img src="/images/blog/github/xenko-github.png" alt="History on github"/></a>
++<a href="https://github.com/SiliconStudio/xenko/commits/master" target="_blank">{% include image src="/images/blog/github/xenko-github.png" no-maximize="true" no-paragraph="true" %}</a>
+ 
+diff --git a/_posts/2015-09-17-new-version-1-3-0-beta.md b/_posts/2015-09-17-new-version-1-3-0-beta.md
+index 3152b75..ac037a5 100644
+--- a/_posts/2015-09-17-new-version-1-3-0-beta.md
++++ b/_posts/2015-09-17-new-version-1-3-0-beta.md
+@@ -7,7 +7,7 @@ We are proud to announce the release of a new version of Xenko, bringing lots of
+ 
+ Also, if you haven't participate to our [survey](/blog/roadmap-and-survery/), please take the time to help us prioritize the features you need for your projects!
+ 
+- <a href="https://youtu.be/-RbIALRmhs0" target="_blank"><img alt="Rescue Robot Tech Demo" src="/images/backgrounds/rescue-robot-tech-demo.jpg"/></a>
++ <a href="https://youtu.be/-RbIALRmhs0" target="_blank">{% include image src="../../images/backgrounds/rescue-robot-tech-demo.jpg" no-maximize="true" %}</a>
+ 
+ <!--more-->
+ 
+@@ -32,9 +32,7 @@ Graphics Profile (DX9, 10 or 11)
+ HDR or LDR mode
+ Color Space: Gamma or Linear (more details below)
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/GameSettings13.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/GameSettings13.png" no-maximize="true" %}
+ 
+ It will automatically be created when opening an old project with version 1.3.
+ We plan to add many more options to this asset from now on.
+@@ -47,9 +45,7 @@ Starting with version 1.3, we compile only assets required by your game. This ma
+ 
+ Don’t worry, most of it is done automatically for you! We do this by collecting dependencies from the new Game Settings asset. Since it references the Default Scene, we can easily detect all the required asset references (Models, Materials, Asset referenced by your scripts and so on).
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/AssetControlExample.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/AssetControlExample.png" no-maximize="true" %}
+ 
+ In case you were loading anything in your script using `Asset.Load`, you can still tag those assets specifically with "Mark as Root" in the editor.
+ 
+@@ -69,9 +65,7 @@ When doing so, source assets will be copied alongside the Xenko asset with the s
+ 
+ This option is still off by default when importing new assets, but we plan to make it a project setting if you want to manage project that way for your whole team.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/AssetConsolidation.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/AssetConsolidation.png" no-maximize="true" %}
+ 
+ Don’t forget to save new versions of your raw assets at the new location.
+ 
+@@ -87,9 +81,7 @@ Animation pipeline is very similar to a 3D model with smooth interpolations.
+ 
+ Check out our new Sprite Studio Demo in the samples:
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/SpriteStudioDemo.jpg" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/SpriteStudioDemo.jpg" no-maximize="true" %}
+ 
+ 
+ ### Materials: Vertex stream, Shader nodes…
+@@ -98,9 +90,7 @@ In addition to the current color providers supported by materials (texture, scal
+ 
+ You can now use a color/values coming from **vertex attributes/stream** and use them directly in material color providers:
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/RenderingMaterialsVertexStream.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/RenderingMaterialsVertexStream.png" no-maximize="true" %}
+ 
+ This allows for example to blend two textures in a diffuse material, based on the value of a color coming from the vertex buffer.
+ 
+@@ -114,15 +104,11 @@ In this version, the engine is now able to fully support pipelines that are HDR
+ 
+ By default, all new games are now created with `Linear` colorspace. This setting can be changed in the GameSettings:
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/GameSettingsColorSpace.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/GameSettingsColorSpace.png" no-maximize="true" %}
+ 
+ The texture importer by default now automatically uses the color space defined at game level:
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/TextureColorSpace.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/TextureColorSpace.png" no-maximize="true" %}
+ 
+ ___
+ 
+@@ -132,9 +118,7 @@ ___
+ 
+ We have added support to create automatically atlas texture generated from sprite sheets. This feature is optional and the user can continue generating their atlas manually if they prefer. It supports sprite border size.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/SpriteSheetTextureAtlas.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/SpriteSheetTextureAtlas.png" no-maximize="true" %}
+ 
+ ### Alpha detection
+ 
+@@ -144,39 +128,27 @@ We have also improve automatic alpha detection of textures and sprites. In addit
+ 
+ The sprite editor has been improved in several ways. First, the left pane now let you select the sheet type (sprites or UI) and the color key. To easily set the color key from the image itself, a color picking tool has been added. It is also possible to duplicate an existing sprite so you don’t have to enter the same parameters again and again.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/SpriteEditorLeft.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/SpriteEditorLeft.png" no-maximize="true" %}
+ 
+ Selecting the area of each sprite in a sheet can be annoying, so we added a magic wand tool to easily create a rectangle that fit the edges of the sprite you click on, using either transparency, or the color key to determine sprite limits.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/MagicWand.gif" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/MagicWand.gif" no-maximize="true" %}
+ 
+  ___
+ 
+ ## Scene editor
+ 
+ We made several improvements to manage the hierarchy of entities. First, the root node representing the scene has been removed. You can now access the graphics compositor and editor settings via the *Scene settings* button.
+-<p>
+-   <img src="/images/blog/release-1.3/SceneSettings.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/SceneSettings.png" no-maximize="true" %}
+ 
+ Also, to help you sort and filter entities in your scene, we added the concept of folders. You can create folders either at root level, or inside an entity, and move other folders/entities into them. Folders are completely virtual and exist only at design time. The actual hierarchy of entities is not affected by them.
+-<p>
+-   <img src="/images/blog/release-1.3/SceneFolders.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/SceneFolders.png" no-maximize="true" %}
+ 
+ 
+ Aligning the camera along coordinate axes was cumbersome. We added a new nativation gizmo to the top-right corner of the scene editor, which allows you to easily rotate the camera around axes in 45° increments. Clicking on the center of the cube a second time, will switch between perspective and orthographic projection. Camera controls have also been improved when working in orthographic mode, to make it easier to move around in 2D worlds.
+-<p>
+-   <img src="/images/blog/release-1.3/NavigationGizmo.gif" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/NavigationGizmo.gif" no-maximize="true" %}
+ Finally, the camera menu has been improved to allow you to customize various options related to the editor camera. These options were previously available in the editor settings section of the scene properties. This section has been removed.
+-<p>
+-   <img src="/images/blog/release-1.3/CameraMenu.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/CameraMenu.png" no-maximize="true" %}
+ 
+ 
+ The material selection mode, introduced in the previous version, has been improved to allow you to perform close-ups on single meshes of a model. Hovering over the desired mesh and pressing 'F' while in material mode, will now center the camera on it.
+@@ -191,9 +163,7 @@ The physics system is now **loaded automatically** - no need anymore to load it
+ ### Element types
+ 
+ Physics elements have been simplified. To reduce confusion between object types some element types have been removed/merged with others. Each element type is now represented by separate class (instead of having a type property). This provides a clearer abstraction and easier configuration from the editor. Physics gizmos are **color coded** by element type.
+-<p>
+-   <img src="/images/blog/release-1.3/physics_elements_new.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/physics_elements_new.png" no-maximize="true" %}
+ 
+ ### Linking to bones
+ 
+@@ -201,9 +171,7 @@ You can now properly link physics elements to bones of a model hierarchy. This m
+ You currently still need to set up constraints programmatically. This will also be possible from the editor in the future.
+ Also, complex entity hierarchies are now well handled.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/physics_nodes.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/physics_nodes.png" no-maximize="true" %}
+ 
+ ### Async scripting for collision handling
+ 
+@@ -231,18 +199,14 @@ You can now declare collider shapes right **inside of a physics component**, for
+ 
+ A **Convex Hull collider shape** has been added, providing a shape that is shrink wrapped to a model. For more complex model, a shape is wrapped to each mesh. In the future we also hope to provide complex convex decomposition.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/physics_inlineshapes_new.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/physics_inlineshapes_new.png" no-maximize="true" %}
+  ___
+ 
+ ## Manage code and scripts from Game Studio
+ 
+ Scripts are now a new special type of asset.
+ 
+-<p>
+-    <img src="/images/blog/release-1.3/script_asset.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/script_asset.png" no-maximize="true" %}
+ You can now create scripts straight from the Game Studio, without any need to have visual studio installed if wanted, Just fire your favorite code editor and start making scripts for your game!
+ 
+ Renaming/Deleting/Adding a script from visual studio will be detected after script recompile in the Game Studio.
+@@ -276,16 +240,12 @@ Last, GameStudio-side logging has been improved to better show what happens in t
+ Model Node Link components allows you to make one entity follow a given model node or bone. They have been reworked and made easier to use.
+ 
+ Firstly, if now target model is set, they will now automatically use the parent entitie’s model. When editing the target node, the editor will now display a list of available model nodes to choose from:
+-<p>
+-    <img src="/images/blog/release-1.3/ModelNodeLinkNodeSelection.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/ModelNodeLinkNodeSelection.png" no-maximize="true" %}
+ 
+ Also, transformation is not ignored anymore. It is now possible to apply an offset, relative to the node.
+ 
+ Lastly, node link information is now visible in the scene tree view for easier discoverability:
+-<p>
+-    <img src="/images/blog/release-1.3/ModelNodeLinkSceneTreeInfo.png" align="center" />
+-</p>
++{% include image src="/images/blog/release-1.3/ModelNodeLinkSceneTreeInfo.png" no-maximize="true" %}
+ 
+  ___
+ 
+diff --git a/_posts/2015-12-17-new-version-1-5-0-beta.md b/_posts/2015-12-17-new-version-1-5-0-beta.md
+index 0ef2f57..40e348d 100644
+--- a/_posts/2015-12-17-new-version-1-5-0-beta.md
++++ b/_posts/2015-12-17-new-version-1-5-0-beta.md
+@@ -23,9 +23,7 @@ A new Skeleton asset (*.xkskel) has been introduced. Both models and animations
+ 
+ Skeletons can be created alongside other assets, when importing an FBX file or other model format.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/SkeletonThumbnail.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/SkeletonThumbnail.png" no-maximize="true"  %}
+ ### Root motion support for models, cameras, lights, etc.
+ 
+ Animations now apply root motion if they have no skeleton, or the ‘Root Motion’ property is enabled on the animation asset. The animation will then move the entity itself, instead of the skeleton’s root bone.
+@@ -33,9 +31,7 @@ This is especially useful to import animations of lights, cameras or unskinned m
+ 
+ The FBX importer will now also import animations of various camera parameters (near-plane, far-plane, field of view) and apply them to the CameraComponent of the animated entity. More properties may be supported in the future.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/RootMotionProperty.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/RootMotionProperty.png" no-maximize="true"  %}
+ ### New animation update system
+ 
+ The animation system now internally uses a new UpdateEngine to update objects. This allows us to animate arbitrary properties of entities, while accessing them in a highly efficient way.
+@@ -48,74 +44,56 @@ The new ‘Animated Properties’ sample demonstrates how to create animations o
+ It is now possible to visualize profiling information of all the game systems and custom profilers directly within your running games.
+ To get started, use the Game Profiler built-in script, attach it to an entity and when the game is running press LCtrl-LShift-P.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/profiler.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/profiler.png" no-maximize="true"  %}
+ ### Physic debug shapes at runtime
+ It is now possible to enable the rendering of physics collider shapes during runtime.
+ The debug shapes are normal entities and they must be enabled for each physics shape that requires it.
+ The best way to start with this feature is to use the Physics Shapes Render built-in script and attach the script to any entity that has a Physics Component and when the game is running press LCtrl-LShift-P.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/phys-debug.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/phys-debug.png" no-maximize="true"  %}
+ ### Asset View
+ The Asset view has been improved to help you better organize and manage your assets.
+ 
+ #### New ‘view options’ menu
+ The view options are gathered in a single menu accessible from the asset view toolbar.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/AssetViewOptions.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/AssetViewOptions.png" no-maximize="true"  %}
+ You can display all the assets in the current folder only, in the current folder and its sub-folder. The third option let you display the assets and the sub folders.
+ 
+ You can also sort your assets by name, order, type or modification date. 
+ 
+ #### New asset filter bar
+ With the new asset filter bar, you can filter your assets by name, tag, type or a combination of those. Each ‘filter tag’ can be disabled by a single click or removed from the active filters.
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/AssetFilterBar.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/AssetFilterBar.png" no-maximize="true"  %}
+ 
+ To add a filter, type in the filter bar and matching filters will be displayed. Click on the one you want to add it to the list of active filters.
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/AddingAssetFilter.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/AddingAssetFilter.png" no-maximize="true"  %}
+ Only the assets matching the active filters will be displayed in the asset view. Note that type filters are inclusive, while name and tag filters are exclusive.
+ 
+ #### Folder support in asset view
+ If the ‘Assets and folder in selected folder’ options is selected, the first level of sub-folder will be displayed in the asset view. You can drag and drop assets inside them. You can also copy/paste complete folder structure.
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/FolderSupport.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/FolderSupport.png" no-maximize="true"  %}
+ ### Copy-paste assets with their dependencies
+ You have now the ability to copy assets with their dependencies. To do that use the new entry ‘Copy with dependencies’ from the asset view context menu, or press Ctrl+Shift+C.
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/CopyAssetWithDependencies.png" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/CopyAssetWithDependencies.png" no-maximize="true"  %}
+ For example, if you copy/paste a model with its dependencies, you will get a copy of this model along with a copy of all its dependencies (skeleton, materials, textures)
+ 
+ ### Border and Center support in sprite sheet editor
+ For ‘Sprite2D’ sprites, you can move the position of the center by selecting the <img src="http://doc.xenko.com/1.5/rn_images/SpriteCenterIcon.png" style="display: inline" /> icon in the toolbar of the sprite editor. Grab and move the cross to the desired position.
+ 
+-For ‘UI’ sprites, you can change the borders by selecting the <img src="http://doc.xenko.com/1.5/rn_images/SpriteBorderIcon.png" style="display: inline" /> icon in the toolbar of the sprite editor. You can then resize each border (left, top, right and bottom) separately in the same way as the texture region, by grabbing and moving one of them. Note that the <img src="http://doc.xenko.com/1.5/rn_images/SpriteBorderLockIcon.png" style="display: inline" /> icon lets you ‘lock’or ‘unlock’ the sprite borders while resizing the texture region.
++For ‘UI’ sprites, you can change the borders by selecting the {% include image src="http://doc.xenko.com/1.5/rn_images/SpriteBorderIcon.png" no-maximize="true" no-paragraph="true" %} icon in the toolbar of the sprite editor. You can then resize each border (left, top, right and bottom) separately in the same way as the texture region, by grabbing and moving one of them. Note that the {% include image src="http://doc.xenko.com/1.5/rn_images/SpriteBorderLockIcon.png" no-maximize="true" no-paragraph="true" %} icon lets you ‘lock’or ‘unlock’ the sprite borders while resizing the texture region.
+ 
+ ### New built-in scripts
+ We added a few more built-in scripts with this release such as an FPS camera script and First player controller script. To use them, just click on “New Asset”, “Script source code”, select the desired script and attach it to an adequate entity.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/built-in_Scripts.png" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/built-in_Scripts.png" no-maximize="true"  %}
+ 
+ ### Precompiled Sprite Fonts
+ Font rights are quite restrictive and it is quite common that only some persons of the project have access to the font files. This was preventing some people to build the game. 
+ To solve this problem, we created a new type of asset, the precompiled sprite fonts. It is an asset taking as input an image and containing all the glyph information required to render the set of character specified. Inside your games you can used it exactly like a standard sprite font.
+ To generate a precompiled sprite font, the owner of the original font file just have to right click on an existing static font and choose “Generate Precompiled Font”.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.5/rn_images/PrecompiledSpriteFont.png" />
+-</p>
++{% include image src="http://doc.xenko.com/1.5/rn_images/PrecompiledSpriteFont.png" no-maximize="true"  %}
+ 
+ <br/>
+ That’s all for us this year, folks! Have a great holiday season, and we will be back early next year for the next updates on Xenko!
+diff --git a/_posts/2016-03-17-new-version-1-6-0.md b/_posts/2016-03-17-new-version-1-6-0.md
+index f5ed54e..0a56818 100644
+--- a/_posts/2016-03-17-new-version-1-6-0.md
++++ b/_posts/2016-03-17-new-version-1-6-0.md
+@@ -29,17 +29,13 @@ Prefabs allow you to assemble entities into building blocks and easily reuse the
+ 
+ We even took the concept one step further to empower our users, by having prefabs within prefabs, as well as the possibility to use only part of a prefab when you instantiate it. And of course, removing or rearranging a few entities won’t break your prefab synchronization!
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/prefabs.gif" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/prefabs.gif" no-maximize="true" %}
+ 
+ ## Archetypes
+ 
+ You can now use any asset as an archetype for another asset. When you change a property of the archetype, the new value will be automatically propagated to all the derived assets, unless you specifically override them. Archetypes can be used with most asset types.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/assset-templating.gif" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/assset-templating.gif" no-maximize="true" %}
+ 
+ ## Particles
+ 
+@@ -47,9 +43,7 @@ You can now create and edit particle systems directly in the Xenko Game Studio.
+ 
+ While there are still several features on the roadmap, the current implementation is sufficient for most games. The ability to customize almost all aspects of the particle engine allows you to add features tailored to your game’s specific needs.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/particle1.gif" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/particle1.gif" no-maximize="true" %}
+ Feel free to visit our <a href="http://doc.xenko.com/1.6/manual/particles/index.html">particle documentation</a>.
+ 
+ ### Features
+@@ -70,9 +64,7 @@ All aspects of particle systems are broken down into individuals modules like sp
+ 
+ The Game Studio now also comes with a built-in curve editor. For now only the particle engine uses curve animation. In the future, it will also power our property animation system and our storyboard system.
+ 
+-<p>
+-	<img src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/particle2.gif" align="center" />
+-</p>
++{% include image src="http://doc.xenko.com/1.6/media/ReleaseNotes-1.6/particle2.gif" no-maximize="true" %}
+ ## New Graphics Engine
+ 
+ Most of our graphics pipeline, both low-, medium- and high-level, has been almost completely rewritten, and should be ready for the future.
+diff --git a/_posts/2016-07-01-new-version-1-7-0.md b/_posts/2016-07-01-new-version-1-7-0.md
+index d9eb373..03f42d7 100644
+--- a/_posts/2016-07-01-new-version-1-7-0.md
++++ b/_posts/2016-07-01-new-version-1-7-0.md
+@@ -38,7 +38,7 @@ We also took this opportunity to rewrite most of our lighting code for improved
+ [Vulkan](https://www.khronos.org/vulkan/) joins our happy family of graphics platforms!
+ Experimental support has also been added for Windows and Linux. Android will follow soon.
+ 
+-![Vulkan](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/Vulkan.png)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/Vulkan.png" no-maximize="true"  %}
+ 
+ Together with Direct3D12 and the recent overhaul of our rendering pipeline, this is another step toward preparing Xenko for the next generation of graphics. Stay tuned for performance improvements and hard numbers in the near future.
+ 
+@@ -50,13 +50,13 @@ Try running your project on Vulkan by selecting it as the **Preferred Graphics P
+ 
+ The workflow to create assets has been simplified! The new menu for asset creation contains multiple templates for each type of asset. You can now import assets from files more directly. With Xenko's efficient search function, creating assets should be faster and easier than ever!
+ 
+-![New add asset menu](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/NewAddAsset.png)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/NewAddAsset.png" no-maximize="true"  %}
+ 
+ ### Camera Preview
+ 
+ We've updated GameStudio's camera preview to now display only the camera currently selected. It also now displays the borders and the camera's name making it easier to see the camera and it's settings.
+ 
+-![Camera preview](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/CameraPreview.png)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/CameraPreview.png" no-maximize="true"  %}
+ 
+ ### Drag & Drop Assets into the Property Grid
+ 
+@@ -64,13 +64,13 @@ So far, you could drag & drop assets into your scene or the tree view.
+ 
+ New in this release, components can now be added to entities just by dragging & dropping matching assets into the property grid.
+ 
+-![Drag & Drop into the Property Grid](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/dragdrop_propertyview.gif)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/dragdrop_propertyview.gif" no-maximize="true"  %}
+ 
+ ### Drag & Drop scripts
+ 
+ You can also drag & drop scripts directly into the scene, tree view and property view:
+ 
+-![Drag & Drop into the Property Grid](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/dragdrop_scripts.gif)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/dragdrop_scripts.gif" no-maximize="true"  %}
+ 
+ ## Linux
+ 
+@@ -78,11 +78,11 @@ Linux users rejoice! Linux is now a supported platform of Xenko among Windows, A
+ 
+ In order to use the **Linux** platform, check **Linux** from the list of platforms in the GameStudio then compile.
+ 
+-![Select Platforms Dialog](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/linux2.png)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/linux2.png" no-maximize="true"  %}
+ 
+ Deployment to a remote Linux box is done via SSH when running your project from GameStudio.
+ 
+-![Platform Selector](http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/Platform_selector.png)
++{% include image src="http://doc.xenko.com/1.7/media/ReleaseNotes-1.7/Platform_selector.png" no-maximize="true"  %}
+ 
+ To know more about our Linux support, read the [Linux documentation](manual/platforms/linux/index.md)
+ 
+diff --git a/_posts/2016-08-31-new-version-1-8-0.md b/_posts/2016-08-31-new-version-1-8-0.md
+index 526e199..5e200b0 100644
+--- a/_posts/2016-08-31-new-version-1-8-0.md
++++ b/_posts/2016-08-31-new-version-1-8-0.md
+@@ -21,7 +21,7 @@ Open the full post for more details!
+ 
+ This release introduces new UI assets along with a brand-new UI editor, so that you can create amazing UI directly from the Game Studio!
+ 
+-[![UI Editor](https://img.youtube.com/vi/YlCViinxviI/0.jpg)](https://www.youtube.com/watch?v=YlCViinxviI "UI Editor")
++[{% include image src="https://img.youtube.com/vi/YlCViinxviI/0.jpg" no-maximize="true" no-paragraph="true" %}](https://www.youtube.com/watch?v=YlCViinxviI "UI Editor")
+ 
+ The UI editor provides a full WYSIWYG experience. You can author the whole visual tree of your UI, edit the properties of each UI element (such as layout, background color, etc.) and preview its rendering.
+ 
+@@ -38,11 +38,11 @@ And since it is built on the same system as archetypes and prefabs, you can easi
+ 
+ Many computationally intensive systems have been multithreaded. Expect a major increase in performance and better scaling to correspond with the size of your game! We have observed up to 6 times higher frame rates for heavily CPU bound scenes so far (on a typical 4-core CPU).
+ 
+-[![Multithreading demo](https://img.youtube.com/vi/sJ2p982cZFc/0.jpg)](https://www.youtube.com/watch?v=sJ2p982cZFc "Multithreading demo")
++[{% include image src="https://img.youtube.com/vi/sJ2p982cZFc/0.jpg" no-maximize="true" no-paragraph="true" %}](https://www.youtube.com/watch?v=sJ2p982cZFc "Multithreading demo")
+ 
+ Parallelized code includes many `EntityProcessors` and almost every part of our recently rewritten **rendering pipeline**. On **Vulkan** and **Direct3D12** this includes also recording of drawing command lists, giving them an edge over the other APIs.
+ 
+-![Multithreading](https://doc.xenko.com/1.8/media/ReleaseNotes-1.8/multithreading.jpg)
++{% include image src="https://doc.xenko.com/1.8/media/ReleaseNotes-1.8/multithreading.jpg" no-maximize="true" %}
+ 
+ Developers can find classes and utilities for concurrent programming in the `SiliconStudio.Core.Threading` namespace, e.g. `Dispatcher.For()`, which resemble the Task Parallel Library, but are more lightweight and tailored for work performed every frame in a game's update loop.
+ 
+@@ -63,7 +63,7 @@ Make sure that the base prefab is just containing static entities as only `Model
+ 
+ Ambient Occlusion was added to the list of post-processing effects. The current technique implements [Scalable Ambient Obscurance](https://graphics.cs.williams.edu/papers/SAOHPG12/). It exposes a variety of options, including number of tap samples, intensity, tap radius and back buffer size.
+ 
+-![SAO comparison shots](https://doc.xenko.com/1.8/media/ReleaseNotes-1.8/SAO.jpg)
++{% include image src="https://doc.xenko.com/1.8/media/ReleaseNotes-1.8/SAO.jpg" no-maximize="true" %}
+ 
+ It is currently part of the post-effect pipeline, but will later move to the lighting pipeline for more realistic rendering.
+ 
+@@ -71,7 +71,7 @@ It is currently part of the post-effect pipeline, but will later move to the lig
+ 
+ Cel shading (or Toon shading) is now available as a rendering model with both Diffuse and Specular rendering options. The default implementation limits the light product to binary or 3-cuts discrete levels. You can also reference a ramp texture for better artistic control.
+ 
+-[![Cel Shading](https://img.youtube.com/vi/RJDrG1QR3Uo/0.jpg)](https://www.youtube.com/watch?v=RJDrG1QR3Uo "Cel Shading")
++[{% include image src="https://img.youtube.com/vi/RJDrG1QR3Uo/0.jpg" no-maximize="true" no-paragraph="true" %}](https://www.youtube.com/watch?v=RJDrG1QR3Uo "Cel Shading")
+ 
+ # How To Upgrade
+ 
+diff --git a/_posts/2016-10-27-copy-paste.md b/_posts/2016-10-27-copy-paste.md
+index 471b46b..fb9255c 100644
+--- a/_posts/2016-10-27-copy-paste.md
++++ b/_posts/2016-10-27-copy-paste.md
+@@ -21,46 +21,22 @@ Any entities in a scene are now copyable, as well as any sprites of a sprite she
+ 
+ Insert it into another list at various positions, for example:
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_InsertIntoList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/copy_paste/Copy_InsertIntoList.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_InsertIntoList" no-maximize="true" %}
+ 
+ *Copy and insert into the list (by pasting at a list item level).*
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_AppendToList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/copy_paste/Copy_AppendToList.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_AppendToList" no-maximize="true" %}
+ *Copy and append to a list, for example, append it to the end of the list.*
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_ReplaceList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-   		<source src="../../images/blog/copy_paste/Copy_ReplaceList.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_ReplaceList" no-maximize="true" %}
+ 
+ *Copy and replace the whole list.*
+ 
+ A bit more difficult to explain, but perhaps easier to show than write about is **copy and replace at an item level**. This action (shown in the video below) will remove the item (at its position in the list) and insert the copied ones starting at the same position of the item in the list. In our example below, the copy replace starts from Item 2 in List 2:
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_ReplaceIntoList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/copy_paste/Copy_ReplaceIntoList.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_ReplaceIntoList" no-maximize="true" %}
+ 
+ 
+ Some information about copying entities and prefabs:
+@@ -69,13 +45,7 @@ Some information about copying entities and prefabs:
+ 
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/CopyPaste_BetweenScenes2.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/copy_paste/CopyPaste_BetweenScenes2.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/CopyPaste_BetweenScenes2" no-maximize="true" %}
+ 
+ *The prefab “MyHero” is copied into the scene. Links to the prefab are maintained.*
+ 
+@@ -89,13 +59,7 @@ In fact, **absolutely any property that can be serialized can be copied**. You c
+ Here’s an example of copying between scripts and transform entities in the GameStudio Property Grid:  
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/CopyPaste_PropertyGrid.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/copy_paste/CopyPaste_PropertyGrid.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/CopyPaste_PropertyGrid" no-maximize="true" %}
+ 
+ Look for this feature in our forthcoming **beta release 1.9, coming soon!** As always, we are committed to offering you best-in-class game dev solutions directly in GameStudio.
+ 
+diff --git a/_posts/2016-11-11-navigation-mesh.md b/_posts/2016-11-11-navigation-mesh.md
+index 3ebf0a5..3923c4c 100644
+--- a/_posts/2016-11-11-navigation-mesh.md
++++ b/_posts/2016-11-11-navigation-mesh.md
+@@ -17,22 +17,9 @@ Another reason we’re psyched for **Xenko 1.9β!** Open post for more details a
+ In Xenko 1.9β, you can create a **navigation mesh** powered by [Recast and Detour](https://github.com/recastnavigation/recastnavigation) with **real-time feedback** directly in the **Xenko GameStudio!** The navigation mesh is especially useful for RPGs or top-down strategy games, as you can use it to **guide characters through complex scenes**. The real-time feedback makes it easy to adjust and conveniently customize AI movement and the dimensions of the navigation mesh itself. The green outline of Xenko’s Navigation Mesh shows where the AI comes into play and where the colliders are set.
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/navmeshes/withOutlineAE.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/navmeshes/withOutlineAE.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/navmeshes/withOutlineAE" no-maximize="true" %}
+ 
+ In the videos, you can see how the AI navigates the level using the logic within the navigation mesh, and how the colliders will automatically be set in real-time. Of course, you can script AI movement manually, too.
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/navmeshes/NoOutlineAE.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/navmeshes/NoOutlineAE.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
+-
++{% include video src="../../images/blog/navmeshes/NoOutlineAE" no-maximize="true" %}
+diff --git a/_posts/2016-11-18-script-editor.md b/_posts/2016-11-18-script-editor.md
+index ca39cdb..a4b9e98 100644
+--- a/_posts/2016-11-18-script-editor.md
++++ b/_posts/2016-11-18-script-editor.md
+@@ -23,13 +23,7 @@ In fact, expect:
+ * Auto-reload C# scripts and C# project changes that happened in the background
+ * A Visual Studio like experience for all your code editing!
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/script_editor/code_completion.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/script_editor/code_completion.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/script_editor/code_completion" no-maximize="true" %}
+ 
+ We had some help from Microsoft’s .NET compiler, [Rosyln](https://github.com/dotnet/roslyn), so Xenko users will also receive the full benefit of all the latest features of .NET. Adding a Rosyln-based Script Editor makes it easier to keep up with the latest C# updates.
+ 
+@@ -42,23 +36,11 @@ Just follow these steps:
+ 3. Edit the script in Game Studio
+ 4. (Optional) Click “Reload assembly” when you’re ready
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/script_editor/create_script_gamestudio.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/script_editor/create_script_gamestudio.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/script_editor/create_script_gamestudio" no-maximize="true" %}
+ 
+ C# scripts saved on Visual Studio side (or any text editor, for that matter) will automatically be updated in Game Studio without reloading. Same goes for project changes (.csproj): new scripts will appear automatically upon saving. GameStudio will automatically listen for file changes on the hard drive and update them live, or ask you what to do in case of conflicts.
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/script_editor/external_changes.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/script_editor/external_changes.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/script_editor/external_changes" no-maximize="true" %}
+ 
+ Under the hood, [Rosyln](https://github.com/dotnet/roslyn) is the underlying technology that can process your Xenko source code. But we didn’t stop there! We were fortunate to find [AvalonEdit](http://avalonedit.net/), which provided us what we wanted for the visual appearance of the UI aspect of the Xenko script editor. We also integrated [RoslynPad](https://roslynpad.net/), which connects Roslyn and AvalonEdit together. We were lucky to be able to take advantage of these great Roslyn related efforts, and appreciate all the hard work the developers and contributors have put into RoslynPad and AvalonEdit, further strengthening the .NET ecosystem.
+ 
+diff --git a/_posts/2016-11-24-new-version-1-9-0.md b/_posts/2016-11-24-new-version-1-9-0.md
+index 358b248..66ba22c 100644
+--- a/_posts/2016-11-24-new-version-1-9-0.md
++++ b/_posts/2016-11-24-new-version-1-9-0.md
+@@ -26,13 +26,7 @@ We have added several templates packed with a lot of functionality to help you k
+ * Third Person Platformer
+ * Top-View RPG
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/release-1.9/game_templates.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/release-1.9/game_templates.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/release-1.9/game_templates" no-maximize="true" %}
+ 
+ All of them come with basic camera and player functionality found in most games of their respective genres. They also have many production-quality assets so you can easily try different features on your own.
+ 
+@@ -48,13 +42,7 @@ In fact, expect:
+ * Auto-reload C# scripts and C# project changes that happened in the background
+ * A Visual Studio like experience for all your code editing!
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/script_editor/code_completion.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/script_editor/code_completion.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/script_editor/code_completion" no-maximize="true" %}
+ 
+ We had some help from Microsoft’s .NET compiler, [Roslyn](https://github.com/dotnet/roslyn), so Xenko users will also receive the full benefit of all the latest features of .NET. Adding a Rosyln-based Script Editor makes it easier to keep up with the latest C# updates.
+ 
+@@ -64,23 +52,11 @@ Using the Xenko Script Editor is fairly straightforward. Just follow these steps
+ * Add a script in Game Studio
+ * Edit the script in Game Studio
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/script_editor/create_script_gamestudio.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/script_editor/create_script_gamestudio.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/script_editor/create_script_gamestudio" no-maximize="true" %}
+ 
+ C# scripts saved on Visual Studio side (or any text editor, for that matter) will automatically be updated in Game Studio without reloading. Same goes for project changes (.csproj): new scripts will appear automatically upon saving. GameStudio will automatically listen for file changes on the hard drive and update them live, or ask you what to do in case of conflicts.
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/script_editor/external_changes.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/script_editor/external_changes.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/script_editor/external_changes" no-maximize="true" %}
+ 
+ Under the hood, [Rosyln](https://github.com/dotnet/roslyn) is the underlying technology that can process your Xenko source code. But we didn’t stop there! We were fortunate to find [AvalonEdit](http://avalonedit.net/), which provided us what we wanted for the visual appearance of the UI aspect of the Xenko script editor. We also integrated [RoslynPad](https://roslynpad.net/), which connects Roslyn and AvalonEdit together.
+ 
+@@ -89,24 +65,12 @@ Under the hood, [Rosyln](https://github.com/dotnet/roslyn) is the underlying tec
+ In Xenko 1.9β, you can create a **navigation mesh** powered by [Recast and Detour](https://github.com/recastnavigation/recastnavigation) with **real-time feedback** directly in the **Xenko GameStudio!** The navigation mesh is especially useful for RPGs or top-down strategy games, as you can use it to **guide characters through complex scenes**. The real-time feedback makes it easy to adjust and conveniently customize AI movement and the dimensions of the navigation mesh itself. The green outline of Xenko’s Navigation Mesh shows where the AI comes into play and where the colliders are set.
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/navmeshes/withOutlineAE.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/navmeshes/withOutlineAE.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/navmeshes/withOutlineAE" no-maximize="true" %}
+ 
+ In the videos, you can see how the AI navigates the level using the logic within the navigation mesh, and how the colliders will automatically be set in real-time. Of course, you can script AI movement manually, too.
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/navmeshes/NoOutlineAE.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/navmeshes/NoOutlineAE.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/navmeshes/NoOutlineAE" no-maximize="true" %}
+ 
+ ## Copy & Paste Functionality Expanded
+ 
+@@ -116,46 +80,22 @@ Any entities in a scene are now copyable, as well as any sprites of a sprite she
+ 
+ * Insert it into another list at various positions, for example:
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_InsertIntoList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/copy_paste/Copy_InsertIntoList.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_InsertIntoList" no-maximize="true" %}
+ 
+ * Copy and insert into the list (by pasting at a list item level).*
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_AppendToList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/copy_paste/Copy_AppendToList.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_AppendToList" no-maximize="true" %}
+ 
+ * Copy and append to a list, for example, append it to the end of the list.
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_ReplaceList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/copy_paste/Copy_ReplaceList.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_ReplaceList" no-maximize="true" %}
+ 
+ * Copy and replace the whole list.
+ 
+ A bit more difficult to explain, but perhaps easier to show than write about is **copy and replace at an item level**. This action (shown in the video below) will remove the item (at its position in the list) and insert the copied ones starting at the same position of the item in the list. In our example below, the copy replace starts from Item 2 in List 2:
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_ReplaceIntoList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/copy_paste/Copy_ReplaceIntoList.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/Copy_ReplaceIntoList" no-maximize="true" %}
+ 
+ 
+ Some information about copying entities and prefabs:
+@@ -163,13 +103,7 @@ Some information about copying entities and prefabs:
+ **An entire hierarchy of entities can be copied from one scene or prefab to another scene or prefab**. Prefab instance will keep their reference to the source prefab as illustrated in the following example:
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/CopyPaste_BetweenScenes2.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/copy_paste/CopyPaste_BetweenScenes2.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/CopyPaste_BetweenScenes2" no-maximize="true" %}
+ 
+ *The prefab "MyHero" is copied into the scene. Links to the prefab are maintained.*
+ 
+@@ -182,13 +116,7 @@ It is also possible to **copy a component from an entity and paste it into anoth
+ 
+ Here’s an example of copying between scripts and transform entities in the GameStudio Property Grid: 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-   <video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/CopyPaste_PropertyGrid.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/copy_paste/CopyPaste_PropertyGrid.mp4" type="video/mp4">
+-   </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/copy_paste/CopyPaste_PropertyGrid" no-maximize="true" %}
+ ## .NET Standard
+ 
+ Starting with Xenko 1.9, shared Game assemblies will be created using [.NET Standard](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) rather than PCL.
+diff --git a/_posts/2016-12-01-game-templates.md b/_posts/2016-12-01-game-templates.md
+index ac07223..894c307 100644
+--- a/_posts/2016-12-01-game-templates.md
++++ b/_posts/2016-12-01-game-templates.md
+@@ -33,42 +33,24 @@ Specifically:
+ 
+ Arguably one of the most popular game genres today. Xenko’s FPS template helps our developers put together a game with a pre-set, first-person camera where you can shoot at the Xenko crates. The controls support both controllers and mouse/keyboard input. The crates come with physics' collider bodies and are fully interactive. The template also shows how to spawn particle effects alternating between bullet impact effect and a smoke trail depending on if you shoot a wall or a crate. Production quality model and animation assets make it easy to learn about controlling and switching animations.
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-    <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-01-game-templates/templateFPS.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-      <source src="../../images/blog/2016-12-01-game-templates/templateFPS.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/2016-12-01-game-templates/templateFPS" no-maximize="true" %}
+ 
+ # Third-Person Platformer
+ 
+ This template is a great starting point for ever-popular platformer games. While the template is set in 3D it can be easily tweaked to become a 2D platformer. Just disable camera rotation in your 3D game to transform your game into a 2D platformer. Additionally, we’ve implemented a few techniques which we hope will be useful to you. Controls will now support both controllers and mouse/keyboard style input. The animation controller seamlessly blends the idle, walk and run animations providing striking visual feedback.
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-01-game-templates/templateTPP.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/2016-12-01-game-templates/templateTPP.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/2016-12-01-game-templates/templateTPP" no-maximize="true" %}
+ 
+ # Top-Down Camera RPG
+ 
+ This template positions the camera at a fixed angle above the character and enables touch screen controls as well as mouse point-and-click, similar to many traditional RPGs. It also uses the Navigation Mesh feature so your character won’t get stuck in bad pathfinding or hit walls. On the game logic side, the template shows several kinds of interactions with game objects, like collecting coins and loot and attacking and breaking objects.
+ 
+ 
+-<p>
+-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
+-	<video autoplay loop class="responsive-video" poster="../../images/blog/navmeshes/NoOutlineAE.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-	   <source src="../../images/blog/navmeshes/NoOutlineAE.mp4" type="video/mp4">
+-	</video>
+-  </div>
+-</p>
++{% include video src="../../images/blog/navmeshes/NoOutlineAE" no-maximize="true" %}
+ 
+ # New Game Template
+ 
+-![New Game Template](../../images/blog/2016-12-01-game-templates/new_game_template.png)
++{% include image src="../../images/blog/2016-12-01-game-templates/new_game_template.png" no-maximize="true" %}
+ 
+ Our New Game template has access to existing production quality assets we used to create our templates! We have particle effects, physically-based materials, lots of animations for our new Xenko mannequin model and building blocks with physics ready for your rapid level prototyping. Unlike the templates, which are kept concise, the extra packages contain many more assets. You’ll even find some props which are not in the templates (swords for example!).
+ 
+diff --git a/_posts/2016-12-07-feature-spotlight-archetypes-prefabs-and-nested-prefabs.md b/_posts/2016-12-07-feature-spotlight-archetypes-prefabs-and-nested-prefabs.md
+index 937a730..3e166e4 100644
+--- a/_posts/2016-12-07-feature-spotlight-archetypes-prefabs-and-nested-prefabs.md
++++ b/_posts/2016-12-07-feature-spotlight-archetypes-prefabs-and-nested-prefabs.md
+@@ -21,11 +21,7 @@ With archetypes, you can take an asset and derive a new asset from it. The new a
+ 
+ You can also override specific properties in the derived asset. These properties become specific to the derived asset. They aren't affected by further changes to the value in the archetype, but all other properties stay synchronized. This lets you create different versions of an asset that still share a common base.
+ 
+-<div class="pull-right">
+-  <a href="../../images/blog/2016-12-07-prefabs/archetypes_pic.png" class="image-popup">
+-    <div class="rt-image"><div class="zoom-in"></div><img src="../../images/blog/2016-12-07-prefabs/archetypes_pic.png"></div>
+-  </a>
+-</div>
++{% include image src="../../images/blog/2016-12-07-prefabs/archetypes_pic.png" no-paragraph="true" %}
+ 
+ ## Prefabs
+ 
+@@ -33,75 +29,23 @@ Prefabs are an extension of the archetype feature. A prefab is a bunch of entiti
+ 
+ The most common use for prefabs is to create a small piece of your world - like a car, a rock, a piece of furniture, an NPC, or whatever - and duplicate it as many times as you need. When you need to modify that object - for example, if you want to add a light or particle effect, or add or move its entities - you can do it in one place and Game Studio applies the change automatically everywhere at once.
+ 
+-<p>
+-  <div id="prefab1_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2016-12-07-prefabs/prefab1.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#prefab1_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab1.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-         <source src="../../images/blog/2016-12-07-prefabs/prefab1.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="../../images/blog/2016-12-07-prefabs/prefab1" %}
+ 
+ You can change the entity hierarchy on the instance side without breaking the link to the original prefab. When you add an entity to the prefab, Game Studio adds it to the same parent or after the same sibling. If you delete the parent entity in the instance, Game Studio discards the entity. This means you can easily instantiate simple prefab subsets.
+ 
+-<p>
+-  <div id="prefab2_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2016-12-07-prefabs/prefab2.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#prefab2_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab2.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-  	   <source src="../../images/blog/2016-12-07-prefabs/prefab2.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="../../images/blog/2016-12-07-prefabs/prefab2" %}
+ 
+ ### Override prefab properties
+ 
+ Of course, you can override prefab properties, just like with archetypes. Change any prefab instance and the change remains in that instance even if you then edit the original prefab.
+ 
+-<p>
+-  <div id="prefab3_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2016-12-07-prefabs/prefab3.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#prefab3_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab3.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-        <source src="../../images/blog/2016-12-07-prefabs/prefab3.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="../../images/blog/2016-12-07-prefabs/prefab3" %}
+ 
+ ### Nested prefabs
+ 
+ You can also nest prefabs inside other prefabs. This means you can build your project in a modular way. For example, you can create a room prefab, then use that to create a house prefab, then use that to create a village. Change something in the room prefab - like a piece of furniture - and the change appears in every house and every village where the room is used. Or you could create a basic prefab for every NPC, attach a script, then create variations to implement different NPCs: animals, monsters, AI companions, soldiers - whatever you need. There's no limit to the amount of prefabs you can nest.
+ 
+-<p>
+-  <div id="prefab4_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2016-12-07-prefabs/prefab4.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#prefab4_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab4.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-        <source src="../../images/blog/2016-12-07-prefabs/prefab4.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="../../images/blog/2016-12-07-prefabs/prefab4" %}
+ 
+ ### Improve performance with prefab models
+ 
+diff --git a/_posts/2016-12-13-back-to-normals.md b/_posts/2016-12-13-back-to-normals.md
+index 7b4f050..8c067fb 100644
+--- a/_posts/2016-12-13-back-to-normals.md
++++ b/_posts/2016-12-13-back-to-normals.md
+@@ -19,7 +19,7 @@ Xenko 1.9.2β fixes an important issue with our normal maps. We have recently re
+ 
+ ## What are normal maps?
+ 
+-![Actual geometry, normal map and shaded quad](https://upload.wikimedia.org/wikipedia/commons/2/2e/Normal_map_example_with_scene_and_result.png)
++{% include image src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Normal_map_example_with_scene_and_result.png" no-maximize="true" %}
+ (Image courtesy of [Julian Herzog](https://julianherzog.com/) shared under [Creative Commons 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
+ 
+ Normal maps are a way to simulate fine details in the surface of a mesh without relying on high polygon representation. When used in combination with lighting they produce believable image which appears fully 3D even on a flat surface.
+diff --git a/_posts/2016-12-22-happy-holidays-2016.md b/_posts/2016-12-22-happy-holidays-2016.md
+index 77cd6bb..e519f29 100644
+--- a/_posts/2016-12-22-happy-holidays-2016.md
++++ b/_posts/2016-12-22-happy-holidays-2016.md
+@@ -6,20 +6,7 @@ image_thumb: /images/blog/2016-12-22-happy-holidays-2016/presents.png
+ ---
+ Season's greetings from the Xenko team!
+ 
+-<p>
+-  <div id="HolidayGreetings_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2016-12-22-happy-holidays-2016/HolidayGreetings.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#HolidayGreetings_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-22-happy-holidays-2016/HolidayGreetings.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-         <source src="../../images/blog/2016-12-22-happy-holidays-2016/HolidayGreetings.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="images/blog/2016-12-22-happy-holidays-2016/HolidayGreetings" %}
+ 
+ Thanks for following us through another action-packed year of development. We think we've made some great progress on Xenko this year, and we hope you've made some cool stuff with it too.
+ 
+diff --git a/_posts/2017-01-18-particle-effects.md b/_posts/2017-01-18-particle-effects.md
+index d04c7e3..1f5fecb 100644
+--- a/_posts/2017-01-18-particle-effects.md
++++ b/_posts/2017-01-18-particle-effects.md
+@@ -9,20 +9,7 @@ Happy 2017!
+ 
+ For our first post of the year, we're moving the spotlight back to a cool Xenko feature: particles. Particles are such an important aspect of almost every game and as a follow-up to our particles tutorial, we wanted to share with you a little more info about our particle system.
+ 
+-<p>
+-  <div id="Particles_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2017-01-18-particles/particle-effects-final-compressed.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#Particles_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2017-01-18-particles/particle-effects-final-pic.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-         <source src="../../images/blog/2017-01-18-particles/particle-effects-final-compressed.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="../../images/blog/2017-01-18-particles/particle-effects-final-compressed" %}
+ 
+ With Xenko's powerful particles system, you can implement effects like rain, explosions fire, smoke, electricity, magic spells, and lots more. Particles are a great way to bring your game worlds to life.
+ 
+@@ -34,20 +21,7 @@ To demonstrate how you can build particle effects from scratch in Xenko, we've p
+ 
+ And to give you a taste of where you can go after that, here's a more elaborate trail that combines multiple particle effects:
+ 
+-<p>
+-  <div id="Swordslash_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
+-    <video controls="" loop="" preload="none">
+-        <source src="../../images/blog/2017-01-18-particles/sword-slash.mp4" type="video/mp4">
+-    </video>
+-  </div>
+-  <a href="#Swordslash_popup" class="video-popup">
+-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
+-      <video autoplay loop class="responsive-video" poster="../../images/blog/2017-01-18-particles/sword-slash.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
+-         <source src="../../images/blog/2017-01-18-particles/sword-slash.mp4" type="video/mp4">
+-      </video>
+-    </div>
+-  </a>
+-</p>
++{% include video src="../../images/blog/2017-01-18-particles/sword-slash" %}
+ 
+ If you'd like to see how this particular effect works, [download the project file](http://doc.xenko.com/latest/manual/particles/tutorials/media/MyTrailEffect.zip) and take a look.
+ 
+diff --git a/_posts/2017-02-03-some-basic-xenko-facts.md b/_posts/2017-02-03-some-basic-xenko-facts.md
+index 3a085d6..0a2c4bb 100644
+--- a/_posts/2017-02-03-some-basic-xenko-facts.md
++++ b/_posts/2017-02-03-some-basic-xenko-facts.md
+@@ -19,7 +19,7 @@ With Xenko, you can currently develop games for the **following platforms** and
+ * iOS/android (via Xamarin): OpenGL ES
+ * UWP & XBox One: DirectX
+ 
+-  ![Platforms](../../images/blog/2017-02-03-some-basic-xenko-facts/platforms.png)
++  {% include image src="../../images/blog/2017-02-03-some-basic-xenko-facts/platforms.png" no-maximize="true" %}
+ 
+ You can learn more about [supported platforms](http://doc.xenko.com/latest/manual/platforms/index.html)  in our documentation.
+ 
+diff --git a/_posts/2017-02-09-real-time-local-reflections-preview.md b/_posts/2017-02-09-real-time-local-reflections-preview.md
+index 59e2fd2..26ff779 100644
+--- a/_posts/2017-02-09-real-time-local-reflections-preview.md
++++ b/_posts/2017-02-09-real-time-local-reflections-preview.md
+@@ -8,21 +8,21 @@ popular: true
+ 
+ We're excited to be working on Xenko's real-time local reflections feature, coming in Xenko's next release. Real-time local reflections are a great way to visually ground objects in a scene. They give your games richer scenes and increased realism in rendering.
+ 
+-![Without local reflections](../../images/blog/2017-02-09-real-time-local-reflections/ball-and-cube-r-off.png)
++{% include image src="../../images/blog/2017-02-09-real-time-local-reflections/ball-and-cube-r-off.png" no-maximize="true" %}
+ 
+ <i>Without local reflections</i>
+ 
+-![With local reflections](../../images/blog/2017-02-09-real-time-local-reflections/ball-and-cube-r-on.png)
++{% include image src="../../images/blog/2017-02-09-real-time-local-reflections/ball-and-cube-r-on.png" no-maximize="true" %}
+ 
+ <i>With local reflections</i>
+ 
+ Where the local reflections effect is available, it replaces image-based lighting (called environment lighting in Game Studio). This has the useful side effect of darkening surfaces where the object meets other objects, similarly to ambient occlusion.
+ 
+-![Darkened area](../../images/blog/2017-02-09-real-time-local-reflections/darkened-area.png)
++{% include image src="../../images/blog/2017-02-09-real-time-local-reflections/darkened-area.png" no-maximize="true" %}
+ 
+ Local reflections are most obvious when they project bright spots onto other surfaces. The effect looks great in night scenes, which have high contrast, and in rainy conditions with lots of reflective surfaces and highlights. Notice how the vending machine lights are reflected in the ground surface in this screenshot:
+ 
+-![Night reflections](../../images/blog/2017-02-09-real-time-local-reflections/night-reflections.png)
++{% include image src="../../images/blog/2017-02-09-real-time-local-reflections/night-reflections.png" no-maximize="true" %}
+ 
+ In games without lightmaps or global illumination, objects don't interact with each other as they do in reality, making them appear as if they have simply been Photoshopped in. With local reflections, objects appear to be part of the world rather than having been placed arbitrarily. It makes scenes feel much more grounded, and gives objects a feeling of weight.
+ 
+@@ -30,7 +30,7 @@ To create local reflections, Xenko reflects the current rendered frame on itself
+ 
+ Essentially, the effect allows the ray steps during the marching phase to skip large amounts of space. When the ray hits hierarchical depth cells, the algorithm progressively refines the level against which cells are checked until it hits the finest level.
+ 
+-![Local reflections graph](../../images/blog/2017-02-09-real-time-local-reflections/local-reflections-graph.png)
++{% include image src="../../images/blog/2017-02-09-real-time-local-reflections/local-reflections-graph.png" no-maximize="true" %}
+ 
+ <i>(Image courtesy of [Yasin Uludag and Tomasz Stachowiak's talk on screen space reflections](http://www.frostbite.com/2015/08/stochastic-screen-space-reflections/)) </i>
+ 
+diff --git a/_posts/2017-02-22-gdc-xenko-exhibit-info.md b/_posts/2017-02-22-gdc-xenko-exhibit-info.md
+index 0d59b83..fd57e69 100644
+--- a/_posts/2017-02-22-gdc-xenko-exhibit-info.md
++++ b/_posts/2017-02-22-gdc-xenko-exhibit-info.md
+@@ -17,11 +17,11 @@ To schedule a meeting, contact us through [our website](http://xenko.com/contact
+ 
+ We hope to see you soon at GDC 2017 in San Francisco!
+ 
+-![Cave of Surtr Poster](../../images/blog/2017-02-22-gdc-xenko-exhibit-info/CaveofSurtrposter.jpg)
++{% include image src="../../images/blog/2017-02-22-gdc-xenko-exhibit-info/CaveofSurtrposter.jpg" no-maximize="true" %}
+ 
+ 
+ 
+-![Starbreach Poster](../../images/blog/2017-02-22-gdc-xenko-exhibit-info/Starbreach poster.jpg)
++{% include image src="../../images/blog/2017-02-22-gdc-xenko-exhibit-info/Starbreach poster.jpg" no-maximize="true" %}
+ 
+ 
+ 
+diff --git a/_posts/2017-03-09-add-xbox-live-service-to-your-xenko-project.md b/_posts/2017-03-09-add-xbox-live-service-to-your-xenko-project.md
+index 6e77031..ba9a6f5 100644
+--- a/_posts/2017-03-09-add-xbox-live-service-to-your-xenko-project.md
++++ b/_posts/2017-03-09-add-xbox-live-service-to-your-xenko-project.md
+@@ -5,7 +5,7 @@ author: 'Xenko Team'
+ image_thumb: /images/blog/2017-03-09-xbox-live/xbox-live-resized.png
+ popular: true
+ ---
+-![Achievement Unlocked](../../images/blog/2017-03-09-xbox-live/achievement-unlocked-with-xenko.png)
++{% include image src="../../images/blog/2017-03-09-xbox-live/achievement-unlocked-with-xenko.png" no-maximize="true" %}
+ 
+ We have continued to work hard on our support in Xenko for Microsoft's Universal Windows Platform (UWP). Keeping with this, we've been working closely with our Microsoft partners to add official support for the Xbox Live SDK. So, now Xenko developers will have the opportunity to add Xbox live to their games. 
+ 
+@@ -19,6 +19,6 @@ If you haven't yet joined ID@Xbox you can learn about the program and how to joi
+ 
+ Once you have applied to the program and have been accepted as a managed partner with Microsoft, feel free to get started using our newly created Xbox Live sample [here](http://doc.xenko.com/latest/manual/platforms/uwp/xbox-live.html). 
+ 
+-![Dev Screenshot](../../images/blog/2017-03-09-xbox-live/xbox-live-dev-screen.png)
++{% include image src="../../images/blog/2017-03-09-xbox-live/xbox-live-dev-screen.png" no-maximize="true" %}
+ 
+ We hope you will give this a try, and let us know about your project! Feel free to leave any comments or suggestions below on how to improve the experience.
+\ No newline at end of file
+diff --git a/_sass/common.scss b/_sass/common.scss
+index 2c84659..b951114 100644
+--- a/_sass/common.scss
++++ b/_sass/common.scss
+@@ -1238,6 +1238,9 @@ div.x_body div.pdx-licensing{
+         }
+     }
+ }
++.mfp-auto-cursor .mfp-content{
++   text-align: center;
++}
+ @import "common/_head.scss";
+ @import "common/_foot.scss";
+ @import "common/_title.scss";
+diff --git a/_sass/common/_extra.scss b/_sass/common/_extra.scss
+index ba5b39d..e9bf968 100644
+--- a/_sass/common/_extra.scss
++++ b/_sass/common/_extra.scss
+@@ -404,7 +404,8 @@ Image popup
+ 	display: block;
+ }
+ 
+-div.zoom-in
++div.zoom-in,
++span.zoom-in
+ {
+ 	position: absolute;
+ 	bottom: 10px;
+@@ -442,7 +443,8 @@ div.zoom-in:hover
+     transition: background-color 200ms linear;
+ }
+ 
+-div.video-play-button
++div.video-play-button,
++span.video-play-button
+ {
+     visibility: hidden;
+ 	position: absolute;
+@@ -472,7 +474,8 @@ div.video-play-button
+ }
+ 
+ 
+-div.video-play-button:hover
++div.video-play-button:hover,
++span.video-play-button:hover
+ {
+     background-color: rgba($accent-color2, 0.7);
+ 	
+@@ -517,10 +520,8 @@ a.inline-popup
+ }
+ 
+ .mfp-video {
+-  position: relative;
+   width: auto;
+   max-width: 80%;
+-  left: 10%;
+ }
+ 
+ .mfp-video.embed-responsive-16by9
+diff --git a/encode.ps1 b/encode.ps1
+new file mode 100644
+index 0000000..0b85eaa
+--- /dev/null
++++ b/encode.ps1
+@@ -0,0 +1,189 @@
++If(Test-Path encoding.log)
++{
++    Remove-Item encoding.log
++}
++Start-Transcript -Path encoding.log
++# Get all posts
++$postsArray = (Get-ChildItem _posts);
++# Create array for strings at the posts
++$arrayVideoString = @();
++# For each post try to find the video string (old example of html)
++for($k = 0; $k -lt $postsArray.length; $k++){
++    $folder = "_posts\";
++    $file = $postsArray[$k];
++    $fileContent = (Get-Content "$folder$file");
++    for($i = 0; $i -lt $fileContent.length; $i++){
++        if($fileContent[$i].Contains('<source')){
++            $arrayVideoString += $fileContent[$i]
++        }
++    }
++}
++# For each post try to find the video string (new example of video class)
++for($k = 0; $k -lt $postsArray.length; $k++){
++    $folder = "_posts\";
++    $file = $postsArray[$k];
++    $fileContent = (Get-Content "$folder$file");
++    for($i = 0; $i -lt $fileContent.length; $i++){
++        if($fileContent[$i].Contains('include video')){
++            $arrayVideoString += $fileContent[$i]
++        }
++    }
++}
++
++# For each video encoding and creating _full, _default, _thumb
++for($j = 0; $j -lt $arrayVideoString.length; $j++){
++    $arraySplitedVideo = $arrayVideoString[$j] -split ' '
++    $videoWidthCustom = 0;
++    for($x = 0; $x -lt $arraySplitedVideo.length; $x++){
++        if($arraySplitedVideo[$x].Contains('width')){
++            $videoWidthCustom = $arraySplitedVideo[$x] -replace ('width=', '') -replace('"', '')
++        }
++        if($arraySplitedVideo[$x].Contains('src=')){
++            $arrayDetailedStringVideo = $arraySplitedVideo[$x].replace('../', '').replace('"', '').replace("'", '').replace('src=', '');
++            $arraySplittedStringVideo = $arrayDetailedStringVideo -split '/';
++            $videoName = $arraySplittedStringVideo[$arraySplittedStringVideo.length - 1] -replace('.mp4', '');
++            $currentLocation = Get-Location;
++            $videoAdressPath = $arrayDetailedStringVideo.replace($videoName, '') -replace('.mp4', '');
++            If($videoAdressPath[0] -eq '/'){
++                $videoAdress = "$currentLocation$videoAdressPath"
++            } else {
++                $videoAdress = "$currentLocation/$videoAdressPath"
++            }
++        }
++    }
++    $videoWidthDefault = ffprobe -v error -show_entries stream=width -of default=noprint_wrappers=1:nokey=1 $videoAdress$videoName.mp4
++
++    $currentLocation = Get-Location
++    Set-Location $videoAdress
++    If(Test-Path $videoName'_full'.mp4)
++    {
++        Write-host "$videoName _full already encoded"
++    } else {
++         ffmpeg -i $videoName'.mp4' -profile:v baseline -level 3.0 -an $videoName'_full'.mp4 -n
++         Write-host "$videoName _full was successful encoded"
++    }
++    If(Test-Path $videoName'_default'.mp4)
++    {
++        Write-host "$videoName _default already encoded"
++    } else {
++        if($videoWidthCustom -gt 0 -and $videoWidthCustom -lt 700){
++            ffmpeg -i $videoName -profile:v baseline -level 3.0 -an -vf scale="$videoWidthCustom":-1 $videoName'_default'.mp4 -n 
++             Write-host "$videoName _default was successful encoded"
++            If(Test-Path $videoName'_thumb'.png)
++            {
++                Write-host "$videoName _thumb already encoded"
++            } else {
++                ffmpeg -i $videoName'_default'.mp4 -ss 00:00:01.000 -vframes 1 $videoName'_thumb'.png -n
++                Write-host "$videoName _thumb was successful encoded"
++            }
++        } elseif($videoWidthDefault -gt 700){
++            ffmpeg -i $videoName -profile:v baseline -level 3.0 -an -vf scale=700:-1 $videoName'_default'.mp4 -n 
++            Write-host "$videoName _default was successful encoded"
++            If(Test-Path $videoName'_thumb'.png)
++            {
++                Write-host "$videoName _full already encoded"
++            } else {
++                ffmpeg -i $videoName'_default'.mp4 -ss 00:00:01.000 -vframes 1 $videoName'_thumb'.png -n
++                Write-host "$videoName _thumb was successful encoded"
++            }
++        } else{
++            ffmpeg -i $videoName'.mp4' -profile:v baseline -level 3.0 -an $videoName'_default'.mp4 -n 
++            Write-host "$videoName _default was successful encoded"
++            If(Test-Path $videoName'_thumb'.png)
++            {
++                Write-host "$videoName _full already encoded"
++            } else {
++                ffmpeg -i $videoName'_default'.mp4 -ss 00:00:01.000 -vframes 1 $videoName'_thumb'.png -n
++                Write-host "$videoName _thumb was successful encoded"
++            }
++        }
++    }
++    Set-Location $currentLocation
++}
++
++# Create array for strings at the posts
++$arrayImageString = @();
++# For each post try to find the image string (old example of html)
++for($k = 0; $k -lt $postsArray.length; $k++){
++    $folder = "_posts\";
++    $file = $postsArray[$k];
++    $fileContent = (Get-Content "$folder$file");
++    for($i = 0; $i -lt $fileContent.length; $i++){
++        if($fileContent[$i].Contains('<img')){
++            $arrayImageString += $fileContent[$i]
++        }
++    }
++}
++
++# For each post try to find the video image (new example of image class)
++for($k = 0; $k -lt $postsArray.length; $k++){
++    $folder = "_posts\";
++    $file = $postsArray[$k];
++    $fileContent = (Get-Content "$folder$file");
++    for($i = 0; $i -lt $fileContent.length; $i++){
++        if($fileContent[$i].Contains('include image')){
++            $arrayImageString += $fileContent[$i]
++        }
++    }
++}
++
++# For each video encoding and creating _full, _default, _thumb
++for($j = 0; $j -lt $arrayImageString.length; $j++){
++    $arraySplitedImage = $arrayImageString[$j] -split ' '
++    $imageWidthCustom = 0;
++    for($x = 0; $x -lt $arraySplitedImage.length; $x++){
++        if($arraySplitedImage[$x].Contains('width')){
++            $imageWidthCustom = $arraySplitedImage[$x] -replace ('width=', '') -replace('"', '')
++        }
++        if($arraySplitedImage[$x].Contains('src=')){
++            $arrayDetailedStringImage = $arraySplitedImage[$x].replace('../', '').replace('"', '').replace("'", '').replace('src=', '');
++            $arraySplittedStringImage = $arrayDetailedStringImage -split '/';
++            $imageName = $arraySplittedStringImage[$arraySplittedStringImage.length - 1];
++            $imageAdress = $arrayDetailedStringImage.replace($imageName, '');
++            $imageNameWithoutFormat = $imageName -replace('\.\w*', '')
++        }
++    }
++
++    function encodeImage{
++        $ImageWidthDefault = ffprobe -v error -show_entries stream=width -of default=noprint_wrappers=1:nokey=1 $imageAdress$imageName
++        $currentLocation = Get-Location
++        Set-Location $imageAdress
++        If(Test-Path $imageNameWithoutFormat'_full.'$imageFormat)
++        {
++            Write-host "$imageNameWithoutFormat _full already encoded"
++        } else {
++            ffmpeg -i $imageName -vf scale="$ImageWidthDefault":-1 $imageNameWithoutFormat'_thumb.'$imageFormat -n 
++            Write-host "$imageNameWithoutFormat _full was successful encoded"
++        }
++        If(Test-Path $imageNameWithoutFormat'_thumb.'$imageFormat)
++        {
++            Write-host "$imageNameWithoutFormat _thumb already encoded"
++        } else {
++            if($imageWidthCustom -gt 0 -and $imageWidthCustom -lt 700){
++                ffmpeg -i $imageName -vf scale="$imageWidthCustom":-1 $imageNameWithoutFormat'_thumb.'$imageFormat -n 
++                Write-host "$imageNameWithoutFormat _thumb was successful encoded"
++            } elseif($ImageWidthDefault -gt 700){
++                ffmpeg -i $imageName -vf scale=700:-1 $imageNameWithoutFormat'_thumb.'$imageFormat -n 
++                Write-host "$imageNameWithoutFormat _thumb was successful encoded"
++            } else{
++                ffmpeg -i $imageName -vf scale="$ImageWidthDefault":-1 $imageNameWithoutFormat'_thumb.'$imageFormat -n 
++                Write-host "$imageNameWithoutFormat _thumb was successful encoded"
++            }
++        }
++        Set-Location $currentLocation
++    }
++
++    if($imageAdress.Contains('http')){
++        continue
++    } elseif($imageAdress[0] -eq '/'){
++        $imageAdress = $imageAdress.TrimStart(" ", "/")
++    }
++    $imageFormat = $imageName.split('.')[1];
++    if(Test-Path $imageAdress$imageName){
++        encodeImage
++    } else {
++        Write-host "$imageAdress$imageName is missed" -foregroundcolor "red"
++        continue
++    }
++}
++Stop-Transcript
+\ No newline at end of file

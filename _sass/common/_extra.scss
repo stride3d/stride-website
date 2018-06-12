@@ -404,7 +404,8 @@ Image popup
 	display: block;
 }
 
-div.zoom-in
+div.zoom-in,
+span.zoom-in
 {
 	position: absolute;
 	bottom: 10px;
@@ -442,7 +443,8 @@ div.zoom-in:hover
     transition: background-color 200ms linear;
 }
 
-div.video-play-button
+div.video-play-button,
+span.video-play-button
 {
     visibility: hidden;
 	position: absolute;
@@ -472,7 +474,8 @@ div.video-play-button
 }
 
 
-div.video-play-button:hover
+div.video-play-button:hover,
+span.video-play-button:hover
 {
     background-color: rgba($accent-color2, 0.7);
 	
@@ -517,10 +520,8 @@ a.inline-popup
 }
 
 .mfp-video {
-  position: relative;
   width: auto;
   max-width: 80%;
-  left: 10%;
 }
 
 .mfp-video.embed-responsive-16by9

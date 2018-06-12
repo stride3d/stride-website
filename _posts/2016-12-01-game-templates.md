@@ -33,42 +33,24 @@ Specifically:
 
 Arguably one of the most popular game genres today. Xenko’s FPS template helps our developers put together a game with a pre-set, first-person camera where you can shoot at the Xenko crates. The controls support both controllers and mouse/keyboard input. The crates come with physics' collider bodies and are fully interactive. The template also shows how to spawn particle effects alternating between bullet impact effect and a smoke trail depending on if you shoot a wall or a crate. Production quality model and animation assets make it easy to learn about controlling and switching animations.
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-    <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-01-game-templates/templateFPS.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-      <source src="../../images/blog/2016-12-01-game-templates/templateFPS.mp4" type="video/mp4">
-    </video>
-  </div>
-</p>
+{% include video src="../../images/blog/2016-12-01-game-templates/templateFPS" no-maximize="true" %}
 
 # Third-Person Platformer
 
 This template is a great starting point for ever-popular platformer games. While the template is set in 3D it can be easily tweaked to become a 2D platformer. Just disable camera rotation in your 3D game to transform your game into a 2D platformer. Additionally, we’ve implemented a few techniques which we hope will be useful to you. Controls will now support both controllers and mouse/keyboard style input. The animation controller seamlessly blends the idle, walk and run animations providing striking visual feedback.
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-01-game-templates/templateTPP.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/2016-12-01-game-templates/templateTPP.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/2016-12-01-game-templates/templateTPP" no-maximize="true" %}
 
 # Top-Down Camera RPG
 
 This template positions the camera at a fixed angle above the character and enables touch screen controls as well as mouse point-and-click, similar to many traditional RPGs. It also uses the Navigation Mesh feature so your character won’t get stuck in bad pathfinding or hit walls. On the game logic side, the template shows several kinds of interactions with game objects, like collecting coins and loot and attacking and breaking objects.
 
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/navmeshes/NoOutlineAE.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/navmeshes/NoOutlineAE.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/navmeshes/NoOutlineAE" no-maximize="true" %}
 
 # New Game Template
 
-![New Game Template](../../images/blog/2016-12-01-game-templates/new_game_template.png)
+{% include image src="../../images/blog/2016-12-01-game-templates/new_game_template.png" no-maximize="true" %}
 
 Our New Game template has access to existing production quality assets we used to create our templates! We have particle effects, physically-based materials, lots of animations for our new Xenko mannequin model and building blocks with physics ready for your rapid level prototyping. Unlike the templates, which are kept concise, the extra packages contain many more assets. You’ll even find some props which are not in the templates (swords for example!).
 

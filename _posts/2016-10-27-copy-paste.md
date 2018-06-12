@@ -21,46 +21,22 @@ Any entities in a scene are now copyable, as well as any sprites of a sprite she
 
 Insert it into another list at various positions, for example:
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_InsertIntoList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/copy_paste/Copy_InsertIntoList.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/copy_paste/Copy_InsertIntoList" no-maximize="true" %}
 
 *Copy and insert into the list (by pasting at a list item level).*
 
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_AppendToList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/copy_paste/Copy_AppendToList.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/copy_paste/Copy_AppendToList" no-maximize="true" %}
 *Copy and append to a list, for example, append it to the end of the list.*
 
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_ReplaceList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-   		<source src="../../images/blog/copy_paste/Copy_ReplaceList.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/copy_paste/Copy_ReplaceList" no-maximize="true" %}
 
 *Copy and replace the whole list.*
 
 A bit more difficult to explain, but perhaps easier to show than write about is **copy and replace at an item level**. This action (shown in the video below) will remove the item (at its position in the list) and insert the copied ones starting at the same position of the item in the list. In our example below, the copy replace starts from Item 2 in List 2:
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/Copy_ReplaceIntoList.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/copy_paste/Copy_ReplaceIntoList.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/copy_paste/Copy_ReplaceIntoList" no-maximize="true" %}
 
 
 Some information about copying entities and prefabs:
@@ -69,13 +45,7 @@ Some information about copying entities and prefabs:
 
 
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/CopyPaste_BetweenScenes2.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/copy_paste/CopyPaste_BetweenScenes2.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/copy_paste/CopyPaste_BetweenScenes2" no-maximize="true" %}
 
 *The prefab “MyHero” is copied into the scene. Links to the prefab are maintained.*
 
@@ -89,13 +59,7 @@ In fact, **absolutely any property that can be serialized can be copied**. You c
 Here’s an example of copying between scripts and transform entities in the GameStudio Property Grid:  
 
 
-<p>
-  <div class="embed-responsive-anyratio"><div class="video-play-button"></div>
-	<video autoplay loop class="responsive-video" poster="../../images/blog/copy_paste/CopyPaste_PropertyGrid.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-	   <source src="../../images/blog/copy_paste/CopyPaste_PropertyGrid.mp4" type="video/mp4">
-	</video>
-  </div>
-</p>
+{% include video src="../../images/blog/copy_paste/CopyPaste_PropertyGrid" no-maximize="true" %}
 
 Look for this feature in our forthcoming **beta release 1.9, coming soon!** As always, we are committed to offering you best-in-class game dev solutions directly in GameStudio.
 

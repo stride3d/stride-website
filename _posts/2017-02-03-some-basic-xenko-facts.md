@@ -19,7 +19,7 @@ With Xenko, you can currently develop games for the **following platforms** and 
 * iOS/android (via Xamarin): OpenGL ES
 * UWP & XBox One: DirectX
 
-  ![Platforms](../../images/blog/2017-02-03-some-basic-xenko-facts/platforms.png)
+  {% include image src="../../images/blog/2017-02-03-some-basic-xenko-facts/platforms.png" no-maximize="true" %}
 
 You can learn more about [supported platforms](http://doc.xenko.com/latest/manual/platforms/index.html)  in our documentation.
 

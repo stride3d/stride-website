@@ -17,11 +17,11 @@ To schedule a meeting, contact us through [our website](http://xenko.com/contact
 
 We hope to see you soon at GDC 2017 in San Francisco!
 
-![Cave of Surtr Poster](../../images/blog/2017-02-22-gdc-xenko-exhibit-info/CaveofSurtrposter.jpg)
+{% include image src="../../images/blog/2017-02-22-gdc-xenko-exhibit-info/CaveofSurtrposter.jpg" no-maximize="true" %}
 
 
 
-![Starbreach Poster](../../images/blog/2017-02-22-gdc-xenko-exhibit-info/Starbreach poster.jpg)
+{% include image src="../../images/blog/2017-02-22-gdc-xenko-exhibit-info/Starbreach poster.jpg" no-maximize="true" %}
 
 
 

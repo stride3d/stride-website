@@ -9,20 +9,7 @@ Happy 2017!
 
 For our first post of the year, we're moving the spotlight back to a cool Xenko feature: particles. Particles are such an important aspect of almost every game and as a follow-up to our particles tutorial, we wanted to share with you a little more info about our particle system.
 
-<p>
-  <div id="Particles_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
-    <video controls="" loop="" preload="none">
-        <source src="../../images/blog/2017-01-18-particles/particle-effects-final-compressed.mp4" type="video/mp4">
-    </video>
-  </div>
-  <a href="#Particles_popup" class="video-popup">
-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
-      <video autoplay loop class="responsive-video" poster="../../images/blog/2017-01-18-particles/particle-effects-final-pic.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-         <source src="../../images/blog/2017-01-18-particles/particle-effects-final-compressed.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-</p>
+{% include video src="../../images/blog/2017-01-18-particles/particle-effects-final-compressed" %}
 
 With Xenko's powerful particles system, you can implement effects like rain, explosions fire, smoke, electricity, magic spells, and lots more. Particles are a great way to bring your game worlds to life.
 
@@ -34,20 +21,7 @@ To demonstrate how you can build particle effects from scratch in Xenko, we've p
 
 And to give you a taste of where you can go after that, here's a more elaborate trail that combines multiple particle effects:
 
-<p>
-  <div id="Swordslash_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
-    <video controls="" loop="" preload="none">
-        <source src="../../images/blog/2017-01-18-particles/sword-slash.mp4" type="video/mp4">
-    </video>
-  </div>
-  <a href="#Swordslash_popup" class="video-popup">
-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
-      <video autoplay loop class="responsive-video" poster="../../images/blog/2017-01-18-particles/sword-slash.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-         <source src="../../images/blog/2017-01-18-particles/sword-slash.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-</p>
+{% include video src="../../images/blog/2017-01-18-particles/sword-slash" %}
 
 If you'd like to see how this particular effect works, [download the project file](http://doc.xenko.com/latest/manual/particles/tutorials/media/MyTrailEffect.zip) and take a look.
 

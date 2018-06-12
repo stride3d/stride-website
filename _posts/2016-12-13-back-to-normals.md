@@ -19,7 +19,7 @@ Xenko 1.9.2β fixes an important issue with our normal maps. We have recently re
 
 ## What are normal maps?
 
-![Actual geometry, normal map and shaded quad](https://upload.wikimedia.org/wikipedia/commons/2/2e/Normal_map_example_with_scene_and_result.png)
+{% include image src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Normal_map_example_with_scene_and_result.png" no-maximize="true" %}
 (Image courtesy of [Julian Herzog](https://julianherzog.com/) shared under [Creative Commons 4.0](https://creativecommons.org/licenses/by/4.0/deed.en))
 
 Normal maps are a way to simulate fine details in the surface of a mesh without relying on high polygon representation. When used in combination with lighting they produce believable image which appears fully 3D even on a flat surface.

@@ -21,11 +21,7 @@ With archetypes, you can take an asset and derive a new asset from it. The new a
 
 You can also override specific properties in the derived asset. These properties become specific to the derived asset. They aren't affected by further changes to the value in the archetype, but all other properties stay synchronized. This lets you create different versions of an asset that still share a common base.
 
-<div class="pull-right">
-  <a href="../../images/blog/2016-12-07-prefabs/archetypes_pic.png" class="image-popup">
-    <div class="rt-image"><div class="zoom-in"></div><img src="../../images/blog/2016-12-07-prefabs/archetypes_pic.png"></div>
-  </a>
-</div>
+{% include image src="../../images/blog/2016-12-07-prefabs/archetypes_pic.png" no-paragraph="true" %}
 
 ## Prefabs
 
@@ -33,75 +29,23 @@ Prefabs are an extension of the archetype feature. A prefab is a bunch of entiti
 
 The most common use for prefabs is to create a small piece of your world - like a car, a rock, a piece of furniture, an NPC, or whatever - and duplicate it as many times as you need. When you need to modify that object - for example, if you want to add a light or particle effect, or add or move its entities - you can do it in one place and Game Studio applies the change automatically everywhere at once.
 
-<p>
-  <div id="prefab1_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
-    <video controls="" loop="" preload="none">
-        <source src="../../images/blog/2016-12-07-prefabs/prefab1.mp4" type="video/mp4">
-    </video>
-  </div>
-  <a href="#prefab1_popup" class="video-popup">
-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab1.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-         <source src="../../images/blog/2016-12-07-prefabs/prefab1.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-</p>
+{% include video src="../../images/blog/2016-12-07-prefabs/prefab1" %}
 
 You can change the entity hierarchy on the instance side without breaking the link to the original prefab. When you add an entity to the prefab, Game Studio adds it to the same parent or after the same sibling. If you delete the parent entity in the instance, Game Studio discards the entity. This means you can easily instantiate simple prefab subsets.
 
-<p>
-  <div id="prefab2_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
-    <video controls="" loop="" preload="none">
-        <source src="../../images/blog/2016-12-07-prefabs/prefab2.mp4" type="video/mp4">
-    </video>
-  </div>
-  <a href="#prefab2_popup" class="video-popup">
-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab2.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-  	   <source src="../../images/blog/2016-12-07-prefabs/prefab2.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-</p>
+{% include video src="../../images/blog/2016-12-07-prefabs/prefab2" %}
 
 ### Override prefab properties
 
 Of course, you can override prefab properties, just like with archetypes. Change any prefab instance and the change remains in that instance even if you then edit the original prefab.
 
-<p>
-  <div id="prefab3_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
-    <video controls="" loop="" preload="none">
-        <source src="../../images/blog/2016-12-07-prefabs/prefab3.mp4" type="video/mp4">
-    </video>
-  </div>
-  <a href="#prefab3_popup" class="video-popup">
-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab3.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-        <source src="../../images/blog/2016-12-07-prefabs/prefab3.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-</p>
+{% include video src="../../images/blog/2016-12-07-prefabs/prefab3" %}
 
 ### Nested prefabs
 
 You can also nest prefabs inside other prefabs. This means you can build your project in a modular way. For example, you can create a room prefab, then use that to create a house prefab, then use that to create a village. Change something in the room prefab - like a piece of furniture - and the change appears in every house and every village where the room is used. Or you could create a basic prefab for every NPC, attach a script, then create variations to implement different NPCs: animals, monsters, AI companions, soldiers - whatever you need. There's no limit to the amount of prefabs you can nest.
 
-<p>
-  <div id="prefab4_popup" class="mfp-video mfp-hide embed-responsive-anyratio">
-    <video controls="" loop="" preload="none">
-        <source src="../../images/blog/2016-12-07-prefabs/prefab4.mp4" type="video/mp4">
-    </video>
-  </div>
-  <a href="#prefab4_popup" class="video-popup">
-    <div class="embed-responsive-anyratio"><div class="zoom-in"></div><div class="video-play-button"></div>
-      <video autoplay loop class="responsive-video" poster="../../images/blog/2016-12-07-prefabs/prefab4.jpg" onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)">
-        <source src="../../images/blog/2016-12-07-prefabs/prefab4.mp4" type="video/mp4">
-      </video>
-    </div>
-  </a>
-</p>
+{% include video src="../../images/blog/2016-12-07-prefabs/prefab4" %}
 
 ### Improve performance with prefab models
 

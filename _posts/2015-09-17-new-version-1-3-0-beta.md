@@ -7,7 +7,7 @@ We are proud to announce the release of a new version of Xenko, bringing lots of
 
 Also, if you haven't participate to our [survey](/blog/roadmap-and-survery/), please take the time to help us prioritize the features you need for your projects!
 
- <a href="https://youtu.be/-RbIALRmhs0" target="_blank"><img alt="Rescue Robot Tech Demo" src="/images/backgrounds/rescue-robot-tech-demo.jpg"/></a>
+ <a href="https://youtu.be/-RbIALRmhs0" target="_blank">{% include image src="../../images/backgrounds/rescue-robot-tech-demo.jpg" no-maximize="true" %}</a>
 
 <!--more-->
 
@@ -32,9 +32,7 @@ Graphics Profile (DX9, 10 or 11)
 HDR or LDR mode
 Color Space: Gamma or Linear (more details below)
 
-<p>
-    <img src="/images/blog/release-1.3/GameSettings13.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/GameSettings13.png" no-maximize="true" %}
 
 It will automatically be created when opening an old project with version 1.3.
 We plan to add many more options to this asset from now on.
@@ -47,9 +45,7 @@ Starting with version 1.3, we compile only assets required by your game. This ma
 
 Don’t worry, most of it is done automatically for you! We do this by collecting dependencies from the new Game Settings asset. Since it references the Default Scene, we can easily detect all the required asset references (Models, Materials, Asset referenced by your scripts and so on).
 
-<p>
-    <img src="/images/blog/release-1.3/AssetControlExample.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/AssetControlExample.png" no-maximize="true" %}
 
 In case you were loading anything in your script using `Asset.Load`, you can still tag those assets specifically with "Mark as Root" in the editor.
 
@@ -69,9 +65,7 @@ When doing so, source assets will be copied alongside the Xenko asset with the s
 
 This option is still off by default when importing new assets, but we plan to make it a project setting if you want to manage project that way for your whole team.
 
-<p>
-    <img src="/images/blog/release-1.3/AssetConsolidation.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/AssetConsolidation.png" no-maximize="true" %}
 
 Don’t forget to save new versions of your raw assets at the new location.
 
@@ -87,9 +81,7 @@ Animation pipeline is very similar to a 3D model with smooth interpolations.
 
 Check out our new Sprite Studio Demo in the samples:
 
-<p>
-    <img src="/images/blog/release-1.3/SpriteStudioDemo.jpg" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/SpriteStudioDemo.jpg" no-maximize="true" %}
 
 
 ### Materials: Vertex stream, Shader nodes…
@@ -98,9 +90,7 @@ In addition to the current color providers supported by materials (texture, scal
 
 You can now use a color/values coming from **vertex attributes/stream** and use them directly in material color providers:
 
-<p>
-    <img src="/images/blog/release-1.3/RenderingMaterialsVertexStream.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/RenderingMaterialsVertexStream.png" no-maximize="true" %}
 
 This allows for example to blend two textures in a diffuse material, based on the value of a color coming from the vertex buffer.
 
@@ -114,15 +104,11 @@ In this version, the engine is now able to fully support pipelines that are HDR 
 
 By default, all new games are now created with `Linear` colorspace. This setting can be changed in the GameSettings:
 
-<p>
-    <img src="/images/blog/release-1.3/GameSettingsColorSpace.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/GameSettingsColorSpace.png" no-maximize="true" %}
 
 The texture importer by default now automatically uses the color space defined at game level:
 
-<p>
-    <img src="/images/blog/release-1.3/TextureColorSpace.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/TextureColorSpace.png" no-maximize="true" %}
 
 ___
 
@@ -132,9 +118,7 @@ ___
 
 We have added support to create automatically atlas texture generated from sprite sheets. This feature is optional and the user can continue generating their atlas manually if they prefer. It supports sprite border size.
 
-<p>
-    <img src="/images/blog/release-1.3/SpriteSheetTextureAtlas.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/SpriteSheetTextureAtlas.png" no-maximize="true" %}
 
 ### Alpha detection
 
@@ -144,39 +128,27 @@ We have also improve automatic alpha detection of textures and sprites. In addit
 
 The sprite editor has been improved in several ways. First, the left pane now let you select the sheet type (sprites or UI) and the color key. To easily set the color key from the image itself, a color picking tool has been added. It is also possible to duplicate an existing sprite so you don’t have to enter the same parameters again and again.
 
-<p>
-    <img src="/images/blog/release-1.3/SpriteEditorLeft.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/SpriteEditorLeft.png" no-maximize="true" %}
 
 Selecting the area of each sprite in a sheet can be annoying, so we added a magic wand tool to easily create a rectangle that fit the edges of the sprite you click on, using either transparency, or the color key to determine sprite limits.
 
-<p>
-    <img src="/images/blog/release-1.3/MagicWand.gif" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/MagicWand.gif" no-maximize="true" %}
 
  ___
 
 ## Scene editor
 
 We made several improvements to manage the hierarchy of entities. First, the root node representing the scene has been removed. You can now access the graphics compositor and editor settings via the *Scene settings* button.
-<p>
-   <img src="/images/blog/release-1.3/SceneSettings.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/SceneSettings.png" no-maximize="true" %}
 
 Also, to help you sort and filter entities in your scene, we added the concept of folders. You can create folders either at root level, or inside an entity, and move other folders/entities into them. Folders are completely virtual and exist only at design time. The actual hierarchy of entities is not affected by them.
-<p>
-   <img src="/images/blog/release-1.3/SceneFolders.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/SceneFolders.png" no-maximize="true" %}
 
 
 Aligning the camera along coordinate axes was cumbersome. We added a new nativation gizmo to the top-right corner of the scene editor, which allows you to easily rotate the camera around axes in 45° increments. Clicking on the center of the cube a second time, will switch between perspective and orthographic projection. Camera controls have also been improved when working in orthographic mode, to make it easier to move around in 2D worlds.
-<p>
-   <img src="/images/blog/release-1.3/NavigationGizmo.gif" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/NavigationGizmo.gif" no-maximize="true" %}
 Finally, the camera menu has been improved to allow you to customize various options related to the editor camera. These options were previously available in the editor settings section of the scene properties. This section has been removed.
-<p>
-   <img src="/images/blog/release-1.3/CameraMenu.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/CameraMenu.png" no-maximize="true" %}
 
 
 The material selection mode, introduced in the previous version, has been improved to allow you to perform close-ups on single meshes of a model. Hovering over the desired mesh and pressing 'F' while in material mode, will now center the camera on it.
@@ -191,9 +163,7 @@ The physics system is now **loaded automatically** - no need anymore to load it 
 ### Element types
 
 Physics elements have been simplified. To reduce confusion between object types some element types have been removed/merged with others. Each element type is now represented by separate class (instead of having a type property). This provides a clearer abstraction and easier configuration from the editor. Physics gizmos are **color coded** by element type.
-<p>
-   <img src="/images/blog/release-1.3/physics_elements_new.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/physics_elements_new.png" no-maximize="true" %}
 
 ### Linking to bones
 
@@ -201,9 +171,7 @@ You can now properly link physics elements to bones of a model hierarchy. This m
 You currently still need to set up constraints programmatically. This will also be possible from the editor in the future.
 Also, complex entity hierarchies are now well handled.
 
-<p>
-    <img src="/images/blog/release-1.3/physics_nodes.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/physics_nodes.png" no-maximize="true" %}
 
 ### Async scripting for collision handling
 
@@ -231,18 +199,14 @@ You can now declare collider shapes right **inside of a physics component**, for
 
 A **Convex Hull collider shape** has been added, providing a shape that is shrink wrapped to a model. For more complex model, a shape is wrapped to each mesh. In the future we also hope to provide complex convex decomposition.
 
-<p>
-    <img src="/images/blog/release-1.3/physics_inlineshapes_new.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/physics_inlineshapes_new.png" no-maximize="true" %}
  ___
 
 ## Manage code and scripts from Game Studio
 
 Scripts are now a new special type of asset.
 
-<p>
-    <img src="/images/blog/release-1.3/script_asset.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/script_asset.png" no-maximize="true" %}
 You can now create scripts straight from the Game Studio, without any need to have visual studio installed if wanted, Just fire your favorite code editor and start making scripts for your game!
 
 Renaming/Deleting/Adding a script from visual studio will be detected after script recompile in the Game Studio.
@@ -276,16 +240,12 @@ Last, GameStudio-side logging has been improved to better show what happens in t
 Model Node Link components allows you to make one entity follow a given model node or bone. They have been reworked and made easier to use.
 
 Firstly, if now target model is set, they will now automatically use the parent entitie’s model. When editing the target node, the editor will now display a list of available model nodes to choose from:
-<p>
-    <img src="/images/blog/release-1.3/ModelNodeLinkNodeSelection.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/ModelNodeLinkNodeSelection.png" no-maximize="true" %}
 
 Also, transformation is not ignored anymore. It is now possible to apply an offset, relative to the node.
 
 Lastly, node link information is now visible in the scene tree view for easier discoverability:
-<p>
-    <img src="/images/blog/release-1.3/ModelNodeLinkSceneTreeInfo.png" align="center" />
-</p>
+{% include image src="/images/blog/release-1.3/ModelNodeLinkSceneTreeInfo.png" no-maximize="true" %}
 
  ___
 
