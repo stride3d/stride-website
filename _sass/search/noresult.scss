@@ -1,0 +1,17 @@
+
+@import "_common.scss";
+
+#x_wrap
+{
+	div.x_search
+	{
+		input
+		{
+			&.txt
+			{
+				box-shadow: none;
+				padding-right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,81 @@
+
+@import "../_const.scss";
+
+#x_wrap 
+{
+	a.x_download
+	{
+		display: block;
+		width: 100%;
+		max-width: 634px;
+		padding: 20px 0;
+		overflow: hidden;
+		border: 2px solid $c_main;
+		border-radius: 2px;
+		box-shadow: 0 0 0 2px rgba(0,0,0,0.2) inset;
+		margin: 0 auto;
+		background: $c_main;
+		font-size: 24px;
+		font-size: 2.4rem;
+		line-height: 1.25;
+		color: #ffffff;
+		text-align: center;
+		text-decoration: none;
+
+		span
+		{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			margin-right: 0.3em;
+			overflow: hidden;
+			background: url(../images/svg/download_white.svg) no-repeat 0 0;
+			background-size: 60px 66px;
+			text-indent: 100%;
+			white-space:  nowrap;
+			vertical-align: middle;
+		}
+
+		&:hover
+		{
+			background: rgba(218,8,48,0.8);
+
+			span
+			{
+				background-position: 100% 100%;
+			}
+		}
+	}
+	
+	.xk-resources {
+	  display: flex;
+	  width: 100%;
+	  justify-content: space-around; }
+	  @media (max-width: 650px) {
+		#x_wrap .xk-resources {
+		  flex-wrap: wrap; } }
+	  #x_wrap .xk-resources div.xb_common.xb_type_short {
+		background-size: 25% 250%;
+		background-position: -5% 50%;
+		width: auto;
+		padding-left: 45px;
+		min-width: 28%; }
+		@media (max-width: 650px) {
+		  #x_wrap .xk-resources div.xb_common.xb_type_short {
+			width: 80%;
+			margin-bottom: 25px; } }
+		#x_wrap .xk-resources div.xb_common.xb_type_short:hover a {
+		  color: #fff; }
+		#x_wrap .xk-resources div.xb_common.xb_type_short p {
+		  background-size: 25% 250%;
+		  background-position: -5% 50%; }
+		#x_wrap .xk-resources div.xb_common.xb_type_short a {
+		  color: #da0830; }
+		  
+	.xk-campaign-title-resources {
+	  font-size: 49px;
+	  font-family: "cabinsemibold",Verdana,Helvetica,Arial,sans-serif;
+	  text-align: center;
+	  margin-top: 65px;
+	  margin-bottom: 40px; }
+}

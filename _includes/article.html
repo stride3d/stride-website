@@ -1,0 +1,63 @@
+{% include post_tags.html %}
+{% if index %}
+    <div class="row xk-blog-article">
+        {% if post.image_thumb %}
+            <div class="xk-blog-article-image col-sm-3 hidden-xs col-md-3">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.image_thumb }}" alt="{{ post.title }}">
+                </a>
+            </div>
+        {% elsif post.image %}
+            <div class="xk-blog-article-image col-sm-3 hidden-xs col-md-3">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
+                </a>
+            </div>
+        {% else %}
+            <div class="xk-blog-article-image col-sm-3 hidden-xs xk-no-image col-md-3">
+                <a href="{{ post.url }}">
+                    <img src="/images/blog/default_thumb.png" alt="Image not found">
+                </a>
+            </div>
+        {% endif %}
+        <div class="col-sm-9 col-md-9 xk-index-posts-list">
+            <h1 class="title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+            <div class="xk-post-meta">{% include post/meta.html %}</div>
+            <div class="xk-mobile-flex-container">
+                <div class="hidden-sm hidden-md hidden-lg xk-mobile-flex-column xk-clear">
+                     {% if post.image_thumb %}
+                        <div class="xk-blog-article-image">
+                            <a href="{{ post.url }}">
+                                <img src="{{ post.image_thumb }}" alt="{{ post.title }}">
+                            </a>
+                        </div>
+                    {% elsif post.image %}
+                        <div class="xk-blog-article-image">
+                            <a href="{{ post.url }}">
+                                <img src="{{ post.image }}" alt="{{ post.title }}">
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="xk-blog-article-image xk-no-image">
+                            <a href="{{ post.url }}">
+                                <img src="/images/blog/default_thumb.png" alt="Image not found">
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="entry-content xk-mobile-flex-column-description" itemprop="articleBody">
+                    {{ post.excerpt | strip_html | truncatewords: 19 }}
+                    <a href="{{ post.url }}" class="xk-more-link">{{ site.excerpt_link }}Read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="xk-clear"></div>
+    </div>
+{% else %}
+    <h1 class="title" itemprop="name">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% include post/meta.html %}
+    <div class="entry-content" itemprop="articleBody">
+    {{ content }}
+    </div>
+    {% include post/meta_bottom.html %}
+{% endif %}

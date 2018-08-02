@@ -1,0 +1,205 @@
+
+#x_wrap
+{
+	#mainview
+	{
+		$w1: 1090px;
+		$w2: 970px;
+		$w3: 850px;
+		$w4: 720px;
+		$w5: 600px;
+
+		//----------
+
+		width: 100%;
+		max-width: 2970px;
+		max-height: 680px;
+		overflow: hidden;
+		position: relative;
+		margin: 0 auto;
+		background: no-repeat 50% 50%;
+		background-size: cover;
+
+		div.video
+		{
+			min-width: 100%;
+			min-height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		div.cover
+		{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+			background: url(../images/top/svg/dot.svg) repeat 0 0 rgba(0,0,0,0.3);
+			background-size: 50px 50px;
+		}
+
+		div.copy
+		{
+			width: 100%;
+			padding: 0.8em 2em;
+			position: relative;
+			margin-top: 140px;
+			margin-bottom: 200px;
+			font-size: 40px;
+			font-size: 4.0rem;
+
+			@media ( max-width: $w1 )
+			{
+				font-size: 40px;
+				font-size: 4.0rem;
+			}
+
+			@media ( max-width: $w2 )
+			{
+				font-size: 35px;
+				font-size: 3.5rem;
+			}
+
+			@media ( max-width: $w3 )
+			{
+				font-size: 30px;
+				font-size: 3.0rem;
+				margin-top: 100px;
+				margin-bottom: 100px;
+			}
+
+			@media ( max-width: $w4 )
+			{
+				font-size: 25px;
+				font-size: 2.5rem;
+				margin-top: 100px;
+				margin-bottom: 100px;
+			}
+
+			@media ( max-width: $w5 )
+			{
+				padding: 3em 0;
+				font-size: 20px;
+				font-size: 2.0rem;
+				margin-top: 100px;
+				margin-bottom: 100px;
+			}
+            
+            .rt-frontpage-subtitle
+            {
+                max-width: 700px;
+                font-size: 20px;
+                font-size: 2.0rem;
+                margin-bottom: 30px;
+                
+                @media ( max-width: $w1 )
+                {
+                    font-size: 18px;
+                    font-size: 1.8rem;
+                }
+
+                @media ( max-width: $w3 )
+                {
+                    font-size: 16px;
+                    font-size: 1.6rem;
+                }
+            }
+
+			div.xb_common
+			{
+				background-color: rgba(192, 192, 192, 0.4);
+				background-image: url(../images/svg/arrow_red_8.svg);
+				@media ( max-width: $w4 )
+				{
+					width: 250px;
+				}
+			}
+			div.xb_common p
+			{
+				background-color: transparent;
+				background-image: url(../images/svg/arrow_white_8.svg);
+			}
+			
+			div.xb_common a
+			{
+				color: #ffffff;
+			}
+			div.xb_common:hover a
+			{
+				color: #ffffff;
+			}
+
+			span.xi_download
+			{
+				background-image: url(../images/svg/download_white.svg);
+			}
+			span.xi_github
+			{
+				background-image: url(../images/svg/github_white.svg);
+			}
+			span.xi_blank
+			{
+				background-image: url(../../images/svg/icon_blank_white.svg);
+			}
+            
+			p
+			{
+				max-width: 1200px;
+				padding: 0;
+				margin: 0 auto 0.4em;
+				color: #ffffff;
+				line-height: 1.68;
+				text-align: center;
+
+				@media ( max-width: $w5 )
+				{
+					padding: 0 5%;
+				}
+
+				span
+				{
+					display: inline-block;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		a.x_download
+		{
+			width: 310px;
+			padding: 15px 0;
+			margin-top: 40px;
+
+			@media ( max-width: $w3 )
+			{
+				width: 240px;
+				padding: 14px 0;
+				font-size: 18px;
+				font-size: 1.8rem;
+
+				span 
+				{
+					width: 20px;
+					height: 20px;
+					background-size: 40px 44px;
+				}
+			}
+
+			@media ( max-width: $w5 )
+			{
+				width: 170px;
+				padding: 13px 0;
+				font-size: 14px;
+				font-size: 1.4rem;
+
+				span 
+				{
+					width: 15px;
+					height: 15px;
+					background-size: 30px 33px;
+				}
+			}
+		}
+	}
+}

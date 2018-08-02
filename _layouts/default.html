@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}  
+  <body>
+  
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHN3F8B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div id="x_wrap">
+		<div id="xk-header">
+			{% include header.html %}		
+		</div>
+        {{ content }}	
+        <div id="xk-footer">
+            {% include footer.html %}
+        </div>
+	</div>
+  </body>
+  <script src="{{ site.baseurl}}/scripts/theme.js" type="text/javascript"></script>
+</html>

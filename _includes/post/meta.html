@@ -1,0 +1,16 @@
+<div class="xk-blog-post-meta">
+	<span class="fa fa-calendar"></span> {% include post/date.html %}{{ time }}
+	&nbsp; <span class="fa fa-pencil"></span> By {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
+	{% include post_tags.html %}
+	{% if index != true %}
+		{% unless page.sharing == false %}
+			{% include post/sharing.html %}
+		{% endunless %}
+	{% endif %}
+	
+	{% if site.disqus_short_name and site.disqus_show_comment_count == true %}
+		<div class="pull-right">
+			<span class="fa fa-comments"></span> {% include post/comments_link.html %}
+		</div>
+	{% endif %}
+</div>

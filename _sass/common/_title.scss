@@ -1,0 +1,88 @@
+
+#x_wrap
+{
+	#x_title
+	{
+		width: 100%;
+		max-width: 1684px;
+		overflow: hidden;
+		position: relative;
+		margin: 0 auto;
+		background: url(../svg/common/title_bg.svg) no-repeat 50% 100% #646464;
+		background-size: auto 100%;
+
+		&.notDefo
+		{
+			background: none;
+
+			div
+			{
+				background: no-repeat 50% 100%;
+				background-size: cover;
+			}
+		}
+
+		h2
+		{
+			padding: 70px 0;
+			background: url(../svg/common/dot.svg) repeat 50% 0 rgba(0,0,0,0.2);
+			color: #ffffff;
+
+			@media ( max-width: $w_under_iphone )
+			{
+				padding: 35px 0;
+			}
+		}
+
+		&.high
+		{
+			max-width: 2072px;
+
+			h2 
+			{
+				padding: 126px 0;
+				font-size: 80px;
+				font-size: 8rem;
+
+				div
+				{
+					padding: 1em 36px 0;
+					font-size: 20px;
+					font-size: 2rem;
+				}
+
+				@media ( max-width: $w_under_iphone )
+				{
+					padding: 63px 0;
+					font-size: 40px;
+					font-size: 4rem;
+
+					div 
+					{
+						padding: 1em 20px 0;
+						font-size: 13px;
+						font-size: 1.3rem;
+					}
+				}
+			}
+		}
+	}
+}
+article.post h1,
+article.post .h1,
+article.post h2,
+article.post .h2,
+article.post h3,
+article.post .xk-module-title,
+article.post .h3,
+article.post h4,
+article.post .h4,
+article.post h5,
+article.post .h5,
+article.post h6,
+article.post .h6{
+	margin-top: 5px;
+}
+h1.title{
+	margin-top:0;
+}

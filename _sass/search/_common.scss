@@ -1,0 +1,106 @@
+
+@import "../_const.scss";
+
+#x_wrap
+{
+	div.x_search
+	{
+		max-width: 749px;
+		height: 42px;
+		padding-right: 43px;
+		border: 1px solid $c_border;
+		border-radius: 2px;
+		position: relative;
+		margin: 0 auto 30px;
+
+		input
+		{
+			height: 42px;
+			padding: 0;
+			border-radius: 0;
+			outline: none;
+			margin: 0;
+			box-shadow: none;
+			font-size: 16px;
+			font-size: 1.6rem;
+
+			&:focus
+			{
+				border: none;
+			}
+
+			&.txt
+			{
+				width: 100%;
+				border: none;
+				line-height: 30px;
+				text-indent: 15px;
+				background: linear-gradient(top, #f8f8f8 0%, #ffffff 12%);
+			}
+
+			&.send
+			{
+				width: 42px;
+				overflow: hidden;
+				border-left: 1px solid $c_border;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background: url(../images/svg/icon_loupe.svg) no-repeat 50% 50% #ffffff;
+				background-size: 20px 20px;
+				text-indent: 110%;
+				white-space: nowrap;
+				cursor: pointer;
+
+				&:hover
+				{
+					background-color: #f0f0f0;
+				}
+			}
+
+			&.delete
+			{
+				width: 44px;
+				overflow: hidden;
+				background: url(../../svg/icon_delete.svg) no-repeat 50% 50%;
+				background-size: 16px 16px;
+				position: absolute;
+				top: 0;
+				right: 43px;
+				text-indent: 110%;
+				white-space: nowrap;
+				cursor: pointer;
+
+				&:hover
+				{
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+
+	div.x_subColumn div.x_search
+	{
+		height: 30px;
+		padding-right: 31px;
+
+		input
+		{
+			height: 30px;
+			font-size: 14px;
+			font-size: 1.4rem;
+
+			&.txt
+			{
+				text-indent: 5px;
+				background: #ffffff;
+			}
+
+			&.send
+			{
+				width: 30px;
+				background-size: 18px 18px;
+			}
+		}
+	}
+}

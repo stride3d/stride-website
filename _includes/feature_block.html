@@ -1,0 +1,39 @@
+	<div class="col-lg-4 col-md-6 gantry-width-block rt-left">
+		<div class="gantry-right-spacer feature-block">
+			<h3 class="title rt-capitalize">{{ feature.title }}</h3>
+{% if feature.type == 'video' %}
+            <div id="{{ feature.id }}_popup" class="mfp-video mfp-hide embed-responsive embed-responsive-16by9">
+                <video controls loop preload="none">
+                    <source src="/images/features/{{ features_current }}/{{ feature.id }}.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="feature-image-container">
+                <a href="#{{ feature.id }}_popup" title="{{ feature.title }}" class="video-popup">
+                    <div class="embed-responsive embed-responsive-16by9"><div class="zoom-in"></div><div class="video-play-button"></div>
+                        <video autoplay loop onplay="feature_video_onplay(event)" onpause="feature_video_onpause(event)"
+                               poster="/images/features/{{ features_current }}/{{ feature.id }}_640.jpg">
+                            <source src="/images/features/{{ features_current }}/{{ feature.id }}_640.mp4">
+                        </video>
+                    </div>
+                </a>
+            </div>
+{% elsif feature.type == 'image' %}
+{% if feature.image_url == nil %}
+{%   assign image_url = feature.id | append: '.jpg' %}
+{% else %}
+{%   assign image_url = feature.image_url %}
+{% endif %}
+            <a href="/images/features/{{ features_current }}/{{ image_url }}" title="{{ feature.title }}" class="feature-image-container image-popup">
+			    <div class="rt-image"><div class="zoom-in"></div><img src="/images/features/{{ features_current }}/{{ image_url }}" alt="{{ feature.title }}"></div>
+            </a>
+{% elsif feature.type == 'image_nozoom' %}
+{% if feature.image_url == nil %}
+{%   assign image_url = feature.id | append: '.jpg' %}
+{% else %}
+{%   assign image_url = feature.image_url %}
+{% endif %}
+            <div class="feature-image-container rt-image"><img src="/images/features/{{ features_current }}/{{ image_url }}" alt="{{ feature.title }}"></div>
+{% endif %}
+			<p>{{ feature.description }}</p>
+		</div>
+	</div>

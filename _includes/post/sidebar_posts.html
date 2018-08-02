@@ -1,0 +1,76 @@
+{% if page.layout == 'post' %}
+    <h2 class="xk-aside-title">Recent Posts</h2>
+    <!-- {% assign popular_posts = site.posts | where:'type', 'popular' %} -->
+    {% for post in site.posts offset: 0 limit: 11  %}
+        {% if page.title != post.title %}
+        <div class="row xk-aside-posts-item">
+            {% if post.image_thumb %}
+            <div class="col-md-2 hidden-sm hidden-xs xk-no-horizontal-padding">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.image_thumb }}" alt="{{ post.title }}" class="xk-aside-posts-image">
+                </a>
+            </div>
+            {% elsif post.image %}
+            <div class="col-md-2 hidden-sm hidden-xs xk-no-horizontal-padding">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.image }}" alt="{{ post.title }}" class="xk-aside-posts-image">
+                </a>
+            </div>
+            {% else %}
+            <div class="col-md-2 hidden-sm hidden-xs xk-no-image xk-no-horizontal-padding">
+                <a href="{{ post.url }}">
+                    <img src="/images/blog/default_thumb.png" alt="Image not found">
+                </a>
+            </div>  
+            {% endif %}
+            <div class="col-md-10">
+                <h3 class="xk-aside-posts-title">
+                    <a href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h3>
+                <span class="xk-aside-posts-date">{{ post.date | date: "%B %e, %Y" }}</span>
+            </div>
+        </div>
+        {% endif %}
+        {% assign post = post.previous %}
+    {% endfor %}
+{% else %}
+    <h2 class="xk-aside-title">Popular Posts</h2>
+    <!-- {% assign popular_posts = site.posts | where:'type', 'popular' %} -->
+    {% assign index = true %}
+    {% for post in site.posts %}
+        {% if post.popular == true %}
+            <div class="row xk-aside-posts-item">
+                {% if post.image_thumb %}
+                    <div class="col-md-2 hidden-sm hidden-xs xk-no-horizontal-padding">
+                        <a href="{{ post.url }}">
+                            <img src="{{ post.image_thumb }}" alt="{{ post.title }}" class="xk-aside-posts-image">
+                        </a>
+                    </div>
+                {% elsif post.image %}
+                <div class="col-md-2 hidden-sm hidden-xs xk-no-horizontal-padding">
+                    <a href="{{ post.url }}">
+                        <img src="{{ post.image }}" alt="{{ post.title }}" class="xk-aside-posts-image">
+                    </a>
+                </div>              
+                {% else %}  
+                <div class="col-md-2 hidden-sm hidden-xs xk-no-image xk-no-horizontal-padding">
+                    <a href="{{ post.url }}">
+                        <img src="/images/blog/default_thumb.png" alt="Image not found">
+                    </a>
+                </div>
+                {% endif %} 
+                <div class="col-md-10">
+                    <h3 class="xk-aside-posts-title">
+                        <a href="{{ post.url }}">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+                    <span class="xk-aside-posts-date">{{ post.date | date: "%B %e, %Y" }}</span>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endif %}

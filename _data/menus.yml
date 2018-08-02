@@ -1,0 +1,18 @@
+---
+__display__:
+    - features
+    - blog
+    - documentation
+    - community    
+features:
+    url: /features
+    text: Features
+blog:
+    url: /blog
+    text: Blog
+documentation:
+    url: https://doc.xenko.com/latest
+    text: Documentation
+community:
+    url: /community
+    text: Community

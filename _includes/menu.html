@@ -1,0 +1,7 @@
+<ul class="x_menu">
+    {% for menu_id in menu_root.__display__ %}
+    {% assign menu_item = menu_root[menu_id] %}
+    {% assign menu_current = page.url | remove: '/' %}
+    <li {% if menu_current == menu_id %}class='active'{% endif %}><a href="{{ menu_item.url }}">{{ menu_item.text }}</a></li>
+    {% endfor %}
+</ul>

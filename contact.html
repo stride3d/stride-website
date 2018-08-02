@@ -1,0 +1,75 @@
+---
+layout: contact
+title: Contact
+permalink: /contact/
+menu: community
+submenu: contact
+---
+<div class="container-fluid xk-contact-form">
+
+	<div class="container">
+		<div id="result-success" style="display: none;">
+			<p class="alert alert-success"><span class="fa fa-check"></span>Your message has been successfully sent!<p>
+		</div>
+		<div id="result-error" style="display: none;">
+			<p class="alert alert-danger"><span class="fa fa-exclamation-circle"></span>Please fill all the fields.</span><p>
+		</div>
+		<form id="contact-form" action="https://support.xenko.com/contact" method="post" class="row">
+			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<label for="contact_name">Contact Name</label>
+				<input type="text" class="form-control" id="contact_name" name="name" placeholder="Name of contact person" required="required">
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<label for="contact_email">Contact Email</label>
+				<input type="email" class="form-control" id="contact_email" name="email" placeholder="Email of contact person" required="required">
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<label for="organization">Company Name</label>
+				<input type="text" class="form-control" id="organization" name="organization" placeholder="Company Name ('Individual' for individual users)" required="required">
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<label for="organizationURL">Company URL (Optional)</label>
+				<input type="text" class="form-control" id="organizationURL" name="organizationURL" placeholder="URL to the organiztion site">
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<label for="industry">Industry</label>
+				<select class="form-control" id="industry" name="industry" required="required">
+					<option></option>
+				</select>
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<label for="country">Country</label>
+				<select class="form-control" id="country" name="country" required="required" disabled="true">
+					<option></option>
+				</select>
+			</div>
+			<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<label for="contact_subject">Subject</label>
+				<input type="text" class="form-control" id="contact_subject" name="subject" placeholder="Subject" required="required">
+			</div>
+			<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<label for="contact_body">Message</label>
+				<textarea class="form-control" rows="5" id="contact_body" name="body" placeholder="Type your message here..." required="required"></textarea>
+			</div>
+			<button type="submit" class="btn btn-success">Send</button>
+		</form>
+	</div>
+</div>
+<script>
+	$.urlParam = function(name){
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (results==null){
+		   return null;
+		}
+		else{
+		   return results[1] || 0;
+		}
+	};
+	if ($.urlParam('success') === 0) $('#result-success').show();
+	var errorMessage = $.urlParam('error');
+	if (errorMessage) 
+	{
+		$('#result-error').show();
+		$('#error-message').text(decodeURIComponent(errorMessage));
+	}
+</script>

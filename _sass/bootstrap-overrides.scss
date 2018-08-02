@@ -1,0 +1,34 @@
+/*
+Bootstrap overrides
+*/
+
+// $accent-color: #583069;
+$accent-color: #900520;
+$accent-color-light: lighten($accent-color, 15%);
+$accent-color-darken: darken($accent-color, 15%);
+
+$accent-color1: lighten($accent-color, 15%);
+$accent-color2: #f19118;
+$accent-color2-darken: darken($accent-color2, 20%);
+$accent-color3: #a5d11d;
+$accent-color4: #158abb;
+
+$button-color: #da0830;
+
+$text-color: #6E6E6E;
+$text-color-with-dark-bg: #fff;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+$navbar-default-color:             #111;
+$navbar-default-bg:                #111;
+$navbar-default-border:            #FFF;
+$navbar-default-link-active-bg:    $navbar-default-bg;
+
+$navbar-default-link-color:                #CCC;
+$navbar-default-link-hover-color:          $accent-color-light;
+$navbar-default-link-active-color:        #FFF;
+
+$link-color:      $accent-color-light;
+$blockquote-border-color: #4060c0;
+$link-hover-color: $accent-color2;

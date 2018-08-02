@@ -1,0 +1,738 @@
+
+#x_head_openBG
+{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+
+	&.open
+	{
+		display: block;
+	}
+}
+
+#x_head
+{
+	$w1: 1280px;
+	$w2: 1212px;
+	$w3: 1175px;
+	$w4: 933px;
+
+	//----------
+
+	width: 100%;
+	height: 54px;
+	background: #ffffff;
+	box-shadow: 0 4px 12px rgba(1,1,1,0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	/*************************************
+		h1
+	*************************************/
+
+	h1
+	{
+		width: 50%;
+		height: 54px;
+		background: #FFFFFF;
+		position: absolute;
+		top: 0;
+		left: -410px;
+        margin: 0;
+
+		@media ( max-width: $w1 )
+		{
+			width: 230px;
+			left: 0;
+		}
+
+		@media ( max-width: $w4 )
+		{
+			width: 100%;
+			height: 54px;
+			position: relative;
+			left: 0;
+		}
+
+		a
+		{
+			display: block;
+			width: 170px;
+			height: 54px;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			right: 21px;
+			background: url(../../images/svg/logo.svg) no-repeat 0 50%;
+			background-size: 170px 42.5px;
+			text-indent: 100%;
+			white-space: nowrap;
+
+			&:hover { opacity: 0.7; }
+
+			@media ( max-width: $w4 )
+			{
+				width: 124px;
+				height: 54px;
+				margin-left: 12px;
+				position: static;
+				background-size: 124px auto;
+			}
+		}
+	}
+
+	/*************************************
+		menuButton
+	*************************************/
+
+	#x_menuButton
+	{
+		width: 54px;
+		height: 54px;
+		border-left: 1px solid $c_border;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		span
+		{
+			display: block;
+			width: 54px;
+			height: 54px;
+			overflow: hidden;
+			background: url(../../images/svg/menu_button.svg) no-repeat 0 0;
+			background-size: 54px 108px;
+			text-indent: 100%;
+			white-space: nowrap;
+			cursor: pointer;
+
+			&:hover
+			{
+				background-color: $c_hoverBG;
+			}
+		}
+
+		&.open
+		{
+			span
+			{
+				background-position: 0 -54px;
+			}
+		}
+	}
+
+	/*************************************
+		download
+	*************************************/
+
+	a.x_download
+	{
+		width: 154px;
+		padding: 8px 0;
+		margin: 13px auto 0;
+		font-size: 14px;
+		font-size: 1.4rem;
+		color: #ffffff;
+		text-align: center;
+		white-space: nowrap;
+
+		span 
+		{
+			width: 22px;
+			height: 22px;
+			background-size: 44px 48px;
+		}
+	}
+
+	#x_fix_download
+	{
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+		width: 200px;
+		height: 68px;
+		padding-top: 32px;
+		border-radius: 2px;
+		overflow: hidden;
+		position: absolute;
+		top: -55px;
+		left: 50%;
+		margin-left: 406px;
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.37, rgba(17,17,17,0.75)), color-stop(0.33, rgba(17,17,17,0.7)));
+		background: -webkit-linear-gradient(top, rgba(17,17,17,0.75) 33%, rgba(17,17,17,0.7) 37%);
+		background: -moz-linear-gradient(top, rgba(17,17,17,0.75) 33%, rgba(17,17,17,0.7) 37%);
+		background: -o-linear-gradient(top, rgba(17,17,17,0.75) 33%, rgba(17,17,17,0.7) 37%);
+		background: -ms-linear-gradient(top, rgba(17,17,17,0.75) 33%, rgba(17,17,17,0.7) 37%);
+		background: linear-gradient(top, rgba(17,17,17,0.75) 33%, rgba(17,17,17,0.7) 37%);
+		box-shadow: 0 1.5px 6px 0 rgba(1,1,1,0.5);
+		transition: top 0.2s linear;
+
+		@media ( max-width: $w1 )
+		{
+			left: auto;
+			right: 50px;
+			margin-left: 0;
+		}
+
+		@media ( max-width: $w4 )
+		{
+			display: none!important;
+		}
+
+		&.show
+		{
+			top: 22px;
+		}
+	}
+
+	/*************************************
+		head_container
+	*************************************/
+
+	#x_head_container
+	{
+		width: 100%;
+		height: 54px;
+		background: #ffffff;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -410px;
+
+		@media ( max-width: $w1 )
+		{
+			left: 230px;
+			margin-left: 0;
+		}
+
+		@media ( max-width: $w4 )
+		{
+			display: none;
+			height: auto;
+			position: static;
+			top: 0;
+			left: 0;
+
+			&.open	{ display: block; }
+		}
+
+		/*************************************
+			menu
+		*************************************/
+
+		ul.x_menu
+		{
+			width: 530px;
+			height: 54px;
+			overflow: hidden;
+			border-left: 1px solid #e7e7e7;
+
+			@media ( max-width: $w4 )
+			{
+				width: 100%;
+				height: auto;
+				border-left: none;
+			}
+
+			li 
+			{
+				min-width: 105px;
+				height: 54px;
+				border-right: 1px solid #e7e7e7;
+				float: left;
+				&.active{
+					background: #F0F0F0;
+				}
+
+				@media ( max-width: $w4 )
+				{
+					width: 100%;
+					border-right: none;
+					border-bottom: 1px solid #e7e7e7;
+					float: none;
+				}
+
+				a 
+				{
+					display: block;
+					width: 100%;
+					padding-left: 20px;
+					padding-right: 20px;
+					height: 54px;
+					overflow: hidden;
+					line-height: 54px;
+					text-align: center;
+					color: $c_text;
+					font-size: 14px;
+					font-size: 1.4rem;
+					text-decoration: none;
+
+					&:hover 
+					{
+						background: $c_hoverBG;
+					}
+
+					@media ( max-width: $w4 )
+					{
+						font-size: 16px;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+
+		/*************************************
+			head_subButton
+		*************************************/
+
+		#x_head_subButton
+		{
+			display: none;
+			width: 92px;
+			height: 54px;
+			overflow: hidden;
+			border-left: 1px solid #e7e7e7;
+			position: absolute;
+			top: 0;
+			right: 230px;
+			background: #FFFFFF;
+			cursor: pointer;
+
+			@media ( max-width: $w3 )	{ display: block; }
+			@media ( max-width: $w4 )	{ display: none; }
+
+			span 
+			{
+				display: block;
+				width: 32px;
+				height: 32px;
+				overflow: hidden;
+				margin: 11px 0 11px 20px;
+				background: url(../images/svg/submenu_button.svg) no-repeat 0 0;
+				background-size: 32px 32px;
+				text-indent: 100%;
+				white-space: nowrap;
+				transition: transform 0.2s linear;
+			}
+
+			&:hover span
+			{
+				opacity: 0.7;
+			}
+			
+			&.open span
+			{
+				transform: rotate(-90deg);
+			}
+		}
+
+		/*************************************
+			head_subContainer
+		*************************************/
+
+		#x_head_subContainer
+		{
+			width: 422px;
+			height: 54px;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 628px;
+
+			@media ( max-width: $w1 )
+			{
+				left: auto;
+				right: 230px;
+			}
+
+			@media ( max-width: $w2 )
+			{
+				width: 385px;
+			}
+
+			@media ( max-width: $w3 )
+			{
+				width: 100%;
+				left: 0;
+				margin-top: -54px;
+				background: #f0f0f0;
+				transition: top 0.2s linear;
+
+				&.open
+				{
+					top: 54px;
+				}
+			}
+
+			@media ( max-width: $w4 )
+			{
+				height: auto;
+				position: static;
+				margin-top: 0;
+				background: none;
+			}
+
+			/*************************************
+				lang
+			*************************************/
+
+			div.x_lang
+			{
+				width: 132px;
+				height: 54px;
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				@media ( max-width: $w3 )
+				{
+					right: 305px;
+				}
+
+				@media ( max-width: $w4 )
+				{
+					display: none;
+				}
+
+				p 
+				{
+					padding-left: 33px;
+					margin: 0;
+					line-height: 54px;
+					font-size: 10px;
+					font-size: 1.0rem;
+					color: #999999;
+					cursor: pointer;
+					background: url(../../images/svg/pulldown.svg) no-repeat 14px 0;
+					background-size: 14px 108px;
+					user-select: none;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+
+					&:hover
+					{
+						opacity: 0.7;
+					}
+
+					&.open
+					{
+						background-position: 14px -54px;
+					}
+				}
+			}
+
+			/*************************************
+				sns
+			*************************************/
+
+			ul.x_sns
+			{
+				width: 84px;
+				height: 34px;
+				padding: 0 8px;
+				overflow: hidden;
+				border-left: 1px dotted #b7b7b7;
+				border-right: 1px dotted #b7b7b7;
+				position: absolute;
+				top: 10px;
+				right: 132px;
+
+				@media ( max-width: $w3 )
+				{
+					right: 437px;
+				}
+
+				@media ( max-width: $w4 )
+				{
+					position: static;
+					width: 255px;
+					height: auto;
+					padding: 15px 0;
+					border: none;
+					margin: 0 auto;
+				}
+
+				li 
+				{
+					height: 16px;
+					padding: 9px 4px;
+					float: left;
+
+					@media ( max-width: $w4 )
+					{
+						height: 38px;
+						padding: 0 20px;
+					}
+
+					a 
+					{
+						font-size: 0;
+						display: block;
+						width: 20px;
+						height: 16px;
+						overflow: hidden;
+						background: url(../../images/svg/sns.svg) no-repeat;
+						background-size: 60px 90px;
+						text-indent: 100%;
+						white-space: nowrap;
+
+						&:hover
+						{
+							opacity: 0.7;
+						}
+
+						@media ( max-width: $w4 )
+						{
+							width: 45px;
+							height: 38px;
+							background-size: 140px 210px;
+						}
+					}
+
+					&.facebook a 	{ background-position: 0 0; }
+					&.twitter a 	{ background-position: 0 -30px; }
+					&.youtube a 	{ background-position: 0 -60px; }
+
+					@media ( max-width: $w4 )
+					{
+						&.facebook a 	{ background-position: 0 0; }
+						&.twitter a 	{ background-position: 0 -70px; }
+						&.youtube a 	{ background-position: 0 -140px; }
+					}
+				}
+			}
+
+			/*************************************
+				search
+			*************************************/
+
+			h3.x_search_title
+			{
+				display: none;
+			}
+
+			div.x_search
+			{
+				width: 140px;
+				height: 30px;
+				padding-right: 31px;
+				border: 1px solid #999999;
+				position: absolute;
+				top: 11px;
+				right: 244px;
+				margin: 0;
+				
+				@media ( max-width: $w2 )
+				{
+					width: 100px;
+				}
+
+				@media ( max-width: $w3 )
+				{
+					right: 557px;
+				}
+
+				@media ( max-width: $w4 )
+				{
+					width: 259px;
+					height: 38px;
+					padding-right: 39px;
+					position: relative;
+					top: 0;
+					left: 0;
+					margin: 0 auto;
+				}
+
+				input
+				{
+					height: 30px;
+					font-size: 14px;
+					font-size: 1.4rem;
+
+					@media ( max-width: $w4 )
+					{
+						height: 38px;
+						font-size: 16px;
+						font-size: 1.6rem;
+					}
+
+					&.txt
+					{
+						background: #ffffff;
+						box-shadow: none;
+						text-indent: 5px;
+						line-height: 30px;
+
+						@media ( max-width: $w4 )
+						{
+							line-height: 38px;
+						}
+					}
+
+					&.send
+					{
+						width: 30px;
+						height: 30px;
+						border-left: 1px solid #999999;
+						background-size: 17px 17px;
+
+						@media ( max-width: $w4 )
+						{
+							width: 38px;
+							height: 38px;
+							background-size: 20px 20px;
+						}
+					}
+				}
+			}
+
+			/*************************************
+				download
+			*************************************/
+
+			a.x_download
+			{
+				display: none;
+				width: 295px;
+				padding: 18px 0;
+				margin: 15px auto;
+				font-size: 16px;
+				font-size: 1.6rem;
+
+				@media ( max-width: $w4 )
+				{
+					display: block;
+				}
+
+				span 
+				{
+					width: 18px;
+					height: 18px;
+					background-size: 36px 40px;
+				}
+			}
+		}
+
+		/*************************************
+			head_langList
+		*************************************/
+
+		#x_head_langList
+		{
+			width: 114px;
+			height: 0;
+			overflow: hidden;
+			box-shadow: 0 4px 12px rgba(1,1,1,0.2);
+			position: absolute;
+			top: 54px;
+			left: 917px;
+			background: #ffffff;
+			font-size: 12px;
+			font-size: 1.2rem;
+			line-height: 33px;
+			text-align: center;
+			transition: height 0.2s linear;
+
+			@media ( max-width: $w1 )
+			{
+				left: auto;
+				right: 249px;
+			}
+
+			@media ( max-width: $w3 )
+			{
+				right: 323px;
+			}
+
+			@media ( max-width: $w4 )
+			{
+				width: 310px;
+				height: auto!important;
+				padding-bottom: 15px;
+				box-shadow: none;
+				position: static;
+				margin: 0 auto;
+				font-size: 14px;
+				font-size: 1.4rem;
+				transition: none;
+			}
+
+			ul 
+			{
+				width: 114px;
+				height: auto;
+				border-top: 1px solid $c_border;
+				overflow: hidden;
+
+				@media ( max-width: $w4 )
+				{
+					width: 310px;
+					border-top: none;
+				}
+
+				li 
+				{
+					width: 114px;
+					border-bottom: 1px solid $c_border;
+
+					@media ( max-width: $w4 )
+					{
+						width: 143px;
+						overflow: hidden;
+						border: 1px solid $c_border;
+						border-radius: 2px;
+						float: left;
+						margin: 0 5px;
+					}
+
+					a, span
+					{
+						display: block;
+						width: 114px;
+						height: 33px;
+						overflow: hidden;
+						color: #888888;
+						text-decoration: none;
+
+						@media ( max-width: $w4 )
+						{
+							width: 143px;
+						}
+					}
+
+					a 
+					{
+						color: #888888;
+
+						&:hover 
+						{
+							background: $c_hoverBG;
+						}
+					}
+
+					span 
+					{
+						background: $c_border;
+						color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+}
+
+body.x_loginMode
+{
+	#x_head
+	{
+		top: 48px;
+	}
+}
