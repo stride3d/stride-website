@@ -1043,7 +1043,7 @@ lib.menu.SelectLang = function(controller) {
 	this._unitHeight = 34;
 	var _g = this;
 	this._controller = controller;
-	var p = framework.dom._Elements.Elements_Impl_._new(window.document.getElementById("x_head_subContainer").getElementsByTagName("p"));
+	var p = framework.dom._Elements.Elements_Impl_._new(window.document.getElementById("x_lang").getElementsByTagName("p"));
 	this._button = p[0];
 	this._list = window.document.getElementById("x_head_langList");
 	var li = framework.dom._Elements.Elements_Impl_._new(this._list.getElementsByTagName("li"));
@@ -1070,7 +1070,7 @@ lib.menu.SubContainer = function(controller) {
 	this._open = false;
 	var _g = this;
 	this._controller = controller;
-	this._selectLang = new lib.menu.SelectLang(controller);
+	this._selectLang = window.document.getElementById("x_lang") != null ? new lib.menu.SelectLang(controller) : null;
 	this._content = window.document.getElementById("x_head_subContainer");
 	this._button = window.document.getElementById("x_head_subButton");
 	framework.event.Window.addEvent(framework.event.EventType.RESIZE,$bind(this,this.close));
@@ -1087,7 +1087,8 @@ lib.menu.SubContainer.prototype = {
 	}
 	,close: function() {
 		this._open = false;
-		this._selectLang.close();
+		if (this._selectLang != undefined)
+			this._selectLang.close();
 		this._content.className = "";
 		this._button.className = "subButton";
 	}

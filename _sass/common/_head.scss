@@ -339,12 +339,12 @@
 
 		#x_head_subContainer
 		{
-			width: 422px;
+			width: 458px;
 			height: 54px;
 			overflow: hidden;
 			position: absolute;
 			top: 0;
-			left: 628px;
+			left: 592px;
 
 			@media ( max-width: $w1 )
 			{
@@ -354,7 +354,7 @@
 
 			@media ( max-width: $w2 )
 			{
-				width: 385px;
+				width: 421px;
 			}
 
 			@media ( max-width: $w3 )
@@ -435,7 +435,7 @@
 
 			ul.x_sns
 			{
-				width: 84px;
+				width: 120px;
 				height: 34px;
 				padding: 0 8px;
 				overflow: hidden;
@@ -447,13 +447,13 @@
 
 				@media ( max-width: $w3 )
 				{
-					right: 437px;
+					right: 467px;
 				}
 
 				@media ( max-width: $w4 )
 				{
 					position: static;
-					width: 255px;
+					width: 245px;
 					height: auto;
 					padding: 15px 0;
 					border: none;
@@ -463,13 +463,13 @@
 				li 
 				{
 					height: 16px;
-					padding: 9px 4px;
+					padding: 9px 2px;
 					float: left;
 
 					@media ( max-width: $w4 )
 					{
 						height: 38px;
-						padding: 0 20px;
+						padding: 0 2px;
 					}
 
 					a 
@@ -500,6 +500,8 @@
 					&.facebook a 	{ background-position: 0 0; }
 					&.twitter a 	{ background-position: 0 -30px; }
 					&.youtube a 	{ background-position: 0 -60px; }
+					&.discord a     { background: url(../../images/svg/sns-discord.svg) no-repeat; height: 20px; @media ( max-width: $w4 ) { height: 45px; } }
+					&.gitter a      { background: url(../../images/svg/sns-gitter.png) no-repeat; background-size: contain; }
 
 					@media ( max-width: $w4 )
 					{
@@ -513,8 +515,22 @@
 			a.xk-patreon-link
 			{
 				position: absolute;
-				left: 295px;
+				right: 0px;
+				width: 128px;
 				top: 12px;
+
+				@media ( max-width: $w3 )
+				{
+					right: 325px;
+				}
+
+				@media ( max-width: $w4 )
+				{
+					position: static;
+					display: block;
+					margin: 5px auto;
+					width: 245px;
+				}
 			}
 
 			/*************************************
@@ -534,7 +550,7 @@
 				border: 1px solid #999999;
 				position: absolute;
 				top: 11px;
-				right: 244px;
+				right: 280px;
 				margin: 0;
 				
 				@media ( max-width: $w2 )
@@ -544,7 +560,7 @@
 
 				@media ( max-width: $w3 )
 				{
-					right: 557px;
+					right: 623px;
 				}
 
 				@media ( max-width: $w4 )
