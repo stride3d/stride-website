@@ -16,9 +16,9 @@ IF YOU DO NOT AGREE TO THIS PRIVACY POLICY, PLEASE DO NOT DOWNLOAD THE SOFTWARE,
 
 Xenko collects information for the Software and the Services as follows.
 
-  1. Xenko software usage to measure and analyze software usage
+  1. Xenko software usage
   2. Xenko website usage (Google Analytics and cookies)
-  3. Contact information (when reaching us for questions)
+  3. Contact information (when reaching us for questions or optionally when submitting crash report)
 
 ## How is information used
 
