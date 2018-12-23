@@ -44,6 +44,8 @@ If you don't reference those packages, they won't be packaged with your game eit
 
 Also, you are free to replace those functionalities with alternative libraries.
 
+## Coming soon
+
 ### Xenko assets will be packed and distributed with NuGet automatically
 
 Coming soon in next beta, C# projects containing Xenko assets will have those assets automatically NuGet packaged in a `xenko` folder.
@@ -51,3 +53,9 @@ Coming soon in next beta, C# projects containing Xenko assets will have those as
 As a result, you will soon be able to generate NuGet package containing Xenko assets out of the box from Visual Studio and publish them on [NuGet.org](https://nuget.org) for general consumption for other Xenko users.
 
 We can't wait to see what will come up!
+
+## Full switch to .NET Standard
+
+Soon Xenko will support .NET Standard for most of its assemblies.
+
+Xenko games will be able to run on .NET Core for Windows (Linux is already supported).
