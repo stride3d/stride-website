@@ -15,6 +15,7 @@ The first developer meeting will be open to everybody (developers, users and pot
 It's possible we then evolve toward a more moderated format if needed.
 
 Here is a [tentative schedule](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Xenko+Developer+Meeting+%231&iso=20190123T01&p1=248&ah=1) for this meeting: 
+
 * **Tokyo (Japan)** Wednesday, 23 January 2019, 01:00:00	JST
 * **Berlin (Germany)** Tuesday, 22 January 2019, 17:00:00	CET
 * **Paris (France)** Tuesday, 22 January 2019, 17:00:00	CET
