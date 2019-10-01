@@ -20,6 +20,7 @@ As part of getting things done quicker, a new public project overview has been s
 
 ##What is being worked on 
 Here are some of the things that are being worked on:
+
 * New tutorials section for the [documentation](https://doc.xenko.com/latest/en/index.html) website. Starting with a section of C# basics with Xenko, we can start making it easier for people to get the hang of Xenko in no time. Here is a quick [peek](https://forums.xenko.com/t/improving-the-api-documentation/1961/18) at how it is going to look like.
 * Phr00t fork merging: The [Phr00t fork](https://github.com/phr00t/xenko) contains many features that the main Xenko engine could benefit from. From countless API improvements to bigger features like Vulkan support. Right now contributors are looking in which features and functionality to move to the main Xenko repository.
 
