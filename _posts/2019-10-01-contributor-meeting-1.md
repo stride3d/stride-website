@@ -11,8 +11,8 @@ Next to the community meetings were everyone can join in on the discussions, we 
 ###Summary 
 Date of meeting: 28 September 2019
 
-* Official release of 3.1.1
-    * The release of 3.1.1 is imminent. More details on this will be provided soon.
+* Official release of 3.1
+    * The release of 3.1 is imminent. More details on this will be provided soon.
     * Nuget package creation is the biggest task to be completed.
 
 * General roadmap
@@ -24,7 +24,7 @@ Date of meeting: 28 September 2019
 
 * Roadmap for 3.2
     * Planning out the next features is a big challenge, because there are so many things wanted/requested. Since Xen is the only full time core developer, we can probably only toggle 1 major feature next.
-    * After the 3.1.1 is released the strategy on which core feature should be implemented. This has yet to be decided. The next developer meeting will go deeper in to this.
+    * After the 3.1 is released the strategy on which core feature should be implemented. This has yet to be decided. The next developer meeting will go deeper in to this.
         * Example on what could be worked on: asset compiling/.NET Core 3
      
 * Release cycles
