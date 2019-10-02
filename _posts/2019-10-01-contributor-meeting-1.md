@@ -34,6 +34,7 @@ Date of meeting: 28 September 2019
 * Phr00t fork
     * It has proven difficult to merge functionality from phr00t fork to main xenko, but there is ongoing progress!
     * 2 users (Fdrobidoux and SilectCLD) are currently working on merging code. If you are interested in following the progress have a look at the [task](https://freedcamp.com/Xenko_YO2/XenkoManagementT_3sf/todos/27077090/) for this.
+    * Vulkan improvements will need to be done differently, and some work from xen2 has already landed for this.
 
 * Documentation
     * The C# basics tutorials are making progress, but the sample project is not quite there yet.
