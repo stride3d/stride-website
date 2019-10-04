@@ -13,7 +13,7 @@ When Xenko went fully open-source in 2018, one of my intent was to be able to en
 
 They have been using Xenko under the hood for a while, and planning to leverage it even further in their future [gamma version](https://vvvv.org/blog/vvvv-gamma-2019.1-preview).
 
-![Freedcamp project](/images/blog/2019-10-04-xenko-meets-vvvv/vvvv_meets_xenko_s.jpg)
+![Ocean of Air](/images/blog/2019-10-04-xenko-meets-vvvv/vvvv_meets_xenko_s.jpg)
 
 That's what led me to establish closer contact with them. At some point, in May 2019, I jumped in with both feets and moved to Berlin. They've been graciously sponsoring Xenko and allowed me to use their office since then.
 
