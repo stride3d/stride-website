@@ -11,9 +11,11 @@ When Xenko went fully open-source in 2018, one of my intent was to be able to en
 
 [vvvv](https://vvvv.org/) is a hybrid visual/textual live-programming environment for easy prototyping and development.
 
-They have been using Xenko under the hood for a while, and planning to leverage it even further in their future [gamma version](https://vvvv.org/blog/vvvv-gamma-2019.1-preview).
+vvvv has been using Xenko under the hood for a while, e.g. for the [Ocean of Air](https://forums.xenko.com/t/multi-user-vr-done-with-xenko-we-live-in-an-ocean-of-air/1872) project. 
 
 ![Ocean of Air](/images/blog/2019-10-04-xenko-meets-vvvv/vvvv_meets_xenko_s.jpg)
+
+There's also various plans to leverage Xenko even further in their future [gamma version](https://vvvv.org/blog/vvvv-gamma-2019.1-preview).
 
 That's what led me to establish closer contact with them. At some point, in May 2019, I jumped in with both feets and moved to Berlin. They've been graciously sponsoring Xenko and allowed me to use their office since then.
 
