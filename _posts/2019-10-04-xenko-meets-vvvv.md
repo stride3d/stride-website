@@ -19,7 +19,7 @@ That's what led me to establish closer contact with them. At some point, in May 
 
 My sincere thanks to them for supporting Xenko and me!
 
-Please find vvvv announcement at https://vvvv.org/blog/vvvv-meets-xenko
+Please find vvvv announcement at [https://vvvv.org/blog/vvvv-meets-xenko](https://vvvv.org/blog/vvvv-meets-xenko)
 
 ## Code signing certificates
 
