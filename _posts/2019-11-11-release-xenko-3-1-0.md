@@ -46,7 +46,7 @@ If you don't reference those packages, they won't be packaged with your game eit
 
 Also, you will be free to replace those functionalities with alternative libraries.
 
-### Package layout: following best NuGet practices
+#### Package layout: following best NuGet practices
 
 Previously Xenko references were added to the project using custom targets.
 
@@ -55,17 +55,17 @@ New packages are now be layout as NuGet/Visual Studio expects them, in folders l
 We still have a few custom MSBuild targets but reduced them to minimum.
 
 
-### Xenko assets are also distributed as part of package
+#### Xenko assets are also distributed as part of package
 
 NuGet packages have a `xenko` folder containing Xenko assets. As a result, user are able to generate nuget package containing Xenko assets out of the box from Visual Studio and publish them on NuGet for general consumption.
 
-### Xenko Packages are now distributed on nuget.org
+#### Xenko Packages are now distributed on nuget.org
 
 With all those changes, it makes sense to stop distributing Xenko on our custom nuget server and use [nuget.org](https://nuget.org) instead.
 
 This will greatly reduce friction to try Xenko (any project would work out of the box in Visual Studio). This might also make our launcher completely optional in the long run.
 
-### Xenko tooling resolves assemblies dynamically using NuGet API
+#### Xenko tooling resolves assemblies dynamically using NuGet API
 
 Tools such as GameStudio or Asset Compiler are distributed as NuGet packages. However, it won't bundle Xenko Runtime, which will simply be encoded as dependency.
 
@@ -75,19 +75,33 @@ This allows for distributing those tools as very small and easy-to-upgrade packa
 
 This brings lot of technical challenges but should allow us in the future to be more flexible in the future to load the exact runtime and plugins that the user project reference rather than the one hardcoded with the tool.
 
-### Future: plugin support for editor
+#### Future: plugin support for editor
 
 Xenko 3.1 editor will still be monolithic: editor support for UI, SpriteStudio, Video and other optional modules will be hardcoded.
 
 However, the target is to get rid of them as soon as possible, and treat them as what they are: plugins.
 
-## Full switch to .NET Standard
+### Full switch to .NET Standard
 
 Xenko supports .NET Standard for most of its runtime assemblies.
 
 Xenko games can run on .NET Core for both Windows and Linux.
 
-## BulletSharp update
+### Tutorials
+
+Xenko now has a [tutorial section](https://doc.xenko.com/3.1/en/tutorials/index.html) in the documentation!
+
+The first project [“C# Beginner”](https://doc.xenko.com/3.1/en/tutorials/csharpbeginner/index.html), demonstrates 12 beginner programming concepts.
+
+Users will be able to select the tutorial template when creating a new Xenko project to practice and experiment with the code.
+
+Additionally, the code used in the project is directly referenced by the new documentation section which explains each individual tutorial level.
+
+The amount of tutorials, as well as intermediate and advanced tutorials, will be extended/added from now on.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zGFYFhBfxVs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### BulletSharp update
 
 [Eideren](https://github.com/eideren) worked on updating our old custom modified version of [BulletSharp](https://github.com/Eideren/BulletSharpPInvoke) (the wrapper library we use for our physics engine).
 
