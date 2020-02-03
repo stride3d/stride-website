@@ -1,0 +1,29 @@
+---
+layout: post
+title: 'January 2020 recap'
+author: 'Jorn Theunissen'
+image_thumb: /images/blog/2020-03-02-January-2020-recap/thumb.jpg
+popular: true
+---
+
+Hi everyone,
+
+Welcome to our January edition. Here is a quick recap on what's going on with Xenko development and its community.
+
+## A new logo for Stride 
+We decided to contact substance/adobe at the start of January after seeing that many people felt that the most voted community logo for Stride was too close to theirs. We received a reply from their legal team which, of course, told us that we would need to change it. It's the legal team, playing it safe is part of their job. They also told us that we could get in touch with their design team, we took that opportunity and sent multiple emails but they never got back to us.
+Proposals are open again so if you think you have a logo that would fit with our new name (Stride), please fill in the picture attached below with your design. There’s also the figma project 6 if you would rather work on that.
+For more information see the [forum post](https://forums.xenko.com/t/about-the-new-logo/2075) 
+
+## Community picks
+Check out these community projects that people are working on:
+
+### Voxel cone tracing based global illumination
+<div>User: Its me DIO! </div>
+youtube:"https://www.youtube.com/watch?v=EizZ4eG6Hf4 
+![Project draco](/images/blog/2020-03-02-january-2020/project-draco.png)
+
+### Heightmap terrain
+<div>User: AggrorJorn </div>
+Youtube: 
+Download:
