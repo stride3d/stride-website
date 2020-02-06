@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem 'activesupport', '4.2.7'
 
 # Jekyll and Plugins
-gem 'jekyll', '3.2.1'
+gem 'jekyll', '3.6.3'
 gem 'jekyll-mentions'
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
