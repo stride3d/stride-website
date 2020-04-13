@@ -3,6 +3,7 @@ layout: post
 title: 'Opensourcing done! What''s next?'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 Now that [Xenko is opensource under the MIT license](2018-08-02-xenko-opensource-mit.md) and the dust settled a little bit (took a few weeks of vacations after the opensource release crunch), it's time to take a step back, think about **what's next**, and start **building it together**!

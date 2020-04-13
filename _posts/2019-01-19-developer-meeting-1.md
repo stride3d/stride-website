@@ -3,6 +3,7 @@ layout: post
 title: 'Developer Meeting #1'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 Now that [Xenko 3.1 beta is well underway](2018-12-24-release-xenko-3-1-0-beta.md), it's time to prepare for the future.

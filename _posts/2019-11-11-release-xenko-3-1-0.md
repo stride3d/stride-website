@@ -3,6 +3,7 @@ layout: post
 title: 'Xenko 3.1 released!'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 It took some time to stabilize everything with the new Xenko packages, but we now feel confident enough to release Xenko 3.1!

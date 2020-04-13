@@ -4,6 +4,7 @@ title: 'Welcome TurboPlay as Gold Sponsor!'
 author: 'Virgile Bello'
 image_thumb: /images/blog/2019-02-12-turboplay-gold-sponsor/logo_turboplay.png
 popular: true
+disqus_short_name: xenko
 ---
 
 We're happy to announce TurboPlay is helping Xenko not only as a Gold Sponsor, but also have further plans to support Xenko in the future.

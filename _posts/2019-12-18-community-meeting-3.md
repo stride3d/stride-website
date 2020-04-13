@@ -3,6 +3,7 @@ layout: post
 title: 'Community Meeting #3'
 author: 'Jorn Theunissen'
 popular: true
+disqus_short_name: xenko
 ---
 
 On the 18th of december 2019 we had our third and final community meeting for 2019. Below you can find a summary of what has been discussed.

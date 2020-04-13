@@ -3,6 +3,7 @@ layout: post
 title: 'Community Meeting #2'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 Time for our second community meeting.

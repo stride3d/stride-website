@@ -3,6 +3,7 @@ layout: post
 title: 'Xenko 3.0 is now free and open-source!'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 You read that right. <b>Xenko 3.0</b> is out now, released under the permissive <b><a href="https://opensource.org/licenses/MIT">MIT license</a></b>. 

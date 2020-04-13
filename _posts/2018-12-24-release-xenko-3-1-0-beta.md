@@ -3,6 +3,7 @@ layout: post
 title: 'Xenko 3.1 beta: NuGet!'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 Just in time for Christmas, **Xenko 3.1 beta** is out now!

@@ -3,6 +3,7 @@ layout: post
 title: 'Feature spotlight: Xenko 3.1 + NuGet'
 author: 'Virgile Bello'
 popular: true
+disqus_short_name: xenko
 ---
 
 Today, I would like to highlight some work being done on Xenko.

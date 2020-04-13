@@ -2,6 +2,7 @@
 layout: post
 title: 'Contributor Meeting #1'
 author: 'Jorn Theunissen'
+disqus_short_name: xenko
 ---
 
 Hi everyone,
