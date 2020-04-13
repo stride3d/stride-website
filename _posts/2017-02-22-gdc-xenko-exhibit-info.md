@@ -14,7 +14,7 @@ We’re also excited to announce that Xenko will be in two locations at GDC this
 We’ll be showcasing two cool, new demo games from Xenko. We will have our new VR demo, “Cave of Surtr” which will feature interactive gameplay using VR controllers. We’ll also be showcasing our third-person shooter demo game, “Starbreach”. Members from Xenko’s dev and marketing team will be around both of our exhibiting locations, so come and visit; we'll be happy to answer any of your questions!
 
 
-To schedule a meeting, contact us through [our website](http://xenko.com/contact/) or direct message us on twitter **@xenko3d**. 
+To schedule a meeting, contact us through [our website](http://stride3d.net/contact/) or direct message us on twitter **@xenko3d**. 
 
 We hope to see you soon at GDC 2017 in San Francisco!
 

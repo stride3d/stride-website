@@ -18,7 +18,7 @@ It is available on [nuget.org](https://www.nuget.org/profiles/XboxLive) for regi
 
 If you haven't yet joined ID@Xbox you can learn about the program and how to join [here](http://www.xbox.com/en-US/developers/id).
 
-Once you have applied to the program and have been accepted as a managed partner with Microsoft, feel free to get started using our newly created Xbox Live sample [here](http://doc.xenko.com/latest/manual/platforms/uwp/xbox-live.html). 
+Once you have applied to the program and have been accepted as a managed partner with Microsoft, feel free to get started using our newly created Xbox Live sample [here](http://doc.stride3d.net/latest/manual/platforms/uwp/xbox-live.html). 
 
 ![Dev Screenshot](../../images/blog/2017-03-09-xbox-live/xbox-live-dev-screen.png)
 

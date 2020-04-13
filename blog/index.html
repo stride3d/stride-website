@@ -13,66 +13,66 @@ title: Blog
 <!-- Pagination links -->
 
 {% assign paginator_divider =  paginator.total_pages | minus:paginator.page %}
-<ul class="pagination xk-custom-pagination">
+<ul class="pagination stride-custom-pagination">
   {% if paginator.page > 1 %}
-  <li class="xk-paginate-item">
-    <a href="{{ paginator.previous_page_path }}" class="xk-paginate-arrow-prev"></a>
+  <li class="stride-paginate-item">
+    <a href="{{ paginator.previous_page_path }}" class="stride-paginate-arrow-prev"></a>
   </li>
   {% else %}
-   <li class="xk-paginate-item disabled">
-    <span class="xk-paginate-arrow-prev"></span>
+   <li class="stride-paginate-item disabled">
+    <span class="stride-paginate-arrow-prev"></span>
   </li>
   {% endif %}
   {% if paginator.page > 1 %}
-  <li class="xk-paginate-item">
+  <li class="stride-paginate-item">
     <a href="/blog">1</a>
   </li>
   {% endif %}
   {% if paginator.page > 4 %}
-   <li class="xk-paginate-item">
+   <li class="stride-paginate-item">
     <span>...</span>
   </li> 
   {% endif %}     
   {% if paginator.page > 3 %}
-  <li class="xk-paginate-item">
+  <li class="stride-paginate-item">
     <a href="/blog/page{{ paginator.page | minus:2 }}/">{{ paginator.page | minus:2 }}</a>
   </li>
   {% endif %}
   {% if paginator.page > 2 %}
-  <li class="xk-paginate-item">
+  <li class="stride-paginate-item">
     <a href="{{ paginator.previous_page_path }}">{{ paginator.previous_page }}</a>
   </li>
   {% endif %}
-  <li class="xk-paginate-item disabled">
+  <li class="stride-paginate-item disabled">
     <span>{{ paginator.page }}</span>
   </li>
   {% if paginator_divider > 0 %}
-  <li class="xk-paginate-item">
+  <li class="stride-paginate-item">
     <a href="{{ paginator.next_page_path }}">{{ paginator.next_page }}</a>
   </li>
   {% endif %}
   {% if paginator_divider > 1 %}
-  <li class="xk-paginate-item">
+  <li class="stride-paginate-item">
     <a href="/blog/page{{ paginator.page | plus:2 }}/">{{ paginator.page | plus:2 }}</a>
   </li>
   {% endif %}
   {% if paginator_divider > 3 %}
-   <li class="xk-paginate-item">
+   <li class="stride-paginate-item">
     <span>...</span>
   </li>
   {% endif %}
   {% if paginator_divider > 2 %}
-  <li class="xk-paginate-item">
+  <li class="stride-paginate-item">
     <a href="/blog/page{{ paginator.total_pages }}/">{{ paginator.total_pages }}</a>
   </li>
   {% endif %}
   {% if paginator.page != paginator.total_pages %}
-  <li class="xk-paginate-item">
-    <a href="{{ paginator.next_page_path }}" class="xk-paginate-arrow-next"></a>
+  <li class="stride-paginate-item">
+    <a href="{{ paginator.next_page_path }}" class="stride-paginate-arrow-next"></a>
   </li>
   {% else %}
-  <li class="xk-paginate-item disabled">    
-    <span class="xk-paginate-arrow-next"></span>
+  <li class="stride-paginate-item disabled">    
+    <span class="stride-paginate-arrow-next"></span>
   </li>
   {% endif %}
 </ul>

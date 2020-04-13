@@ -47,32 +47,32 @@
 		}
 	}
 	
-	.xk-resources {
+	.stride-resources {
 	  display: flex;
 	  width: 100%;
 	  justify-content: space-around; }
 	  @media (max-width: 650px) {
-		#x_wrap .xk-resources {
+		#x_wrap .stride-resources {
 		  flex-wrap: wrap; } }
-	  #x_wrap .xk-resources div.xb_common.xb_type_short {
+	  #x_wrap .stride-resources div.xb_common.xb_type_short {
 		background-size: 25% 250%;
 		background-position: -5% 50%;
 		width: auto;
 		padding-left: 45px;
 		min-width: 28%; }
 		@media (max-width: 650px) {
-		  #x_wrap .xk-resources div.xb_common.xb_type_short {
+		  #x_wrap .stride-resources div.xb_common.xb_type_short {
 			width: 80%;
 			margin-bottom: 25px; } }
-		#x_wrap .xk-resources div.xb_common.xb_type_short:hover a {
+		#x_wrap .stride-resources div.xb_common.xb_type_short:hover a {
 		  color: #fff; }
-		#x_wrap .xk-resources div.xb_common.xb_type_short p {
+		#x_wrap .stride-resources div.xb_common.xb_type_short p {
 		  background-size: 25% 250%;
 		  background-position: -5% 50%; }
-		#x_wrap .xk-resources div.xb_common.xb_type_short a {
+		#x_wrap .stride-resources div.xb_common.xb_type_short a {
 		  color: #da0830; }
 		  
-	.xk-campaign-title-resources {
+	.stride-campaign-title-resources {
 	  font-size: 49px;
 	  font-family: "cabinsemibold",Verdana,Helvetica,Arial,sans-serif;
 	  text-align: center;

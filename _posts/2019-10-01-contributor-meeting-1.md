@@ -49,7 +49,7 @@ Date of meeting: 28 September 2019
 
 * Name change
     * Let’s take it one step at a time: first let’s see what possible name we can come up with.
-    * Check the [voting topic](https://forums.xenko.com/t/vote-for-xenkos-new-name/2016) by Eideren for more info.
+    * Check the [voting topic](https://forums.stride3d.net/t/vote-for-xenkos-new-name/2016) by Eideren for more info.
 
 * General topics:
     * We are aiming to do a contributor meeting every 2 months. 
@@ -63,5 +63,5 @@ Date of meeting: 28 September 2019
 ##Want to join the contributors?
 
 Whether you are a developer, designer, artist or writer, you are always free to create Pull Requests or add issues to the Xenko github project.
-If you are interested in participating in the contributor meetings and the [Xenko Freedcamp project](https://freedcamp.com/Xenko_YO2/XenkoManagementT_3sf/todos/), please send a private message to [AggrorJorn](https://forums.xenko.com/u/Aggror/) using the Xenko forum. All you need to do is send in your email address and what areas of contributing you are interested in.
+If you are interested in participating in the contributor meetings and the [Xenko Freedcamp project](https://freedcamp.com/Xenko_YO2/XenkoManagementT_3sf/todos/), please send a private message to [AggrorJorn](https://forums.stride3d.net/u/Aggror/) using the Xenko forum. All you need to do is send in your email address and what areas of contributing you are interested in.
 You will be invited to join the publicly viewable [Xenko Freedcamp project](https://freedcamp.com/Xenko_YO2/XenkoManagementT_3sf/todos/) which we use to keep track of all sorts of tasks that people are working on. We can then also have a quick chat to get you up to speed on any tasks.

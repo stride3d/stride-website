@@ -1,9 +1,9 @@
-.xk-welcome-campaign-wrapper
+.stride-welcome-campaign-wrapper
 {
     max-width: 970px;
     margin: 20px auto 0 auto;
     color: #fff;
-    background: url(../images/xk-welcome-campaign-line.png) no-repeat center;
+    background: url(../images/stride-welcome-campaign-line.png) no-repeat center;
     padding: 50px 0;
     background-size: 100% 100%;
     @media (max-width: $w_log8){
@@ -19,7 +19,7 @@
         margin: 0 0 10px 0;
         text-align: center;
         line-height: 1;
-        &.xk-welcome-campaign-title
+        &.stride-welcome-campaign-title
         {
             font-size: 5.0rem;
             font-family: $EnFamily, $JaFamily;
@@ -33,7 +33,7 @@
                 font-size: 3rem;
             }
         }
-        &.xk-welcome-campaign-date{
+        &.stride-welcome-campaign-date{
             font-size: 2.9rem;
             @media (max-width: $w_log8){
                 font-size: 4vw;
@@ -44,7 +44,7 @@
         }
     }
 }
-.xk-welcome-campaign-hint{
+.stride-welcome-campaign-hint{
     color: $c_log4;
     font-weight: 600;
     text-align: center;

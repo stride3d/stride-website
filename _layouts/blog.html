@@ -20,11 +20,11 @@ menu: blog
         <div class="bg-light">
             <div class="container">
                 {% if page.image and page.layout == 'post' %}
-                <div class="xk-blog-article-image">
+                <div class="stride-blog-article-image">
                     <img src="{{ page.image }}" alt="{{ page.title }}">
                 </div>
                 {% endif %}
-                <aside class="col-md-3 hidden-sm hidden-xs col-md-offset-1 xk-aside-posts">
+                <aside class="col-md-3 hidden-sm hidden-xs col-md-offset-1 stride-aside-posts">
                     {% include post/sidebar_posts.html %}
                 </aside>
                 <div class="blog-content col-md-8">

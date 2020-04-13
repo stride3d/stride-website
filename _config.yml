@@ -1,18 +1,18 @@
 # Site Settings
-title: Xenko Game Engine
-author: Xenko Team
-description: Xenko Game Engine
+title: Stride Game Engine
+author: Stride Team
+description: Stride Game Engine
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://xenko.com" # the base hostname & protocol for your site
+url: "http://stride3d.net" # the base hostname & protocol for your site
 
 exclude: ['Gemfile*', '_deploy', '.*', '_jekyll']
 
 # Twitter
-twitter_user: xenko3d
+twitter_user: stride3d
 twitter_tweet_button: true
 
 # Disqus Comments
-disqus_short_name: xenko
+disqus_short_name: stride3d
 disqus_show_comment_count: true
 
 # Google Analytics

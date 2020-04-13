@@ -22,14 +22,14 @@ With Xenko, you can currently develop games for the **following platforms** and 
 
   ![Platforms](../../images/blog/2017-02-03-some-basic-xenko-facts/platforms.png)
 
-You can learn more about [supported platforms](http://doc.xenko.com/latest/manual/platforms/index.html)  in our documentation.
+You can learn more about [supported platforms](http://doc.stride3d.net/latest/manual/platforms/index.html)  in our documentation.
 
-**Note:** since the release of Xenko 1.9β, shared game assemblies are created using .NET Standard rather than PCL (Portable Class Library). You can learn more about why we made that decision in our earlier blog post, [Toward a Better .NET!](http://xenko.com/blog/toward-a-better-dotnet/)
+**Note:** since the release of Xenko 1.9β, shared game assemblies are created using .NET Standard rather than PCL (Portable Class Library). You can learn more about why we made that decision in our earlier blog post, [Toward a Better .NET!](http://stride3d.net/blog/toward-a-better-dotnet/)
 
 You can currently develop games with Xenko only on Windows. We do not support Xenko game development on Mac yet. 
 
-For the **system requirements**, the Xenko install takes approximately 5GB and a minimum of 4GB of RAM; however 8GB of RAM is recommended for heavy 3D games or applications development. See Xenko’s [development requirements](http://doc.xenko.com/latest/manual/requirements/index.html) for more details.
+For the **system requirements**, the Xenko install takes approximately 5GB and a minimum of 4GB of RAM; however 8GB of RAM is recommended for heavy 3D games or applications development. See Xenko’s [development requirements](http://doc.stride3d.net/latest/manual/requirements/index.html) for more details.
 
-While the Xenko documentation is under way and improving daily, you may also find it beneficial to peruse our blog for each of our earlier beta releases to learn more on which features and techniques are implemented in Xenko. Of course, all of these features are in [our documentation](http://doc.xenko.com/latest/) as well. 
+While the Xenko documentation is under way and improving daily, you may also find it beneficial to peruse our blog for each of our earlier beta releases to learn more on which features and techniques are implemented in Xenko. Of course, all of these features are in [our documentation](http://doc.stride3d.net/latest/) as well. 
 
 We hope this quick runthrough helped answer some of the fundamental questions we receive often about Xenko. Stick around for more news coming soon!

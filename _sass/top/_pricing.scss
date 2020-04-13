@@ -1,11 +1,11 @@
-#xk-pricing
+#stride-pricing
 {
     max-width: $w_log16;
     overflow: hidden;
     margin: 20px auto;
     padding: 3px 40px;
 
-    .xk-pricing-item
+    .stride-pricing-item
     {
         text-align: center;
         background: $c_log12;
@@ -20,7 +20,7 @@
             @media (max-width: $w_log11){
                 padding: 12px 15px;
             }
-            .xk-pricing-title{
+            .stride-pricing-title{
                 color: $c_pricing_text;
                 border-bottom: 1px solid $c_border;
                 font-family: $EnFamily, $JaFamily;
@@ -33,14 +33,14 @@
                     color: $c_main !important;
                 }
             }
-            .xk-pricing-text{
+            .stride-pricing-text{
                 color: $c_pricing_text;
                 font-family: $EnFamily, $JaFamily;
                 font-size: 2.0rem;
                 line-height: 1.3;
                 margin-bottom: 20px;
             }
-            .xk-pricing-info
+            .stride-pricing-info
             {
                 font-size: 2rem;
                 &[data-link]:hover{
@@ -59,21 +59,21 @@
         &.orange-item
         {
             border-bottom-color: $c_pricing1;
-            .xk-pricing-info{
+            .stride-pricing-info{
                 color: $c_pricing1;
             }
         }
         &.green-item
         {
             border-bottom-color: $c_pricing2;
-            .xk-pricing-info{
+            .stride-pricing-info{
                 color: $c_pricing2;
             }
         }
         &.red-item
         {
             border-bottom-color: $c_pricing3;
-            .xk-pricing-info{
+            .stride-pricing-info{
                 color: $c_pricing3;
             }
         }
@@ -87,16 +87,16 @@
     }
     &.during-welcome-campaign
     {
-        .xk-pricing-item.green-item{
-            .xk-pricing-link{
+        .stride-pricing-item.green-item{
+            .stride-pricing-link{
                 span{
                     color: $c_pricing2;
                 }
             }
-            .xk-pricing-info{
+            .stride-pricing-info{
                 display: inline-block;
                 position: relative;
-                .xk-pricing-info-share{
+                .stride-pricing-info-share{
                     position: absolute;
                     top: -16px;
                     left: 0;
@@ -109,7 +109,7 @@
     }
 }
  
-#x_wrap #xk-pricing + a.x_download
+#x_wrap #stride-pricing + a.x_download
 {
     max-width: 290px;
     margin-top: 65px;

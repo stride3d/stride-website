@@ -11,7 +11,7 @@ You read that right. <b>Xenko 3.0</b> is out now, released under the permissive 
 From now on, you can use and modify Xenko completely <b>free</b> — whether you're a professional, a student, or just looking for a new hobby. This includes both the runtime and editor.
 
 Main focus for this release was on the open-source transition, but Xenko 3.0 also includes some new features, such as a switch to the new C# project system, video, hair and skin rendering.
-Read the full release notes [here](https://doc.xenko.com/3.0/en/ReleaseNotes/ReleaseNotes.html).
+Read the full release notes [here](https://doc.stride3d.net/3.0/en/ReleaseNotes/ReleaseNotes.html).
 
 <a href="https://www.siliconstudio.co.jp/en">Silicon Studio</a> no longer supports Xenko, but members of the Xenko team will continue to work on it independently as part of the community. More specifically, I will personally work on it fulltime for the next few months to see if it picks up some steam as a community project. Kudos to Silicon Studio for starting and supporting the project so far! Turning the project open-source and community-driven is a fantastic achievement.
 

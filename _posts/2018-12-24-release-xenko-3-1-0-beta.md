@@ -8,7 +8,7 @@ disqus_short_name: xenko
 
 Just in time for Christmas, **Xenko 3.1 beta** is out now!
 
-One of the major change is turning the engine into separate NuGet packages, published on [NuGet.org](https://www.nuget.org/profiles/xenko.com).
+One of the major change is turning the engine into separate NuGet packages, published on [NuGet.org](https://www.nuget.org/profiles/stride3d.net).
 
 Merry Christmas and Happy Holidays!
 

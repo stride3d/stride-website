@@ -1002,12 +1002,12 @@ div.x_body
         Blog (list and inner pages)
 *************************************/
 
-.xk-blog-article{
+.stride-blog-article{
     margin-bottom: 50px;
     @media (max-width: $screen-md){
         margin-bottom: 25px;
     }
-    .xk-blog-article-image{
+    .stride-blog-article-image{
         height: 170px;
         padding: 0;
         img{
@@ -1020,7 +1020,7 @@ div.x_body
     div.entry-content p{
         display: inline;
     }
-    .xk-more-link{
+    .stride-more-link{
         text-decoration: underline;
         position: relative;
         display: inline-block;
@@ -1029,7 +1029,7 @@ div.x_body
             margin-left: 0;
         }
     }   
-    .xk-blog-article-description{
+    .stride-blog-article-description{
         padding-left: 30px;
         h1.title{
             font-size: 28px;
@@ -1041,12 +1041,12 @@ div.x_body
         }
     }   
 }
-.xk-aside-posts{
+.stride-aside-posts{
     background: transparent;
     padding: 0 5px;
     float: right;
 }
-.xk-aside-title{
+.stride-aside-title{
     color: #111111;
     font-size: 25px;
     padding: 7px 0;
@@ -1054,22 +1054,22 @@ div.x_body
     margin-bottom: 15px;
 
 }
-.xk-no-horizontal-padding{
+.stride-no-horizontal-padding{
     padding-right: 0;
     padding-left: 0;
 }
-.xk-aside-posts-item{
+.stride-aside-posts-item{
     padding-bottom: 6px;
     border-bottom: 1px solid $c_log5;
     margin: 0 0 15px 0;
     min-height: 70px;
-    .xk-aside-posts-image{
+    .stride-aside-posts-image{
         max-width: 50px;
         max-height: 50px;
         object-fit: cover;
         object-position: top center;
     }
-    .xk-aside-posts-title{
+    .stride-aside-posts-title{
         font-size: 16px;
         font-family: $EnFamily, $JaFamily;
         margin-bottom: 5px;
@@ -1081,42 +1081,42 @@ div.x_body
             }
         }
     }
-    .xk-aside-posts-date{
+    .stride-aside-posts-date{
         color: $c_log5;
         font-size: 14px;        
     }
 }
-.xk-clear,
+.stride-clear,
 .clear{
     clear: both;
 }
 
-.xk-blog-post-meta .share{
+.stride-blog-post-meta .share{
     display: inline-block;
     margin-left: 15px;
     vertical-align: top;
     position: relative;
     top: 3px;
 }
-.xk-blog-article-image img{
+.stride-blog-article-image img{
     width: auto;
     max-width: 100%;
 }
-.xk-bottom-divider{
+.stride-bottom-divider{
     padding: 25px 0 55px 0;
     border-top: 2px solid #CCCCCC;
 }
 article.post .entry-content{
     margin-bottom: 0;
 }
-.xk-gdc{
+.stride-gdc{
     margin: 50px auto;
     padding: 30px 0px;
     text-align: center;
     border-bottom: thin solid #818F97;
     border-top: thin solid #818F97;
 }
-.xk-no-image-icons{
+.stride-no-image-icons{
     position: absolute;
     width: 100%;
     top: calc(50% - 35px);
@@ -1126,7 +1126,7 @@ article.post .entry-content{
     font-size: 35px;
     color: #fff;
 }
-.xk-aside-posts-item .xk-no-image{
+.stride-aside-posts-item .stride-no-image{
     height: 50px;
     img{
         width: 100%;
@@ -1142,13 +1142,13 @@ article.post .entry-content{
 .addthis_button_facebook_share{
     margin-right: 5px;
 }
-.xk-index-posts-list h1.title{
+.stride-index-posts-list h1.title{
     margin-bottom: 5px;
     margin-top: -7px;
     margin-left: -4px;
 
 }
-.xk-index-posts-list .entry-content{
+.stride-index-posts-list .entry-content{
     margin-top: 0;
 }
 /*************************************
@@ -1156,25 +1156,25 @@ article.post .entry-content{
     we used css-rules, because liquid templates
     doesn't supports regexp filter =(
 *************************************/
-.xk-blog-article .entry-content>*,
-.xk-blog-article .entry-content img,
-.xk-blog-article .entry-content a{
+.stride-blog-article .entry-content>*,
+.stride-blog-article .entry-content img,
+.stride-blog-article .entry-content a{
   display: none;
 }
-.xk-blog-article .entry-content a.xk-more-link{
+.stride-blog-article .entry-content a.stride-more-link{
   display: inline;
   
 }
-.xk-blog-content.col-md-8{
+.stride-blog-content.col-md-8{
     margin-top: 0;
     padding-top: 0;
 }
-.xk-blog-article-image{
+.stride-blog-article-image{
     margin-bottom: 40px;
     float: left;
 }
 @media (max-width: $screen-md){
-    .xk-mobile-flex-container{
+    .stride-mobile-flex-container{
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -1183,9 +1183,9 @@ article.post .entry-content{
         justify-content: center;
         align-items: flex-start;
         width: 100%;        
-        .xk-mobile-flex-column{
+        .stride-mobile-flex-column{
             min-width: 110px;
-            .xk-blog-article-image{
+            .stride-blog-article-image{
                 height: auto;
                 img{
                     margin-top: 20px;
@@ -1212,14 +1212,14 @@ article.post .entry-content{
     margin-left: 15px;
 }
 @media (max-width: $screen-sm){
-    .xk-mobile-flex-column-description{
+    .stride-mobile-flex-column-description{
         padding-left: 15px;
     }
 }
 .legal_link{
     font-size: 23px;
 }
-div.x_body div.xk-licensing{
+div.x_body div.stride-licensing{
     p{
         margin-bottom: 0.8em;
         &+ul{

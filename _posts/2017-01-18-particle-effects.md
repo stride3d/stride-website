@@ -31,7 +31,7 @@ You can build particle effects completely inside Xenko Game Studio. Just add a P
 
 Unlike legacy game engines, the Xenko particle system is modular: you add only the options you need, and remove anything you don't. This means no wasted CPU cycles loading effects you're not using.
 
-To demonstrate how you can build particle effects from scratch in Xenko, we've put together a [trail effect tutorial](http://doc.xenko.com/latest/manual/particles/tutorials/create-a-trail.html). Follow the steps to add a trail effect to a sword slash animation.
+To demonstrate how you can build particle effects from scratch in Xenko, we've put together a [trail effect tutorial](http://doc.stride3d.net/latest/manual/particles/tutorials/create-a-trail.html). Follow the steps to add a trail effect to a sword slash animation.
 
 And to give you a taste of where you can go after that, here's a more elaborate trail that combines multiple particle effects:
 
@@ -50,7 +50,7 @@ And to give you a taste of where you can go after that, here's a more elaborate 
   </a>
 </p>
 
-If you'd like to see how this particular effect works, [download the project file](http://doc.xenko.com/latest/manual/particles/tutorials/media/MyTrailEffect.zip) and take a look.
+If you'd like to see how this particular effect works, [download the project file](http://doc.stride3d.net/latest/manual/particles/tutorials/media/MyTrailEffect.zip) and take a look.
 
 Don't forget, Xenko comes with some pre-made particles included as prefabs in the asset packs, too. To check them out, just select the Particles asset pack when you create a project.
 

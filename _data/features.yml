@@ -18,7 +18,7 @@ gamestudio:
         type: video
     -   id: sprite_editor
         title: Sprite editor
-        description: Create and edit sprites visually in the editor. Xenko automatically creates optimized atlases from your sprite sheets.
+        description: Create and edit sprites visually in the editor. Stride automatically creates optimized atlases from your sprite sheets.
         type: video
     -   id: curve_editor
         title: Curve editor
@@ -43,17 +43,17 @@ graphics:
         type: video
     -   id: shader_language
         title: Advanced shader language
-        description: Say goodbye to uber shader problems. Split shaders logically with Xenko's composition-based shader language, written on top of HLSL.
+        description: Say goodbye to uber shader problems. Split shaders logically with Stride's composition-based shader language, written on top of HLSL.
         type: image_nozoom
         image_url: shader_language.png
     -   id: post_effects
         title: Post effects
-        description: Add photorealistic effects to your game with post-effects. Xenko supports all the most common effects such as Depth of Field, Bloom, etc.
+        description: Add photorealistic effects to your game with post-effects. Stride supports all the most common effects such as Depth of Field, Bloom, etc.
         type: video
 engine:
     -   id: scripting
         title: C# scripting
-        description: Built in C#, Xenko gives you access to the low-level APIs, C#7.0 and asynchronous scripting, and comes with a script editor. 
+        description: Built in C#, Stride gives you access to the low-level APIs, C#7.0 and asynchronous scripting, and comes with a script editor. 
         type: image
     -   id: scene_streaming
         title: Scene streaming
@@ -61,7 +61,7 @@ engine:
         type: video
     -   id: physics
         title: Physics
-        description: Simulate the laws of physics, trigger events and easily detect collisions in your game by using Xenko's physics system.
+        description: Simulate the laws of physics, trigger events and easily detect collisions in your game by using Stride's physics system.
         type: video
     -   id: navigation
         title: Navigation
@@ -69,7 +69,7 @@ engine:
         type: video
     -   id: multithreading
         title: Multi-threading
-        description: Improve the performance of your game by using a completely multi-threaded engine. Xenko does all the arduous work for you in an optimized way.
+        description: Improve the performance of your game by using a completely multi-threaded engine. Stride does all the arduous work for you in an optimized way.
         type: image_nozoom
     -   id: animation
         title: Animation
@@ -78,7 +78,7 @@ engine:
 vr:
     -   id: template
         title: VR sample
-        description: Xenko comes with a VR game sample that shows you how to implement VR gameplay, including environment interaction and teleportation.
+        description: Stride comes with a VR game sample that shows you how to implement VR gameplay, including environment interaction and teleportation.
         type: video
     -   id: optimized
         title: Optimized perfomance

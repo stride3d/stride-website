@@ -12,7 +12,7 @@ When Xenko went fully open-source in 2018, one of my intent was to be able to en
 
 [vvvv](https://vvvv.org/) is a hybrid visual/textual live-programming environment for easy prototyping and development.
 
-vvvv has been using Xenko under the hood for a while, e.g. for the [Ocean of Air](https://forums.xenko.com/t/multi-user-vr-done-with-xenko-we-live-in-an-ocean-of-air/1872) project.
+vvvv has been using Xenko under the hood for a while, e.g. for the [Ocean of Air](https://forums.stride3d.net/t/multi-user-vr-done-with-xenko-we-live-in-an-ocean-of-air/1872) project.
 
 ![Ocean of Air](/images/blog/2019-10-04-xenko-meets-vvvv/vvvv_meets_xenko_s.jpg)
 

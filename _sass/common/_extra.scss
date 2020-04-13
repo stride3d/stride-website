@@ -201,7 +201,7 @@ Banner
 
 	text-align: center;
 
-	.xk-frontpage-main-button
+	.stride-frontpage-main-button
 	{
 		display: inline-block !important;
 		max-width: 300px;
@@ -209,7 +209,7 @@ Banner
 		vertical-align: center;
 	}
 
-	.xk-download:hover
+	.stride-download:hover
 	{
 		span.xi_download
 		{
@@ -246,7 +246,7 @@ Banner
 /*
 Gray Top Banner
 */
-.xk-announce
+.stride-announce
 {
 	font-family: "cabinregular",Verdana,Helvetica,Arial,sans-serif;
 	font-weight: normal;
@@ -579,7 +579,7 @@ Template for Next between articles
 /*
 Template for Licensing
 */
-.xk-licensing
+.stride-licensing
 {
 	font-family: Calibri, Arial;
 	background-color: #EEE;
@@ -812,7 +812,7 @@ h1.title
 	color: $accent-color1 !important;
 }
 
-.xk-module-title
+.stride-module-title
 {
 	@extend h3;
 	margin-top: 10px;
@@ -820,7 +820,7 @@ h1.title
 	display: block;
 }
 
-.xk-blog-post-meta
+.stride-blog-post-meta
 {
 	.fa
 	{
@@ -858,10 +858,10 @@ body
 {
 	padding-bottom: 118px;
 }
-#xk-header
+#stride-header
 {
 }
-#xk-footer
+#stride-footer
 {
 	width: 100%;
 	line-height: 14px;
@@ -883,7 +883,7 @@ body
 /*
 Layout for contact
 */
-.xk-contact-form
+.stride-contact-form
 {
 	padding-top: 0px;
 	padding-bottom: 50px;
@@ -892,7 +892,7 @@ Layout for contact
 /*
 Layout for front Latest News
 */
-.xk-front-latest
+.stride-front-latest
 {
 	.readon
 	{

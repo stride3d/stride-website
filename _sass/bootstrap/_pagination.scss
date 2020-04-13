@@ -87,7 +87,7 @@
   @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
 }
 // Additional pagination styles
-.xk-paginate-arrow-prev{
+.stride-paginate-arrow-prev{
   background: url(../images/svg/arrow_red_mini_8.svg);
   display: inline-block;
   width: 38px;
@@ -99,7 +99,7 @@
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.xk-paginate-arrow-next{
+.stride-paginate-arrow-next{
   background: url(../images/svg/arrow_red_mini_8.svg);
   display: inline-block;
   width: 38px;
@@ -109,12 +109,12 @@
   background-repeat: no-repeat;
 }
 .disabled{
-  .xk-paginate-arrow-next,
-  .xk-paginate-arrow-prev{
+  .stride-paginate-arrow-next,
+  .stride-paginate-arrow-prev{
     background-image: url(../images/svg/arrow_gray_8.svg);
   }  
 }
-.xk-paginate-item button[disabled]{
+.stride-paginate-item button[disabled]{
   position: relative;
   float: left;
   padding: 6px 12px;
@@ -125,7 +125,7 @@
   border: 1px solid #ddd;
   margin-left: -1px;
 }
-.xk-custom-pagination{
+.stride-custom-pagination{
   margin: 0;
   padding: 0;
   width: 100%;

@@ -16,7 +16,7 @@ xcode-select --install
 sudo gem update --system
 sudo gem install bundler -n /usr/local/bin
 
-cd <xenko-website-dir>
+cd <stride-website-dir>
 bundle install --path ~/.gem
 ```
 

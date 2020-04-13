@@ -11,7 +11,7 @@ blog:
     url: /blog
     text: Blog
 documentation:
-    url: https://doc.xenko.com/latest
+    url: https://doc.stride3d.net/latest
     text: Documentation
 community:
     url: /community
