@@ -1,7 +1,7 @@
 @echo off
 setlocal
 set DEST_WEBSITE=%~dp0\_site
-set PUBLISH_PROFILE=%~dp0\xenko-website.PublishSettings
+set PUBLISH_PROFILE=%~dp0\website.PublishSettings
 
 REM *****************************
 REM Check PreRequisites
