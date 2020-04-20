@@ -13,7 +13,7 @@ Changing product names always is a lot of work and comes with some downsides. Ho
 
 There are various reasons for this:
 
-- We wanted to let the community now that Xenko is completely and 100% free and open in its development. This also means that any donations should always be made 100% visible to the public. This also includes what and where the donation money is spent on. Joining the .NET Foundation would aid in visualizing how this money would be spent.
+- We wanted to let the community know that Xenko is completely and 100% free and open in its development. This also means that any donations should always be made 100% visible to the public. This also includes what and where the donation money is spent on. Joining the .NET Foundation would aid in visualizing how this money would be spent.
 - Being able to tell possible investors/backers/companies that Xenko/Stride can be trusted. This can help with publicity and more funding.
 - They also provide help for opensource projects in various areas.
 
