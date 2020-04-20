@@ -45,7 +45,7 @@ Game Studio will use a red variant:
 
 - Release Stride 4.0 within the next few days
 - A new application to join the .NET Foundation
-- A new effort to find more backers
+- A new effort to find new backers
 - The new [Youtube channel](https://www.youtube.com/c/Stride3d) will be the new hub for video tutorials. We will start with recording videos for the C# beginner section. After that, we will look at new editor video tutorials and extend the C# tutorials.
 
 Here are the new links that you should be using:
