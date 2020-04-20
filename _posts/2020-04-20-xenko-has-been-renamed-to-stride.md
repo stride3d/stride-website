@@ -25,7 +25,7 @@ About 6 months later, several polls, logo proposal and a lot of brainstorming, w
 
 ## New Stride Logo
 
-The new Stride logo, designed by [sebl](https://twitter.com/sebllll), was chosen after a process managed by [Eideren](https://github.com/Eideren) consisting of several community votes. Thanks to all the other people involved!
+The new Stride logo, designed by [sebl](https://github.com/sebllll) (from [schnellebuntebilder](https://schnellebuntebilder.de/)), was chosen after a process managed by [Eideren](https://github.com/Eideren) consisting of several community votes. Thanks to all the other people involved!
 
 Without further ado, here it is:
 
