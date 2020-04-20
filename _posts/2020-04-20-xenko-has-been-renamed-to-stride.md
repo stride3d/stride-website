@@ -5,19 +5,19 @@ author: 'Jorn Theunissen'
 popular: true
 ---
 
-The Xenko game engine has been renamed to Stride. From now on, all source code, blogs and tutorials will no longer use the name 'Xenko' and use the name 'Stride'.
+The Xenko game engine has been renamed to Stride. From now on, all source code, blogs and tutorials will use the name 'Stride' instead of 'Xenko'.
 
-## Why the namechange?
+## Why the name change?
 
-Changing product names always is a lot work and comes with some downsides. However, we would not do this if there weren't any good reasons for us to do so. Since 2019, [xen2](https://github.com/xen2), has been trying to affiliate Xenko with the [.NET Foundation](https://dotnetfoundation.org/), a non-profit organisation (NPO).
+Changing product names always is a lot of work and comes with some downsides. However, we would not do this if there weren't any good reasons for us to do so. Since 2019, [xen2](https://github.com/xen2), has been trying to affiliate Xenko with the [.NET Foundation](https://dotnetfoundation.org/), a non-profit organization (NPO).
 
 There are various reasons for this:
 
-- We wanted to let the community now that Xenko is completely and 100% free and open in its development. This also means that any donations should always be made 100% visible to the public. This also includes what and were the donation money is spend on. Joining the .NET Foundation would aid in visualizing how this money would be spend.
-- Being able to tell possible investors/backers/componies that Xenko/Stride can be trusted. This can help with publicity and more funding.
+- We wanted to let the community now that Xenko is completely and 100% free and open in its development. This also means that any donations should always be made 100% visible to the public. This also includes what and where the donation money is spent on. Joining the .NET Foundation would aid in visualizing how this money would be spent.
+- Being able to tell possible investors/backers/companies that Xenko/Stride can be trusted. This can help with publicity and more funding.
 - They also provide help for opensource projects in various areas.
 
-This sounded great, but unfortunately there was a massive drawback to this: as long as the project kept the name 'Xenko' (trademarked by Silicon Studio), it would be difficult to transfer to the .NET Foundation. After a lot of back and forth between Silicon Studio legal department, xen2 and the .NET Foundation, we didn't get any step closer to achieving our goals.
+This sounded great, but unfortunately, there was a massive drawback to this: as long as the project kept the name 'Xenko' (trademarked by Silicon Studio), it would be difficult to transfer to the .NET Foundation. After a lot of back and forth between Silicon Studio legal department, xen2 and the .NET Foundation, we didn't get any step closer to achieving our goals.
 
 After several months without progress, we started to suggest the idea of a rename to the community. In the Discord server, we opened up the name change and logo suggestions to see how people would react and what their suggestions would be.
 
@@ -43,10 +43,10 @@ Game Studio will use a red variant:
 
 ## What's next?
 
-- Release Stride 4.0 within the next few days.
-- A new attempt at joining the .NET Foundation
-- A new round were we are going to look for backers
-- The new [Youtube channel](https://www.youtube.com/c/Stride3D) will be the new hub for video tutorials. We will start with recording videos for the C# beginner section. After that we will look at new editor video tutorials and extend the C# tutorials.
+- Release Stride 4.0 within the next few days
+- A new application to join the .NET Foundation
+- A new effort to find more backers
+- The new [Youtube channel](https://www.youtube.com/c/Stride3d) will be the new hub for video tutorials. We will start with recording videos for the C# beginner section. After that, we will look at new editor video tutorials and extend the C# tutorials.
 
 Here are the new links that you should be using:
 
@@ -54,7 +54,7 @@ Here are the new links that you should be using:
 - Website: [https://stride3d.net/](https://stride3d.net/)
 - Documentation: [https://doc.stride3d.net/latest/en/manual/index.html](https://doc.stride3d.net/latest/en/manual/index.html)
 - Twitter: [https://twitter.com/stridedotnet](https://twitter.com/stridedotnet)
-- Youtube: [https://www.youtube.com/c/Stride3D](https://www.youtube.com/c/Stride3D)
+- Youtube: [https://www.youtube.com/c/Stride3d](https://www.youtube.com/c/Stride3d)
 
 ## Final notes
 
