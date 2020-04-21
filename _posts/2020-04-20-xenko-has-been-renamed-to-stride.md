@@ -35,6 +35,8 @@ Game Studio will use a red variant:
 
 ![GameStudio Logo](/images/blog/2020-04-20-xenko-has-been-renamed-to-stride/gamestudio-logo.png)
 
+Thanks to [tebjan](https://twitter.com/tebjan?lang=en) as well for coming up with the name Stride.
+
 ## What does this mean for you?
 
 - The Xenko launcher will ask to install Stride launcher.
