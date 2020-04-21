@@ -25,7 +25,7 @@ About 6 months later, several polls, logo proposal and a lot of brainstorming, w
 
 ## New Stride Logo
 
-The new Stride logo, designed by [sebl](https://github.com/sebllll) (from [schnellebuntebilder](https://schnellebuntebilder.de/)), was chosen after a process managed by [Eideren](https://github.com/Eideren) consisting of several community votes. Thanks to all the other people involved!
+The new Stride logo, designed by [sebl](https://github.com/sebllll) (from [schnellebuntebilder](https://schnellebuntebilder.de/)), was chosen after a process managed by [Eideren](https://github.com/Eideren) consisting of several community votes. Also, [tebjan](https://twitter.com/tebjan?lang=en) is the one that came up with the name Stride. Many thanks to them, as well as to all the other people involved!
 
 Without further ado, here it is:
 
@@ -34,8 +34,6 @@ Without further ado, here it is:
 Game Studio will use a red variant:
 
 ![GameStudio Logo](/images/blog/2020-04-20-xenko-has-been-renamed-to-stride/gamestudio-logo.png)
-
-Thanks to [tebjan](https://twitter.com/tebjan?lang=en) as well for coming up with the name Stride.
 
 ## What does this mean for you?
 
