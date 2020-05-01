@@ -24,7 +24,7 @@ REM *****************************
 REM Azure Deploy
 REM *****************************
 set WAWSDeploy_COMMAND=%~dp0\WAWSDeploy.exe
-"%WAWSDeploy_COMMAND%" "%DEST_WEBSITE%" "%PUBLISH_PROFILE%" /DeleteExistingFiles
+"%WAWSDeploy_COMMAND%" "%DEST_WEBSITE%" "%PUBLISH_PROFILE%" /p %1 /DeleteExistingFiles
 IF %ERRORLEVEL% NEQ 0 GOTO :WAWSDeploy_ERROR
 
 ECHO Website has been correctly deployed
