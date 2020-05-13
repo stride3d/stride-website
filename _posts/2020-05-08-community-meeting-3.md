@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Community meeting May 2020'
+title: 'Community Meeting May 2020'
 author: 'Jorn Theunissen'
 popular: true
 ---
