@@ -26,22 +26,24 @@ User Tebjan explained some more about VVVV and VL.Stride.
 *Here is a short overview of what we at vvvv are doing and will release somewhen this year:*
 
 *What is vvvv gamma?*
+
 - vvvv gamma is a live programming environment for .NET
 - VL is a our visual programming language that works with every .NET assembly
 - Development, compilation and state hot-reload at runtime, we believe this is the future of software development
 - You can see the data while you develop
 - Can export .NET executables
-- More info and download at: https://visualprogramming.net/
+- More info and download at: [visualprogramming.net](https://visualprogramming.net/)
 
 *What is VL.Stride?*
+
 - Stride will be our 3d rendering library of choice
 - We are working on making the Stride features available as convenient nodes in vvvv gamma
 - High-Level nodes for: Mainloop, Windowing, Scene Graph, Materials, Models, Textures, etc.
 - Low-Level nodes for: Drawing API, Visual Shaders, Vector Math, etc.
 - Load a Stride project at runtime and use all content of it
-- You can see dev captures at: https://vvvv.org/blog/vl-xenko-3d-engine-update-3
+- You can see dev captures at: [vl-xenko-3d-engine-update-3](https://vvvv.org/blog/vl-xenko-3d-engine-update-3)
 
-We actively support the Stride open-source community and financially support the Stride development: Update #3 https://vvvv.org/blog/vvvv-meets-xenko
+We actively support the Stride open-source community and financially support the Stride development: [vvvv-meets-xenko](https://vvvv.org/blog/vvvv-meets-xenko)
 
 
 ## Sponsoring and gold members
