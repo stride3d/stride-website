@@ -11,7 +11,7 @@ disqus_short_name: xenko
 
 Helo Striders,
 
-We've just released a new 3d-engine for [vvvv](http://visualprogramming.net), our visual live-programming environment for .NET. We call it "VL.Stride" and it is basically a wrapper around the Stride engine, using it independent from the Stride Game Studio. 
+this is vvvv calling! We've just released a new 3d-engine for [vvvv](http://visualprogramming.net), our visual live-programming environment for .NET. We call it "VL.Stride" and it is basically a wrapper around the Stride engine, using it independent from the Stride Game Studio. 
 
 In this [release blog post](https://vvvv.org/blog/vl.stride-for-evvvveryone), we talk about some details.
 
