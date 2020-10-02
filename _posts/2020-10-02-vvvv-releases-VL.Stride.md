@@ -14,7 +14,7 @@ this is vvvv calling! We've just released a new 3d-engine for [vvvv](http://visu
 
 In this [release blog post](https://vvvv.org/blog/vl.stride-for-evvvveryone), we talk about some details.
 
-Note that vvvv's focus is not on creating games but rather on creative coding and interaction design style of applications. But due to its live-programming nature, using a state hot-reload approach, it may still be interesting for you to quickly prototype some functionality for your games.
+Note that vvvv's focus is not on creating games but rather on creative coding and interaction design style of applications. But due to its live-programming nature, using a state hot-reload approach, it may still be interesting for you to quickly prototype some functionality for your games. Also vvvv can help you explore all the different parts of the Stride engine and understand how they work together. Being able to touch all parts while they are running, allows to get an overview faster than just going through Stride's documentation. 
 
 We'd like to invite you to play with it and hear your feedback. vvvv is free for non-commercial use, no strings attached. So please just go ahead, [download vvvv gamma 2020.3-preview](http://visualprogramming.net/) and let us know what you think!
 
