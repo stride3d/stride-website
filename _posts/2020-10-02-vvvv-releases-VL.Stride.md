@@ -2,10 +2,12 @@
 layout: post
 title: 'vvvv releases VL.Stride'
 author: 'vvvv'
-image_thumb: /images/blog/2020-02-03-january-2020/thumb.jpg
+image_thumb: /images/blog/2020-10-02-vl.stride-announce/vl.stride.png
 popular: true
 disqus_short_name: xenko
 ---
+
+![VL.Stride](/images/blog/2020-10-02-vl.stride-announce/vl.stride.png)
 
 Helo Striders,
 
