@@ -33,7 +33,7 @@ As you can see, there are many customizations and settings available in the edit
 
 ![Voxel Cone Tracing GI](/images/blog/2021-02-01-release-stride-4-0/voxelgi.jpg)
 
-There's a documentation page explaining [how to set up the project with Voxel Cone Tracing GI](../manual/graphics/lights-and-shadows/voxel-cone-tracing-gi.html).
+There's a documentation page explaining [how to set up the project with Voxel Cone Tracing GI](https://doc.stride3d.net/4.0/en/manual/graphics/lights-and-shadows/voxel-cone-tracing-gi.html).
 
 Here's the original [forum post](https://forums.stride3d.net/t/voxel-gi-implementation/1947) and [pull request](https://github.com/stride3d/stride/pull/583). Thanks again for this great contribution!
 
@@ -100,7 +100,7 @@ The first 10 C# beginner tutorials are recorded and uploaded to the official Str
 
 ![Youtube Playlist](/images/blog/2021-02-01-release-stride-4-0/doc-playlist.jpg)
 
-These videos are the video equivalent of the existing [online documentation](../tutorials/csharpbeginner/index.html) for the C# beginner template tutorials and the 'new project' template when creating a new project from the Stride launcher.
+These videos are the video equivalent of the existing [online documentation](https://doc.stride3d.net/latest/en/tutorials/csharpbeginner/index.html) for the C# beginner template tutorials and the 'new project' template when creating a new project from the Stride launcher.
 
 The C# beginner series should be fully recorded by the end of July 2020. 
 After those videos are done, Jorn will put his focus on the C# Intermediate project template. Here a is work in progress screenshot on the raycasting tutorial:
