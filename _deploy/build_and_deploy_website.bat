@@ -1,7 +1,7 @@
 @echo off
 setlocal
 set DEST_WEBSITE=%~dp0\_site
-set PUBLISH_PROFILE=%~dp0\website.PublishSettings
+set PUBLISH_PROFILE=%~dp0\%1
 
 REM *****************************
 REM Check PreRequisites
@@ -24,7 +24,7 @@ REM *****************************
 REM Azure Deploy
 REM *****************************
 set WAWSDeploy_COMMAND=%~dp0\WAWSDeploy.exe
-"%WAWSDeploy_COMMAND%" "%DEST_WEBSITE%" "%PUBLISH_PROFILE%" /p %1 /DeleteExistingFiles
+"%WAWSDeploy_COMMAND%" "%DEST_WEBSITE%" "%PUBLISH_PROFILE%" /p %2 /DeleteExistingFiles
 IF %ERRORLEVEL% NEQ 0 GOTO :WAWSDeploy_ERROR
 
 ECHO Website has been correctly deployed
