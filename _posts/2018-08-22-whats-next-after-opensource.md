@@ -42,8 +42,9 @@ Please state your intention to work on something on GitHub issues, and confirm h
 Expect some tweets and blogs posts about what's being worked on in the coming weeks.
 
 ## Donations
+OUTDATED: Use [Open Collective](https://opencollective.com/stride3d) instead.
+~~If you want to help Xenko, or if Xenko is helping you or your company, please consider **donating** on [Patreon](https://patreon.com/xenko).~~
 
-If you want to help Xenko, or if Xenko is helping you or your company, please consider **donating** on [Patreon](https://patreon.com/xenko).
 
 This will help me not having to focus on side projects to secure money, and bring me peace of mind to focus solely on Xenko. Since my plan is to work full-time on it, this will be my main source of income for now.
 

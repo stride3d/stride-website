@@ -47,9 +47,11 @@ We actively support the Stride open-source community and financially support the
 
 
 ## Sponsoring and gold members
-We welcome our new gold sponsor David Jeske. We would also like to thank him for contributing the work on VXGI last year. He is using Stride for one of his projects.
+OUTDATED: As off November 2021, we will use [Open collective](https://opencollective.com/stride3d)
 
-Also, a friendly reminder, that if you [sponsor Stride through Github](https://github.com/sponsors/xen2), the reward is doubled by Github. You can also still sponsor through [Patreon](https://www.patreon.com/stride3d)
+~~We welcome our new gold sponsor David Jeske. We would also like to thank him for contributing the work on VXGI last year. He is using Stride for one of his projects.~~
+
+~~Also, a friendly reminder, that if you [sponsor Stride through Github](https://github.com/sponsors/xen2), the reward is doubled by Github.~~
 
 ## Links 
 In case you missed them, here are the new links that you should be using:
