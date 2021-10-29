@@ -6,11 +6,14 @@ menu: sponsor
 ---
 
 <div class="rt-center entry-content">
-    <a href="https://opencollective.com/stride3d" target="_blank">
-        <img src="https://opencollective.com/stride3d/donate/button@2x.png?color=blue" width=300 />
-
-    </a><br>
+    <div class="row">
+        <h1>A big shout out to all those who sponsor the Stride Game Engine!</h1> <br>
+    </div>
     <div class="rt-center entry-content">
+        <a href="https://opencollective.com/stride3d" target="_blank">
+            <img src="https://opencollective.com/stride3d/donate/button@2x.png?color=blue" width=300 />
+        </a>
+        <br><br>
         <object class type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/badge.svg"></object>
     </div>
 </div>
@@ -85,9 +88,10 @@ menu: sponsor
 </div>
 
 <script>
-	let url = 'https://opencollective.com/stride3d/members/all.json?limit=10&offset=0&TierId=33051';
-    const contributorsUl = document.getElementById("contributors");
 
+    //Automatically list all the 
+	let url = 'https://opencollective.com/stride3d/members/all.json?limit=10&offset=0&TierId=33046';
+    const contributorsUl = document.getElementById("contributors");
     fetch(url)
     .then(response => {
         if (response.ok) {
