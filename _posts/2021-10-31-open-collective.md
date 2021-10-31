@@ -1,3 +1,4 @@
+---
 layout: post
 title: 'Open collective'
 author: 'Aggror Jorn'
