@@ -6,10 +6,9 @@ popular: true
 
 Stride has been using Patreon and Github sponsors for a while now. However, in the recent community meeting of october 1st it became apparent that these donation platforms don't really suit all of our needs. Both Github sponsors and Patreon don't really show where the money is going. To solve this we have been looking at a different platform that allows us to communicate more openly on our expenses and where money will be spent. After some investigation and various registration and other formalities, we can now say goodbye to Patreon, as Stride will from now use the [Open Collective](https://opencollective.com/stride3d) platform.
 
-
 ![Open Collective Logo](/images/blog/2021-10-31-open-collective/opencollective.svg)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/46POw2euUKY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ufKkAsaJNTM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Open (Source) collective ##
 Open collective is similar to other sponsor platforms, but sticks out in the way it openly displays payments and expenses. Everything about it is open for everyone to see. Through various Tiers, people can sponsor the Stride game engine. Each tier will have its own reward(s). Some tiers for instance will have the reward that users are shown on the stride website as a thank you. This is being worked on.
