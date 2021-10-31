@@ -19,6 +19,7 @@ This project will live <b>thanks to its community</b> and will have its own GitH
 
 ![GitHub](/images/blog/2018-06-14-xenko-opensource-mit/github.png)
 
-Also, I have setup a [Patreon page](https://www.patreon.com/xenko) for people who want to financially support the effort (servers and me working fulltime).
+OUTDATED: Use [Open Collective](https://opencollective.com/stride3d) instead.
+ ~~Also, I have setup a [Patreon page](https://www.patreon.com/xenko) for people who want to financially support the effort (servers and me working fulltime).~~
 
 We're proud of everything we and our users have achieved with Xenko over the last three years. We can't wait to see what you do with it next!

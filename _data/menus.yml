@@ -4,6 +4,7 @@ __display__:
     - blog
     - documentation
     - community    
+    - sponsor
 features:
     url: /features
     text: Features
@@ -16,3 +17,6 @@ documentation:
 community:
     url: /community
     text: Community
+sponsor:
+    url: /sponsor
+    text: Sponsor
