@@ -53,7 +53,7 @@ graphics:
 engine:
     -   id: scripting
         title: C# scripting
-        description: Built in C#, Stride gives you access to the low-level APIs, C#7.0 and asynchronous scripting, and comes with a script editor. 
+        description: Built in C#, Stride gives you access to the low-level APIs, C# 9.0 and asynchronous scripting, and comes with a script editor. 
         type: image
     -   id: scene_streaming
         title: Scene streaming
