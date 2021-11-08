@@ -59,7 +59,9 @@ menu: sponsor
     <div class="container" >
         <div class="row">
             <h1 class="rt-center"><span>Gold Striders</span></h1>
-            <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/gold-strider.svg?avatarHeight=64&width=600&button=false"></object>
+            <div class = "vertical-center">
+                <object class="sponsortier" type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/gold-strider.svg?avatarHeight=82&button=false"></object>
+            </div>
         </div>
     </div>
 </div>
@@ -69,7 +71,7 @@ menu: sponsor
         <div class="row">
             <h1 class="rt-center"><span>Silver Striders</span></h1>
             <div class = "vertical-center">
-                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/silver-strider.svg?avatarHeight=36&width=600&button=false"></object>
+                <object class="sponsortier" type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/silver-strider.svg?avatarHeight=46&button=false"></object>
             </div>
         </div>
     </div>
@@ -79,34 +81,10 @@ menu: sponsor
     <div class="container" >
         <div class="row">
             <h1 class="rt-center"><span>Bronze Striders</span></h1>
-            <div class = "vertical-center rt-center">                
-                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/bronze-strider.svg?avatarHeight=24&width=600&button=false"></object>
-                <ul id="contributors">                     
-                </ul>
+            <div class = "vertical-center sponsortier">                
+                <object class="sponsortier" type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/bronze-strider.svg?avatarHeight=24&button=false"></object>
+
             </div>
         </div>
     </div>
 </div>
-
-<script>
-
-    //Automatically list all the 
-	let url = 'https://opencollective.com/stride3d/members/all.json?limit=10&offset=0&TierId=33046';
-    const contributorsUl = document.getElementById("contributors");
-    fetch(url)
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(response.statusText);
-        }
-    })
-    .then(data => {
-        data.forEach((item, index) => {
-            let li = document.createElement("li");
-            let node = document.createTextNode(item.name);
-            li.appendChild(node);
-            contributorsUl.appendChild(li);
-        });
-    });
-</script>
