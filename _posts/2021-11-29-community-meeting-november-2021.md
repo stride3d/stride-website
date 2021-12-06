@@ -19,7 +19,7 @@ November 29th we had another commmunity meeting. This blogpost summarizes the to
 
 # A month of Open collective
 After a month using the new sponsor platform, the Stride collective has reached a balance of $1,984.31 USD.  
-We started discussing how and where the money should be distributed to. We want to this with the help of Open collective 'Projects'. These projects are listed on Stride's Open collective page, and have their own tiers, targets and description. Users can sponsor projects directly instead of the main Stride collective if they want to.
+We started discussing how and where the money should be distributed to. We want to do this with the help of Open collective 'Projects'. These projects are listed on Stride's Open collective page, and have their own tiers, targets and description. Users can sponsor projects directly instead of the main Stride collective if they want to.
 
 We have come up with several projects that need to be written out in more detail before we will add them to the Open collective page. All tickets below have a Github disscusion for more details.
 
@@ -49,13 +49,13 @@ We have come up with several projects that need to be written out in more detail
 # Preparing request Epic grant
 For a while now we have been wanting to pursue the option of requesting an Epig grant. In order to do so however, we need to come up with a proper plan. The endgoal is to have a proper document explaining what we want to do, and how we plan to spend any given budget.
 
-AggrorJorn starts a github ticket where we gather info on the request to Epic. He will contact others for proof read and further info. [Github Discussion](https://github.com/stride3d/stride/discussions/1207
+AggrorJorn starts a github ticket where we gather info on the request to Epic. He will contact others for proof read and further info. [Github Discussion](https://github.com/stride3d/stride/discussions/1207)
 
 Some of the topics mentioned:
-* Shader system
-* Editor rewrite
-* Megascan Integration 
-* ECS rewrite/Run Update() and Render() in parallel
+- Shader system
+- Editor rewrite
+- Megascan Integration 
+- ECS rewrite/Run Update() and Render() in parallel
 
 
 # Other Action items
@@ -67,7 +67,7 @@ Some of the topics mentioned:
     - What we can do it is utilise the existing Nuget (tagging) system so that users can quickly add a component to their ongoing project in the editor. 
     
 - Documentation on the stride source/new comers tutorial
-    - YKA, Manio143 and Tebjn collect some info for a tutorial: [Github Discussion](https://github.com/stride3d/stride/discussions/1211) 
+    - YKA, Manio143 and Tebjan collect some info for a tutorial: [Github Discussion](https://github.com/stride3d/stride/discussions/1211) 
 
 
 # Ongoing development
