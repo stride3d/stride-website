@@ -9,6 +9,10 @@ Stride 4.1 is here and ready for the future!
 
 Stride contributors are proud to announce a new release now running on .NET 6 supporting the latest C# 10. That means you can now head to the download page and start developing your games using the latest .NET technologies.
 
+## Stride On .NET Live
+We had the pleasure to be on a live stream with the .NET team! We gave an introduction, overview and some live demos:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Improvements Summary
 
 Here's a non-exhaustive list of new improvements:
