@@ -11,7 +11,8 @@ Stride contributors are proud to announce a new release now running on .NET 6 su
 
 ## Stride On .NET Live
 We had the pleasure to be on a live stream with the .NET team! We gave an introduction, overview and some live demos:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Improvements Summary
 
