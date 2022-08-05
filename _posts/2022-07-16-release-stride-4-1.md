@@ -9,10 +9,14 @@ Stride 4.1 is here and ready for the future!
 
 Stride contributors are proud to announce a new release now running on .NET 6 supporting the latest C# 10. That means you can now head to the download page and start developing your games using the latest .NET technologies.
 
+
+
 ## Stride On .NET Live
 We had the pleasure to be on a live stream with the .NET team! We gave an introduction, overview and some live demos:
 
  <iframe width="560" height="315" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ## Improvements Summary
 
@@ -42,11 +46,14 @@ Here's a non-exhaustive list of new improvements:
 
 ## Improvement Details
 
+
+
 ### Dithered shadows for semi-transparent materials
 Produces semi-transparent shadows by poking more and more holes in the shadow map based on the transparency of the object, shadow map filtering will blur those holes with their neighbor which will result in those partially opaque pixels.
 
 ![Dithered shadow settings](https://i.imgur.com/xFzuNbl.png)
 ![Dithered shadow effect comparison](https://i.imgur.com/kHvSy8a.png)
+
 
 
 ### Physics constraints
@@ -57,11 +64,15 @@ For more information on all the types of constraints, you can read up about them
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uMZMYpMD3Wg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+
 ### Physics optimizations
 Retrieving collision and contact information was previously done by re-testing all components for collisions, which, as one might expect, led to awful performance for physics heavy scenes (could take up to and above 90% of the frame).
 
 Contacts are now lazily evaluated to reduce overhead when nothing ends up reading them.
 Users can now read and iterate over all collisions through Simulation.CurrentCollisions.
+
+
 
 ### Improved editor gizmos
 The old gizmos weren't very nice to look at, so this feature makes them look better and more user-friendly. It also changes how the rotation gizmo works and adds scale planes to the scale gizmo.
@@ -73,6 +84,7 @@ This feature also updates the text on the CameraOrientationGizmo to be XYZ inste
 ![Rotation](https://i.imgur.com/W4zIf7J.png =400x160)
 
 
+
 ### Intermediate tutorials
 One of the first Open Collective sub-projects is the [intermediate C# tutorials project](https://opencollective.com/stride3d/projects/stride-intermediate-tutorials). After discussion in community meetings and with various contributors donating directly to this project, the amount for this project to be included in Stride quickly became a realization.
 
@@ -80,21 +92,35 @@ One of the first Open Collective sub-projects is the [intermediate C# tutorials 
 
 With Stride 4.1, you will be able to select the C# intermediate tutorials project as a new template project. The template project contains (at the moment of writing) 11 topics that every developer will want to have a look at.
 1.    UI basics
-1.    Collision triggers
-1.    Raycasting
-1.    Projecting and Unprojecting
-1.    Async(hronous) scripts
-1.    Scene loading
-1.    Animation basics
-1.    Audio
-1.    First person camera
-1.    Third person camera
-1.    Navigation
+
+2.    Collision triggers
+
+3.    Raycasting
+
+4.    Projecting and Unprojecting
+
+5.    Async(hronous) scripts
+
+6.    Scene loading
+
+7.    Animation basics
+
+8.    Audio
+
+9.    First person camera
+
+10.    Third person camera
+
+11.    Navigation
 
 Each tutorial has a video tutorial accompanying it, which can be found on Stride's [Youtube channel](https://www.youtube.com/c/Stride3D). Below you can find the full playlist. 
  
  
  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRZx2y7uC8mOE6_L0ZiFxNBE7HmzU2dP7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
 
 ## Known Issues
 
@@ -104,6 +130,9 @@ The transition to .NET6 unfortunately broke the help tooltips and the code compl
 The reason for the error is that [RoslynPad](https://github.com/roslynpad/roslynpad), the underlaying library, also needs an update or fix. We'll adress this in one of the upcoming minor version releases.
 
 ![](https://i.imgur.com/Gn2i6Js.png)
+
+
+
 
 
 ## A little help
