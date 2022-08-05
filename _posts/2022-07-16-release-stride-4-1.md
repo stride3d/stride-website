@@ -49,9 +49,7 @@ Here's a non-exhaustive list of new improvements:
 
 
 ### Dithered shadows for semi-transparent materials
-Produces semi-transparent shadows by poking more and more holes in the shadow map based on the transparency of the object, shadow map filtering will blur those holes with their neighbor which will result in those partially opaque pixels.
-
-![Dithered shadow settings](https://i.imgur.com/xFzuNbl.png)
+Produces semi-transparent shadows by poking more and more holes in the shadow map based on the transparency of the object, shadow map filtering will blur those holes with their neighbor which will result in a transparent looking shadow.
 ![Dithered shadow effect comparison](https://i.imgur.com/kHvSy8a.png)
 
 
