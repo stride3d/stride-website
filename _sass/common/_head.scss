@@ -389,7 +389,7 @@
 				height: 54px;
 				position: absolute;
 				top: 0;
-				right: 0;
+				right: 85px;
 
 				@media ( max-width: $w3 )
 				{
@@ -544,13 +544,13 @@
 
 			div.x_search
 			{
-				width: 200px;
+				width: 150px;
 				height: 30px;
 				padding-right: 31px;
 				border: 1px solid #999999;
 				position: absolute;
 				top: 11px;
-				right: 140px;
+				right: 220px;
 				margin: 0;
 				
 				@media ( max-width: $w2 )
@@ -656,7 +656,7 @@
 			box-shadow: 0 4px 12px rgba(1,1,1,0.2);
 			position: absolute;
 			top: 54px;
-			left: 917px;
+			left: 825px;
 			background: #ffffff;
 			font-size: 12px;
 			font-size: 1.2rem;
@@ -667,7 +667,7 @@
 			@media ( max-width: $w1 )
 			{
 				left: auto;
-				right: 249px;
+				right: 335px;
 			}
 
 			@media ( max-width: $w3 )
