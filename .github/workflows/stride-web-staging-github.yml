@@ -1,6 +1,6 @@
 name: Build Stride Web in Eleventy - Staging - GitHub
 on:
-  push:
+#  push:
 #    branches:
 #      - main
 #    paths-ignore:
