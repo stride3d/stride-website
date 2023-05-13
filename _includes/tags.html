@@ -1,0 +1,2 @@
+{% comment %} The tags styling needs to be updated also in search.liquid {% endcomment %}
+{% for tag in tags %}{% if tag != "blog" and tag != "search" %}<span class="badge text-bg-stride text-stride me-1" style="--bs-bg-opacity: .20;">{{ tag | replace: "-"," "}}</span>{% endif %}{% endfor %}

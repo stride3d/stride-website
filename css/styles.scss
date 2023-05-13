@@ -1,0 +1,217 @@
+@import "custom-bootstrap";
+@import "/css/all.min.css";
+
+:root {
+    --main-shadow: 2px 2px 8px #0000001a;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.navbar-nav {
+    &.navbar-nav--text .nav-item {
+        padding-right: 1rem;
+        font-size: 18px;
+    }
+
+    &.navbar-icons {
+        font-size: 20px;
+    }
+}
+
+h1, h2 {
+    color: var(--bs-stride);
+}
+
+a {
+    text-decoration: none;
+}
+
+.carousel .carousel-inner img {
+    object-fit: cover;
+    object-position: center;
+    height: 45vh;
+    overflow: hidden;
+}
+
+.accordion {
+    div {
+        .fa-square-minus {
+            display: inline-block;
+        }
+
+        .fa-square-plus {
+            display: none;
+        }
+
+        .accordion-collapse {
+            border-bottom: 1px solid #c9c9c9;
+        }
+    }
+
+    div.collapsed {
+        .fa-square-minus {
+            display: none;
+        }
+
+        .fa-square-plus {
+            display: inline-block;
+        }
+    }
+
+    div.row:hover {
+        background-color: #cbcbcb40;
+    }
+
+    div.accordion-item label[aria-expanded="true"] {
+        color: var(--bs-stride);
+    }
+}
+
+.accordion-item:hover label {
+    cursor: pointer;
+}
+
+.postcontent {
+    margin: 30px 0;
+    box-shadow: var(--main-shadow);
+    padding-top: 60px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-bottom: 60px;
+    background-color: #fff;
+
+    h1 {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .direct-link {
+        text-decoration: none;
+        font-size: 1.5rem;
+        transform: rotate(45deg);
+        display: none;
+    }
+
+    h2, h3, h4, h5, h6 {
+        &:hover .direct-link {
+            display: inline-block;
+        }
+    }
+}
+
+.image-code-script-wrapper {
+    margin: 60px 60px 30px 60px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .postcontent {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .image-code-script-wrapper {
+        margin: 88px 0px 53px 98px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .image-code-script-wrapper {
+        margin: 60px 60px 30px 60px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .image-code-script-wrapper {
+        margin: 30px 30px 10px 30px;
+    }
+}
+
+.bg-stride-website {
+    background-image: url(/images/top/svg/bg_dark.svg);
+}
+
+svg path.logo-path {
+    fill: var(--bs-stride) !important;
+}
+
+[data-bs-theme=light] {
+    .bg-stride-website {
+        background-image: url(/images/top/svg/bg_dark.svg);
+    }
+
+    .bg-light-stride-website {
+        background-image: url(/images/top/svg/bg_light.svg);
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    }
+}
+
+[data-bs-theme=dark] {
+    /*    h1, h2 {
+        color: $link-color-dark;
+    }*/
+
+    --logo: url(/images/svg/stride-logo-dark-theme.svg) no-repeat;
+
+    .bg-stride-website {
+        background-image: url(/images/top/svg/bg_dark-dark-mode.svg);
+    }
+
+    .bg-light-stride-website {
+        --bs-bg-opacity: 0.8;
+        background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+    }
+
+    .image-code-script-wrapper {
+        margin: 50px 10px 20px 80px;
+    }
+
+    @media (max-width: 991.98px) {
+        .image-code-script-wrapper {
+            margin: 101px 0px 67px 149px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .image-code-script-wrapper {
+            margin: 54px 0px 20px 75px;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .image-code-script-wrapper {
+            margin: 30px 30px 10px 50px;
+        }
+    }
+
+    .postcontent {
+        background: #323130;
+        box-shadow: none;
+        color: #fff;
+    }
+}
+
+.bg-footer {
+    background-image: url(/images/backgrounds/foot_bg.webp);
+    background-size: cover;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: url(../images/top/svg/dot.svg) repeat 0 0 rgba(0, 0, 0, 0.3);
+    background-size: 50px 50px;
+}
+
+@import "syntax-highlighting";

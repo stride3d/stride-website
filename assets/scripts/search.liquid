@@ -1,0 +1,195 @@
+---
+permalink: /scripts/search.js
+---
+{% include ./node_modules/lunr/lunr.min.js %}
+
+(function () {
+    function displaySearchResults(results, store) {
+        const searchResults = document.getElementById('search-results');
+
+        if (results.length) {
+            const maxResults = 100; // Once paging implemented, then remove this restriction
+            var appendString = '';
+
+            for (var i = 0; i < results.length; i++) {
+
+                const post = store[results[i].ref];
+
+                if (post.source === 'web') {
+
+                appendString += `
+<article class="card mb-4 p-4">
+    <div class="row justify-content-center">
+        <div class="col-12 post-card-header">
+            <h4 class="entry-title"><a href="${post.url}">${post.title}</a></h4>
+            <p><i class="fa-solid fa-calendar-days me-1"></i> ${getDate(post.date)}</p>
+            <p>${post.author}</p>
+            <p>
+                ${getExcerpt(post)}...
+            </p>
+            <p>
+                ${getTags(post)}
+            </p>
+        </div>
+    </div>
+</article>
+`
+                } else if (post.source === 'docs') {
+
+                appendString += `
+<article class="card mb-4 p-4">
+    <div class="row justify-content-center">
+        <div class="col-12 post-card-header">
+            <h4 class="entry-title"><a href="{{site.links.docs-url}}${post.key}" target="_blank" rel="noopener">${post.title}</a></h4>
+            <p>
+                ${getDocsExcerpt(post)}...
+            </p>
+        </div>
+    </div>
+</article>
+`
+                }
+
+                if (i > maxResults) break;
+
+            }
+            searchResults.innerHTML = appendString;
+        } else {
+            searchResults.innerHTML = '<div class="card p-4"><h2>No results found</h2>Your query returned 0 results. Retry with a different search term, or try one of the links on the side.</div>';
+        }
+    }
+
+    function getDate(date) {
+        if (date.length === 0) return '';
+
+        return `${date}`;
+    }
+
+    function getExcerpt(post) {
+        return post.excerpt.length === 0 ? post.content.substring(0, 200) : post.excerpt;
+    }
+
+    function getDocsExcerpt(post) {
+        return htmlEncode(post.content.substring(0, 200));
+    }
+
+    function getTags(post) {
+        var tags = post.tags.split(', ');
+        return tags.filter(s => s !== 'blog' && s !== 'search').map(s => `<span class="badge text-bg-stride text-stride me-1" style="--bs-bg-opacity: .20;">${s.replace('-', ' ')}</span>`).join('');
+    }
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var pairs = query.split('&');
+
+        for (var i = 0; i < pairs.length; i++) {
+            var pair = pairs[i].split('=');
+
+            if (pair[0] === variable) {
+                return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
+            }
+        }
+    }
+
+    function htmlEncode(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    var searchTerm = getQueryVariable('query');
+
+    if (searchTerm) {
+        document.getElementById('search-result-term').textContent = searchTerm;
+        document.getElementById('search-input').value = searchTerm;
+        document.getElementById('search-form-post').value = searchTerm;
+
+        const success = res => res.ok ? res.json() : Promise.resolve({});
+
+        const web = fetch(`/search.json`).then(success);
+
+        var docs = Promise.resolve();
+
+        if({{site.docs-search}}) {
+            docs = fetch(`{{site.links.docs-search-url}}`).then(success);
+        }
+
+        Promise.all([web, docs])
+        .then(([webData, docsData]) => {
+            search(mergeSearchData(webData, docsData))
+        })
+        .catch(error => console.error(error));
+
+        /*fetch('/search.json')
+        .then(response => response.json())
+        .then(data => search(data))
+        .catch(error => console.log(error));*/
+    }
+
+    function mergeSearchData(webData, docsData) {
+
+        const data = [];
+
+        for (var key in webData) {
+            data.push({
+                'key': key,
+                'title': webData[key].title,
+                'author': webData[key].author,
+                'category': webData[key].category,
+                'tags': webData[key].tags,
+                'content': webData[key].content,
+                'excerpt': webData[key].excerpt,
+                'url': webData[key].url,
+                'date': webData[key].date,
+                'source': 'web',
+            });
+        }
+
+        if (!docsData) return data;
+
+        for (var key in docsData) {
+            data.push({
+                'key': key,
+                'title': docsData[key].title,
+                'content': docsData[key].keywords,
+                'source': 'docs',
+            });
+        }
+
+        return data;
+    }
+
+    function search(data) {
+        // Initalize lunr with the fields it will be searching on. I've given title
+        // a boost of 10 to indicate matches on this field are more important.
+        var idx = lunr(function () {
+            this.field('id');
+            this.field('title', { boost: 50 });
+            this.field('author');
+            this.field('category');
+            this.field('tags');
+            this.field('content');
+            this.field('excerpt');
+
+            // Add the data to lunr
+            for (var key in data) {
+                this.add({
+                    'id': key,
+                    'title': data[key].title,
+                    'author': data[key].author,
+                    'category': data[key].category,
+                    'tags': data[key].tags,
+                    'content': data[key].content,
+                    'excerpt': data[key].excerpt
+                });
+            }
+
+        });
+
+        var results = idx.search(searchTerm); // Get lunr to perform a search
+        displaySearchResults(results, data);
+    }
+})();

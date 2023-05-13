@@ -1,15 +1,61 @@
 ---
-layout: blog
-single: true
+layout: default
 ---
-{% include post_tags.html %}
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">{% include article.html %}</article>
-
-{% if site.disqus_short_name and page.comments != false %}
-<section id="comment">
-    <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
-</section>
-{% endif %}
-
-
+<div class="container">
+    <div class="row postcontent">
+        <div class="col-12">
+            <article itemscope itemtype="http://schema.org/BlogPosting">
+                <h1 itemprop="name">{{ title }}</h1>
+                <div class="text-center mb-3 pt-2">
+                    {%- assign author = site.authors[author] -%}{%- if author -%}
+                    <div>
+                        {%- if author.github -%}
+                        <div class="mt-4 mb-2">
+                            <img class="rounded-circle me-1" alt="author" src="https://avatars.githubusercontent.com/{{ author.github }}?size=58">
+                        </div>{%- endif -%}
+                        {{ author.name }}
+                    </div>
+                    {%- endif -%}
+                    <p style="border-top: 2px solid #979593;" class="x-hidden-focus mt-4 pt-1 small text-secondary date d-inline-block">
+                        <small><i class="fa-solid fa-calendar-days"></i> {% include post/day.html date: page.date %}</small>
+                    </p>
+                </div><div itemprop="articleBody">
+                    {{ content }}
+                </div>
+                <hr>
+                <p>{%- include tags.html tags: tags -%}</p>
+                <p>
+                    Any comments? You can start 🗨 at <i class="fa-brands fa-github text-decoration-none"></i> <a href="{{site.links.github-discussions-url}}" target="_blank" rel="noreferrer">GitHub Discussions</a> or <i class="fa-brands fa-discord text-decoration-none"></i> <a class="" href="{{site.links.discord-url}}" target="_blank" rel="noopener">Discord</a>.
+                </p>
+                <p>
+                    <a href="{{ site.links.github-web-edit-url }}{{ page.inputPath }}" target="_blank" rel="noreferrer">Edit</a> this page on
+                    <i class="fa-brands fa-github text-decoration-none"></i>.
+                </p>
+            </article>
+        </div>
+    </div>
+    <div class="row mb-4">
+        {%- assign previousPost = collections.blog | getPreviousCollectionItem: page -%}
+        {%- assign nextPost = collections.blog | getNextCollectionItem: page -%}
+        <div class="col-md-6 mb-4">
+            {% if previousPost %}
+            <div class="card px-3">
+                <div class="card-body p-4">
+                    <h5>Previous Post</h5>
+                    <a class="prev stretched-link" href="{{previousPost.url}}">{{previousPost.data.title}}</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-md-6 text-md-end">
+            {% if nextPost %}
+            <div class="card px-3">
+                <div class="card-body p-4">
+                    <h5>Next Post</h5>
+                    <a class="next stretched-link" href="{{nextPost.url}}">{{nextPost.data.title}}</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

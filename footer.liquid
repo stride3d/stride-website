@@ -1,0 +1,10 @@
+---
+permalink: /footer.json
+eleventyExcludeFromCollections: true
+---
+{%- capture footer -%}
+{%- include footer.html btn-class:"link-danger" social-class:"link-danger" -%}
+{%- endcapture -%}
+{
+   "footer" : {{ footer | strip_newlines | normalize_whitespace | jsonify }}
+}

@@ -1,10 +1,14 @@
 ---
-layout: legal
-title: Privacy Policy
+layout: page
+title: Stride Privacy Policy
 permalink: /legal/privacy-policy/
+description: Privacy Policy for Stride
+banner:
+  title: Privacy Policy
+  sub-title: 
+  image-url: /images/backgrounds/legal.webp
+  h1: false
 ---
-
-# Stride Privacy Policy
 
 Stride (“We” or “Us”) has created this privacy policy (“Privacy Policy”) to explain and summarize how we collect, retain, use and protect Your personally identifiable information (“User Information”) when You use Stride’s software (the “Software”) and any associated services (the “Services”).
 
@@ -60,6 +64,6 @@ If such a change takes place, the revised Privacy Policy will be published at th
 
 Please contact the following for inquiries in relation to the User Information:
 
-* legal (at) stride3d.net
+* legal (at) stride3d&#46;net
 
 Effective date: November 24, 2018

@@ -1,73 +1,78 @@
-<div id="x_foot">
-	<div class="x_totop"><a href="#x_wrap">To Top</a></div>
-	<div class="x_footBody">
-		<div class="x_container">
-			<div id="x_foot_sitemap">
-				<ul>
-					<li><a href="/features">Features</a></li>
-					<li><a href="/blog">Blog</a></li>
-					<li><a href="http://doc.stride3d.net/latest">Documentation</a></li>
-					<li><a href="/community">Community</a></li>
-				</ul>
-				<ul>
-					<li><a href="/sponsors">Sponsor</a></li>
-					<li><a href="/faq">FAQ</a></li>
-					<li><a href="/download/">Download</a></li>
-					<li><a href="/legal">Legal</a></li>
-				</ul>
-			</div>
-			<div class="x_subContainer">
-				<ul class="x_sns">
-					<li class="facebook"><a href="https://www.facebook.com/stride3d" target="_blank">Facebook</a></li>
-					<li class="twitter"><a href="https://twitter.com/stridedotnet" target="_blank">Twitter</a></li>
-					<li class="youtube"><a href="https://www.youtube.com/c/Stride3D" target="_blank">YouTube</a></li>
-					<li class="rss"><a href="/feed.xml"><i class="fa fa-rss"></i></a></li>
-				</ul>
-			</div>
-		</div>
+{% assign text-styling='class="text-light" style="--bs-text-opacity: 0.85;"' %}
+<div class="bg-footer mt-auto">
+    <div class="container">
+        <footer class="pt-5 px-2">
+            <div class="row">
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5 {{ text-styling }}>Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="/features/" class="nav-link p-0 {{ btn-class }}">Features</a></li>
+                        <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 {{ btn-class }}">Blog</a></li>
+                        <li class="nav-item mb-2"><a href="/download/" class="nav-link p-0 {{ btn-class }}">Download</a></li>
+                        <li class="nav-item mb-2"><a href="/legal/" class="nav-link p-0 {{ btn-class }}">Legal</a></li>
+                        <li class="nav-item mb-2"><a href="/contact/" class="nav-link p-0 {{ btn-class }}">Contact us</a></li>
+                        <li class="nav-item mb-2"><a href="/legal/privacy-policy/" class="nav-link p-0 {{ btn-class }}">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5 {{ text-styling }}>Docs</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="{{ site.links.docs-manual-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Manual</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.docs-api-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Stride API</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.docs-release-notes-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Release notes</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.docs-tutorial-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Tutorials</a></li>
+                    </ul>
+                </div>
 
-		<ul class="x_siteInfo container">
-			<li><a href="/contact">Contact us</a></li>
-			<li><a href="/legal/privacy-policy" target="_blank">Privacy Policy</a></li>
-		</ul>
-
-		<p class="x_copyCenter">Supported by the <a href="https://dotnetfoundation.org" target="_blank">.NET Foundation</a></p>
-		<p class="x_copyRight">&copy;.NET Foundation and Contributors</p>
-		<svg class="top left svg_footer"></svg>
-		<svg class="top right svg_footer"></svg>
-	</div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5 {{ text-styling }}>Community</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="{{ site.links.open-collective-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Open Collective</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.discord-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Discord</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.github-stride-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">GitHub</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.twitter-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="/faq/" class="nav-link p-0 {{ btn-class }}">FAQ</a></li>
+                        <li class="nav-item mb-2"><a href="/sponsor/" class="nav-link p-0 {{ btn-class }}">Sponsor</a></li>
+                        <li class="nav-item mb-2"><a href="{{ site.links.github-discussions-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Discussions</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5 {{ text-styling }}>Blog</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 {{ btn-class }}">Posts</a></li>
+                        <li class="nav-item mb-2"><a href="/tags/" class="nav-link p-0 {{ btn-class }}">Tags</a></li>
+                        <li class="nav-item mb-2"><a href="/archive/" class="nav-link p-0 {{ btn-class }}">Archive</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-4 mb-3 mt-4 text-center text-lg-end">
+                    <a class="{{ social-class }} me-2 text-decoration-none mb-3 d-inline-block" href="{{ site.links.github-stride-url }}" target="_blank" rel="noopener" aria-label="GitHub link">
+                        <i class="fa-brands fa-xl fa-github text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.discord-url }}" target="_blank" rel="noopener" aria-label="Discor link">
+                        <i class="fa-brands fa-xl fa-discord text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.twitter-url }}" target="_blank" rel="noopener" aria-label="Twitter link">
+                        <i class="fa-brands fa-xl fa-twitter text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.open-collective-url }}" target="_blank" rel="noopener" aria-label="Open Collective link">
+                        {% include svg-icons.html type:'open-collective' size:26 style:'margin-top:-5px' %}
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.facebook-url }}" target="_blank" rel="noopener" aria-label="Facebook link">
+                        <i class="fa-brands fa-xl fa-facebook text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.youtube-url }}" target="_blank" rel="noopener" aria-label="YouTube link">
+                        <i class="fa-brands fa-xl fa-youtube text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="/feed.xml" aria-label="RSS feed link">
+                        <i class="fa-solid fa-rss fa-xl text-decoration-none"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 pb-4 text-center small">
+                <p {{ text-styling }}>Supported by the <a class="{{ social-class }}" href="{{ site.links.dotnet-foundation-url }}" target="_blank" rel="noopener">.NET Foundation</a></p>
+                <p {{ text-styling }}>Website v.{{ site.version }}</p>
+                <p {{ text-styling }}>© .NET Foundation and Contributors</p>
+            </div>
+        </footer>
+    </div>
 </div>
-{% if layout.menu == "blog" %}
-{% include disqus.html %}
-{% endif %}
-<script>
-	{% if site.googlega %}
-	(function (i, s, o, g, r, a, m) {
-	i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-		(i[r].q = i[r].q || []).push(arguments)
-	}, i[r].l = 1 * new Date(); a = s.createElement(o),
-		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', '__gaTracker');
-	__gaTracker('create', '{{ site.googlega }}', 'auto');
-	__gaTracker('send', 'pageview');
-	{% endif %}
-
-	$(document).ready(function () {
-		$('.image-popup').magnificPopup({ type: 'image', closeOnContentClick: true, disableOn: 992 });
-		$('.video-popup').magnificPopup({
-			type: 'inline',
-			disableOn: 992,
-			closeOnContentClick: false,
-			callbacks: {
-				open: function () {
-					this.content.children('video')[0].play();
-				},
-				close: function () {
-					this.content.children('video')[0].pause();
-					this.content.children('video')[0].currentTime = 0;
-				}
-			}
-		});
-		$('.bxslider').bxSlider({ auto: true, controls: false });
-	});
-</script>

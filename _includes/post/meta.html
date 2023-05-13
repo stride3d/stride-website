@@ -1,16 +1,16 @@
-<div class="stride-blog-post-meta">
-	<span class="fa fa-calendar"></span> {% include post/date.html %}{{ time }}
-	&nbsp; <span class="fa fa-pencil"></span> By {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
-	{% include post_tags.html %}
-	{% if index != true %}
-		{% unless page.sharing == false %}
-			{% include post/sharing.html %}
-		{% endunless %}
-	{% endif %}
-	
-	{% if site.disqus_short_name and site.disqus_show_comment_count == true %}
-		<div class="pull-right">
-			<span class="fa fa-comments"></span> {% include post/comments_link.html %}
-		</div>
-	{% endif %}
-</div>
+<p class="d-flex justify-content-between">
+    <span>
+        <i class="fa-solid fa-calendar-days me-1"></i> {%- include post/day.html date:post.date -%}
+    </span>
+</p>
+{%- assign author = site.authors[post.data.author] -%}
+{%- if author -%}
+<p>
+    {%- if author.github -%}
+    <img class="rounded-circle me-1" alt="author" height="40" width="40" src="https://avatars.githubusercontent.com/{{ author.github }}?size=40">
+    {%- endif -%}
+    {{ author.name }}
+</p>
+{%- else -%}
+<p>Unknown author</p>
+{%- endif -%}

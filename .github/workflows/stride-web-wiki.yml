@@ -1,0 +1,24 @@
+name: Publish to GitHub Wiki
+on:
+ # push:
+ #   branches:
+ #     - main
+ #   paths:
+ #     - wiki/**
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v3
+     - name: Upload Wiki pages
+       uses: docker://decathlon/wiki-page-creator-action:2.0.1
+       env:
+         GH_PAT: ${{ secrets.GH_PAT }}
+         ACTION_MAIL: vaclavelias@gmail.com
+         ACTION_NAME: VaclavElias
+         OWNER: VaclavElias
+         REPO_NAME: stride-website-next
+         MD_FOLDER: wiki

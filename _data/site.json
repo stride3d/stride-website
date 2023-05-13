@@ -1,0 +1,89 @@
+{
+  "version": "2.0.0.8",
+  "engine": "Eleventy 2.0",
+  "title": "Stride Game Engine",
+  "description": "C# Stride Game Engine is a powerful and versatile game development engine that is based on the C# programming language",
+  "language": "en",
+  "author": "Stride Team",
+  "dark-mode": true,
+  "alert-banner": false,
+  "docs-search": true,
+  "google-analytics": true,
+  "download-version": "4.1",
+  "csharp-version": "C# 10",
+  "dotnet-version": ".NET 6",
+  "url": "https://www.stride3d.net",
+  "twitter-username": "stridedotnet",
+  "google-analytics-id": "G-Y9CVGC9YV1",
+  "paginate": 10,
+  "links": {
+    "discord-url": "https://discord.gg/f6aerfE",
+    "stride-url": "https://stride3d.net/",
+    "stride-download-url-temp": "https://github.com/stride3d/stride-website/raw/master/files/StrideSetup.exe",
+    "stride-download-url": "/files/StrideSetup.exe",
+    "docs-url": "https://doc.stride3d.net/latest/en/",
+    "docs-api-url": "https://doc.stride3d.net/latest/en/api/",
+    "docs-manual-url": "https://doc.stride3d.net/latest/en/manual/",
+    "docs-manual-jp-url": "https://doc.stride3d.net/latest/jp/manual/",
+    "docs-release-notes-url": "https://doc.stride3d.net/latest/en/releasenotes/",
+    "docs-requirements-url": "https://doc.stride3d.net/latest/en/manual/requirements/",
+    "docs-search-url": "https://doc.stride3d.net/latest/en/index.json",
+    "docs-tutorial-url": "https://doc.stride3d.net/latest/en/tutorials/",
+    "dotnet-foundation-url": "https://dotnetfoundation.org/",
+    "facebook-url": "https://www.facebook.com/stride3d",
+    "github-discussions-url": "https://github.com/stride3d/stride/discussions",
+    "github-stride-url": "https://github.com/stride3d/stride",
+    "github-web-url": "https://github.com/stride3d/stride-website",
+    "github-web-edit-url": "https://github.com/VaclavElias/stride-website-next/blob/main/",
+    "github-web-edit-url-temp": "https://github.com/stride3d/stride-website/blob/main/stride-website/",
+    "github-docs-url": "https://github.com/stride3d/stride-docs",
+    "open-collective-url": "https://opencollective.com/stride3d",
+    "stackexchange-url": "https://gamedev.stackexchange.com/questions/tagged/stride",
+    "twitter-url": "https://twitter.com/stridedotnet",
+    "youtube-url": "https://www.youtube.com/@Stride3D"
+  },
+  "authors": {
+    "virgile": {
+      "name": "Virgile Bello",
+      "github": "xen2",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "aggror": {
+      "name": "Aggror Jorn",
+      "github": "Aggror",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "jorn": {
+      "name": "Jorn Theunissen",
+      "github": "Aggror",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "vvvv": {
+      "name": "vvvv",
+      "github": "vvvv",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "vaclav": {
+      "name": "Vaclav Elias",
+      "github": "VaclavElias",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "youness": {
+      "name": "Youness KAFIA",
+      "github": "ykafia",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "silicon-studio": {
+      "name": "Silicon Studio Corporation",
+      "github": "SiliconStudio",
+      "linkedin": "",
+      "twitter": ""
+    }
+  }
+}
