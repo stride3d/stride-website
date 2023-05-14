@@ -5,6 +5,11 @@ on:
  #     - staging-next
  #   paths:
  #     - wiki/**
+ # pull_request:
+ #   branches:
+ #     - staging-next
+ #   paths:
+ #     - wiki/**
   workflow_dispatch:
 
 jobs:
