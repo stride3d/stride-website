@@ -49,7 +49,9 @@ The `web.config` file is used to configure IIS, including:
 - Custom Headers
 - Custom 404
 
-The GitHub action `eleventy_stride-web-rc.yml` builds the website and deploys it to Azure Web Apps.
+The GitHub action `stride-website-staging-azure` builds the website and deploys it to Azure Web Apps.
+
+[Step-by-Step Deployment Guide for Azure Web Apps (Windows) with IIS and Stride Website](Deployment-Azure).
 
 ## Deploying with .NET Core
 
