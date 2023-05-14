@@ -2,7 +2,12 @@ name: Publish to GitHub Wiki
 on:
  # push:
  #   branches:
- #     - main
+ #     - staging-next
+ #   paths:
+ #     - wiki/**
+ # pull_request:
+ #   branches:
+ #     - staging-next
  #   paths:
  #     - wiki/**
   workflow_dispatch:
