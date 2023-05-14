@@ -17,7 +17,7 @@ Our main goal was to make the website future-proof and easy to maintain. We also
 
 ## What's New or Updated
 
-- Improved consistency across pages, posts, and styling, offering an excellent readability experience
+- Improved consistency across pages, posts, and styling, offering an excellent reading experience
 - Enhanced content readability
 - Modern and simplified design
 - Updated static page generator: Eleventy 2.0 (previously Jekyll)
@@ -36,7 +36,7 @@ Our main goal was to make the website future-proof and easy to maintain. We also
 This new update will enable us to share more content with you faster and more easily. We will also be able to add more features and enhance the overall experience.
 
 {%- capture title -%}
-The Disqus comment widget has been removed from the blog posts, as we would like to encourage our readers to use <a class="link-info" href="{{ site.links.github-discussions-url }}" target="_blank" rel="noopener">GitHub Discussion</a> or Discord. We are considering linking the GitHub Discussions with the blog posts.
+The Disqus comment widget has been removed from the blog posts, as we would like to encourage our readers to use <a class="link-info" href="{{ site.links.github-discussions-url }}" target="_blank" rel="noopener">GitHub Discussion</a> or Discord. We are considering integrating the GitHub Discussions with the blog posts.
 {%- endcapture -%}
 
 {% include _alert.html type:'info' title:title %}
@@ -45,7 +45,7 @@ The Disqus comment widget has been removed from the blog posts, as we would like
 
 We will continue to improve the website and add more content. Additionally, we will be adding more features and further refining the overall experience.
 
-Our Stride website [GitHub issue tracker](https://github.com/stride3d/stride-website/issues) is open for any suggestions or feedback. Please feel free to collaborate, create issues, and submit pull requests.
+Our Stride website [GitHub issue tracker](https://github.com/stride3d/stride-website/issues) is open for any suggestions or feedback. We encourage you to collaborate, create issues, and submit pull requests.
 
 ## Closing
 
@@ -55,4 +55,4 @@ With this new release, we would like to encourage our community to contribute as
 
 If you have a topic, tutorial, or success story you'd like to share, we invite you to get in touch. By contributing, you'll not only help others in the community but also gain visibility for your work and expertise.
 
-Let's work together to make the Stride community even more vibrant and resourceful.
+Let's work together to make the Stride community even more vibrant and enriching.
