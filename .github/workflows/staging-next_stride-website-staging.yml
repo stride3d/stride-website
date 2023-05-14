@@ -4,9 +4,9 @@
 name: Build and deploy ASP app to Azure Web App - stride-website-staging
 
 on:
-  push:
-    branches:
-      - staging-next
+  #push:
+  #  branches:
+  #    - staging-next
   workflow_dispatch:
 
 jobs:
