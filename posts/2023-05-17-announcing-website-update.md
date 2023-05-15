@@ -1,11 +1,11 @@
 ---
-title: 'Announcing Stride Website'
+title: 'Announcing Refreshed Stride Website'
 author: vaclav
 tags: ['Announcement']
 image: /images/blog/2023-04/new-home-page.webp
 ---
 
-The Stride team is happy 🙌 to announce the launch of our new Stride website. We have been working on this for a while, and we are excited to share it with you. We hope you like it.
+The Stride team is happy 🙌 to announce the release of our refreshed Stride website. We have been working on this for a while, and we are excited to share these updates with you and hope you enjoy the enhanced browsing experience.
 
 ---
 
@@ -49,7 +49,7 @@ Our Stride website [GitHub issue tracker](https://github.com/stride3d/stride-web
 
 ## Closing
 
-We hope you like the new website.
+We hope you like the updated website.
 
 With this new release, we would like to encourage our community to contribute as well. Your experiences, insights, and knowledge are invaluable, and we would love to showcase them on our blog.
 
