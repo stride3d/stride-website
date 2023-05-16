@@ -11,21 +11,27 @@ permalink: /scripts/theme-selector.js
   'use strict'
 
   const storedTheme = localStorage.getItem('theme')
+  const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  const resolveTheme = (theme) => {
+      if (theme === 'auto') {
+        return isSystemDark ? 'dark' : 'light';
+      } else {
+        return theme;
+      }
+  }
 
   const getPreferredTheme = () => {
     if (storedTheme) {
       return storedTheme
     }
 
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    return isSystemDark ? 'dark' : 'light'
   }
 
   const setTheme = function (theme) {
-    if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-bs-theme', 'dark')
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
-    }
+      const resolvedTheme = resolveTheme(theme);
+      document.documentElement.setAttribute('data-bs-theme', resolvedTheme);
   }
 
   setTheme(getPreferredTheme())
@@ -35,7 +41,10 @@ permalink: /scripts/theme-selector.js
     const themeDropdownButton = document.querySelector('#themeDropdown');
     const activeThemeIcon = document.querySelector(`[data-theme="${theme}"]`);
     themeDropdownButton.innerHTML = activeThemeIcon.outerHTML;
-    logo.src = `/images/svg/stride-logo-${theme}.svg`;
+
+    const resolvedTheme = resolveTheme(theme);
+
+    logo.src = `/images/svg/stride-logo-${resolvedTheme}.svg`;
   }
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
@@ -47,7 +56,7 @@ permalink: /scripts/theme-selector.js
   window.addEventListener('DOMContentLoaded', () => {
     showActiveTheme(getPreferredTheme())
 
-    document.querySelectorAll('.dropdown-item')
+    document.querySelectorAll('.dropdown-item-theme')
       .forEach(toggle => {
         toggle.addEventListener('click', () => {
           const theme = toggle.id.replace('Theme', '').toLowerCase();
