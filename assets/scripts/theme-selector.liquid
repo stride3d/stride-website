@@ -56,7 +56,7 @@ permalink: /scripts/theme-selector.js
   window.addEventListener('DOMContentLoaded', () => {
     showActiveTheme(getPreferredTheme())
 
-    document.querySelectorAll('.dropdown-item-language')
+    document.querySelectorAll('.dropdown-item-theme')
       .forEach(toggle => {
         toggle.addEventListener('click', () => {
           const theme = toggle.id.replace('Theme', '').toLowerCase();
