@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0.9",
+  "version": "2.0.0.10",
   "engine": "Eleventy 2.0",
   "title": "Stride Game Engine",
   "description": "C# Stride Game Engine is a powerful and versatile game development engine that is based on the C# programming language",
@@ -19,8 +19,8 @@
   "links": {
     "discord-url": "https://discord.gg/f6aerfE",
     "stride-url": "https://stride3d.net/",
-    "stride-download-url-temp": "https://github.com/stride3d/stride-website/raw/master/files/StrideSetup.exe",
-    "stride-download-url": "/files/StrideSetup.exe",
+    "stride-download-url": "https://github.com/stride3d/stride-website/raw/master/files/StrideSetup.exe",
+    "stride-download-url-local": "/files/StrideSetup.exe",
     "docs-url": "https://doc.stride3d.net/latest/en/",
     "docs-api-url": "https://doc.stride3d.net/latest/en/api/",
     "docs-manual-url": "https://doc.stride3d.net/latest/en/manual/",

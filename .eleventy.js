@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
     // Add custom files and folders
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("scripts");
-    eleventyConfig.addPassthroughCopy("files");
+    //eleventyConfig.addPassthroughCopy("files");
     eleventyConfig.addPassthroughCopy("favicon.ico");
     eleventyConfig.addPassthroughCopy("favicon.png");
     eleventyConfig.addPassthroughCopy("CNAME"); // For GitHub Pages
