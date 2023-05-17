@@ -10,6 +10,7 @@ on:
 #    paths-ignore:
 #      - 'README.md'
 #      - 'wiki/**'
+#      - '_drafts/**'
 #      - .gitignore
 #      - '.github/**'
   workflow_dispatch:
