@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("favicon.ico");
     eleventyConfig.addPassthroughCopy("favicon.png");
     eleventyConfig.addPassthroughCopy("CNAME"); // For GitHub Pages
+    eleventyConfig.addPassthroughCopy("blog/web.config");
     eleventyConfig.addPassthroughCopy("web.config");
     eleventyConfig.addPassthroughCopy({
         "node_modules/lunr/lunr.min.js": "scripts/lunr.min.js",
