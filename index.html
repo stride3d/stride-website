@@ -6,7 +6,7 @@ eleventyComputed:
 ---
 {% include carousel_home.html %}
 <div class="container-xxl mt-5 mt-sm-0">
-    <div class="row g-5 py-sm-5">
+    <div class="row g-5 py-sm-5 pb-5">
         <div class="col-lg-6">
             <div class="card h-100">
                 <div class="ratio ratio-16x9">
@@ -96,7 +96,7 @@ eleventyComputed:
                     <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'Windows Desktop & Windows Universal' %}
                         {% include bullet-point.html text:'iOS and Android' %}
-                        {% include bullet-point.html text:'Xbox One, Series S/X' %}
+                        {% comment %}{% include bullet-point.html text:'Xbox One, Series S/X' %}{% endcomment %}
                     </ul>
                 </div>
                 <div class="px-4 mb-4">
@@ -122,7 +122,7 @@ eleventyComputed:
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="card h-100">
                 <div class="p-4">
                     <img src="/images/logos/Silicon_Studio_logo.svg" alt="Silicon Studio" class="img-fluid">
