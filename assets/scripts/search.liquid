@@ -127,6 +127,9 @@ permalink: /scripts/search.js
         .then(response => response.json())
         .then(data => search(data))
         .catch(error => console.log(error));*/
+    } else {
+        console.log('No search term found');
+        document.getElementById('spinner').remove();
     }
 
     function mergeSearchData(webData, docsData) {
