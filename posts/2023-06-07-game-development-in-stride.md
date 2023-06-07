@@ -1,18 +1,24 @@
 ---
 title: 'Taking .NET game development in Stride'
-author: Youness
+author: youness
 tags: ['Live']
 image: /images/blog/2023-04/new-home-page.webp
 ---
+🎥🎥🎥
 
-A little reminder that Stride has been presented in a .NET live ! 🎥🎥🎥
+A little reminder that Stride has been presented in a .NET live! 
 
+🎥🎥🎥
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Vaclav, Tebjan and I have participated in a .NET live session to showcase the Stride engine as well as some work done by users, many questions were asked and many were answered !
 
 ---
 
-But, what's in it for you ?
+
+## Watch the live right here
+
+<iframe width="100%" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="aspect-ratio: 16 / 9;"></iframe>
+
 
 ## The most important questions answered
 
