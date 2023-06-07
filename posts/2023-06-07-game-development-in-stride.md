@@ -2,7 +2,7 @@
 title: 'Taking .NET game development in Stride'
 author: youness
 tags: ['Live']
-image: /images/blog/2023-04/new-home-page.webp
+image: /images/blog/2023-06/netlive.png
 ---
 🎥🎥🎥
 
