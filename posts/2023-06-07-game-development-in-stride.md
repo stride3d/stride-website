@@ -1,41 +1,59 @@
 ---
-title: 'Taking .NET game development in Stride'
+title: 'Taking .NET Game Development in Stride'
 author: youness
 tags: ['Live']
 image: /images/blog/2023-06/netlive.png
 ---
-🎥🎥🎥
 
-A little reminder that Stride has been presented in a .NET live! 
+Just a little reminder that Stride has been presented in a .NET Live! 🎥🎥🎥
 
-🎥🎥🎥
-
-Vaclav, Tebjan and I have participated in a .NET live session to showcase the Stride engine as well as some work done by users, many questions were asked and many were answered !
+[Vaclav](https://github.com/VaclavElias), [Tebjan](https://github.com/tebjan) and I participated in a .NET live session to showcase the Stride engine, as well as some work done by users. Many questions were asked, and [Manio](https://github.com/manio143) answered many of them in the chat.
 
 ---
 
+## Watch the .NET Live right here
 
-## Watch the live right here
+**Content**
 
-<iframe width="100%" src="https://www.youtube.com/embed/J6g5y8m26zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="aspect-ratio: 16 / 9;"></iframe>
+- History of the Project
+- Roadmap
+- What are some of the big game titles that folks would recognize
+- The UI
+- Add Scripts to Entities
+- Integrating Stride into your projects
+- Add Interaction
+- Shader System of Stride
+- Shader Code
+- Shader Language
 
+{% youtube 'J6g5y8m26zs' %}
 
 ## The most important questions answered
 
-In this live we've answered the most important questions about the project, how to use Stride and what it aims to be!
+In this live session, we answered the most important questions about the project, including how to use Stride and what it aims to be!
 
-Tebjan has presented a bit about what contributors have done, what users (professionals/hobbyist, artists/developers) have done so far to show off the capabilities of the enginen, well as a little presentation of how Stride is used with VVVV with 3D rendering!
+Tebjan presented a bit about what contributors have done and what users (professionals/hobbyists, artists/developers) have done so far to show off the capabilities of the engine. He also gave a small presentation on how Stride is used with [VVVV](https://vvvv.org/) for 3D rendering!
 
 ## A fun experimentation
 
-Vaclav has dived into Stride wanting to use Stride without editor, creating an API to experiment and create games just with a nuget package.
-In his part, he presents his nuget package, how to use it and to make games using the power of .NET and hot reloading!
+Vaclav, having dived into Stride with a desire to use Stride without an editor, created an API to experiment and create games using just a NuGet package. He presents his NuGet package, explains how to use it, and how to make games leveraging the power of .NET and hot reloading!
+
+ToDo @vaclav: Add some further description, maybe a code snippet
 
 ## Shaders
 
-I've myself gotten interested in the shader system of Stride and found it refreshingly easy to use. I decided to show more of how to use shaders, update them and extend the rendering engine of Stride.
+I've personally become interested in the shader system of Stride and found it refreshingly easy to use. I decided to show more about how to use shaders, update them, and extend the rendering engine of Stride.
 
+### What is a shader?
+
+ToDo @youness: Write your explanation and link to our existing documentation if we have got anything related to shaders. Interlinking with existing tutorials, manual, previous posts is very important if it is possible.
+
+### Shader code
+
+```
+// ToDo @youness Add your shader sample?
+```
 
 ## Closing
 
-We hope watching this live can help you have a better understanding of Stride. .NET is becoming more and more relevant for a game engine as we can see with Stride, don't hesitate to reach our community through the discord server!
+We strongly recommend watching this live session, as it will help you gain a better understanding of Stride. .NET is becoming more and more relevant for a game engine, as evident with Stride. Don't hesitate to reach out to our community through the [Discord]({{ site.links.discord-url }}) server!
