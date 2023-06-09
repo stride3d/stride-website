@@ -1,0 +1,181 @@
+{
+  "gamestudio": [
+    {
+      "id": "graphics_compositor",
+      "title": "Graphics compositor",
+      "description": "Customize the rendering pipeline of your game in a visual way using building blocks. Future versions will even allow you to edit the building blocks themselves.",
+      "type": "image",
+      "enabled": true
+    },
+    {
+      "id": "prefab",
+      "title": "Nested prefabs",
+      "description": "Edit a prefab and every instance updates automatically, saving hours of work. You can even edit prefabs inside other prefabs.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "ui_editor",
+      "title": "UI editor",
+      "description": "Build the UI of your game visually and intuitively. Create UI libraries and leverage the prefab system to automatically update all your UI elements' design.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "scene_editor",
+      "title": "Scene editor",
+      "description": "Create your game scenes and levels simply by dragging and dropping your objects from the asset view to the desired places.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "sprite_editor",
+      "title": "Sprite editor",
+      "description": "Create and edit sprites visually in the editor. Stride automatically creates optimized atlases from your sprite sheets.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "curve_editor",
+      "title": "Curve editor",
+      "description": "Intuitively animate the value of your properties by creating animation curves directly in the editor.",
+      "type": "video",
+      "enabled": true
+    }
+  ],
+  "graphics": [
+    {
+      "id": "pbr",
+      "title": "PBR materials",
+      "description": "Bring your game one step closer to reality with physically-based materials. Create infinite variations of materials by layering them together.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "light_probes",
+      "title": "Light probes",
+      "description": "Increase graphics realism by adding indirect lighting to static and dynamic objects of your game with our new light probe system.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "nextgen_graphics_api",
+      "title": "DirectX 12 and Vulkan",
+      "description": "Increase performance of your game thanks to next generation explicit graphics APIs: multi-thread your rendering and reduce driver overhead.",
+      "type": "image_nozoom",
+      "enabled": true
+    },
+    {
+      "id": "particles",
+      "title": "Particles",
+      "description": "Add life and realism to your game using the fully integrated particle system. Particles can be edited from the scene editor.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "shader_language",
+      "title": "Advanced shader language",
+      "description": "Say goodbye to uber shader problems. Split shaders logically with Stride's composition-based shader language, written on top of HLSL.",
+      "type": "image_nozoom",
+      "image_url": "shader_language.png",
+      "enabled": true
+    },
+    {
+      "id": "post_effects",
+      "title": "Post effects",
+      "description": "Add photorealistic effects to your game with post-effects. Stride supports all the most common effects such as Depth of Field, Bloom, etc.",
+      "type": "video",
+      "enabled": true
+    }
+  ],
+  "engine": [
+    {
+      "id": "scripting",
+      "title": "C# scripting",
+      "description": "Built in C#, Stride gives you access to the low-level APIs, C# 10 (.NET 6) and asynchronous scripting, and comes with a script editor.",
+      "type": "image",
+      "enabled": false
+    },
+    {
+      "id": "scene_streaming",
+      "title": "Scene streaming",
+      "description": "Easily create vast worlds by streaming objects in and out of your scenes. Divide your world into subscenes to avoid editing conflicts.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "physics",
+      "title": "Physics",
+      "description": "Simulate the laws of physics, trigger events and easily detect collisions in your game by using Stride's physics system.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "description": "Easily and efficiently find paths to move your characters around using navigation meshes. The scene editor automatically update them for you.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "multithreading",
+      "title": "Multi-threading",
+      "description": "Improve the performance of your game by using a completely multi-threaded engine. Stride does all the arduous work for you in an optimized way.",
+      "type": "image_nozoom",
+      "enabled": true
+    },
+    {
+      "id": "animation",
+      "title": "Animation",
+      "description": "Play and blend animations created in 3D modeling tools and animate any property of your game. Storyboard editor coming soon.",
+      "type": "video",
+      "enabled": true
+    }
+  ],
+  "vr": [
+    {
+      "id": "template",
+      "title": "VR sample",
+      "description": "Stride comes with a VR game sample that shows you how to implement VR gameplay, including environment interaction and teleportation.",
+      "type": "video",
+      "enabled": true
+    },
+    {
+      "id": "optimized",
+      "title": "Optimized performance",
+      "description": "Get the best VR performance with clustered forward rendering, single-pass rendering, multi-threading, and next-gen graphics API support.",
+      "type": "image",
+      "enabled": true
+    },
+    {
+      "id": "vr-editor",
+      "title": "VR preview",
+      "description": "Save valuable time by visualizing and testing VR directly from the scene editor.",
+      "type": "video",
+      "enabled": true
+    }
+  ],
+  "scripting": [
+    {
+      "id": "startup_scripts",
+      "title": "Startup scripts",
+      "description": "Startup scripts in Stride are executed when the game or a specific scene is loaded, allowing developers to initialize game objects, set up the environment, and prepare any required resources. These scripts can be used to set initial states, configure game settings, or establish connections between game entities. Additionally, startup scripts can be utilized for creating reusable functions, registering event handlers, or setting up custom input systems, ensuring the game is fully prepared and optimized for the player's experience.",
+      "type": "image",
+      "enabled": true
+    },
+    {
+      "id": "synchronous_scripts",
+      "title": "Synchronous scripts",
+      "description": "Synchronous scripts in Stride run sequentially within the game loop, ensuring that each step of the game logic is executed in a specific order. This type of scripting is particularly useful for character movements, physics simulations, and other aspects of game logic that require precise and predictable execution. Synchronous scripts ensure that the game state remains consistent across each frame, providing a smooth and coherent gameplay experience.",
+      "type": "image",
+      "enabled": true
+    },
+    {
+      "id": "asynchronous_scripts",
+      "title": "Asynchronous scripts",
+      "description": "Asynchronous scripts in Stride allow developers to perform non-blocking operations, such as loading assets or handling network requests, without interrupting the main game loop. By leveraging the async/await pattern in C# 10 and .NET 6, these scripts enable efficient multitasking and help maintain optimal game performance. Asynchronous scripts are particularly useful for managing time-consuming tasks or background processes, ensuring that the game remains responsive and fluid for the player.",
+      "type": "image",
+      "enabled": true
+    }
+  ]
+}

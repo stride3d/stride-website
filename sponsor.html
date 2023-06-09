@@ -1,84 +1,93 @@
 ---
-layout: sponsors
-title: Sponsor
+layout: container
+title: Support the Future of Stride
 permalink: /sponsor/
-menu: sponsor
+description: 'Support Stride Game Engine: Become a sponsor and contribute to the development of the powerful open-source Stride game engine. Help shape its future!'
+tags: search
+banner:
+  title: A Special Thanks to Our Sponsors
+  sub-title: Empowering Innovation and Creativity in Game Development
+  image-url: /images/backgrounds/spaceescape.webp
+  h1: false
 ---
-
-<div class="rt-center entry-content">
-    <div class="row">
-        <h1>A big shout out to all those who sponsor the Stride Game Engine!</h1> <br>
-    </div>
-    <div class="rt-center entry-content">
-        <a href="https://opencollective.com/stride3d" target="_blank">
-            <img src="https://opencollective.com/stride3d/donate/button@2x.png?color=blue" width=300 />
-        </a>
-        <br><br>
-        <object class type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/badge.svg"></object>
-    </div>
-</div>
-
-<div class="entry-content">
-    <div class="container" >
+<div class="card">
+    <div class="card-body p-4">
         <div class="row">
-            <h1 class="rt-center"><span>Diamond Striders</span></h1>
-            <div class="rt-center">
-                <div class="col-md-6">
-                    <a target="_blank" href="https://www.ore-system.com/""><img class="partner-logo-diamond" src="/images/sponsors/ore_system-next_gen_nfts_dark.png"/></a>
-                </div>
-                <div class="col-md-6 ">
-                    <br>
-                    <br>
-                    <br>
-                    <h3 class="platinum-name">David Jeske</H3>
-                </div>
+            <div class="col-lg-7 col-md-6 rt-left">
+                <h1 class="mb-3">Support the Future of Stride</h1>
+                <h2>Why Sponsor Stride?</h2>
+                <p class="lead">Stride is a community-driven, free, and open-source project. We're dedicated to pushing the boundaries of game development, but we can't do it alone. That's where sponsors come in.</p>
+                <h2>The Impact of Your Sponsorship</h2>
+                <p class="lead">Sponsors play a crucial role in empowering developers and creators by supporting the tools and resources they need to bring their visions to life. Your sponsorship helps maintain and improve the quality of our game engine, enhance our documentation, provide vital resources to our community, and much more.</p>
+                <h2>Join Our Community of Sponsors</h2>
+                <p>
+                    <img alt="Financial Contributors badge" src="https://opencollective.com/stride3d/tiers/badge.svg" />
+                </p>
+                <p class="lead">We want to extend a big shout out to all those who already sponsor the Stride Game Engine. Your dedication and backing are what make Stride's ongoing development possible. If you're not a sponsor yet, consider joining this community of visionaries who are investing in the future of game development.</p>
+                <p class="mt-4">
+                    <a href="https://opencollective.com/stride3d" target="_blank" rel="noopener">
+                        <img src="https://opencollective.com/stride3d/donate/button@2x.png?color=blue" width=300 />
+                    </a>
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-6 rt-center feature-block">
+                <a href="/images/features/gamestudio/overview.webp" title="The GameStudio Editor" class="feature-image-container image-popup">
+                    <div class="rt-image"><div class="zoom-in"></div><img class="img-fluid" src="/images/features/gamestudio/overview.webp" /></div>
+                </a>
             </div>
         </div>
     </div>
 </div>
-
-<div class="entry-content">
-    <div class="container" >
+{% comment %}<div class="card mt-5">
+    <div class="card-body p-4">
+        <h2 class="mb-3">Diamond Striders</h2>
         <div class="row">
-            <h1 class="rt-center"><span>Platinum Striders</span></h1>
-            <div class = "vertical-center">
-                <div class="col-md-12">
-                    <a target="_blank" href="https://vvvv.org/"><img class="partner-logo-platinum" src="/images/sponsors/logo_vvvv.png"/></a>
-                </div>
-            </div>
+            {% include sponsor-diamond.html %}
+        </div>
+        <h2 class="mb-3 mt-4">Platinum Striders</h2>
+        <div class="row">
+            {% include sponsor-platinum.html %}
         </div>
     </div>
-</div> 
-
-<div class="entry-content">
-    <div class="container" >
-        <div class="row">
-            <h1 class="rt-center"><span>Gold Striders</span></h1>
-            <div class = "vertical-center">
-                <object class="sponsortier" type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/gold-strider.svg?avatarHeight=82&button=false"></object>
+</div>{% endcomment %}
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body p-4">
+            <h2 class="mb-0">Featured Sponsors</h2>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    {% include sponsor-generic.html %}
+</div>
+{% comment %} The styling is difficult as those widgets are not responsive. We can fix in the future by fetching json and display what we want and how we want. {% endcomment %}
+<div class="card mt-5">
+    <div class="card-body p-4">
+        <div class="row mb-3 mt-4">
+            <div class="col-md-4">
+                <h2 class="text-center">Gold Striders</h2>
+                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/gold-strider.svg?avatarHeight=40&button=false&width=290"></object>
+            </div>
+            <div class="col-md-4">
+                <h2 class="text-center">Silver Striders</h2>
+                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/silver-strider.svg?avatarHeight=40&button=false&width=290"></object>
+            </div>
+            <div class="col-md-4">
+                <h2 class="text-center">Bronze Striders</h2>
+                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/bronze-strider.svg?avatarHeight=40&button=false&width=290"></object>
             </div>
         </div>
     </div>
 </div>
-
-<div class="entry-content">
-    <div class="container" >
+<div class="card mt-5">
+    <div class="card-body p-4">
         <div class="row">
-            <h1 class="rt-center"><span>Silver Striders</span></h1>
-            <div class = "vertical-center">
-                <object class="sponsortier" type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/silver-strider.svg?avatarHeight=46&button=false"></object>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="entry-content">
-    <div class="container" >
-        <div class="row">
-            <h1 class="rt-center"><span>Bronze Striders</span></h1>
-            <div class = "vertical-center sponsortier">                
-                <object class="sponsortier" type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/bronze-strider.svg?avatarHeight=24&button=false"></object>
-
+            <div class="col-12 text-center">
+                <h2>All Stride Sponsors</h2>
+                <script src="https://opencollective.com/stride3d/banner.js"></script>
+                <h3>Additional Sponsors</h3>
+                <p>Thank you to all our additional sponsors who have contributed to the Stride project.</p>
+                <p>David Jeske</p>
             </div>
         </div>
     </div>

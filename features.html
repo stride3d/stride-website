@@ -1,98 +1,147 @@
 ---
-layout: features
+layout: default
 title: Features
-permalink: /features/
-excerpt: 'Stride supports an extensive list of features: Scene Editor, Physically Based Rendering, Particles, UI Editor, Prefabs, DX12 & Vulkan, C# Scripting, etc...'
+description: 'Stride supports an extensive list of features: Scene Editor, Physically Based Rendering, Particles, UI Editor, Prefabs, DX12 & Vulkan, C# Scripting, etc...'
 ---
-
-<div class="bg-light bg-bottom-border">
-<div class="container">
-<div class="row">
-    <a class="anchor" id="game-studio"></a>
-	<div class="col-lg-7 col-md-6 gantry-width-block rt-left">
-		<h1><span class="rt-accent-color1">Game</span> Studio</h1>
-		<p>Stride comes with a robust toolchain that enables you to intuitively and efficiently create, manage and modify all assets of your game.</p>
-		<p>The suite of editors simplify and automate common development workflows. Its nested prefab and archetype systems scale along all editors and assets.</p>
-		<p>Stride Game Studio has also been designed so that it can be extended easily. A plug-in system to help users extend the Game Studio is coming soon!</p>
-	</div>
-	<div class="col-lg-5 col-md-6 gantry-width-block rt-center feature-block">
-		<a href="/images/features/gamestudio/overview.jpg" title="The GameStudio Editor" class="feature-image-container image-popup">
-			<div class="rt-image"><div class="zoom-in"></div><img src="/images/features/gamestudio/overview.jpg"/></div>			
-		</a>
-	</div>
+<div style="background-image: url(/images/backgrounds/features_banner.webp); background-position: 50% 40%; background-size: cover">
+    <div class="cover text-center py-5">
+        <h1 class="text-light pt-4">Stride Features</h1>
+        <div class=" pt-3">
+            <a href="#game-studio" class="btn px-4 mb-2 btn-stride mx-1">Editor</a>
+            <a href="#graphics" class="btn px-4 mb-2 btn-stride mx-1">Graphics</a>
+            <a href="#engine" class="btn px-4 mb-2 btn-stride mx-1">Engine</a>
+            <a href="#vr" class="btn px-4 mb-2 btn-stride mx-1">VR</a>
+            <a href="#scripting" class="btn px-4 mb-2 btn-stride mx-1">Scripting</a>
+        </div>
+    </div>
 </div>
-<div class="row">
-{% assign features_current = 'gamestudio' %}
-{% include features_block.html %}
-</div>
-</div>
-</div>
-
-<div class="bg-dark bg-bottom-border">
-<div class="container">
-<div class="row">
-    <a class="anchor" id="graphics"></a>
-	<div class="col-lg-7 col-md-6 gantry-width-block rt-left">
-		<h1>Advanced <span class="rt-accent-color1">graphics</span></h1>
-		<p>With Stride, there's no need to be a rendering expert to make great-looking games. The engine does the work for you, so you can focus on the important stuff.</p>
-		<p>Stride's PBR materials, light probes, post effects, multithreading, and next-gen graphics API support deliver realistic graphics with outstanding performance.</p>
-		<p>The flexible pipeline, accessible low-level APIs, and customizable shaders let you tweak the rendering as much as you need.</p>
-	</div>
-	<div class="col-lg-5 col-md-6 gantry-width-block rt-center feature-block">
-		<a href="/images/features/graphics/overview.jpg" title="Material Editor" class="feature-image-container image-popup">
-			<div class="rt-image"><div class="zoom-in"></div><img src="/images/features/graphics/overview.jpg" alt="Material Editor"></div>			
-		</a>
-	</div>
-</div>
-<div class="row">
-{% assign features_current = 'graphics' %}
-{% include features_block.html %}
-</div>
-</div>
-</div>
-
-<div class="bg-light bg-bottom-border"/>
-<div class="container">
-<div class="row">
-    <a class="anchor" id="engine"></a>
-	<div class="col-lg-7 col-md-6 gantry-width-block rt-left">
-		<h1>Reliable <span class="rt-accent-color1">engine</span></h1>
-		<p>Whether you're indie or AAA, Stride lets you focus on your ideas rather than technical concerns.</p>
-		<p>It comes with a full set of modules dedicated to editing every part of your game. Each is provided out of the box and integrated into the engine.</p>
-		<p>Modern C# scripting with shader and script hot reload lets you build prototypes and iterate fast.</p>
-	</div>
-	<div class="col-lg-5 col-md-6 gantry-width-block rt-center feature-block">
-		<a href="/images/features/engine/overview.jpg" title="The Eternity Blood Sample Game" class="feature-image-container image-popup">
-			<div class="rt-image"><div class="zoom-in"></div><img src="/images/features/engine/overview.jpg"></div>			
-		</a>
-	</div>
-</div>
-<div class="row">
-{% assign features_current = 'engine' %}
-{% include features_block.html %}
-</div>
-</div>
-</div>
-
-<div class="bg-dark">
-<div class="container">
-<div class="row">
-    <a class="anchor" id="vr"></a>
-	<div class="col-lg-7 col-md-6 gantry-width-block rt-left">
-		<h1><span class="rt-accent-color1">VR</span> ready</h1>
-		<p>Stride's clustered forward rendering, with its multisample anti-aliasing, makes it ideal for VR. Enabling VR is as simple as a single click.</p>
-		<p>Stride uses a single API for every device, with native support for Oculus and HTC Vive.</p>
-		<p>Stride's <b>HRTF binaural audio</b> greatly improves VR immersion.</p>
-	</div>
-	<div class="col-lg-5 col-md-6 gantry-width-block rt-center feature-block">
-		<a href="/images/features/vr/overview.jpg" title="VR Game Template" class="feature-image-container image-popup">
-			<div class="rt-image"><div class="zoom-in"></div><img src="/images/features/vr/overview.jpg" alt="VR Game Template"></div>			
-		</a>
-	</div>
-</div>
-<div class="row">
-{% assign features_current = 'vr' %}
-{% include features_block.html %}
-</div>
-</div>
+<div class="container-xxl py-5">
+    <div class="card">
+        <div class="card-body p-4">
+            <div class="row">
+                <a class="anchor" id="game-studio"></a>
+                <h2 class="h1 mb-3"><span class="rt-accent-color1">Game</span> Studio</h2>
+                <div class="col-lg-7 col-md-6 rt-left">
+                    <p class="lead">Stride comes with a robust toolchain that enables you to intuitively and efficiently create, manage and modify all assets of your game.</p>
+                    <p class="lead">The suite of editors simplify and automate common development workflows. Its nested prefab and archetype systems scale along all editors and assets.</p>
+                    <p class="lead">Stride Game Studio has also been designed so that it can be extended easily.</p>
+                </div>
+                <div class="col-lg-5 col-md-6 rt-center feature-block">
+                    <a href="/images/features/gamestudio/overview.webp" title="The GameStudio Editor">
+                        <div><img class="img-fluid" src="/images/features/gamestudio/overview.webp" /></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1 g-4">
+        {% assign name = 'gamestudio' %}
+        {% include feature.html %}
+    </div>
+    <div class="card mt-5">
+        <div class="card-body p-4">
+            <div class="row">
+                <a class="anchor" id="graphics"></a>
+                <h2 class="h1 mb-3">Advanced <span class="rt-accent-color1">graphics</span></h2>
+                <div class="col-lg-7 col-md-6 rt-left">
+                    <p class="lead">With Stride, there's no need to be a rendering expert to make great-looking games. The engine does the work for you, so you can focus on the important stuff.</p>
+                    <p class="lead">Stride's PBR materials, light probes, post effects, multithreading, and next-gen graphics API support deliver realistic graphics with outstanding performance.</p>
+                    <p class="lead">The flexible pipeline, accessible low-level APIs, and customizable shaders let you tweak the rendering as much as you need.</p>
+                </div>
+                <div class="col-lg-5 col-md-6 rt-center feature-block">
+                    <a href="/images/features/graphics/overview.jpg" title="Material Editor">
+                        <div><img src="/images/features/graphics/overview.jpg" alt="Material Editor" class="img-fluid"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1 g-4">
+        {% assign name = 'graphics' %}
+        {% include feature.html %}
+    </div>
+    <div class="card mt-5">
+        <div class="card-body p-4">
+            <div class="row">
+                <a class="anchor" id="engine"></a>
+                <h2 class="h1 mb-3">Reliable <span class="rt-accent-color1">engine</span></h2>
+                <div class="col-lg-7 col-md-6 rt-left">
+                    <p class="lead">Whether you're indie or AAA, Stride lets you focus on your ideas rather than technical concerns.</p>
+                    <p class="lead">It comes with a full set of modules dedicated to editing every part of your game. Each is provided out of the box and integrated into the engine.</p>
+                    <p class="lead">Modern C# scripting with shader and script hot reload lets you build prototypes and iterate fast.</p>
+                </div>
+                <div class="col-lg-5 col-md-6 rt-center feature-block">
+                    <a href="/images/features/engine/overview.jpg" title="The Eternity Blood Sample Game">
+                        <div><img class="img-fluid" src="/images/features/engine/overview.jpg"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1 g-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">C# scripting</h3>
+                    <a href="/images/features/engine/scripting.webp" title="C# scripting">
+                        <div class="rt-image my-3"><img class="img-fluid" loading="lazy" src="/images/features/engine/scripting.webp" alt="C# scripting"></div>
+                    </a>
+                    <p>Built in C#, Stride gives you access to the low-level APIs, {{ site.csharp-version }} ({{ site.dotnet-version }}) and asynchronous scripting, and comes with a script editor.</p>
+                </div>
+            </div>
+        </div>
+        {% assign name = 'engine' %}
+        {% include feature.html %}
+    </div>
+    <div class="card mt-5">
+        <div class="card-body p-4">
+            <div class="row">
+                <a class="anchor" id="vr"></a>
+                <h2 class="h1 mb-3"><span class="rt-accent-color1">VR</span> ready</h2>
+                <div class="col-lg-7 col-md-6 rt-left">
+                    <p class="lead">Stride's clustered forward rendering, with its multisample anti-aliasing, makes it ideal for VR. Enabling VR is as simple as a single click.</p>
+                    <p class="lead">Stride uses a single API for every device, with native support for Oculus and HTC Vive.</p>
+                    <p class="lead">Stride's <b>HRTF binaural audio</b> greatly improves VR immersion.</p>
+                </div>
+                <div class="col-lg-5 col-md-6 rt-center feature-block">
+                    <a href="/images/features/vr/overview.webp" title="VR Game Template">
+                        <div><img class="img-fluid" src="/images/features/vr/overview.webp" alt="VR Game Template"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1 g-4">
+        {% assign name = 'vr' %}
+        {% include feature.html %}
+    </div>
+    <div class="card mt-5">
+        <div class="card-body p-4">
+            <div class="row">
+                <a class="anchor" id="scripting"></a>
+                <h2 class="h1 mb-3"><span class="rt-accent-color1">C#</span> scripting</h2>
+                <div class="col-lg-7 col-md-6 rt-left">
+                    <p class="lead">C# scripting in Stride takes advantage of the latest language features in {{ site.csharp-version }} and the {{ site.dotnet-version }} framework, providing developers with cutting-edge tools to create game logic and interactivity. </p>
+                    <p class="lead">With Stride's integration into the .NET ecosystem, developers can access a wealth of libraries and resources to enhance their game development experience.</p>
+                    <p class="lead">By utilizing {{ site.csharp-version }} and {{ site.dotnet-version }}, Stride enables developers to employ modern programming concepts and techniques, resulting in robust, efficient, and maintainable game code.</p>
+                </div>
+                <div class="col-lg-5 col-md-6 rt-center feature-block">
+                    <div><img class="img-fluid" src="/images/features/scripting/stride-injecting-services.webp" alt="Injecting Services in Stride"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1 g-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">Async Scripting</h3>
+                    <a href="{{ site.links.docs-manual-url }}scripts/types-of-script.html#asynchronous-scripts" title="Stride Async Script" target="_blank" rel="noopener">
+                        <div class="rt-image my-3"><img class="img-fluid" loading="lazy" src="/images/features/scripting/async-script.webp" alt="Stride Async Script"></div>
+                    </a>
+                    <p>Stride utilizes the modern and native C# <a href="{{ site.links.docs-manual-url }}scripts/types-of-script.html#asynchronous-scripts" target="_blank" rel="noopener">async/await feature</a> for handling asynchronous operations, offering a more intuitive and efficient approach to concurrent tasks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

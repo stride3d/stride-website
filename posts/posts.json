@@ -1,0 +1,11 @@
+{
+  "layout": "post",
+  "eleventyComputed": {
+    "year": "{{ page.date | date: '%Y' }}",
+    "modified": "Last Modified"
+  },
+  "permalink": "/blog/{{ page.fileSlug }}/",
+  "permalink3": "/posts/{{ page.date | date: '%Y/%m/%d' }}/{{ page.fileSlug }}/",
+  "permalink2": "/posts/{{ page.fileSlug }}/",
+  "tags": [ "blog", "search" ]
+}

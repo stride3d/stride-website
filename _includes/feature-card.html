@@ -1,0 +1,42 @@
+<div class="col-lg-4 col-md-6">
+    <div class="card h-100">
+        <div class="card-body">
+            <h3 class="card-title">{{ feature.title }}</h3>
+            {% if feature.type == 'video' %}
+            <div id="{{ feature.id }}_popup" class="ratio ratio-16x9 my-3">
+                <video controls loop preload="none" poster="/images/features/{{ name }}/{{ feature.id }}_640.jpg">
+                    <source src="/images/features/{{ name }}/{{ feature.id }}.mp4" type="video/mp4">
+                </video>
+            </div>
+            {% comment %}
+            <div class="feature-image-container">
+                <a href="#{{ feature.id }}_popup" title="{{ feature.title }}" class="video-popup">
+                    <div class="ratio ratio-16x9">
+                        <div class="zoom-in"></div><div class="video-play-button"></div>
+                        <video muted autoplay loop poster="/images/features/{{ name }}/{{ feature.id }}_640.jpg"><source src="/images/features/{{ name }}/{{ feature.id }}_640.mp4">
+                        </video>
+                    </div>
+                </a>
+            </div>
+            {% endcomment %}
+            {% elsif feature.type == 'image' %}
+            {% if feature.image_url == nil %}
+            {%   assign image_url = feature.id | append: '.jpg' %}
+            {% else %}
+            {%   assign image_url = feature.image_url %}
+            {% endif %}
+            <a href="/images/features/{{ name }}/{{ image_url }}" title="{{ feature.title }}" class="feature-image-container image-popup">
+                <div class="rt-image my-3"><div class="zoom-in"></div><img class="img-fluid" loading="lazy" src="/images/features/{{ name }}/{{ image_url }}" alt="{{ feature.title }}"></div>
+            </a>
+            {% elsif feature.type == 'image_nozoom' %}
+            {% if feature.image_url == nil %}
+            {%   assign image_url = feature.id | append: '.jpg' %}
+            {% else %}
+            {%   assign image_url = feature.image_url %}
+            {% endif %}
+            <div class="feature-image-container rt-image my-3"><img class="img-fluid" loading="lazy" src="/images/features/{{ name }}/{{ image_url }}" alt="{{ feature.title }}"></div>
+            {% endif %}
+            <p>{{ feature.description }}</p>
+        </div>
+    </div>
+</div>

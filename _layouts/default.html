@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}  
-  <body>
-  
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHN3F8B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
-	<div id="x_wrap">
-		<div id="stride-header">
-			{% include header.html %}		
-		</div>
-        {{ content }}	
-        <div id="stride-footer">
-            {% include footer.html %}
-        </div>
-	</div>
-  </body>
-  <script src="{{ site.baseurl}}/scripts/theme.js" type="text/javascript"></script>
+<!doctype html>
+<html lang="en" class="h-100">
+{% include _head.html %}
+<body class="bg-stride-website d-flex flex-column min-vh-100">
+    {%- include _top-navigation.html -%}
+    {%- if site.alert-banner -%}{% include alert-banner.html %}{%- endif -%}
+    {%- if banner -%}{% include banner.html title:banner.title sub-title:banner.sub-title image-url:banner.image-url h1:banner.h1 %}{%- endif -%}
+    {{ content }}
+    {%- include footer.html btn-class:"link-danger" social-class:"link-danger" -%}
+    {%- comment -%}{% include footer.html btn-class:"link-light" social-class:"link-light" %}{%- endcomment -%}
+    <script src="{{ site.baseurl}}/scripts/bootstrap.bundle.min.js?site-version={{site.version}}"></script>
+</body>
 </html>

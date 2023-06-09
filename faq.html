@@ -1,157 +1,136 @@
 ---
-layout: faq
-title: "FAQ"
+layout: default
+title: FAQ
 permalink: /faq/
+tags: search
+banner:
+  title: FAQ
+  sub-title: What can I do with Stride?
+  image-url: /images/backgrounds/faq.webp
+  h1: true
 ---
+<div class="container-xxl py-5 px-4 px-sm-5">
+    <div class="row g-4">
+        <div class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="h1 mb-3">General</h2>
+                    <div class="accordion">
+                        {% capture body %}
+                        <p>You can find the Stride system requirements on the <a href="{{ site.links.docs-requirements-url }}">Requirements</a> page in the Stride manual.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"system-requirements"
+                        title:"What are the Stride system requirements?"
+                        body:body
+                        %}
 
-<div class="entry-content">
-<h1 class="rt-center">General</h1>
-<div class="noMargin"><hr></div>
+                        {% include accordion-item-faq.html id:"what-platforms"
+                        title:"What platforms can I make applications for using Stride?"
+                        body:"<p>Stride currently supports <b>Windows</b>, <b>Android</b>, <b>iOS</b>, <b>Xbox One</b> and <b>Universal Windows Platforms (UWP)</b>. Stride also supports most popular VR devices and has experimental support for Linux.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_600" type="checkbox">
-	<dl>
-		<dt><label for="block_600">What are the Stride system requirements?</label></dt>
-		<dd><p>You can find the Stride system requirements on the <a href="http://doc.stride3d.net/latest/manual/requirements">Requirements</a> page in the Stride manual.</p></dd>
-	</dl>
-</div>
+                        {% capture body %}
+                        <p>You can find information about Stride features on the <a href="/features/" target="_self">Stride features page</a>, in the <a href="{{ site.links.docs-manual-url }}" target="_self">Stride documentation</a>, on the <a href="/blog/" target="_self">Stride blog</a>, and in the <a href="{{ site.links.docs-release-notes-url }}" target="_self">Stride release notes</a>. If you can't find what you're looking for, ask us on the <a href="{{ site.links.github-discussions-url }}" target="_self">Stride Github Discussions</a>.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-what-features"
+                        title:"What features does Stride support?"
+                        body:body
+                        %}
 
-<div class="x_accordion">
-	<input id="block_601" type="checkbox">
-	<dl>
-		<dt><label for="block_601">What platforms can I make applications for using Stride?</label></dt>
-		<dd><p>Stride currently supports <b>Windows</b>, <b>Android</b>, <b>iOS</b>, <b>Xbox One</b> and <b>Universal Windows Platforms (UWP)</b>. Stride also supports most popular VR headsets and has experimental support for Linux.</p></dd>
-	</dl>
-</div>
+                        {% include accordion-item-faq.html id:"question-what-application"
+                        title:"What kind of applications can I make with Stride?"
+                        body:"<p>Stride is open-source, highly modular, and super-versatile. You can use it to create mobile, PC and VR games, or as a high-end rendering engine for non-gaming applications such as architecture, medical, and engineering visualization software, training simulations, and so on.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_602" type="checkbox">
-	<dl>
-		<dt><label for="block_602">What features does Stride support?</label></dt>
-		<dd><p>You can find information about Stride features on the <a href="http://stride3d.net/features/" target="_self">Stride features page</a>, in the <a href="http://doc.stride3d.net/latest/manual/" target="_self">Stride documentation</a>, on the <a href="http://stride3d.net/blog/" target="_self">Stride blog</a>, and in the <a href="http://doc.stride3d.net/latest/releasenotes/" target="_self">Stride release notes</a>. If you can't find what you're looking for, ask us on the <a href="https://forums.stride3d.net/" target="_self">Stride forum</a>.</p></dd>
-	</dl>
-</div>
+                        {% capture body %}
+                        <p>Yes. Stride is free. If you want, you can support the project through the <a href="{{ site.links.open-collective-url }}" target="_blank" rel="noopener">Open Collective</a>.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"is-stride-free"
+                        title:"Is Stride free?"
+                        body:body
+                        %}
 
-<div class="x_accordion">
-	<input id="block_604" type="checkbox">
-	<dl>
-		<dt><label for="block_604">What kind of applications can I make with Stride?</label></dt>
-		<dd><p>Stride is open-source, highly modular, and super-versatile. You can use it to create mobile, PC and VR games, or as a high-end rendering engine for non-gaming applications such as architecture, medical, and engineering visualization software, training simulations, and so on.</p></dd>
-	</dl>
-</div>
+                        {% include accordion-item-faq.html id:"question-can-sell"
+                        title:"Can I sell applications made with Stride?"
+                        body:"<p>Yes. You can sell applications made with Stride without restriction.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_605" type="checkbox">
-	<dl>
-		<dt><label for="block_605">Is Stride free?</label></dt>
-		<dd><p>Yes. Stride is free. If you want, you can support the project through the <a href="https://opencollective.com/stride3d" target="_blank">Patreon page</a>.</p></dd>
-	</dl>
-</div>
+                        {% include accordion-item-faq.html id:"question-can-assets"
+                        title:"Can I use assets and code from the Stride samples or templates in my application?"
+                        body:"<p>Yes, you can use Stride sample assets and code in your games.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_606" type="checkbox">
-	<dl>
-		<dt><label for="block_606">Can I sell applications made with Stride?</label></dt>
-		<dd><p>Yes. You can sell applications made with Stride without restriction.</p></dd>
-	</dl>
-</div>
+                        {% include accordion-item-faq.html id:"question-upgrade"
+                        title:"Do I have to upgrade to new versions of Stride? Will this break my application?"
+                        body:"<p>No, you don't have to upgrade Stride if you don't want to. However, we recommend you upgrade to benefit from new features and bug fixes. Stride automatically upgrades your code and assets when you open a project in a new version. In the case of important API changes, upgrading Stride might break your application. We recommend you make a backup of your project before upgrading it.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_607" type="checkbox">
-	<dl>
-		<dt><label for="block_607">Can I use assests and code from the Stride samples or templates in my application?</label></dt>
-		<dd><p>Yes, you can use Stride sample assets and code in your games.</p></dd>
-	</dl>
-</div>
+                        {% capture body %}
+                        <p>
+                            You can get support on the Stride <a href="/community/">community platforms</a> or in the documentation <a href="http://doc.stride3d.net/latest/manual/troubleshooting/index.html">troubleshooting section</a>.
+                        </p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-stride-support"
+                        title:"Where can I get support for Stride?"
+                        body:body
+                        %}
 
-<div class="x_accordion">
-	<input id="block_608" type="checkbox">
-	<dl>
-		<dt><label for="block_608">Do I have to upgrade to new versions of Stride? Will this break my application?</label></dt>
-		<dd>
-			<p>No, you don't have to upgrade Stride if you don't want to. However, we recommend you upgrade to benefit from new features and bug fixes. Stride automatically upgrades your code and assets when you open a project in a new version. In the case of important API changes, upgrading Stride might break your application. We recommend you make a backup of your project before upgrading it.</p></dd>
-	</dl>
-</div>
+                        {% capture body %}
+                        <p>Maybe! <a href="/contact/" target="_self">Let us know</a> when you're about to release your game. We'll be happy to discuss how we can help.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-help-promote"
+                        title:"Can you help promote a game I made with Stride?"
+                        body:body
+                        %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="h1 mb-3">Licensing</h2>
+                    <div class="accordion">
+                        {% include accordion-item-faq.html id:"question-do-i-own"
+                        title:"Do I own the content I make with Stride?"
+                        body:"<p>Yes. You own all the content you make with Stride.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_610" type="checkbox">
-	<dl>
-		<dt><label for="block_610">Where can I get support for Stride?</label></dt>
-		<dd>
-			<p>You can get support on the Stride <a href="/community">community platforms</a> or in the documentation <a href="http://doc.stride3d.net/latest/manual/troubleshooting/index.html">troubleshooting section</a>.
-			If you use need premium support, <a href="http://stride3d.net/contact/" target="_self">contact us</a> to make a custom plan.</p></dd>
-	</dl>
-</div>
+                        {% include accordion-item-faq.html id:"question-royalty"
+                        title:"Does Stride charge royalties?"
+                        body:"<p>No. You can build and distribute applications made with Stride with zero royalty fees.</p>"
+                        %}
 
-<div class="x_accordion">
-	<input id="block_612" type="checkbox">
-	<dl>
-		<dt><label for="block_612">Can you help promote a game I made with Stride?</label></dt>
-		<dd>
-			<p>Maybe! <a href="http://stride3d.net/contact/" target="_self">Let us know</a> when you're about to release your game. We'll be happy to discuss how we can help.</p></dd>
-	</dl>
-</div>
+                        {% include accordion-item-faq.html id:"question-modify-source"
+                        title:"Can I modify the Stride source code for my game?"
+                        body:"<p>Yes. You can modify Stride as you need without restrictions.</p>"
+                        %}
 
-</div>
+                        {% include accordion-item-faq.html id:"question-open-game"
+                        title:"Do I have to open the code of my game if I modify Xenko/Stride?"
+                        body:"<p>No. Xenko 3.x and Stride 4+ are covered by MIT license.</p>"
+                        %}
 
+                        {% include accordion-item-faq.html id:"question-share-modified"
+                        title:"Can I share a modified version of Stride in source code or binary form?"
+                        body:"<p>Yes, as long as you comply with the terms of the MIT license.</p>"
+                        %}
 
-<div class="entry-content">
-<h1 class="rt-center">Licensing</h1>
-<div class="noMargin"><hr></div>
-
-<div class="x_accordion">
-	<input id="block_700" type="checkbox">
-	<dl>
-		<dt><label for="block_700">Do I own the content I make with Stride?</label></dt>
-		<dd>
-			<p>Yes. You own all the content you make with Stride.</p>		</dd>
-	</dl>
-</div>
-
-<div class="x_accordion">
-	<input id="block_701" type="checkbox">
-	<dl>
-		<dt><label for="block_701">Does Stride charge royalties?</label></dt>
-		<dd>
-			<p>No. You can build and distribute applications made with Stride with zero royalty fees.</p></dd>
-	</dl>
-</div>
-
-<div class="x_accordion">
-	<input id="block_709" type="checkbox">
-	<dl>
-		<dt><label for="block_709">Can I modify the Stride source code for my game?</label></dt>
-		<dd><p>Yes. You can modify Stride as you need without restrictions.</p></dd>
-	</dl>
-</div>
-
-	<div class="x_accordion">
-	<input id="block_720" type="checkbox">
-	<dl>
-	    	<dt><label for="block_720">Do I have to open the code of my game if I modify Xenko/Stride?</label></dt>
-	    	<dd><p>No. Xenko 3.x and Stride 4+ are covered by MIT license.</p></dd>
-	</dl>
-</div>
-
-<div class="x_accordion">
-	<input id="block_710" type="checkbox">
-	<dl>
-		<dt><label for="block_710">Can I share a modified version of Stride in source code or binary form?</label></dt>
-		<dd><p>Yes, as long as you comply with the terms of the MIT license.</p></dd>
-	</dl>
-</div>
-
-<div class="x_accordion">
-	<input id="block_711" type="checkbox">
-	<dl>
-		<dt><label for="block_711">Can I include parts of Stride in my own application or engine?</label></dt>
-		<dd><p>Yes, as long as you comply with the terms of the MIT license.</p></dd>
-	</dl>
-</div>
-
-</div>
-
-<div class="entry-content">
-<h3 class="rt-center">Disclaimer</h3>
-<p>The information on this page is provided "as is" and has no legal value. Stride makes no guarantees about the accuracy or completeness of the information on this page.</p>
+                        {% include accordion-item-faq.html id:"question-include-parts"
+                        title:"Can I include parts of Stride in my own application or engine?"
+                        body:"<p>Yes, as long as you comply with the terms of the MIT license.</p>"
+                        %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Disclaimer</h2>
+                    <p>The information on this page is provided "as is" and has no legal value. Stride makes no guarantees about the accuracy or completeness of the information on this page.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
