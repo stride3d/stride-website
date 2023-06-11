@@ -1,75 +1,52 @@
 ---
-layout: contact
+layout: container
 title: Contact
 permalink: /contact/
-menu: community
-submenu: contact
+description: 'Contact us for support, general inquiries, or to report a bug.'
+banner:
+  title: Contact us
+  sub-title: We'd love to hear from you
+  image-url: /images/backgrounds/spaceescape.webp
+  h1: true
 ---
-<div class="container-fluid stride-contact-form">
-
-	<div class="container">
-		<div id="result-success" style="display: none;">
-			<p class="alert alert-success"><span class="fa fa-check"></span>Your message has been successfully sent!<p>
-		</div>
-		<div id="result-error" style="display: none;">
-			<p class="alert alert-danger"><span class="fa fa-exclamation-circle"></span>Please fill all the fields.</span><p>
-		</div>
-		<form id="contact-form" action="https://support.stride3d.net/contact" method="post" class="row">
-			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<label for="contact_name">Contact Name</label>
-				<input type="text" class="form-control" id="contact_name" name="name" placeholder="Name of contact person" required="required">
-			</div>
-			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<label for="contact_email">Contact Email</label>
-				<input type="email" class="form-control" id="contact_email" name="email" placeholder="Email of contact person" required="required">
-			</div>
-			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<label for="organization">Company Name</label>
-				<input type="text" class="form-control" id="organization" name="organization" placeholder="Company Name ('Individual' for individual users)" required="required">
-			</div>
-			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<label for="organizationURL">Company URL (Optional)</label>
-				<input type="text" class="form-control" id="organizationURL" name="organizationURL" placeholder="URL to the organiztion site">
-			</div>
-			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<label for="industry">Industry</label>
-				<select class="form-control" id="industry" name="industry" required="required">
-					<option></option>
-				</select>
-			</div>
-			<div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<label for="country">Country</label>
-				<select class="form-control" id="country" name="country" required="required" disabled="true">
-					<option></option>
-				</select>
-			</div>
-			<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<label for="contact_subject">Subject</label>
-				<input type="text" class="form-control" id="contact_subject" name="subject" placeholder="Subject" required="required">
-			</div>
-			<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<label for="contact_body">Message</label>
-				<textarea class="form-control" rows="5" id="contact_body" name="body" placeholder="Type your message here..." required="required"></textarea>
-			</div>
-			<button type="submit" class="btn btn-success">Send</button>
-		</form>
-	</div>
+<div class="card mb-4">
+    <div class="card-body">
+        <h2>Community Support</h2>
+        <p>
+            If you have a problem learning Stride or need help, please first use the various <a href="/community/">community channels</a>. Stride developers are busy working in making Stride better, so they can't always answer questions. They will, however, be glad to assist you if you can't get an answer from conventional means.
+        </p>
+        <h2>Commercial support</h2>
+        <p>At the moment we don't provide commercial support.</p>
+        <h2>General inquiries</h2>
+        <p>For other inquiries please use our <a href="/community/">community channels</a>.</p>
+        <h2>FAQ</h2>
+        <p>Check out our list of <a href="/faq/">Frequently Asked Questions</a> covering various topics. If you can't find an answer to your question, please use our community channels for assistance.</p>
+    </div>
 </div>
-<script>
-	$.urlParam = function(name){
-		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-		if (results==null){
-		   return null;
-		}
-		else{
-		   return results[1] || 0;
-		}
-	};
-	if ($.urlParam('success') === 0) $('#result-success').show();
-	var errorMessage = $.urlParam('error');
-	if (errorMessage) 
-	{
-		$('#result-error').show();
-		$('#error-message').text(decodeURIComponent(errorMessage));
-	}
-</script>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2>Report a bug</h2>
+                <p>Sometimes bugs happen, but don’t worry! Developers got your back, just <a href="{{ site.links.github-stride-url }}/issues" target="_blank" rel="noopener">report a bug</a> and we’ll all enjoy a more stable Stride.</p>
+                <p>If you’d like to help fixing bugs, we have plenty of ways how you can <a href="/community/">get involved</a> with making Stride better.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2>Documentation</h2>
+                <p>Stride's <a href="{{ site.links.docs-manual-url }}" target="_blank" rel="noopener">user manual</a> covers all aspects of the engine, from installation and getting started to advanced features and best practices, ensuring a smooth learning curve for users.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2>Tutorials</h2>
+                <p>Access a variety of <a href="{{ site.links.docs-tutorial-url }}" target="_blank" rel="noopner">tutorials</a> and example projects that demonstrate how to use Stride's features effectively, catering to users with different skill levels and experience.</p>
+            </div>
+        </div>
+    </div>
+</div>

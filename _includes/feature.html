@@ -1,0 +1,4 @@
+{% assign items = features[name] | where: "enabled" %}
+{% for feature in items %}
+    {% include feature-card.html %}
+{% endfor %}

@@ -1,27 +1,11 @@
 ---
 layout: default
 ---
-
-<div class="container">
-	<div class="row">		
-		<div class="col-md-12">
-			<article class="page">
-				{% if page.title_html %}
-					{% assign title_html = page.title_html %}
-				{% elsif page.title %}
-					{% assign title_html = page.title %}
-				{% endif %}
-				{% if title_html %}
-				<h1 class="title">{% if site.titlecase %}{{ title_html | titlecase }}{% else %}{{ title_html }}{% endif %}</h1>
-				{% endif %}
-				<div class="entry-content">{{ content }}</div>
-			</article>
-			{% if site.disqus_short_name and page.comments != false %}
-			<section id="comment">
-				<h1 class="title">Comments</h1>
-				<div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
-			</section>
-			{% endif %}
-		</div>
-	</div>
+<div class="container-xxl">
+    <div class="row postcontent">
+        <div class="col-12">
+            <h1 class="mb-5">{{ title }}</h1>
+            {{ content }}
+        </div>
+    </div>
 </div>

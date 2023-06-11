@@ -1,0 +1,39 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title }}</title>
+    <description>{{ site.description }}</description>
+    <link>{{ site.url }}</link>
+    <link>{{ permalink | absoluteUrl(site.url) }}</link>
+    <atom:link href="{{ permalink | absoluteUrl(site.url) }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ collections.blog | getNewestCollectionItemDate | dateToRfc822 }}</pubDate>
+    <lastBuildDate>{{ collections.blog | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
+    <generator>{{ site.engine }}</generator>
+    {%- for post in collections.blog | reverse %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}
+    {%- set author = site.authors[post.data.author] %}
+    <item>
+      <title>{{ post.data.title | escape  }}</title>
+      <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
+      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <link>{{ absolutePostUrl }}</link>
+      <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
+      {%- if post.data.image_thumb -%}
+      {% set enclosureImage = post.data.image_thumb.split(".") %}
+      <enclosure url="{{ site.url }}{{ post.data.image_thumb }}" type="image/{{ enclosureImage | last }}" length="0" />
+      {%- elif post.data.image -%}
+      {% set enclosureImage = post.data.image.split(".") %}
+      <enclosure url="{{ site.url if 'http' not in post.data.image }}{{ post.data.image }}" type="image/{{ enclosureImage | last }}" length="0" />
+      {%- else -%}
+      <enclosure url="{{ site.url }}/images/blog/default_thumb.png" type="image/png" length="0" />
+      {%- endif -%}
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
