@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="_site\**\*.*" CopyToPublishDirectory="PreserveNewest" Exclude="_site\web.config" />
+    </ItemGroup>
+
+    <Target Name="11ty" BeforeTargets="Build">
+        <Exec Command="npm run build" />
+    </Target>
+
+</Project>

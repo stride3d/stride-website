@@ -1,0 +1,24 @@
+{%- case type -%}
+{% when 'success' %}
+{% assign icon = 'fa-circle-check' %}
+{% when 'danger' %}
+{% assign icon = 'fa-circle-exclamation' %}
+{% when 'warning' %}
+{% assign icon = 'fa-triangle-exclamation' %}
+{% when 'info' %}
+{% assign icon = 'fa-circle-info' %}
+{% when 'secondary' %}
+{% assign icon = 'fa-lightbulb' %}
+{% when 'light' %}
+{% assign icon = 'fa-circle-info' %}
+{% when 'dark' %}
+{% assign icon = 'fa-circle-info' %}
+{% when 'primary' %}
+{% assign icon = 'fa-circle-info' %}
+{% else %}
+{% assign icon = '' %}
+{%- endcase -%}
+<div class="alert alert-{{ type }} d-flex">
+    {% if icon != '' %}<span class="me-3 mt-1"><i class="fa-solid {{ icon }} fa-lg"></i></span>{% endif %}
+    <div>{{ title }}</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="card mb-4">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item active">
+            <h4 class="mb-0 fw-normal">Popular Posts</h4>
+        </li>{% assign popularPosts = collections.blog | reverse | where: "data.popular", true %}
+        {% for post in popularPosts limit:5 %}
+        <li class="list-group-item  list-group-item-action">
+            <a href="{{ post.url }}">
+                {{ post.data.title }}
+            </a>
+        </li>{% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,17 @@
+---
+permalink: /search.json
+eleventyExcludeFromCollections: true
+---
+[
+{% for post in collections.search reversed %}{% unless post.url contains ".css" %}{
+    {% assign author = site.authors[post.data.author] %}
+    "title":"{{ post.data.title | strip_html | xml_escape }}",
+    "excerpt": {{ post.data.page.excerpt | strip_html | truncatewords: 30 | jsonify }},
+    "author": "{{ author.name }}",
+    "date": "{{ post.date | date: "%B %d, %Y" }}",
+    "category": "{{ post.data.category | xml_escape }}",
+    "tags": "{{ post.data.tags | join: ', ' | xml_escape }}",
+    "url":"{{ site.url }}{{ post.url | url }}",
+    "content":{{ post.templateContent | strip_html | strip_newlines | normalize_whitespace | jsonify }}
+  }{% if forloop.last == false %},{% endif %}{% endunless %}{% endfor %}
+]

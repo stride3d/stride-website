@@ -1,0 +1,1 @@
+{% assign sponsor = sponsors.users[key] %}{% if sponsor %}[{{sponsor.name}}]({{sponsor.url}}){{emoji}}{% endif %}

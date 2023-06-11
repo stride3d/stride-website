@@ -1,8 +1,0 @@
-<span class="stride-module-title">Latest News</span>
-{% assign post = site.posts.first %}
-<ul>
-{% for i in (1..5) %}
-	<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% assign post = post.previous %}
-{% endfor %}
-</ul>

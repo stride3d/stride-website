@@ -1,0 +1,23 @@
+{
+  "users": {
+    "vaclav": {
+      "name": "Vašo ( Vaclav )",
+      "url": "https://opencollective.com/vaclav"
+    },
+    "xen2": {
+      "name": "Xen2",
+      "url": "https://opencollective.com/xen2"
+    }
+  },
+  "organizations": {
+    "vvvv": {
+      "name": "VVVV",
+      "url": "https://visualprogramming.net/"
+    },
+    "ore": {
+      "name": "ORE system",
+      "url": "https://www.ore-system.com/",
+      "img": "/images/sponsors/ore_system-next_gen_nfts_dark.png"
+    }
+  }
+}
