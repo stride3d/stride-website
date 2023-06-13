@@ -25,5 +25,5 @@ jobs:
          ACTION_MAIL: vaclavelias@gmail.com
          ACTION_NAME: VaclavElias
          OWNER: VaclavElias
-         REPO_NAME: stride-website-next
+         REPO_NAME: stride-website
          MD_FOLDER: wiki
