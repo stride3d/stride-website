@@ -38,12 +38,13 @@ Tebjan presented a bit about what contributors have done and what users (profess
 
 Vaclav, having dived into Stride with a desire to use Stride without an editor, created an API to experiment and create games using just a NuGet package. He presents his NuGet package, explains how to use it, and how to make games leveraging the power of .NET and hot reloading!
 
-ToDo @vaclav: Add some further description, maybe a code snippet
+{%- comment -%}ToDo @vaclav: Add some further description, maybe a code snippet{%- endcomment -%}
 
 ## Shaders
 
 I've personally become interested in the shader system of Stride and found it refreshingly easy to use. I decided to show more about how to use shaders, update them, and extend the rendering engine of Stride.
 
+{%- comment -%}
 ### What is a shader?
 
 ToDo @youness: Write your explanation and link to our existing documentation if we have got anything related to shaders. Interlinking with existing tutorials, manual, previous posts is very important if it is possible.
@@ -53,6 +54,7 @@ ToDo @youness: Write your explanation and link to our existing documentation if 
 ```
 // ToDo @youness Add your shader sample?
 ```
+{%- endcomment -%
 
 ## Closing
 
