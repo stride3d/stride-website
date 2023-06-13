@@ -1,41 +1,46 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP app to Azure Web App - stride-website
+name: Build Stride Web for Azure Web App Release
 
 on:
-  push:
-    branches:
-      - release
+#  push:
+#    branches:
+#      - release
+#    paths-ignore:
+#      - 'README.md'
+#      - 'wiki/**'
+#      - '_drafts/**'
+#      - .gitignore
+#      - '.github/**'
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Setup MSBuild path
-        uses: microsoft/setup-msbuild@v1.0.2
+      - name: Set up Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
-
-      - name: Restore NuGet packages
-        run: nuget restore
-
-      - name: Publish to folder
-        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: ASP-app
-          path: '/published/**'
+          name: node-app
+          path: ./_site
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
@@ -43,9 +48,9 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          name: ASP-app
+          name: node-app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
