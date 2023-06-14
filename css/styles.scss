@@ -45,9 +45,11 @@ a {
     align-items: center;
     justify-content: end;
     margin-bottom: 20px;
+
     @media screen and (max-width: 768px) {
         margin-bottom: 10px;
     }
+
     z-index: 2;
     height: 100%;
 }
