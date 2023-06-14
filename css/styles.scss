@@ -35,69 +35,6 @@ a {
     overflow: hidden;
 }
 
-.hero-section {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    margin-bottom: 20px;
-
-    @media screen and (max-width: 768px) {
-        margin-bottom: 10px;
-    }
-
-    z-index: 2;
-    height: 100%;
-}
-
-.hero-buttons {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-
-    a {
-        font-size: 1rem;
-    }
-
-    @media screen and (max-width: 768px) {
-        flex-direction: column;
-
-        a {
-            margin-top: 10px;
-        }
-    }
-}
-
-.hero-title {
-    font-size: 3rem;
-
-    @media screen and (max-width: 768px) {
-        font-size: 2rem;
-    }
-
-    font-weight: 700;
-    color: #fff;
-    white-space: nowrap;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-
-    @media screen and (max-width: 768px) {
-        font-size: 1rem;
-    }
-
-    font-weight: 400;
-    color: #fff;
-    white-space: nowrap;
-}
-
 .accordion {
     div {
         .fa-square-minus {
