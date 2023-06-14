@@ -24,6 +24,6 @@ jobs:
          GH_PAT: ${{ secrets.GH_PAT }}
          ACTION_MAIL: vaclavelias@gmail.com
          ACTION_NAME: VaclavElias
-         OWNER: VaclavElias
+         OWNER: stride3d
          REPO_NAME: stride-website
          MD_FOLDER: wiki
