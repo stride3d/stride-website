@@ -49,6 +49,56 @@ a {
     height: 100%;
     // background-color: red;
 }
+
+.hero-buttons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    a {
+        font-size: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+
+        a {
+            margin-top: 10px;
+        }
+    }
+
+}
+
+.hero-title {
+    font-style: "Roboto", sans-serif;
+    font-size: 3rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 2rem;
+    }
+
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 8px #0000001a;
+    white-space: nowrap;
+}
+
+.hero-subtitle {
+    font-style: "Roboto", sans-serif;
+    font-size: 1.5rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1rem;
+    }
+
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 2px 2px 8px #0000001a;
+    white-space: nowrap;
+}
+
 .accordion {
     div {
         .fa-square-minus {
