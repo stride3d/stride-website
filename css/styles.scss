@@ -88,6 +88,12 @@ a {
 
     a {
         text-decoration: underline;
+        text-underline-offset: 0.2em !important;
+        text-decoration-color: rgba(220, 53, 69, 0.25);
+
+        &:hover {
+            text-decoration-color: rgba(220, 53, 69, 1);
+        }
     }
 
     .direct-link {
