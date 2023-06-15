@@ -1,15 +1,10 @@
 name: Publish to GitHub Wiki
 on:
- # push:
- #   branches:
- #     - staging-next
- #   paths:
- #     - wiki/**
- # pull_request:
- #   branches:
- #     - staging-next
- #   paths:
- #     - wiki/**
+  push:
+    branches:
+      - master
+    paths:
+      - wiki/**
   workflow_dispatch:
 
 jobs:
