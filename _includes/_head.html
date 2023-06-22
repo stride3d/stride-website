@@ -1,6 +1,6 @@
 <head>
-    <meta charset="utf-8">{% if site.google-analytics %}
-    {% include google-tag.html %}{% endif %}
+    <meta charset="utf-8">
+    {%- if site.google-analytics -%}{% include google-tag.html %}{%- endif -%}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.title }}{% if title != 'Home' %} - {{ title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
@@ -8,6 +8,8 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css?site-version={{site.version}}">
+    <link rel="preload" as="font" href="/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
     {%- if page.image -%}
     <meta property="og:image" content="{{ page.image }}" />
     {%- else -%}
