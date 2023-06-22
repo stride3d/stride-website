@@ -2,7 +2,7 @@
 <div class="card mb-4 p-3">
     {% include search-form.html id:"search-form-post" %}
     <hr>
-    <h4>Latest Posts</h4>
+    <h2 class="h4">Latest Posts</h2>
     <ul class="ps-1 ms-3">
         {% assign latestPosts = collections.blog | reverse %}
         {% for post in latestPosts limit:5 %}
@@ -14,7 +14,7 @@
         {% endfor %}
     </ul>
     <hr>
-    <h4>Resources</h4>
+    <h2 class="h4">Resources</h2>
     <ul class="ps-1 ms-3">
         <li>
             <a title="Silk.NET" href="https://dotnet.github.io/Silk.NET/" target="_blank" rel="noopener">Silk.NET</a>
@@ -45,7 +45,7 @@
         </li>
     </ul>
     <hr>
-    <h4>Other</h4>
+    <h2 class="h4">Other</h2>
     <ul class="ps-1 ms-3">
         <li>
             <a title="Stride Post Archive" href="/archive/">Archive</a>
