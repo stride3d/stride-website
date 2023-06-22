@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    if: github.repository == 'stride3d/stride-website'
     runs-on: ubuntu-latest
 
     steps:
