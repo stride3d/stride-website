@@ -44,13 +44,14 @@ We can define small updates as changes to the content of the website:
 - Update the content of an existing blog post
 - Add a [new page](#creating-new-page) or [blog post](#creating-new-post)
 - Fix a typo
-- Update the navigation or footer
+- Minor navigation or footer update
+    - This will update all pages containing the navigation or footer
 
 ### Steps
 
 **Note:** This guide assumes you are already familiar with updating files in GitHub.
 
-1. Go to the [Stride Website GitHub](https://github.com/VaclavElias/stride-website-next) repository.
+1. Go to the [Stride Website GitHub](https://github.com/stride3d/stride-website) repository.
 1. Locate the file you wish to edit.
 1. Click the `Edit this file` (pencil) icon in the top right corner.
 1. If prompted, fork the repository by clicking `Fork this repository`.
