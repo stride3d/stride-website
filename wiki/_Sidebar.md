@@ -1,4 +1,4 @@
-- [Home](https://github.com/VaclavElias/stride-website-next/wiki)
+- [Home](https://github.com/stride3d/stride-website/wiki)
 - [Installation](Installation)
   - [Prerequisites](Installation#prerequisites)
   - [Installation Steps](Installation#installation-steps)
