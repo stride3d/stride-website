@@ -9,7 +9,7 @@
 
 ## 🚀 Getting Started
 
-All the information you need to start with Stride Website development is available in the 📚 [Stride Website Wiki](https://github.com/VaclavElias/stride-website-next/wiki).
+All the information you need to start with Stride Website development is available in the 📚 [Stride Website Wiki](https://github.com/stride3d/stride-website/wiki).
 
 ## 🤝 Contributing
 
