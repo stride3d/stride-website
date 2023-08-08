@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   {% for page in collections.all %}{% unless page.url contains ".css" or page.url contains ".js" %}
   <url>
     <loc>{{ site.url }}{{ page.url | url }}</loc>
-    <lastmod>{{ page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}</lastmod>
+    <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
   </url>
   {% endunless %}{% endfor %}
 </urlset>

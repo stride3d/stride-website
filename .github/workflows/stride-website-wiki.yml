@@ -1,19 +1,15 @@
 name: Publish to GitHub Wiki
 on:
- # push:
- #   branches:
- #     - staging-next
- #   paths:
- #     - wiki/**
- # pull_request:
- #   branches:
- #     - staging-next
- #   paths:
- #     - wiki/**
+  push:
+    branches:
+      - master
+    paths:
+      - wiki/**
   workflow_dispatch:
 
 jobs:
   build:
+    if: github.repository == 'stride3d/stride-website'
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +18,8 @@ jobs:
        uses: docker://decathlon/wiki-page-creator-action:2.0.1
        env:
          GH_PAT: ${{ secrets.GH_PAT }}
-         ACTION_MAIL: vaclavelias@gmail.com
+         ACTION_MAIL: github-bot@stride3d.net
          ACTION_NAME: VaclavElias
-         OWNER: VaclavElias
-         REPO_NAME: stride-website-next
+         OWNER: stride3d
+         REPO_NAME: stride-website
          MD_FOLDER: wiki

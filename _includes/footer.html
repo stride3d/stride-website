@@ -1,10 +1,10 @@
-{% assign text-styling='class="text-light" style="--bs-text-opacity: 0.85;"' %}
+{% assign text-styling='class="text-light h5" style="--bs-text-opacity: 0.85;"' %}
 <div class="bg-footer mt-auto">
     <div class="container">
         <footer class="pt-5 px-2">
             <div class="row">
                 <div class="col-6 col-lg-2 mb-3">
-                    <h5 {{ text-styling }}>Links</h5>
+                    <h3 {{ text-styling }}>Links</h3>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="/features/" class="nav-link p-0 {{ btn-class }}">Features</a></li>
                         <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 {{ btn-class }}">Blog</a></li>
@@ -15,7 +15,7 @@
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 mb-3">
-                    <h5 {{ text-styling }}>Docs</h5>
+                    <h3 {{ text-styling }}>Docs</h3>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="{{ site.links.docs-manual-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Manual</a></li>
                         <li class="nav-item mb-2"><a href="{{ site.links.docs-api-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Stride API</a></li>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-6 col-lg-2 mb-3">
-                    <h5 {{ text-styling }}>Community</h5>
+                    <h3 {{ text-styling }}>Community</h3>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="{{ site.links.open-collective-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Open Collective</a></li>
                         <li class="nav-item mb-2"><a href="{{ site.links.discord-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Discord</a></li>
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 mb-3">
-                    <h5 {{ text-styling }}>Blog</h5>
+                    <h3 {{ text-styling }}>Blog</h3>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="/blog/" class="nav-link p-0 {{ btn-class }}">Posts</a></li>
                         <li class="nav-item mb-2"><a href="/tags/" class="nav-link p-0 {{ btn-class }}">Tags</a></li>
@@ -69,9 +69,9 @@
                 </div>
             </div>
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-3 pb-4 text-center small">
-                <p {{ text-styling }}>Supported by the <a class="{{ social-class }}" href="{{ site.links.dotnet-foundation-url }}" target="_blank" rel="noopener">.NET Foundation</a></p>
-                <p {{ text-styling }}>Website v.{{ site.version }}</p>
-                <p {{ text-styling }}>© .NET Foundation and Contributors</p>
+                <p class="text-light">Supported by the <a class="{{ social-class }}" href="{{ site.links.dotnet-foundation-url }}" target="_blank" rel="noopener">.NET Foundation</a></p>
+                <p class="text-light">Website v.{{ site.version }}</p>
+                <p class="text-light">© .NET Foundation and Contributors</p>
             </div>
         </footer>
     </div>
