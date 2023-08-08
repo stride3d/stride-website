@@ -6,7 +6,7 @@ name: Build Stride Web for Azure Web App Staging
 on:
 #  push:
 #    branches:
-#      - staging-next
+#      - staging
 #    paths-ignore:
 #      - 'README.md'
 #      - 'wiki/**'
