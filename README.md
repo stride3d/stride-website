@@ -4,7 +4,7 @@
 * [Contributing](#-contributing)
 * [Roadmap](#%EF%B8%8F-roadmap)
 * [.NET Foundation](#-net-foundation)
-* [License](#-license)
+* [License](#%EF%B8%8Flicense)
 
 ## 🚀 Getting Started
 
