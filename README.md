@@ -12,7 +12,7 @@ All the information you need to start with Stride Website development is availab
 
 ## 🤝 Contributing
 
-For questions and general discussions, please us [Discord](https://discord.gg/f6aerfE). 
+For questions and general discussions, please use [Discord](https://discord.gg/f6aerfE). 
 To report bugs or propose features, use [Issues](https://github.com/stride3d/stride-website/issues).
 
 We welcome code contributions via pull requests. Issues tagged with **[`help wanted`](https://github.com/stride3d/stride-website/labels/help%20wanted)** are great starting points for code contributions.
