@@ -44,21 +44,22 @@ We can define small updates as changes to the content of the website:
 - Update the content of an existing blog post
 - Add a [new page](#creating-new-page) or [blog post](#creating-new-post)
 - Fix a typo
-- Update the navigation or footer
+- Minor navigation or footer update
+    - This will update all pages containing the navigation or footer
 
 ### Steps
 
 **Note:** This guide assumes you are already familiar with updating files in GitHub.
 
-1. Go to the [Stride Website GitHub](https://github.com/VaclavElias/stride-website-next) repository.
-1. Locate the file you wish to edit.
-1. Click the `Edit this file` (pencil) icon in the top right corner.
-1. If prompted, fork the repository by clicking `Fork this repository`.
-1. Make your changes to the file, then write a brief commit message describing the changes.
-1. Click on the `Propose changes` button.
-1. On the next screen, click the `Create pull request` button.
-1. Provide a title and description for your pull request, and click on `Create pull request` again.
-1. Wait for the review and merge.
+1. Go to the [Stride Website GitHub](https://github.com/stride3d/stride-website) repository
+1. Locate the file you wish to edit
+1. Click the `Edit this file` (pencil) icon in the top right corner
+1. If prompted, fork the repository by clicking `Fork this repository`
+1. Make your changes to the file, then write a brief commit message describing the changes
+1. Click on the `Propose changes` button
+1. On the next screen, click the `Create pull request` button
+1. Provide a title and description for your pull request, and click on `Create pull request` again
+1. Wait for the review and merge
 
 ## Major Updates
 
@@ -76,20 +77,20 @@ Then you would make your changes and test them locally. Once you are happy with 
 
 ## Updating Wiki
 
-While wiki pages can be updated directly in the GitHub web interface, this feature is restricted only to contributors who can edit the wiki directly. We have decided to move our wiki pages to a regular folder in this repository called `wiki`, allowing us to use the same process as we do for the website content. If any changes are made directly on the wiki pages, they will be overwritten by the next wiki deployment.
+While wiki pages can be updated directly in the GitHub web interface, this feature is restricted only to contributors who can edit the wiki directly. We have decided to move our wiki pages to a regular folder in this repository called [wiki](https://github.com/stride3d/stride-website/tree/master/wiki), allowing us to use the same process as we do for the website content. If any changes are made directly on the wiki pages, they will be overwritten by the next wiki deployment.
 
 Wiki pages are deployed through a separate GitHub action, `stride-web-wiki.yml`, which is triggered by updates in the `wiki` folder or can be triggered manually. The `wiki` folder is ignored by the Eleventy build process, ensuring that the wiki pages are not deployed to the website. Additionally, any pushes to the `wiki` folder will not trigger the website deployment.
 
 You can update the wiki pages as any other content pages, by following the steps in the [Small Updates](#small-updates) section.
 
-⚠️**Important:** If you are updating any headers in the wiki pages, please make sure to update the *Table of Contents* at the top of the page, [Home](Home) page and `_Sidebar.md`. Also, you might need to search for all the links to the updated header and update them as well.
+⚠️**Important:** If you are updating any headers in the wiki pages, please make sure to update the *Table of Contents* at the top of the page, [Home](https://github.com/stride3d/stride-website/blob/master/wiki/Home.md) page and [_Sidebar.md](https://github.com/stride3d/stride-website/blob/master/wiki/_Sidebar.md). Also, you might need to search for all the links to the updated header and update them as well.
 
 # Creating New Post
 
 To create a new blog post, you can follow one of these methods:
 
-1. Copy an existing post and update the front matter and content. This is the fastest way to get started with a new post.
-1. Alternatively, create a new file in the `posts` folder, ensuring that the file name follows the appropriate naming convention.
+1. Copy an existing post and update the front matter and content. This is the fastest way to get started with a new post
+1. Alternatively, create a new file in the `posts` folder, ensuring that the file name follows the appropriate naming convention
 
 Either method will allow you to create a new blog post, so choose the one that best suits your needs.
 
@@ -98,6 +99,8 @@ Either method will allow you to create a new blog post, so choose the one that b
 `YYYY-MM-DD-post-title.md`
 
 Replace `YYYY-MM-DD` with the date of the post and `post-title` with the title of the post.
+
+⚠️**Important SEO Note:** Ensure the file title includes essential keywords related to your post's content. This is crucial as the file title dictates the URL of the post, which plays a significant role in search engine optimization (SEO).
 
 ## Post Front Matter
 
@@ -119,6 +122,20 @@ pupular: true
 # permlink is automatically generated based on the file name, but you can override it here
 permalink: /blog/2023-04/my-custom-link/ # this is a custom link
 ---
+```
+
+The same example, without the comments:
+
+```yaml
+---
+title: 'Post title'
+author: vaclav
+tags: ['Announcement']
+image: /images/blog/2023-04/new-home-page.webp
+pupular: true
+permalink: /blog/2023-04/my-custom-link/
+---
+
 ```
 
 Default front matter, which is used for all posts, can be found in the `posts/posts.json` file.
@@ -188,7 +205,7 @@ permalink: /my-features/ # otherwise it would be /features/
 
 # Shortcodes and Includes
 
-ToDo: Add link to live examples
+You can see examples here https://www.stride3d.net/blog/examples/.
 
 ## Alert
 
@@ -312,7 +329,6 @@ ffmpeg -i myvideo.mp4 -vframes 1 -f image2 -y myvideo.jpg
 ToDo: Maybe we could provide a simple tool to do that without using command line.
 
 
-
 # Web Assets
 
 Our main web assets are:
@@ -335,11 +351,11 @@ Our main web assets are:
 
 Our website uses the [Bootstrap](https://getbootstrap.com/) framework, version **5.3**.
 
-Prioritize using Bootstrap styling before introducing any custom styles. 
+⚠️**Important:** Prioritize the use of Bootstrap's inherent styling before integrating any custom styles. You should be familiar with [Bootstrap Utilities](https://getbootstrap.com/docs/5.3/utilities/api/) which help you to achieve most of the styling requirements.
 
 ## CSS Guidelines
 
-We aim to write minimum CSS code to keep the website lightweight and use the Bootstrap framework as much as possible. 
+Our goal is to write as little CSS as possible to ensure the website remains lightweight. We maximize the utilization of the Bootstrap framework to achieve this. 
 
 Further, we are using also [FontAwesome](https://fontawesome.com/) free icons. The icons are loaded in the `src/_includes/css/main.css` file.
 
