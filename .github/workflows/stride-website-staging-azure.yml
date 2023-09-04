@@ -4,15 +4,15 @@
 name: Build Stride Web for Azure Web App Staging
 
 on:
-#  push:
-#    branches:
-#      - staging
-#    paths-ignore:
-#      - 'README.md'
-#      - 'wiki/**'
-#      - '_drafts/**'
-#      - .gitignore
-#      - '.github/**'
+  push:
+    branches:
+      - staging
+    paths-ignore:
+      - 'README.md'
+      - 'wiki/**'
+      - '_drafts/**'
+      - .gitignore
+      - '.github/**'
   workflow_dispatch:
 
 jobs:
@@ -56,7 +56,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'stride-website-staging'
-          slot-name: 'Production'
+          app-name: 'stride-website'
+          slot-name: 'staging'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_987D5D58A3DB4FC585848F34A99F7E0D }}
           package: .

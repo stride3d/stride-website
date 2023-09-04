@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stride.Web", "Stride.Web.csproj", "{EE7D7C0A-B38E-43BC-B98A-278E2C8BA6D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CFAE5475-B23D-499F-910D-9586C48A654D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\stride-website-release-azure.yml = .github\workflows\stride-website-release-azure.yml
+		.github\workflows\stride-website-staging-azure.yml = .github\workflows\stride-website-staging-azure.yml
+		.github\workflows\stride-website-wiki.yml = .github\workflows\stride-website-wiki.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

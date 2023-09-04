@@ -1,11 +1,10 @@
 # Stride Website Development
 
-* [Getting Started](#getting-started)
-* [Contributing](#contributing)
-* [Roadmap](#roadmap)
-* [.NET Foundation](#net-foundation)
-* [License](#license)
-* [Stride Website Next](#stride-website-next)
+* [Getting Started](#-getting-started)
+* [Contributing](#-contributing)
+* [Roadmap](#%EF%B8%8F-roadmap)
+* [.NET Foundation](#-net-foundation)
+* [License](#%EF%B8%8Flicense)
 
 ## 🚀 Getting Started
 
@@ -13,7 +12,7 @@ All the information you need to start with Stride Website development is availab
 
 ## 🤝 Contributing
 
-For questions and general discussions, please us [Discord](https://discord.gg/f6aerfE). 
+For questions and general discussions, please use [Discord](https://discord.gg/f6aerfE). 
 To report bugs or propose features, use [Issues](https://github.com/stride3d/stride-website/issues).
 
 We welcome code contributions via pull requests. Issues tagged with **[`help wanted`](https://github.com/stride3d/stride-website/labels/help%20wanted)** are great starting points for code contributions.
@@ -43,6 +42,6 @@ This project is supported by the [.NET Foundation](http://www.dotnetfoundation.o
 This project has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/) to clarify expected behavior in our community.
 For more information see the [.NET Foundation Code of Conduct](http://www.dotnetfoundation.org/code-of-conduct).
 
-## License
+## 🛡️License
 
 This project is licensed under the [MIT](https://github.com/stride3d/stride-website/blob/master/LICENSE.md) License.
