@@ -17,6 +17,13 @@ Technologies we use to build our website:
 - HTML, JavaScript, CSS, SCSS, and JSON
 - GitHub Actions (CI/CD) - Don't worry, this is already set up, you don't need to worry about it.
 
+## Important Links
+
+- https://www.stride3d.net/legal/privacy-policy/
+  - This links is used in the Stride Installer
+- https://www.stride3d.net/feed.xml
+  - This feed is loaded in the Stride Launcher
+
 ## Table of Contents
 
 - [Installation](Installation)
