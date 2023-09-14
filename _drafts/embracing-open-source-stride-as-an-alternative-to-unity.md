@@ -62,8 +62,8 @@ yeah => docs
 
 ## Other Q&A
 
-Q: What is Coroutine in Stride?
-A: Unity uses an `IEnumerator` for executing code asynchronously. Stride uses the C# built in feature of `await` and `async` to run code asynchronously. One way to use it is with the `AsyncScrip`t which is just a `SyncScript` (equivalent to MonoBehaviour) just with `async` methods.
+**Q:** What is Coroutine in Stride?
+**A:** Unity uses an `IEnumerator` for executing code asynchronously. Stride uses the C# built in feature of `await` and `async` to run code asynchronously. One way to use it is with the `AsyncScrip`t which is just a `SyncScript` (equivalent to MonoBehaviour) just with `async` methods.
 
 Q: What is a StartupScript?
 A: The `StartupScript` has a `Start` method (Invoked when added to the `Scene` tree, equivalent to Unity's Start/Awake). But it has no `Update` methods, so it doesn't have methods that get called each frame.
