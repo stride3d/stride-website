@@ -34,7 +34,7 @@ Stride is released under the **MIT** license, which is important because it gran
 
 For examples of games developed using Stride, check out [Made with Stride](https://github.com/Doprez/Awesome-Stride#made-with-stride) section.
 
-## Hardware Support
+## Operating System Support
 
 - Editor: Windows
 - Runtime: Windows, Linux, Android, iOS
@@ -103,7 +103,7 @@ The [`TransformComponent`](https://doc.stride3d.net/latest/en/api/Stride.Engine.
 - **`Parent` and `Children`**: These properties allow you to establish parent-child relationships between entities, affecting their transformations accordingly.
 
 ## Rendering
-Stride primarily uses forward rendering, with some additional features. Read more in the docs.
+Stride primarily uses **clustered** forward rendering, with some additional features. Read more in the docs.
 
 - https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html
 - https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html
@@ -135,3 +135,21 @@ Getting started with Stride is easy, thanks to a wealth of resources available. 
 - [Stride's Manual](https://doc.stride3d.net/latest/en/manual/): A comprehensive guide that covers everything from basic setup to advanced features.
 - [Stride's Tutorials](https://doc.stride3d.net/latest/en/tutorials/): Step-by-step tutorials to help you get your first project off the ground.
 - [Discord]({{ site.links.discord-url }}): Join the community on Discord for real-time discussions and the latest updates.
+
+## How to Find Answers
+
+Consider checking these platforms where your query may have already been addressed or where you can gain more context:
+
+- [Discord]({{ site.links.discord-url }}): Use the search functionality in our Discord channel to see if your topic has been discussed before.
+- GitHub Issues: Navigate to [Stride's GitHub Issues](https://github.com/stride3d/stride/issues) to see if your question is related to a known issue or feature request.
+- GitHub Discussion: Participate in [Stride's GitHub Discussions]({{ site.links.github-discussions-url }}) to engage with the community and explore various topics.
+
+This proactive approach not only helps you get immediate answers but also makes it easier for the community to focus on unresolved or unique queries.
+
+## Closing Thoughts 🙂
+
+If you've made it this far, congratulations 🎉! You now have a comprehensive understanding of Stride, its capabilities, and how it compares to Unity. The world of game development is vast and ever-changing 🌍, but the emergence of community-driven, open-source engines like Stride showcases the exciting directions the industry is taking. With its C# focus 🎯, extensive .NET support 💻, and flexible licensing 📜, Stride is a formidable option for both new and experienced developers.
+
+As the saying goes, the best way to learn is by doing 🛠️. So dive in 🏊, start a project 🚀, and don't hesitate to participate in the community discussions on Discord or GitHub 👨‍💻👩‍💻. Your journey with Stride is what you make of it, and the resources and community are here to support you every step of the way 🤗.
+
+Thank you for reading 📖, and happy coding 💻👩‍💻👨‍💻!
