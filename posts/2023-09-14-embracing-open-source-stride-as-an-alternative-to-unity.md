@@ -2,9 +2,11 @@
 title: "Unity's Licensing Changes: Discovering Stride, a Community-Driven Open Source Engine"
 author: vaclav
 popular: true
+image: /images/blog/2023-09-14-embracing-open-source/stride-vs-unity-opening-image-2.webp
+tags: ['.NET']
 ---
 
-Explore the key differences between Unity and Stride, a C#-based, open-source .NET-powered game engine. Learn how Stride's flexibility and native .NET support offer a unique development experience.
+Explore the key differences between Unity and Stride, a C#-based, open-source game engine powered by .NET 6 (soon .NET 8). Learn how Stride's flexibility and native .NET support offer a unique development experience.
 
 ---
 
@@ -24,7 +26,7 @@ This means that Stride might not have all the features that Unity has, simply be
 
 Additionally, Stride allows you to utilize any [NuGet](https://www.nuget.org/profiles/Stride) package and even provides access to the `Main` function of your game. You can also find useful resources such as documentation, community toolkits, and guides for migrating from Unity to Stride.
 
-https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html
+- [Stride for Unity Developers](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html)
 
 ## Licensing
 
@@ -37,7 +39,7 @@ For examples of games developed using Stride, check out [Made with Stride](https
 ## Operating System Support
 
 - Editor: Windows
-- Runtime: Windows, Linux, Android, iOS
+- Runtime: Windows, Linux, <span class="text-warning">macOS</span>, Android, iOS
 
 ## IDE Support
 
@@ -49,7 +51,7 @@ Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 - Blocknote + MsBuild
 - VVVV
 
-> **Note:** There's a Visual Studio Code extension for syntax highlighting and shader build keys.
+> **Note:** There's a Visual Studio extension for syntax highlighting, shader build keys and error checking.
 
 > **Note:** Another extension offers syntax highlighting only.
 
@@ -61,9 +63,9 @@ Stride does not offer built-in multiplayer or Server/Client architecture. Howeve
 
 You can import some 3D models from the Unity store into Stride. However, scripts will need modification since the two engines differ.
 
-These are the [Scripting diferences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc) simply:
-- `StartupScript` is a Monobehaviour without the Update method that's not run every frame
-- `SyncScript` is a Monobehaviour that runs every frame
+These are the [Scripting differences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc) simply:
+- `StartupScript` is a MonoBehaviour without the Update method that's not run every frame
+- `SyncScript` is a MonoBehaviour that runs every frame
 - `AsyncScript` is unique and run per-frame asynchronously
 
 ## Screen Capture
@@ -80,7 +82,7 @@ commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 ## Shaders Available
 Yes. SDSL, written on top of HLSL.
 
-- https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html
+- [Shading language](https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html)
 - https://github.com/tebjan/Stride.ShaderExplorer
 
 ## Build Automation
@@ -105,10 +107,11 @@ The [`TransformComponent`](https://doc.stride3d.net/latest/en/api/Stride.Engine.
 ## Rendering
 Stride primarily uses **clustered** forward rendering, with some additional features. Read more in the docs.
 
-- https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html
-- https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html
+- [Stride Rending Pipeline](https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html)
+- [Stride Graphics Compositor](https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html)
 
 ## Gamepads
+
 https://doc.stride3d.net/latest/en/manual/input/gamepads.html
 
 ## Other Q&A
@@ -145,6 +148,16 @@ Consider checking these platforms where your query may have already been address
 - GitHub Discussion: Participate in [Stride's GitHub Discussions]({{ site.links.github-discussions-url }}) to engage with the community and explore various topics.
 
 This proactive approach not only helps you get immediate answers but also makes it easier for the community to focus on unresolved or unique queries.
+
+## 🤝 Join Us: Stride Bug Bounties and Feature Funding 🛠️
+
+We invite talented developers to collaborate with us through our [Bug and Feature Bounties](https://opencollective.com/stride3d/projects). With tasks ranging from Vulkan support to decals and morph targets, there's something for everyone! Reach out via the specific [GitHub Bounty tickets](https://github.com/stride3d/stride/labels/bounty) to get involved.
+
+📬 For suggestions on new bounties, don't hesitate to connect with us on our Discord server or directly through GitHub.
+
+Participating in our bug bounties is a win-win! Not only will you be able to hone your skills, but you'll also contribute to the expansion and enrichment of the Stride community—and get **compensated** for your efforts! 💰
+
+[Stride's Open Collective Projects](https://opencollective.com/stride3d/projects)
 
 ## Closing Thoughts 🙂
 
