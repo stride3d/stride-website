@@ -61,8 +61,8 @@ commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 ## Shaders Available
 Yes. SDSL, written on top of HLSL.
 
-https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html
-https://github.com/tebjan/Stride.ShaderExplorer
+- https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html
+- https://github.com/tebjan/Stride.ShaderExplorer
 
 ## Build Automation
 Yes, since Stride uses .NET, automating the build process works out-of-the-box.
@@ -76,8 +76,8 @@ In Stride, positions are represented as Vector3 and rotations use quaternions, s
 ## Rendering
 Stride primarily uses forward rendering, with some additional features. Read more in the docs.
 
-https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html
-https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html
+- https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html
+- https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html
 
 ## Gamepads
 https://doc.stride3d.net/latest/en/manual/input/gamepads.html
