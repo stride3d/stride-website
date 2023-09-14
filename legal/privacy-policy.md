@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Stride Privacy Policy
+# This link is used also in the Stride Launcher
 permalink: /legal/privacy-policy/
 description: Privacy Policy for Stride
 banner:

@@ -9,6 +9,7 @@ on:
       - release
     paths-ignore:
       - 'README.md'
+      - 'Stride.Web.sln'
       - 'wiki/**'
       - '_drafts/**'
       - .gitignore
