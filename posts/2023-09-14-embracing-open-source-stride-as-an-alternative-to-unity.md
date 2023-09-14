@@ -45,7 +45,7 @@ For examples of games developed using Stride, check out [Made with Stride](https
 
 Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 
-- VSCode
+- VS Code
 - Visual Studio 2022
 - Rider
 - Blocknote + MsBuild
