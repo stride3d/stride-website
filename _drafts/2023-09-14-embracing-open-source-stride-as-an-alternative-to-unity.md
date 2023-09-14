@@ -6,15 +6,17 @@ popular: true
 
 ## Difference Between Unity and Stride
 
-Unity is developed by a large team and offers a feature-rich experience. On the other hand, Stride is open-source and built by community contributors. 
+Unity is developed by a large team and offers a feature-rich experience. On the other hand, [Stride](https://github.com/stride3d) is open-source and built by community contributors. 
 
 This means that Stride might not have all the features that Unity has, simply because there aren't as many people working on it. However, the open-source nature of Stride allows you to customize it according to your needs and provides a solid foundation for any rendering project.
 
-Additionally, Stride allows you to utilize any NuGet package and even provides access to the `Main` function of your game. You can also find useful resources such as documentation, community toolkits, and guides for migrating from Unity to Stride.
+Additionally, Stride allows you to utilize any [NuGet](https://www.nuget.org/profiles/Stride) package and even provides access to the `Main` function of your game. You can also find useful resources such as documentation, community toolkits, and guides for migrating from Unity to Stride.
+
+https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html
 
 ## Licensing
 
-Stride is released under the MIT license, which is important because it grants you significant freedoms to use, modify, and distribute the engine.
+Stride is released under the **MIT** license, which is important because it grants you significant freedoms to use, modify, and distribute the engine.
 
 ## What game were made using Stride?
 
@@ -23,7 +25,7 @@ For examples of games developed using Stride, check out [Made with Stride](https
 ## Hardware Support
 
 - Editor: Windows
-- Runtime: Windows, Linux, Mac, Android, iOS
+- Runtime: Windows, Linux, Android, iOS
 
 ## IDE Support
 
@@ -35,11 +37,11 @@ Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 - Blocknote + MsBuild
 
 > **Note:** There's a Visual Studio Code extension for syntax highlighting and shader build keys.
-> **Note 2:** Another extension offers syntax highlighting only.
+> **Note:** Another extension offers syntax highlighting only.
 
 ## Multiplayer Support
 
-Multiplayer functionality is not built-in. However, you can integrate any .NET networking library. [Here's a link to various libraries and resources](#your-github-link).
+Multiplayer functionality is not built-in. However, you can integrate any .NET networking library. [Here's a link to various libraries and resources](https://github.com/Doprez/Awesome-Stride#networking).
 
 ## Unity Assets
 
@@ -56,7 +58,9 @@ commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 ```
 
 ## Shaders Available
-Yes. YEAH ! with the best shader laguage of the world : SDSL ! (source tebjan)
+Yes. SDSL, written on top of HLSL.
+
+https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html
 https://github.com/tebjan/Stride.ShaderExplorer
 
 ## Build Automation
@@ -71,8 +75,11 @@ In Stride, positions are represented as Vector3 and rotations use quaternions, s
 ## Rendering
 Stride primarily uses forward rendering, with some additional features. Read more in the docs.
 
-Gamepads ?
-yeah => docs
+https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html
+https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html
+
+## Gamepads
+https://doc.stride3d.net/latest/en/manual/input/gamepads.html
 
 ## Other Q&A
 
