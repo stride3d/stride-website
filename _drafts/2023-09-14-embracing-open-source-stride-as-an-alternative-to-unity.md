@@ -18,7 +18,7 @@ Stride is released under the MIT license, which is important because it grants y
 
 ## What game were made using Stride?
 
-For examples of games developed using Stride, check out [this awesome URL](#your-anchor-to-section).
+For examples of games developed using Stride, check out [Made with Stride](https://github.com/Doprez/Awesome-Stride#made-with-stride) section.
 
 ## Hardware Support
 
@@ -84,3 +84,20 @@ A `StartupScript` in Stride includes a `Start` method that is invoked when it's 
 
 ### Using Other Assemblies/Projects in Stride
 In Unity, the packaging system is built on top of a `csproj` file, which allows Unity to protect its proprietary source code. Stride, however, grants you full access to your `csproj` and `sln` (Solution) files. This enables you to include any NuGet packages or other C# projects in the usual way, by adding project references. If you add a new subproject to your main project through the Stride editor, it will be correctly configured by default, including folder location and references to the Stride engine.
+
+### Is There an Asset Store for Stride?
+No, Stride does not have a dedicated Asset Store. However, most additional libraries specially designed for Stride can be found on GitHub or NuGet. For easier discovery, a summary has been made available at [Awesome-Stride](https://github.com/Doprez/Awesome-Stride).
+
+### Null Checking in Stride vs Unity
+Does `is null` and `== null` work? Unlike Unity, which has overridden the `Equals` operator to be compatible with its C++ engine, Stride allows you to use `is null` and `== null` to compare the existence of an Entity or Component directly.
+
+### Networking Support in Stride
+Stride itself does not provide built-in networking or Server/Client architecture. However, you are free to use any networking NuGet library to meet your needs.
+
+## Troubleshooting Common Issues
+
+### .NET SDK Version Error
+
+**Q:** When trying to build my project, I receive the following error: "The current .NET SDK does not support targeting .NET 6.0. Either target .NET 5.0 or lower, or use a version of the .NET SDK that supports .NET 6.0."  
+
+**A:** Make sure you have the **.NET 6.0 SDK** installed. Also, ensure you are using an IDE that supports .NET 6.0, such as Visual Studio 2022.
