@@ -3,6 +3,9 @@ title: "Unity's Licensing Changes: Discovering Stride, a Community-Driven Open S
 author: vaclavelias
 popular: true
 ---
+## Intro
+
+Stride is written in C# and you get native .NET C# tooling. You have full control over the entry point. The Stride projects are normal C# projects `csproj` grouped in the normal solutions.
 
 ## Difference Between Unity and Stride
 
@@ -79,7 +82,18 @@ You can not extend the editor in the same way as Unity but you can create custom
 - [Level editor add-on](https://github.com/Basewq/XenkoProofOfConcepts/tree/master/LevelEditorExtensionExample)
 
 ## Transformations
-In Stride, positions are represented as Vector3 and rotations use quaternions, similar to Unity
+
+The [`TransformComponent`](https://doc.stride3d.net/latest/en/api/Stride.Engine.TransformComponent.html) class in Stride is a fundamental component for representing an entity's position, rotation, and scale within a 3D scene.
+
+### Important Features:
+
+- **`LocalMatrix` and `WorldMatrix`**: These matrices manage the transformations of the entity.
+  
+- **`Position`, `Rotation`, and `Scale`**: These properties represent the entity's position, rotation, and scale in the local coordinate system. The `Position` property is a [`Vector3`](https://doc.stride3d.net/latest/en/api/Stride.Core.Mathematics.Vector3.html), defining the entity's position. The `Rotation` property uses a `Quaternion` to represent the entity's rotation, and the `Scale` property is a `Vector3` that sets the scale. You can modify these properties to transform the entity.
+
+- **`UpdateLocalMatrix()` and `UpdateWorldMatrix()`**: These methods update the local and world matrices, respectively.
+
+- **`Parent` and `Children`**: These properties allow you to establish parent-child relationships between entities, affecting their transformations accordingly.
 
 ## Rendering
 Stride primarily uses forward rendering, with some additional features. Read more in the docs.
