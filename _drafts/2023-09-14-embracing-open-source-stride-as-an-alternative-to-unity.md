@@ -37,6 +37,7 @@ Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 - Blocknote + MsBuild
 
 > **Note:** There's a Visual Studio Code extension for syntax highlighting and shader build keys.
+
 > **Note:** Another extension offers syntax highlighting only.
 
 ## Multiplayer Support
