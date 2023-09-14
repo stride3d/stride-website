@@ -43,7 +43,7 @@ Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 
 ## Multiplayer Support
 
-Multiplayer functionality is not built-in. However, you can integrate any .NET networking library. [Here's a link to various libraries and resources](https://github.com/Doprez/Awesome-Stride#networking).
+Stride does not offer built-in multiplayer or Server/Client architecture. However, you can easily integrate any .NET networking library to implement these features. You have the freedom to choose from a variety of libraries and resources. For a curated list, you can check out [Awesome-Stride's Networking section](https://github.com/Doprez/Awesome-Stride#networking).
 
 ## Unity Assets
 
@@ -106,9 +106,6 @@ No, Stride does not have a dedicated Asset Store. However, most additional libra
 
 ### Null Checking in Stride vs Unity
 Does `is null` and `== null` work? Unlike Unity, which has overridden the `Equals` operator to be compatible with its C++ engine, Stride allows you to use `is null` and `== null` to compare the existence of an Entity or Component directly.
-
-### Networking Support in Stride
-Stride itself does not provide built-in networking or Server/Client architecture. However, you are free to use any networking NuGet library to meet your needs.
 
 ## Troubleshooting Common Issues
 
