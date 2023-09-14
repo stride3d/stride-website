@@ -1,6 +1,6 @@
 ---
 title: "Unity's Licensing Changes: Discovering Stride, a Community-Driven Open Source Engine"
-author: vaclavelias
+author: vaclav
 popular: true
 ---
 ## Intro
