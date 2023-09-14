@@ -3,9 +3,18 @@ title: "Unity's Licensing Changes: Discovering Stride, a Community-Driven Open S
 author: vaclav
 popular: true
 ---
-## Intro
 
-Stride is written in C# and you get native .NET C# tooling. You have full control over the entry point. The Stride projects are normal C# projects `csproj` grouped in the normal solutions.
+Explore the key differences between Unity and Stride, a C#-based, open-source .NET-powered game engine. Learn how Stride's flexibility and native .NET support offer a unique development experience.
+
+---
+
+Table of Contents:
+
+[[TOC]]
+
+## Introduction to Stride
+
+Stride is not just another game engine; it's written entirely in C# and serves as a powerful platform in the .NET ecosystem. This unique focus on C# offers developers the native .NET tooling and functionalities they are already comfortable with. What sets Stride apart is its project structure; Stride projects are standard `csproj` files, allowing them to integrate effortlessly into your existing .NET solutions.
 
 ## Difference Between Unity and Stride
 
@@ -53,15 +62,16 @@ Stride does not offer built-in multiplayer or Server/Client architecture. Howeve
 You can import some 3D models from the Unity store into Stride. However, scripts will need modification since the two engines differ.
 
 These are the [Scripting diferences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc) simply:
-- StartupScript is a Monobehaviour without the Update method that's not run every frame
-- SyncScript is a Monobehaviour that runs every frame
-- AsyncScript is unique and run per-frame asynchronously
+- `StartupScript` is a Monobehaviour without the Update method that's not run every frame
+- `SyncScript` is a Monobehaviour that runs every frame
+- `AsyncScript` is unique and run per-frame asynchronously
 
 ## Screen Capture
 
 To capture a frame, you can use the following code snippet:
 
-```
+
+```csharp
 var commandList = GraphicsContext.CommandList;
 
 commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
@@ -85,14 +95,11 @@ You can not extend the editor in the same way as Unity but you can create custom
 
 The [`TransformComponent`](https://doc.stride3d.net/latest/en/api/Stride.Engine.TransformComponent.html) class in Stride is a fundamental component for representing an entity's position, rotation, and scale within a 3D scene.
 
-### Important Features:
+**Important Features:**
 
 - **`LocalMatrix` and `WorldMatrix`**: These matrices manage the transformations of the entity.
-  
 - **`Position`, `Rotation`, and `Scale`**: These properties represent the entity's position, rotation, and scale in the local coordinate system. The `Position` property is a [`Vector3`](https://doc.stride3d.net/latest/en/api/Stride.Core.Mathematics.Vector3.html), defining the entity's position. The `Rotation` property uses a `Quaternion` to represent the entity's rotation, and the `Scale` property is a `Vector3` that sets the scale. You can modify these properties to transform the entity.
-
 - **`UpdateLocalMatrix()` and `UpdateWorldMatrix()`**: These methods update the local and world matrices, respectively.
-
 - **`Parent` and `Children`**: These properties allow you to establish parent-child relationships between entities, affecting their transformations accordingly.
 
 ## Rendering
@@ -121,12 +128,10 @@ No, Stride does not have a dedicated Asset Store. However, most additional libra
 ### Null Checking in Stride vs Unity
 Does `is null` and `== null` work? Unlike Unity, which has overridden the `Equals` operator to be compatible with its C++ engine, Stride allows you to use `is null` and `== null` to compare the existence of an Entity or Component directly.
 
-## Troubleshooting Common Issues
+## Where to Start
 
-### .NET SDK Version Error
+Getting started with Stride is easy, thanks to a wealth of resources available. Here are some you shouldn't miss:
 
-**Q:** When trying to build my project, I receive the following error: "The current .NET SDK does not support targeting .NET 6.0. Either target .NET 5.0 or lower, or use a version of the .NET SDK that supports .NET 6.0."  
-
-**A:** Make sure you have the **.NET 6.0 SDK** installed. Also, ensure you are using an IDE that supports .NET 6.0, such as Visual Studio 2022.
-
-> **Note:** This question holds true if certain features seem to be misbehaving or commonly crashing. Always make sure the latest [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) version is installed with Stride 4.1
+- [Stride's Manual](https://doc.stride3d.net/latest/en/manual/): A comprehensive guide that covers everything from basic setup to advanced features.
+- [Stride's Tutorials](https://doc.stride3d.net/latest/en/tutorials/): Step-by-step tutorials to help you get your first project off the ground.
+- [Discord]({{ site.links.discord-url }}): Join the community on Discord for real-time discussions and the latest updates.
