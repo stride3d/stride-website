@@ -3,75 +3,84 @@ title: "Unity's Licensing Changes: Discovering Stride, a Community-Driven Open S
 author: vaclavelias
 popular: true
 ---
-## Difference
 
-Unity is made by a big team and is feature rich.
-Stride is open source and made by contributors.
+## Difference Between Unity and Stride
 
-Which means, Stride cannot have the same features as unity, because there is not 1k people make sure everything work. But Stride, as open source, can be edited to your need and provide a solid base to any rendering project.
+Unity is developed by a large team and offers a feature-rich experience. On the other hand, Stride is open-source and built by community contributors. 
 
-Also, using Stride, you can use any nugget package and access the Main function of your game.
-and also all the useful link like doc, community tool kit, unity to Stide guide [!!], ... ?
+This means that Stride might not have all the features that Unity has, simply because there aren't as many people working on it. However, the open-source nature of Stride allows you to customize it according to your needs and provides a solid foundation for any rendering project.
 
-## License
-MIT (important to explain for me)
+Additionally, Stride allows you to utilize any NuGet package and even provides access to the `Main` function of your game. You can also find useful resources such as documentation, community toolkits, and guides for migrating from Unity to Stride.
+
+## Licensing
+
+Stride is released under the MIT license, which is important because it grants you significant freedoms to use, modify, and distribute the engine.
 
 ## What game were made using Stride?
-Give stride awesome URL with anchor to section 
 
-## Hardware support
-Editor (Windows) / Runtime (Win, Linux, Mac, Android, iOS)
+For examples of games developed using Stride, check out [this awesome URL](#your-anchor-to-section).
 
-## IDE
-Any : VScode, Visual Studio, Rider, Blocknote + MsBuild. Since a Stride game is a "standard" C# project.
+## Hardware Support
 
-Note : There is a Visual Studio Code extension that syntax highlight and build key for shaders.
-note2 : There is a Visual Studio Code extension with syntax highlight only
+- Editor: Windows
+- Runtime: Windows, Linux, Mac, Android, iOS
 
-## Multiplayer
-Not built in. You can use any .NET  library (see github link with all networking lib and resources)
+## IDE Support
 
-## Unity asset (from store) 
-Some model can be used in Stride, Script will need modification since it's not the same engine, ....
+Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 
-Can we record a video/frame ?
-more or less
+- VSCode
+- Visual Studio
+- Rider
+- Blocknote + MsBuild
+
+> **Note:** There's a Visual Studio Code extension for syntax highlighting and shader build keys.
+> **Note 2:** Another extension offers syntax highlighting only.
+
+## Multiplayer Support
+
+Multiplayer functionality is not built-in. However, you can integrate any .NET networking library. [Here's a link to various libraries and resources](#your-github-link).
+
+## Unity Assets
+
+You can import some 3D models from the Unity store into Stride. However, scripts will need modification since the two engines differ.
+
+## Screen Capture
+
+To capture a frame, you can use the following code snippet:
+
 ```
 var commandList = GraphicsContext.CommandList;
+
 commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 ```
-(maybe add a fonction to make a gif in stride commmunity toolkit)
 
 ## Shaders Available
 Yes. YEAH ! with the best shader laguage of the world : SDSL ! (source tebjan)
 https://github.com/tebjan/Stride.ShaderExplorer
 
-## Can we automate build? 
-Yes, it's just .NET code, so it work out of the box. (in theory)
+## Build Automation
+Yes, since Stride uses .NET, automating the build process works out-of-the-box.
 
-## Add-ons for this engine/for my game ?
-Yes, it's open source, it may need some more work to implement it.
+## Add-ons and Extensions
+Being open-source, Stride allows for custom add-ons, although implementing them might require additional work.
 
-## Are positions Vector3 and rotations quaternion like Unity's?
-Yes/Mostly ? (need to check)
+## Transformations
+In Stride, positions are represented as Vector3 and rotations use quaternions, similar to Unity
 
-## Is it a forward renderer or deferred?
-Tt's a forward but ++ ... ? (cannot find again what is the right definition)
+## Rendering
+Stride primarily uses forward rendering, with some additional features. Read more in the docs.
+
 Gamepads ?
 yeah => docs
 
 ## Other Q&A
 
-**Q:** What is Coroutine in Stride?
-**A:** Unity uses an `IEnumerator` for executing code asynchronously. Stride uses the C# built in feature of `await` and `async` to run code asynchronously. One way to use it is with the `AsyncScrip`t which is just a `SyncScript` (equivalent to MonoBehaviour) just with `async` methods.
+### What is Coroutine in Stride?
+Unlike Unity, which uses `IEnumerator` for asynchronous code execution, Stride leverages C#'s built-in `await` and `async` features. This can be accomplished using `AsyncScript`, which essentially acts as a `SyncScript` (the Stride equivalent of Unity's MonoBehaviour) but with asynchronous methods.
 
+### What is a StartupScript?
+A `StartupScript` in Stride includes a `Start` method that is invoked when it's added to the scene tree. This is similar to Unity's `Start` or `Awake` methods. However, `StartupScript` does not contain `Update` methods and therefore doesn't execute code every frame.
 
-**Q:** What is a StartupScript?
-**A:** The `StartupScript` has a `Start` method (Invoked when added to the `Scene` tree, equivalent to Unity's Start/Awake). But it has no `Update` methods, so it doesn't have methods that get called each frame.
-
-
-Q: How can i use other Assemblies/Projects in my game?
-A: Unity has it's own packaging System which is built on top of a csproj, so Unity can protect it's source code due to it's Proprietary Nature.
-    In Stride you have ful Access to your csproj AND sln ( Solution file ) which allows you to include any Nuget Packages and any other Projects in the "normal" C# way by adding Project References.
-    If you add through the Stride Editor a new Subproject to your Main Project you get guaranteed a correct configured additional Subproject.
-    Which means it will be in the right folder and has allready references to the Stride Engine, but that's optional
+### Using Other Assemblies/Projects in Stride
+In Unity, the packaging system is built on top of a `csproj` file, which allows Unity to protect its proprietary source code. Stride, however, grants you full access to your `csproj` and `sln` (Solution) files. This enables you to include any NuGet packages or other C# projects in the usual way, by adding project references. If you add a new subproject to your main project through the Stride editor, it will be correctly configured by default, including folder location and references to the Stride engine.
