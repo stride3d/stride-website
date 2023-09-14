@@ -32,9 +32,10 @@ For examples of games developed using Stride, check out [Made with Stride](https
 Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 
 - VSCode
-- Visual Studio
+- Visual Studio 2022
 - Rider
 - Blocknote + MsBuild
+- VVVV
 
 > **Note:** There's a Visual Studio Code extension for syntax highlighting and shader build keys.
 
@@ -47,6 +48,11 @@ Multiplayer functionality is not built-in. However, you can integrate any .NET n
 ## Unity Assets
 
 You can import some 3D models from the Unity store into Stride. However, scripts will need modification since the two engines differ.
+
+These are the [Scripting diferences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc) simply:
+- StartupScript is a Monobehaviour without the Update method that's not run every frame
+- SyncScript is a Monobehaviour that runs every frame
+- AsyncScript is unique and run per-frame asynchronously
 
 ## Screen Capture
 
@@ -68,7 +74,9 @@ Yes. SDSL, written on top of HLSL.
 Yes, since Stride uses .NET, automating the build process works out-of-the-box.
 
 ## Add-ons and Extensions
-Being open-source, Stride allows for custom add-ons, although implementing them might require additional work.
+You can not extend the editor in the same way as Unity but you can create custom code extensions as seen in the following:
+- [Terrain add-on](https://github.com/johang88/TR.Stride)
+- [Level editor add-on](https://github.com/Basewq/XenkoProofOfConcepts/tree/master/LevelEditorExtensionExample)
 
 ## Transformations
 In Stride, positions are represented as Vector3 and rotations use quaternions, similar to Unity
@@ -85,7 +93,7 @@ https://doc.stride3d.net/latest/en/manual/input/gamepads.html
 ## Other Q&A
 
 ### What is Coroutine in Stride?
-Unlike Unity, which uses `IEnumerator` for asynchronous code execution, Stride leverages C#'s built-in `await` and `async` features. This can be accomplished using `AsyncScript`, which essentially acts as a `SyncScript` (the Stride equivalent of Unity's MonoBehaviour) but with asynchronous methods.
+Unlike Unity, which uses `IEnumerator` for asynchronous code execution, Stride leverages C#'s built-in `await` and `async` features. This can be accomplished using `AsyncScript`, which essentially acts as a `SyncScript` (the Stride equivalent of Unity's MonoBehaviour) but with asynchronous methods. You can use async methods within sync scripts, the same as standard C#.
 
 ### What is a StartupScript?
 A `StartupScript` in Stride includes a `Start` method that is invoked when it's added to the scene tree. This is similar to Unity's `Start` or `Awake` methods. However, `StartupScript` does not contain `Update` methods and therefore doesn't execute code every frame.
@@ -109,3 +117,5 @@ Stride itself does not provide built-in networking or Server/Client architecture
 **Q:** When trying to build my project, I receive the following error: "The current .NET SDK does not support targeting .NET 6.0. Either target .NET 5.0 or lower, or use a version of the .NET SDK that supports .NET 6.0."  
 
 **A:** Make sure you have the **.NET 6.0 SDK** installed. Also, ensure you are using an IDE that supports .NET 6.0, such as Visual Studio 2022.
+
+> **Note:** This question holds true if certain features seem to be misbehaving or commonly crashing. Always make sure the latest [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) version is installed with Stride 4.1
