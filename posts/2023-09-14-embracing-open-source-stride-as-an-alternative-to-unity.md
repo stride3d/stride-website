@@ -45,7 +45,7 @@ For examples of games developed using Stride, check out [Made with Stride](https
 
 Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 
-- VSCode
+- VS Code
 - Visual Studio 2022
 - Rider
 - Blocknote + MsBuild
@@ -72,7 +72,6 @@ These are the [Scripting differences](https://doc.stride3d.net/latest/en/manual/
 
 To capture a frame, you can use the following code snippet:
 
-
 ```csharp
 var commandList = GraphicsContext.CommandList;
 
@@ -83,7 +82,7 @@ commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 Yes. SDSL, written on top of HLSL.
 
 - [Shading language](https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html)
-- https://github.com/tebjan/Stride.ShaderExplorer
+- [ShaderExplorer](https://github.com/tebjan/Stride.ShaderExplorer)
 
 ## Build Automation
 Yes, since Stride uses .NET, automating the build process works out-of-the-box.
@@ -105,6 +104,7 @@ The [`TransformComponent`](https://doc.stride3d.net/latest/en/api/Stride.Engine.
 - **`Parent` and `Children`**: These properties allow you to establish parent-child relationships between entities, affecting their transformations accordingly.
 
 ## Rendering
+
 Stride primarily uses **clustered** forward rendering, with some additional features. Read more in the docs.
 
 - [Stride Rending Pipeline](https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html)
@@ -112,7 +112,7 @@ Stride primarily uses **clustered** forward rendering, with some additional feat
 
 ## Gamepads
 
-https://doc.stride3d.net/latest/en/manual/input/gamepads.html
+- [Gamepads](https://doc.stride3d.net/latest/en/manual/input/gamepads.html)
 
 ## Other Q&A
 
