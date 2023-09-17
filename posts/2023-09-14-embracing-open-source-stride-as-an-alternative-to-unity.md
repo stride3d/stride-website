@@ -32,7 +32,7 @@ Additionally, Stride allows you to utilize any [NuGet](https://www.nuget.org/pro
 
 Stride is released under the **MIT** license, which is important because it grants you significant freedoms to use, modify, and distribute the engine.
 
-## What game were made using Stride?
+## What games were made using Stride?
 
 For examples of games developed using Stride, check out [Made with Stride](https://github.com/Doprez/Awesome-Stride#made-with-stride) section.
 
@@ -63,10 +63,10 @@ Stride does not offer built-in multiplayer or Server/Client architecture. Howeve
 
 You can import some 3D models from the Unity store into Stride. However, scripts will need modification since the two engines differ.
 
-These are the [Scripting differences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc) simply:
-- `StartupScript` is a MonoBehaviour without the Update method that's not run every frame
-- `SyncScript` is a MonoBehaviour that runs every frame
-- `AsyncScript` is unique and run per-frame asynchronously
+These are the basic [Scripting Differences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc):
+- `StartupScript` is a MonoBehaviour without the Update method
+- `SyncScript` is a MonoBehaviour with an Update method that runs every frame
+- `AsyncScript` is unique and runs asynchronously
 
 ## Screen Capture
 
@@ -79,7 +79,7 @@ commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 ```
 
 ## Shaders Available
-Yes. SDSL, written on top of HLSL.
+SDSL is a shader language written on top of HLSL.
 
 - [Shading language](https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html)
 - [ShaderExplorer](https://github.com/tebjan/Stride.ShaderExplorer)
@@ -88,7 +88,7 @@ Yes. SDSL, written on top of HLSL.
 Yes, since Stride uses .NET, automating the build process works out-of-the-box.
 
 ## Add-ons and Extensions
-You can not extend the editor in the same way as Unity but you can create custom code extensions as seen in the following:
+You cannot extend the editor in the same way as Unity, but you can create custom code extensions as seen in the following:
 - [Terrain add-on](https://github.com/johang88/TR.Stride)
 - [Level editor add-on](https://github.com/Basewq/XenkoProofOfConcepts/tree/master/LevelEditorExtensionExample)
 
@@ -107,7 +107,7 @@ The [`TransformComponent`](https://doc.stride3d.net/latest/en/api/Stride.Engine.
 
 Stride primarily uses **clustered** forward rendering, with some additional features. Read more in the docs.
 
-- [Stride Rending Pipeline](https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html)
+- [Stride Rendering Pipeline](https://doc.stride3d.net/latest/en/manual/graphics/rendering-pipeline/index.html)
 - [Stride Graphics Compositor](https://doc.stride3d.net/latest/en/manual/graphics/graphics-compositor/index.html)
 
 ## Gamepads
@@ -116,7 +116,7 @@ Stride primarily uses **clustered** forward rendering, with some additional feat
 
 ## Other Q&A
 
-### What is Coroutine in Stride?
+### What is the Equivalent of a Coroutine in Stride?
 Unlike Unity, which uses `IEnumerator` for asynchronous code execution, Stride leverages C#'s built-in `await` and `async` features. This can be accomplished using `AsyncScript`, which essentially acts as a `SyncScript` (the Stride equivalent of Unity's MonoBehaviour) but with asynchronous methods. You can use async methods within sync scripts, the same as standard C#.
 
 ### What is a StartupScript?
