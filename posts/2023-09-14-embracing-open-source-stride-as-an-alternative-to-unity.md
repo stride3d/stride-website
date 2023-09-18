@@ -55,6 +55,12 @@ Stride games are "standard" C# projects, meaning you can use a variety of IDEs:
 
 > **Note:** Another extension offers syntax highlighting only.
 
+## .NET Hot Reload Support
+
+Stride has the capability of using [.NET Hot Reload](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022) for C# scripts, allowing real-time code modifications as your game runs. Importantly, this feature is also available when editing the engine side, giving you even more flexibility. Standard .NET hot reload rules are in effect.
+
+This feature streamlines development by minimizing the delay between coding and observing results, enhancing both efficiency and ease of use. If you're familiar with .NET and C#, you'll find that Hot Reload in Stride feels intuitively familiar.
+
 ## Multiplayer Support
 
 Stride does not offer built-in multiplayer or Server/Client architecture. However, you can easily integrate any .NET networking library to implement these features. You have the freedom to choose from a variety of libraries and resources. For a curated list, you can check out [Awesome-Stride's Networking section](https://github.com/Doprez/Awesome-Stride#networking).
