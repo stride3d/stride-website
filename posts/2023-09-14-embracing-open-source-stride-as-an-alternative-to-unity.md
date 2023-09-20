@@ -175,6 +175,8 @@ Participating in our bug bounties is a win-win! Not only will you be able to hon
 
 {% img 'Flappy Bird Stride Demo' '/images/blog/2023-09-14-embracing-open-source/flappy-bird-demo.webp' %}
 
+*A screenshot of the Flappy Bird demo created by Ned Reid*
+
 ## Closing Thoughts 🙂
 
 If you've made it this far, congratulations 🎉! You now have a comprehensive understanding of Stride, its capabilities, and how it compares to Unity. The world of game development is vast and ever-changing 🌍, but the emergence of community-driven, open-source engines like Stride showcases the exciting directions the industry is taking. With its C# focus 🎯, extensive .NET support 💻, and flexible licensing 📜, Stride is a formidable option for both new and experienced developers.
