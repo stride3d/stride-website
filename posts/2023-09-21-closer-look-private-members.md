@@ -2,7 +2,7 @@
 title: "A closer look: Setting private members in the editor"
 author: manio
 popular: false
-image: TODO
+image: /images/blog/2023-09-21-closer-look-private-members/script-with-secrets.png
 tags: ['.NET']
 ---
 
