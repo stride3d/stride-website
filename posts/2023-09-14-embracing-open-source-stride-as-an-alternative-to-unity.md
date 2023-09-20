@@ -61,6 +61,8 @@ Stride has the capability of using [.NET Hot Reload](https://learn.microsoft.com
 
 This feature streamlines development by minimizing the delay between coding and observing results, enhancing both efficiency and ease of use. If you're familiar with .NET and C#, you'll find that Hot Reload in Stride feels intuitively familiar.
 
+{% youtube 'NG773m0SxyM' %}
+
 ## Multiplayer Support
 
 Stride does not offer built-in multiplayer or Server/Client architecture. However, you can easily integrate any .NET networking library to implement these features. You have the freedom to choose from a variety of libraries and resources. For a curated list, you can check out [Awesome-Stride's Networking section](https://github.com/Doprez/Awesome-Stride#networking).
@@ -164,6 +166,16 @@ We invite talented developers to collaborate with us through our [Bug and Featur
 Participating in our bug bounties is a win-win! Not only will you be able to hone your skills, but you'll also contribute to the expansion and enrichment of the Stride community—and get **compensated** for your efforts! 💰
 
 [Stride's Open Collective Projects](https://opencollective.com/stride3d/projects)
+
+## Flappy Bird - Stride Engine Demo
+
+[Ned Reid](https://nedreid.itch.io/), a new member of the Stride community, has created a  [Flappy Bird demo](https://nedreid.itch.io/flappy-bird-stride), while exploring Stride as an alternative to Unity. He shared the following thoughts on his experience:
+
+<p class="border-start border-5 ps-3"> I decided a couple of days ago that I would explore engines outside of Unity (for obvious reasons), and wanted to start with something simple. Over a fairly relaxed weekend, I've managed to put together a neat little Flappy Bird clone!</p>
+
+{% img 'Flappy Bird Stride Demo' '/images/blog/2023-09-14-embracing-open-source/flappy-bird-demo.webp' %}
+
+*A screenshot of the Flappy Bird demo created by Ned Reid*
 
 ## Closing Thoughts 🙂
 
