@@ -3,7 +3,7 @@ title: "A closer look: Setting private members in the editor"
 author: manio
 popular: false
 image: /images/blog/2023-09-21-closer-look-private-members/script-with-secrets.png
-tags: ['.NET']
+tags: ['.NET', 'Education']
 ---
 
 Let's take a closer look at why currently you can't set private members of scripts and components in the Stride Editor and explore the options to change that in the future.
@@ -14,7 +14,7 @@ Table of Contents:
 
 [[TOC]]
 
-It has been an amazing week for Stride and our Discord is booming with new people who want to learn more about the engine and maybe port some games from Unity. One of the questions that has been asked a few times was why we can't set private members on scripts in the editor. I thought it's a good opportunity to dive a little deeper into the technical reasons and engine architecture to explain the current limitation and explore the options to change it in the future.
+It has been an amazing week for Stride and our Discord is booming with new people who want to [learn more about the engine](https://www.stride3d.net/blog/embracing-open-source-stride-as-an-alternative-to-unity/) and maybe port some games from Unity. One of the questions that has been asked a few times was why we can't set private members on scripts in the editor. I thought it's a good opportunity to dive a little deeper into the technical reasons and engine architecture to explain the current limitation and explore the options to change it in the future.
 
 ## What is public and what is private
 
@@ -33,7 +33,7 @@ Moreover, component's public properties are often not just modified at design ti
 
 We can talk about components in two contexts: setting the properties during level design in the editor and setting them at runtime while the game is running. We would generally expect in both cases that we can modify the properties of the component and they will be picked up by the processing system. 
 
-With the introduction of Scripts, however, which are components containing logic, we get into a bit of a pickle. Yes, the script should be able to have private state and a public API for other components to interact with it. What if we want to restrict some data so that it can only be set once during initialization? Ideally the editor would not be constrained to modify the property during design, but once we hit the runtime it should be allowed to change.
+With the introduction of [Scripts](https://doc.stride3d.net/latest/en/manual/scripts/index.html), however, which are components containing logic, we get into a bit of a pickle. Yes, the script should be able to have private state and a public API for other components to interact with it. What if we want to restrict some data so that it can only be set once during initialization? Ideally the editor would not be constrained to modify the property during design, but once we hit the runtime it should be allowed to change.
 
 ## Editor runs your code directly
 
@@ -45,7 +45,7 @@ The editor uses reflection to access properties and fields on your script. It te
 
 ## Serialization
 
-Stride uses YAML for design time serialization of Assets. The assets can have a different form from the actual Content they are compiled to by the AssetCompiler. This is used for example by Audio or Model assets which at design time just hold a reference to your media files, but once compiled actually hold the bits of your media in a format that's easy to consume by Stride's runtime.
+Stride uses YAML for design time serialization of [Assets](https://doc.stride3d.net/latest/en/manual/game-studio/assets.html). The assets can have a different form from the actual Content they are compiled to by the AssetCompiler. This is used for example by Audio or Model assets which at design time just hold a reference to your media files, but once compiled actually hold the bits of your media in a format that's easy to consume by Stride's runtime.
 
 For components and scripts rather than having a second class for each component and doing compilation from design to runtime representation, those classes are the same in both scenarios. This simplifies things but it means that serialization constraints need to be applied equally.
 
