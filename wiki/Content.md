@@ -152,6 +152,14 @@ Default front matter, which is used for all posts, can be found in the `posts/po
 }
 ```
 
+### Image
+
+The image specified in the front matter serves dual purposes: It appears in the blog listing at [Stride Blog](https://www.stride3d.net/blog/) and is used as the **og:image** meta tag for social sharing. Here are three ways to specify this image:
+
+- Not including an image in the front matter will use the default image
+- Including an image in the front matter will override the default image. The size of the image should be minimum **1200 x 600px** e.g. `image: /images/blog/2023-04/new-home-page.webp`
+- External image URL e.g. `image: https://i.imgur.com/7GVEiSR.jpg`
+
 ## Post Content
 
 Check the previous posts for an example of the post content. Ideally you should use the same format as the previous posts to preserve the consistency of the blog.
