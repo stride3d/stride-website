@@ -73,7 +73,7 @@ public string MyProperty { get; init; }
 
 As we're trying to squeeze out more performance and improve the Stride codebase we're looking at rewriting the AssemblyProcessor from Mono.Cecil and manually emitting IL into a Roslyn C# source generator. This will also mean being restricted to whatever the compiler enforces, such as not setting init properties outside of object construction.
 
-Luckily in .NET 8 there's a new performance hack which allows you to access private fields on other classes. You can read about it more in the [proposal](https://github.com/dotnet/runtime/issues/90081) and on the [performance blog](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/#networking-primitives).
+Luckily in .NET 8 there's a new performance hack which allows you to access private fields on other classes. You can read about it more in the [proposal](https://github.com/dotnet/runtime/issues/81741) and on the [performance blog](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/#networking-primitives).
 
 ```csharp
 [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "_myField")]
