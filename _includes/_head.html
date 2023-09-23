@@ -28,6 +28,15 @@
     <meta name="twitter:creator" content="@{{ site.twitter-username }}">
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
+    {% if image %}
+    {%- if image contains "http://" or image contains "https://" -%}
+    <meta name="twitter:image" content="{{ image }}" />
+    {%- else -%}
+    <meta name="twitter:image" content="{{ site.url }}{{ image }}" />
+    {%- endif -%}
+    {%- else -%}
+    <meta name="twitter:image" content="{{ site.url }}/images/og/stride-game-engine-default-og.jpg">
+    {%- endif -%}
     {%- if site.dark-mode -%}
     <script src="{{ site.baseurl}}/scripts/theme-selector.js?site-version={{site.version}}"></script>
     {%- endif -%}
