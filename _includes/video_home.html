@@ -1,0 +1,33 @@
+<div class="container-fluid p-0">
+  <div class="hero-video">
+    <div class="ratio ratio-16x9">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/SlipyjcEb0g?controls=0&autoplay=1&mute=1&loop=1&playlist=SlipyjcEb0g" title="Stride YouTube demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="hero-video-content p-5 d-flex align-items-end">
+      <div class="container-xxl">
+        <div class="hero-video-text">
+          <h1 class="h1 mb-3 text-light mb-3 display-5 fw-bold">Stride Engine</h1>
+          <p class="text-light mb-2 lead fw-normal">Stride is a free, open-source, cross-platform game engine.
+          <p class="text-light mb-4 lead fw-normal">Use it to create 2D and 3D video games and interactive content <br /> for PC, mobile devices and Virtual Reality.</p>
+          <div class="row g-3">
+            <div class="col-auto">
+              <a href="/download/" class="btn btn-lg btn-stride">
+                <i class="fa-solid fa-download"></i> Download {{ site.download-version }}
+              </a>
+            </div>
+            <div class="col-auto">
+              <a href="{{ site.links.github-stride-url }}" class="btn btn-lg btn-outline-stride" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github text-decoration-none"></i> Source Code (MIT)
+              </a>
+            </div>
+            <div class="col-auto">
+              <a href="{{ site.links.open-collective-url }}" class="btn btn-lg btn-info" target="_blank" rel="noopener">
+                {% include svg-icons.html type:'open-collective' size:22 %}&nbsp;Donate to our Collective
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
