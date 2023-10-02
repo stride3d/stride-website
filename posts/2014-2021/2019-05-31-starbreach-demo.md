@@ -8,7 +8,7 @@ Explore the impressive Starbreach demo, a testament to Stride's powerful 3D game
 
 ---
 
-{% img-click 'Starbreach Demo' '/images/blog/2019-05-31-starbreach-demo/starbreach_poster.jpg' 'https://github.com/xenko3d/Starbreach' %}
+{% img-click 'Starbreach Demo' '/images/blog/2019-05-31-starbreach-demo/starbreach_poster.webp' 'https://github.com/xenko3d/Starbreach' %}
 
 Hi everyone, Silicon Studio agreed to release the Starbreach demo from GDC 2017, along with all associated assets as open source (see license), for the Xenko community to use. Code in the project is released under an MIT license, the assets are released under a attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.
 
