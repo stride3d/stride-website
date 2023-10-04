@@ -6,14 +6,14 @@ eleventyComputed:
 ---
 <!-- {% include carousel_home.html %} -->
 {% include video_home.html %}
-<div class="container-xxl mt-5 mt-sm-0">
-    <div class="row gy-5 gx-sm-5 py-sm-5 pb-5">
+<div class="container-xxl container-small mt-5">
+    <div class="row gy-4 gx-sm-4 justify-content-center">
         <div class="col-lg-6">
             <div class="card h-100">
                 <img src="/images/backgrounds/robot.webp" alt="Stride Editor Screenshot" width="816" height="441" class="img-fluid">
                 <div class="card-body p-4">
-                    <h2 class="h2 mb-3">Bet on the future</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                    <h3 class="mb-3 fw-bold">Bet on the future</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'Next-gen graphics API support' %}
                         {% include bullet-point.html text:'Photorealistic rendering' %}
                         {% include bullet-point.html text:'Fully multi-threaded' %}
@@ -31,8 +31,8 @@ eleventyComputed:
             <div class="card h-100">
                 <img src="/images/home/stride-studio-editor.webp" alt="Stride Editor Screenshot" width="816" height="441" class="img-fluid">
                 <div class="card-body p-4">
-                    <h2 class="h2 mb-3">Accelerated development</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                    <h3 class="mb-3 fw-bold">Accelerated development</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         <li><span class="fa-li"><i class="fa-solid fa-circle-check text-stride me-2"></i></span>{{ site.csharp-version }} scripting with {{ site.dotnet-version }}</li>
                         {% include bullet-point.html text:'Built-in game templates' %}
                         {% include bullet-point.html text:'Full asset creation toolchain' %}
@@ -46,10 +46,10 @@ eleventyComputed:
         </div>
         <div class="col-lg-6">
             <div class="card h-100">
-                <img src="/images/top/platforms.webp" alt="Platforms Image" width="816" height="459" class="img-fluid mt-2 mb-lg-5">
+                <img src="/images/top/platforms.webp" alt="Platforms Image" width="816" height="459" class="img-fluid mt-2">
                 <div class="card-body p-4">
-                    <h2 class="h2 mb-3 mt-lg-2">Develop once, deploy cross-platform</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                    <h3 class="mb-3 fw-bold">Develop once, deploy cross-platform</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'Windows Desktop & Windows Universal' %}
                         {% include bullet-point.html text:'iOS and Android' %}
                         {% include bullet-point.html text:'Linux' %}
@@ -67,8 +67,8 @@ eleventyComputed:
                     <img src="/images/backgrounds/stride-game-code-short.webp" alt="Game Image" width="816" height="459" style="transform:rotateY(15deg)" class="img-fluid">
                 </div>
                 <div class="card-body p-4">
-                    <h2 class="h2 mb-3">Write your Stride scripts in {{ site.csharp-version }}</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                    <h3 class="mb-3 fw-bold">Write your scripts in {{ site.csharp-version }}</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'IntelliSense and code navigation for C#' %}
                         {% include bullet-point.html text:'Visual Studio, Visual Studio Code or Rider' %}
                         <li><span class="fa-li"><i class="fa-solid fa-circle-check text-stride me-2"></i></span> Game Development with {{ site.dotnet-version }}</li>
@@ -83,8 +83,8 @@ eleventyComputed:
             <div class="card h-100">
                 <img src="/images/backgrounds/toppage_poster_cropped.webp" alt="Game Image" width="816" height="441" class="img-fluid">
                 <div class="card-body p-4">
-                    <h2 class="h2 mb-3">Collaborate with us</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                    <h3 class="mb-3 fw-bold">Collaborate with us</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'Editor and runtime open source (MIT)' %}
                         {% include bullet-point.html text:'Participate in the community' %}
                         {% include bullet-point.html text:'Propose changes to the engine and docs' %}
@@ -96,33 +96,36 @@ eleventyComputed:
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container-xxl container-small mt-5 mb-5">
+    <div class="row gy-4 gx-sm-4 justify-content-center">
         <div class="col-lg-12">
             <div class="card h-100">
                 <div class="p-4 pull-left">
                     <img src="/images/logos/Silicon_Studio_logo.svg" alt="Silicon Studio" class="img-fluid w-100">
                 </div>
                 <div class="card-body p-4">
-                    <h2 class="h2 mb-3">History</h2>
-                    <p class="lead">Xenko was originally started by <b><a href="https://www.siliconstudio.co.jp/en/" target="_blank" rel="noopener">Silicon Studio</a></b>, a technology and services company of 300+ employees founded in 2000, dedicated to driving entertainment forward. Silicon Studio develops world-class products to help developers maximize the potential of leading-edge digital media technology.</p>
-                    <p class="lead">In 2018, Xenko was transformed by Silicon Studio into an independent project, driven by an open-source community.</p>
-                    <p class="lead">In 2020, the project formerly known as Xenko took on a new identity as Stride.</p>
-                    <p class="lead">Then, in May of 2021, Stride proudly became a member of the .NET Foundation.</p>
+                    <h3 class="mb-3 fw-bold">History</h3>
+                    <p>Xenko was originally started by <b><a href="https://www.siliconstudio.co.jp/en/" target="_blank" rel="noopener">Silicon Studio</a></b>, a technology and services company of 300+ employees founded in 2000, dedicated to driving entertainment forward. Silicon Studio develops world-class products to help developers maximize the potential of leading-edge digital media technology.</p>
+                    <p>In 2018, Xenko was transformed by Silicon Studio into an independent project, driven by an open-source community.</p>
+                    <p>In 2020, the project formerly known as Xenko took on a new identity as Stride.</p>
+                    <p>Then, in May of 2021, Stride proudly became a member of the .NET Foundation.</p>
                 </div>
             </div>
         </div>
         <div class="col-12">
             <div class="card">
                 <div class="card-body p-4">
-                    <h2 class="h1 mb-3">Our Featured Sponsors</h2>
-                    <p class="lead">Thanks to our Featured Sponsors for supporting Stride and empowering creators with the resources they need to bring their visions to life.</p>
+                    <h3 class="mb-3 fw-bold">Featured Sponsors</h3>
+                    <p>Thanks to our featured sponsors for supporting Stride and empowering creators with the resources they need to bring their visions to life.</p>
+                    <div class="row mt-4">
+                        {% comment %}{% include sponsor-diamond.html %}
+                        {% include sponsor-platinum.html %}{% endcomment %}
+                        {% include sponsor-generic.html %}
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="row gy-5 gx-sm-5 row-cols-1 row-cols-md-3 justify-content-center">
-                {% comment %}{% include sponsor-diamond.html %}
-                {% include sponsor-platinum.html %}{% endcomment %}
-                {% include sponsor-generic.html %}
             </div>
         </div>
     </div>
