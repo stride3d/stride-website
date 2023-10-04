@@ -1,7 +1,7 @@
 ---
 title: 'Real-Time Local Reflections Preview'
 author: silicon-studio
-image_thumb: /images/blog/2017-02-09-real-time-local-reflections/night-reflections.png
+image_thumb: /images/blog/2017-02-09-real-time-local-reflections/night-reflections.webp
 ---
 
 We're excited to be working on Xenko's real-time local reflections feature, coming in Xenko's next release. Real-time local reflections are a great way to visually ground objects in a scene. They give your games richer scenes and increased realism in rendering.
@@ -22,7 +22,7 @@ Where the local reflections effect is available, it replaces image-based lightin
 
 Local reflections are most obvious when they project bright spots onto other surfaces. The effect looks great in night scenes, which have high contrast, and in rainy conditions with lots of reflective surfaces and highlights. Notice how the vending machine lights are reflected in the ground surface in this screenshot:
 
-{% img 'Night reflections' '/images/blog/2017-02-09-real-time-local-reflections/night-reflections.png' %}
+{% img 'Night reflections' '/images/blog/2017-02-09-real-time-local-reflections/night-reflections.webp' %}
 
 In games without lightmaps or global illumination, objects don't interact with each other as they do in reality, making them appear as if they have simply been Photoshopped in. With local reflections, objects appear to be part of the world rather than having been placed arbitrarily. It makes scenes feel much more grounded, and gives objects a feeling of weight.
 

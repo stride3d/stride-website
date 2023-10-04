@@ -11,7 +11,7 @@ Everyone on the Xenko team has been working hard to bring you new features and t
 
 [[TOC]]
 
-{% img 'Example Asset' '/images/blog/release-1.1/robot_editor.jpg' %}
+{% img 'Example Asset' '/images/blog/release-1.1/robot_editor.webp' %}
 
 ## Highlights
 
