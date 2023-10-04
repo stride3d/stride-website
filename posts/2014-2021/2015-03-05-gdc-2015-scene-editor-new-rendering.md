@@ -29,4 +29,4 @@ We have been quiet for the past two months working hard on many new features in 
 
 <p>We will also release shortly a video showing the rendering of a Robot with the new PBR material system and post effects that we presented here at GDC.</p>
 
-{% img-click 'Materials Physically Based Rendering' '/images/blog/GDC2015/pbr_robot_thumb.jpg' '/images/blog/GDC2015/pbr_robot.jpg' %}
+{% img-click 'Materials Physically Based Rendering' '/images/blog/GDC2015/pbr_robot_thumb.jpg' '/images/blog/GDC2015/pbr_robot.webp' %}

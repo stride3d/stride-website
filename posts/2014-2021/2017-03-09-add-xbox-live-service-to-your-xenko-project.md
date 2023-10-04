@@ -8,7 +8,7 @@ Discover how to integrate Xbox Live services into your Xenko game project with t
 
 ---
 
-{% img 'Achievement Unlocked' '/images/blog/2017-03-09-xbox-live/achievement-unlocked-with-xenko.png' %}
+{% img 'Achievement Unlocked' '/images/blog/2017-03-09-xbox-live/achievement-unlocked-with-xenko.webp' %}
 
 We have continued to work hard on our support in Xenko for Microsoft's Universal Windows Platform (UWP). Keeping with this, we've been working closely with our Microsoft partners to add official support for the Xbox Live SDK. So, now Xenko developers will have the opportunity to add Xbox live to their games. 
 
@@ -22,6 +22,6 @@ If you haven't yet joined ID@Xbox you can learn about the program and how to joi
 
 Once you have applied to the program and have been accepted as a managed partner with Microsoft, feel free to get started using our newly created Xbox Live sample [here](http://doc.stride3d.net/latest/manual/platforms/uwp/xbox-live.html). 
 
-{% img 'Dev Screenshot' '/images/blog/2017-03-09-xbox-live/xbox-live-dev-screen.png' %}
+{% img 'Dev Screenshot' '/images/blog/2017-03-09-xbox-live/xbox-live-dev-screen.webp' %}
 
 We hope you will give this a try, and let us know about your project! Feel free to leave any comments or suggestions below on how to improve the experience.

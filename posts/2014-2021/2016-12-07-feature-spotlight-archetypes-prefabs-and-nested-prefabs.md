@@ -18,7 +18,7 @@ With archetypes, you can take an asset and derive a new asset from it. The new a
 
 You can also override specific properties in the derived asset. These properties become specific to the derived asset. They aren't affected by further changes to the value in the archetype, but all other properties stay synchronized. This lets you create different versions of an asset that still share a common base.
 
-{% img-click 'Stride Archetypes' '/images/blog/2016-12-07-prefabs/archetypes_pic.png' %}
+{% img-click 'Stride Archetypes' '/images/blog/2016-12-07-prefabs/archetypes_pic.webp' %}
 
 ## Prefabs
 

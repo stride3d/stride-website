@@ -118,7 +118,7 @@ The graphics compositor is now a separate asset.
 
 Rendering parameters (such as VR) and post effect parameters can be tweaked in just a few clicks.
 
-{% img-click 'Graphics compositor' '/images/blog/release-2.0/graphics_compositor.jpg' %}
+{% img-click 'Graphics compositor' '/images/blog/release-2.0/graphics_compositor.webp' %}
 
 This is just the first step towards making the graphics compositor easy to customize and extend. Stay tuned for more changes in future releases! 
 
