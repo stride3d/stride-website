@@ -42,14 +42,14 @@ The new ‘Animated Properties’ sample demonstrates how to create animations o
 It is now possible to visualize profiling information of all the game systems and custom profilers directly within your running games.
 To get started, use the Game Profiler built-in script, attach it to an entity and when the game is running press LCtrl-LShift-P.
 
-{% img 'Simple Profiling system' 'https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/profiler.png' %}
+{% img 'Simple Profiling system' 'https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/profiler.webp' %}
 
 ## Physic debug shapes at runtime
 It is now possible to enable the rendering of physics collider shapes during runtime.
 The debug shapes are normal entities and they must be enabled for each physics shape that requires it.
 The best way to start with this feature is to use the Physics Shapes Render built-in script and attach the script to any entity that has a Physics Component and when the game is running press LCtrl-LShift-P.
 
-{% img 'Physic debug shapes' 'https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/phys-debug.png' %}
+{% img 'Physic debug shapes' 'https://doc.stride3d.net/latest/en/ReleaseNotes/media/ReleaseNotes-1.5/phys-debug.webp' %}
 
 ## Asset View
 

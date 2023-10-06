@@ -168,7 +168,7 @@ You can now properly link physics elements to bones of a model hierarchy. This m
 You currently still need to set up constraints programmatically. This will also be possible from the editor in the future.
 Also, complex entity hierarchies are now well handled.
 
-{% img 'Physics Nodes' '/images/blog/release-1.3/physics_nodes.png' %}
+{% img 'Physics Nodes' '/images/blog/release-1.3/physics_nodes.webp' %}
 
 ### Async scripting for collision handling
 

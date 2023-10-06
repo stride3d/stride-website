@@ -5,6 +5,7 @@
       "title": "Graphics compositor",
       "description": "Customize the rendering pipeline of your game in a visual way using building blocks. Future versions will even allow you to edit the building blocks themselves.",
       "type": "image",
+      "image_url": "graphics_compositor.webp",
       "enabled": true
     },
     {
@@ -145,6 +146,7 @@
       "title": "Optimized performance",
       "description": "Get the best VR performance with clustered forward rendering, single-pass rendering, multi-threading, and next-gen graphics API support.",
       "type": "image",
+      "image_url": "optimized.webp",
       "enabled": true
     },
     {

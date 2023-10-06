@@ -1,8 +1,11 @@
 # Stride Website Development
 
+Welcome to the Stride website repository. This repository contains all the source files for the Stride website https://www.stride3d.net/.
+
 * [Getting Started](#-getting-started)
 * [Contributing](#-contributing)
 * [Roadmap](#%EF%B8%8F-roadmap)
+* [Stride Documentation Landscape](#-stride-documentation-landscape)
 * [.NET Foundation](#-net-foundation)
 * [License](#%EF%B8%8Flicense)
 
@@ -34,6 +37,16 @@ The staging website is available at https://stride-website-staging.azurewebsites
 ## 🗺️ Roadmap
 
 Our Wiki [Roadmap](https://github.com/stride3d/stride-website/wiki/Roadmap) communicates upcoming changes to the Stride website.
+
+## 📖 Stride Documentation Landscape
+
+The Stride documentation landscape is organized across different repositories and their respective wikis to cater to both users and contributors. Here's how it's structured:
+
+1. [Stride Website](https://www.stride3d.net/) - Stride's official site showcasing its free, open-source 2D and 3D game engine, alongside blog posts
+   - [Stride Website Wiki](https://github.com/stride3d/stride-website/wiki) - This wiki serves as a comprehensive guide for those looking to contribute to or develop the Stride Website
+1. [Stride Docs](https://doc.stride3d.net/) - Here you'll find Stride's documentation, including manuals, tutorials, and API references
+   - [Stride Docs Wiki](https://github.com/stride3d/stride-docs/wiki) - This wiki is a comprehensive guide for individuals interested in contributing to or developing the Stride Docs
+1. [Stride Wiki](https://github.com/stride3d/stride/wiki) - A thorough guide for those who wish to contribute to or develop Stride game engine 
 
 ## 🌐 .NET Foundation
 
