@@ -7,6 +7,10 @@
     "xen2": {
       "name": "Xen2",
       "url": "https://opencollective.com/xen2"
+    },
+    "skidvis": {
+      "name": "Skid Vis",
+      "url": "https://opencollective.com/skidvis"
     }
   },
   "organizations": {
@@ -18,6 +22,14 @@
       "name": "ORE system",
       "url": "https://www.ore-system.com/",
       "img": "/images/sponsors/ore_system-next_gen_nfts_dark.png"
+    },
+    "lucid": {
+      "name": "Lucid Silence Games",
+      "url": "http://www.lucidsilence.org/"
+    },
+    "happenstance": {
+      "name": "Happenstance Games",
+      "url": "http://www.happenstancegames.com"
     }
   }
 }
