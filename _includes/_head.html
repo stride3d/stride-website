@@ -3,7 +3,7 @@
     {%- if site.google-analytics -%}{% include google-tag.html %}{%- endif -%}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title != 'Home' %}{{ title }} - {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
@@ -12,13 +12,13 @@
     <link rel="preload" as="font" href="/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url | url }}">
     {% if image %}
     {%- if image contains "http://" or image contains "https://" -%}
-    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:image" content="{{ image }}">
     {%- else -%}
-    <meta property="og:image" content="{{ site.url }}{{ image }}" />
+    <meta property="og:image" content="{{ site.url }}{{ image }}">
     {%- endif -%}
     {%- else -%}
     <meta property="og:image" content="{{ site.url }}/images/og/stride-game-engine-default-og.jpg">
@@ -27,12 +27,12 @@
     <meta name="twitter:site" content="@{{ site.twitter-username }}">
     <meta name="twitter:creator" content="@{{ site.twitter-username }}">
     <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
     {% if image %}
     {%- if image contains "http://" or image contains "https://" -%}
-    <meta name="twitter:image" content="{{ image }}" />
+    <meta name="twitter:image" content="{{ image }}">
     {%- else -%}
-    <meta name="twitter:image" content="{{ site.url }}{{ image }}" />
+    <meta name="twitter:image" content="{{ site.url }}{{ image }}">
     {%- endif -%}
     {%- else -%}
     <meta name="twitter:image" content="{{ site.url }}/images/og/stride-game-engine-default-og.jpg">
