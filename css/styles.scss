@@ -73,8 +73,12 @@ a {
     cursor: pointer;
 }
 
-.container-small {
-    max-width: 1200px;
+.container-xl {
+    max-width: 1140px !important;
+}
+
+.container-lg {
+    max-width: 960px !important;
 }
 
 .intro-section {
