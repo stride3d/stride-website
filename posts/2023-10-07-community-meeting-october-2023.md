@@ -18,7 +18,6 @@ Table of Contents:
 [[TOC]]
 
 ## Short summary of Contributor meeting
-
 A few weeks prior to the community meeting, we held a contributor meeting. This was mostly to address the recent instream of many new users. Since we suddenly got an abundance of user feedback we took and planned some steps
 * Inventorizing domain knowledge and access rights
   * This overview will be posted soon on GitHub
@@ -32,7 +31,6 @@ A few weeks prior to the community meeting, we held a contributor meeting. This 
 * Adjusting the strategy with OpenCollective Projects: here we came to the consensus that we required more feedback which we would gather during the community meeting
 
 ## Release of 4.2
-
 Stride 4.2 is around the corner, but when exactly?
 
 * For 4.2 we are waiting for the official release of .NET 8 which is to be release on November 14, 2023
@@ -44,7 +42,6 @@ Stride 4.2 is around the corner, but when exactly?
 
 
 ## Open Collective
-
 Next we discussed the use of [Open Collective](http://opencollective.com/stride3d) for donations and funding specific projects.
 Although not mentioned in the meeting, our current funding is **12,992.34 USD**.
 
@@ -54,7 +51,6 @@ Although not mentioned in the meeting, our current funding is **12,992.34 USD**.
 * There are currently two talks ongoing for specific development. Once we have confirmation we will communicate this with the community
 
 ### New projects
-
 We will add several new Projects to the Open Collective. This will give members a clear view on 'targets' that we like to see funded.
 
 * Extending tutorials. Both written and video tutorials.
@@ -65,14 +61,12 @@ We will add several new Projects to the Open Collective. This will give members 
 
 
 ## New Demo project
-
 We want to have a new demo sample project that demonstrates Strides capabilities. Members who want to help out, can add to the discussion [here](https://github.com/stride3d/stride/discussions/1800).
 
 ## Community Toolkit
-There is a new initiative called the [Stride Community Toolkit](https://github.com/stride3d/stride-community-toolkit), aimed at aggregating common features, helpers, and extensions to streamline Stride development. It allows community members to test and enhance tools and propose their integration into the engine. This project has come to fruition with the combined effort the repositories off [dfkeenan](https://github.com/dfkeenan/StrideToolkit) and [VaclavElias](https://github.com/VaclavElias/)
+There is a new initiative called the [Stride Community Toolkit](https://github.com/stride3d/stride-community-toolkit), aimed at aggregating common features, helpers, and extensions to streamline Stride development. It allows community members to test and enhance tools and propose their integration into the engine. This project has come to fruition with the combined effort of several users, and specifically the repositories off [dfkeenan](https://github.com/dfkeenan/StrideToolkit) and [VaclavElias](https://github.com/VaclavElias/)
 
 ## Stride Plugins
-
 A topic talked about for several years now and it's quite an important one. Plugins allow you, for one, extend the editor with new functionality without having to build the engine from source. Ideally you want to go to some (NuGet) store and click -> install this awesome extension/plugin for Stride.
 
 If you want to contribute to the discussion on how to do this technically.
@@ -86,7 +80,6 @@ For this [Manio143](https://github.com/manio143) is taking the lead
 Since we are short on development time here, we need to take into account that it will be a while before we can see the first results of this.
 
 ## Stride UI Rewrite
-
 The Stride editor is built with WPF and therefore only works on Windows. WPF isn’t really being developed anymore and on top of that we want to start supporting the editor on Linux. We can only do so by rewriting the editor to another UI framework.
 
 Just like the Plugin topic, the [Editor rewrite](https://github.com/stride3d/stride/discussions/1031) is a big topic. Probably the biggest topic of them all. The editor rewrite has been discussed in great lengths on both Discord and GitHub in the past few years. People have shared their ideas on which framework to use (Avalonia, MAUI, Uno etc), made some prototypes, even ported the Stride launcher. But we never really ‘actively’ made this an official item since it would take a full time developer many months to work on this task.
@@ -96,7 +89,6 @@ Members have been asking if they can help out with the rewrite, but up until thi
 So regardless of time/developer power: we have landed on using the [Avalonia UI framework](https://avaloniaui.net/) to rewrite the editor. Aggror will set up a GitHub topic summarizing how people can contribute to this UI rewrite branch and inventorize how we can split this massive task into subtasks.. More details on this will follow later this year.
 
 ## Acknowledgements
-
 We extend our heartfelt gratitude for all the recent donations that have been made. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
 
 In particular we want to thanks these donors:
