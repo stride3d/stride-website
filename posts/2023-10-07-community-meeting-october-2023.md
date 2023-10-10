@@ -39,7 +39,7 @@ Stride 4.2 is around the corner, but when exactly?
   * Since we want to release a version for .NET 6 and .NET 8, our goal is to release within a few days after the release of .NET 8
 * Prior to the official release we will have a release candidate. This will be announced when it is available.
 * At the moment there is 1 open bug and 1 open pull request for a feature. Other than that, the build is locked for features. Only bug fixes would be allowed in.
-* The open pull request for [Silk.NET](https://github.com/stride3d/stride/pull/1123) will be moved to 4.2.1 to ensure stability.
+* The open pull request for [Silk.NET](https://github.com/stride3d/stride/pull/1123) will be moved to 4.3 to ensure stability.
 * For more info on the [final items](https://github.com/stride3d/stride/discussions/1699)
 
 
@@ -69,8 +69,7 @@ We will add several new Projects to the Open Collective. This will give members 
 We want to have a new demo sample project that demonstrates Strides capabilities. Members who want to help out, can add to the discussion [here](https://github.com/stride3d/stride/discussions/1800).
 
 ## Community Toolkit
-
-There is a new initiative called the [Stride Community Toolkit](https://github.com/stride3d/stride-community-toolkit), aimed at aggregating common features, helpers, and extensions to streamline Stride development. It allows community members to test and enhance tools and propose their integration into the engine.
+There is a new initiative called the [Stride Community Toolkit](https://github.com/stride3d/stride-community-toolkit), aimed at aggregating common features, helpers, and extensions to streamline Stride development. It allows community members to test and enhance tools and propose their integration into the engine. This project has come to fruition with the combined effort the repositories off [dfkeenan](https://github.com/dfkeenan/StrideToolkit) and [VaclavElias](https://github.com/VaclavElias/)
 
 ## Stride Plugins
 
@@ -102,12 +101,29 @@ We extend our heartfelt gratitude for all the recent donations that have been ma
 
 In particular we want to thanks these donors:
 
-### Platinum Striders
 
-* {% include sponsor-org.md key:'happenstance' emoji:'🏆' %}
+### Long time Stride supporters
+* <div>
+  
+  [vvvv](https://visualprogramming.net) is a visual live-programming environment that takes you from rapid prototyping to final production.
+  
+  <a href="https://visualprogramming.net/"><img src="https://images.opencollective.com/vvvv/8ab0acd/logo/256.png?height=72" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
+</div>
+
+### Platinum Striders
+* <div>
+
+  [Happenstance Games](www.happenstancegames.com) 
+
+  <a href="www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
+</div>
 
 ### Gold Striders
-* {% include sponsor-org.md key:'vvvv' emoji:'🥇' %}
+
 * {% include sponsor-user.md key:'vaclav' emoji:'🥇' %}
-* {% include sponsor-org.md key:'lucid' emoji:'🥇' %}
-* {% include sponsor-user.md key:'skidvis' emoji:'🥇' %}
+* [Lucid Silence Games](http://www.lucidsilence.org/)
+* Skidvis
+
+
+
+
