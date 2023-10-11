@@ -107,7 +107,7 @@ In particular we want to thanks these donors:
 
   [Happenstance Games](www.happenstancegames.com) 
 
-  <a href="www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
+  <a href="www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="Happenstance games logo"></a>
 </div>
 
 ### Gold Striders
