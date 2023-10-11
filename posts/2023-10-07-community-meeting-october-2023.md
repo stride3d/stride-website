@@ -107,7 +107,7 @@ In particular we want to thanks these donors:
   
   {% include sponsor-org.md key:'happenstance' emoji:'🏆' %}
  
-  <a href="www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="Happenstance games logo"></a>
+  <a href="http://www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="Happenstance games logo"></a>
 </div>
 
 ### Gold Striders
