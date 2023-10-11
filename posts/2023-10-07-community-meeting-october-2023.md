@@ -96,25 +96,25 @@ In particular we want to thanks these donors:
 
 ### Long time Stride supporters
 * <div>
-  
-  [vvvv](https://visualprogramming.net) is a visual live-programming environment that takes you from rapid prototyping to final production.
-  
+
+  {% include sponsor-org.md key:'vvvv' emoji:'🥇' %}
+
   <a href="https://visualprogramming.net/"><img src="https://images.opencollective.com/vvvv/8ab0acd/logo/256.png?height=72" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
 </div>
 
 ### Platinum Striders
 * <div>
-
-  [Happenstance Games](www.happenstancegames.com) 
-
+  
+  {% include sponsor-org.md key:'happenstance' emoji:'🏆' %}
+ 
   <a href="www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="Happenstance games logo"></a>
 </div>
 
 ### Gold Striders
 
 * {% include sponsor-user.md key:'vaclav' emoji:'🥇' %}
-* [Lucid Silence Games](http://www.lucidsilence.org/)
-* Skidvis
+* {% include sponsor-org.md key:'lucid' emoji:'🥇' %}
+* {% include sponsor-user.md key:'skidvis' emoji:'🥇' %}
 
 
 
