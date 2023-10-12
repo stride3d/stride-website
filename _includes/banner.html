@@ -1,7 +1,7 @@
 {% capture style %}
 background-image: url({{ image-url }}); background-position: 50% 50%; background-size: cover
 {% endcapture %}
-<div style="{{ style | strip }}">
+<div style="{{ style | strip }}" class="header-image">
     <div class="cover text-center py-5">{% if h1 == true %}
         <h1 class="text-light pt-4">{{ title }}</h1>{% else %}
         <p class="text-light pt-4 h1">{{ title }}</p>{% endif %}

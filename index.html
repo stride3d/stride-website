@@ -4,152 +4,99 @@ title: Stride Game Engine - Free, Open Source C# 2D and 3D Game Engine
 eleventyComputed:
   description: Stride, an MIT-licensed C# game engine, built for the future of gaming. Use {{ site.csharp-version }} and {{ site.dotnet-version }} to create your own games. #opensource
 ---
-{% include carousel_home.html %}
-<div class="container-xxl mt-5 mt-sm-0">
-    <div class="row gy-5 gx-sm-5 py-sm-5 pb-5">
+{% include video_home.html %}
+<div class="container-xl mt-5">
+    <div class="row gy-4 gx-sm-4 justify-content-center mb-4">
         <div class="col-lg-6">
             <div class="card h-100">
-                <div class="ratio ratio-16x9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SlipyjcEb0g?controls=0&autoplay=1&mute=1&loop=1&playlist=SlipyjcEb0g&rel=0" title="Stride YouTube demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="card-body p-4">
-                    <h1 class="h1 mb-3">Open-source C# Game Engine</h1>
-                    <p class="lead">Stride is a free and open-source 2D and 3D cross-platform game engine.
-                    <p class="lead">Stride can be used to create video games for PC, mobile devices and virtual reality or interactive content.</p>
-                </div>
-                <div class="px-4 mb-4">
-                    <div class="row g-4">
-                        <div class="col-auto">
-                            <a href="/download/" class="btn btn-lg btn-stride me-2">
-                                <i class="fa-solid fa-download"></i> Download {{ site.download-version }}
-                            </a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="{{ site.links.github-stride-url }}" class="btn btn-lg btn-outline-stride" target="_blank" rel="noopener">
-                                <i class="fa-brands fa-github text-decoration-none"></i> Source Code (MIT)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card h-100">
-                <div class="ratio ratio-16x9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/m4bC4h0aXfA?autoplay=0&rel=0" allowfullscreen title="Stride YouTube demo"></iframe>
-                </div>
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3">Bet on the future</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                <img src="/images/home/robot.jpg" alt="Robot" class="img-fluid">
+                <div class="card-body pt-5 px-5">
+                    <h3 class="mb-3 fw-bold">Bet on the future</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'Next-gen graphics API support' %}
                         {% include bullet-point.html text:'Photorealistic rendering' %}
                         {% include bullet-point.html text:'Fully multi-threaded' %}
                         {% include bullet-point.html text:'VR ready' %}
                         {% include bullet-point.html text:'Fully customizable to your needs' %}
                         {% include bullet-point.html text:'Long-term code maintainability' %}
+                        {% include bullet-point.html text:'Deploy for Windows, Linux, iOS and Android' %}
                     </ul>
                 </div>
-                <div class="px-4 mb-4">
-                    <a href="/features/" class="btn btn-lg btn-outline-stride me-md-2">Discover Next-Gen Capabilities</a>
+                <div class="px-5 pb-5">
+                    <a href="/features/" class="btn btn-lg btn-outline-stride me-md-2">Discover next-gen capabilities</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card h-100">
-                <img src="/images/home/stride-studio-editor.webp" alt="Stride Editor Screenshot" width="816" height="441" class="img-fluid">
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3">Accelerated development</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                <img src="/images/home/scripting.jpg" alt="Stride Editor Screenshot" class="img-fluid">
+                <div class="card-body pt-5 px-5">
+                    <h3 class="mb-3 fw-bold">Accelerated development</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         <li><span class="fa-li"><i class="fa-solid fa-circle-check text-stride me-2"></i></span>{{ site.csharp-version }} scripting with {{ site.dotnet-version }}</li>
                         {% include bullet-point.html text:'Built-in game templates' %}
                         {% include bullet-point.html text:'Full asset creation toolchain' %}
                         {% include bullet-point.html text:'Flexible and customizable rendering pipeline' %}
+                        {% include bullet-point.html text:'IntelliSense and code navigation for C#' %}
+                        {% include bullet-point.html text:'Visual Studio, Visual Studio Code or Rider' %}
                     </ul>
                 </div>
-                <div class="px-4 mb-4">
-                    <a href="/features/" class="btn btn-lg btn-outline-stride me-md-2">Dive Into Accelerated Development</a>
+                <div class="px-5 pb-5">
+                    <a href="/features/" class="btn btn-lg btn-outline-stride me-md-2">Dive into development features</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card h-100">
-                <img src="/images/backgrounds/toppage_poster_cropped.webp" alt="Game Image" width="816" height="441" class="img-fluid">
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3">Collaborate with us</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                <img src="/images/home/StarBreach.jpg" alt="Platforms Image" class="img-fluid">
+                <div class="card-body pt-5 px-5">
+                    <h3 class="mb-3 fw-bold">Documentation that sings</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
+                        {% include bullet-point.html text:'Manual in English and Japanese' %}
+                        {% include bullet-point.html text:'Beginner friendly introduction videos' %}
+                        {% include bullet-point.html text:'Intermediate scripting tutorials on YouTube' %}
+                        {% include bullet-point.html text:'Get help on our Discord channel' %}
+                        {% comment %}{% include bullet-point.html text:'Xbox One, Series S/X' %}{% endcomment %}
+                    </ul>
+                </div>
+                <div class="px-5 pb-5">
+                    <a href="/features" class="btn btn-lg btn-outline-stride me-md-2">Explore documentation</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <img src="/images/home/rescue-robot-tech-demo.jpeg" alt="Game Image" class="img-fluid">
+                <div class="card-body pt-5 px-5">
+                    <h3 class="mb-3 fw-bold">Collaborate with us</h3>
+                    <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
                         {% include bullet-point.html text:'Editor and runtime open source (MIT)' %}
                         {% include bullet-point.html text:'Participate in the community' %}
                         {% include bullet-point.html text:'Propose changes to the engine and docs' %}
                         {% include bullet-point.html text:'Connect with Stride game engine community' %}
                     </ul>
                 </div>
-                <div class="px-4 mb-4">
-                    <a href="/community/" class="btn btn-lg btn-outline-stride me-md-2">Join Our Community</a>
+                <div class="px-5 pb-5">
+                    <a href="/community/" class="btn btn-lg btn-outline-stride me-md-2">Join our community</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="card h-100">
-                <img src="/images/top/platforms.webp" alt="Platforms Image" width="816" height="459" class="img-fluid mt-2 mb-lg-5">
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3 mt-lg-2">Develop once, deploy cross-platform</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
-                        {% include bullet-point.html text:'Windows Desktop & Windows Universal' %}
-                        {% include bullet-point.html text:'iOS and Android' %}
-                        {% include bullet-point.html text:'Linux' %}
-                        {% comment %}{% include bullet-point.html text:'Xbox One, Series S/X' %}{% endcomment %}
-                    </ul>
-                </div>
-                <div class="px-4 mb-4">
-                    <a href="/features" class="btn btn-lg btn-outline-stride me-md-2">Explore Cross-Platform Development</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card h-100">
-                <div class="image-code-script-wrapper" style="perspective: 500px;">
-                    <img src="/images/backgrounds/stride-game-code-short.webp" alt="Game Image" width="816" height="459" style="transform:rotateY(15deg)" class="img-fluid">
-                </div>
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3">Write your Stride scripts in {{ site.csharp-version }}</h2>
-                    <ul class="lead mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
-                        {% include bullet-point.html text:'IntelliSense and code navigation for C#' %}
-                        {% include bullet-point.html text:'Visual Studio, Visual Studio Code or Rider' %}
-                        <li><span class="fa-li"><i class="fa-solid fa-circle-check text-stride me-2"></i></span> Game Development with {{ site.dotnet-version }}</li>
-                    </ul>
-                </div>
-                <div class="px-4 mb-4">
-                    <a href="/features/#scripting" class="btn btn-lg btn-outline-stride me-md-2">Learn About Scripting in {{ site.csharp-version }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="card h-100">
-                <div class="p-4">
-                    <img src="/images/logos/Silicon_Studio_logo.svg" alt="Silicon Studio" class="img-fluid">
-                </div>
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3">History</h2>
-                    <p class="lead">Xenko was originally started by <b><a href="https://www.siliconstudio.co.jp/en/" target="_blank" rel="noopener">Silicon Studio</a></b>, a technology and services company of 300+ employees founded in 2000, dedicated to driving entertainment forward. Silicon Studio develops world-class products to help developers maximize the potential of leading-edge digital media technology.</p>
-                    <p class="lead">In 2018, Xenko was transformed by Silicon Studio into an independent project, driven by an open-source community.</p>
-                    <p class="lead">In 2020, the project formerly known as Xenko took on a new identity as Stride.</p>
-                    <p class="lead">Then, in May of 2021, Stride proudly became a member of the .NET Foundation.</p>
-                </div>
-            </div>
-        </div>
+    </div>
+</div>
+
+<div class="container-xl">
+    <div class="row gy-4 gx-sm-4 justify-content-center mb-5">
         <div class="col-12">
-            <div class="card">
-                <div class="card-body p-4">
-                    <h2 class="h1 mb-3">Our Featured Sponsors</h2>
-                    <p class="lead">Thanks to our Featured Sponsors for supporting Stride and empowering creators with the resources they need to bring their visions to life.</p>
+            <div class="card h-100">
+                <div class="p-5 pull-left">
+                    <h3 class="mb-3 fw-bold">Featured Sponsors</h3>
+                    <p class="lead" style="max-width: 780px">Thanks to our featured sponsors for supporting Stride and empowering creators with the resources they need to bring their visions to life.</p>
+                    <div class="row mt-4">
+                        {% comment %}{% include sponsor-diamond.html %}
+                        {% include sponsor-platinum.html %}{% endcomment %}
+                        {% include sponsor-generic.html %}
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="row gy-5 gx-sm-5 row-cols-1 row-cols-md-3 justify-content-center">
-                {% comment %}{% include sponsor-diamond.html %}
-                {% include sponsor-platinum.html %}{% endcomment %}
-                {% include sponsor-generic.html %}
             </div>
         </div>
     </div>
