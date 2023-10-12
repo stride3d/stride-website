@@ -92,7 +92,7 @@ a {
         position: relative;
         overflow: hidden;
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
 
         iframe {
             position: absolute;
@@ -196,6 +196,12 @@ a {
     }
     .carousel .carousel-inner img {
         height: 75vh;
+    }
+    .intro-section .intro-content {
+        padding-bottom: 3rem !important;
+    }
+    .hero-video-text {
+        max-width: 450px;
     }
 }
 
