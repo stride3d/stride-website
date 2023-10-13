@@ -5,7 +5,7 @@ eleventyComputed:
   description: Stride, an MIT-licensed C# game engine, built for the future of gaming. Use {{ site.csharp-version }} and {{ site.dotnet-version }} to create your own games. #opensource
 ---
 {% include video_home.html %}
-<div class="container-xl mt-5">
+<div class="container-xl mt-4">
     <div class="row gy-4 gx-sm-4 justify-content-center mb-4">
         <div class="col-lg-6">
             <div class="card h-100">
@@ -70,10 +70,10 @@ eleventyComputed:
                 <div class="card-body pt-5 px-5">
                     <h3 class="mb-3 fw-bold">Collaborate with us</h3>
                     <ul class="mb-4 fa-ul" style="--fa-li-margin: 1.8em;">
-                        {% include bullet-point.html text:'Editor and runtime open source (MIT)' %}
-                        {% include bullet-point.html text:'Participate in the community' %}
-                        {% include bullet-point.html text:'Propose changes to the engine and docs' %}
+                        {% include bullet-point.html text:'Editor and runtime fully open source' %}
+                        <li><span class="fa-li"><i class="fa-solid fa-circle-check text-stride me-2"></i></span>Dive into our source code (MIT) on <a href="{{ site.links.github-stride-url }}" target="_blank" rel="noopener">GitHub</a></li>      
                         {% include bullet-point.html text:'Connect with Stride game engine community' %}
+                        {% include bullet-point.html text:'Propose changes to the engine, website and documentation' %}
                     </ul>
                 </div>
                 <div class="px-5 pb-5">
