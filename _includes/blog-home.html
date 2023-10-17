@@ -1,0 +1,20 @@
+<div class="row gy-5 gx-sm-5 mb-5">
+    {% assign latestPosts = collections.blog | reverse %}
+    {% for post in latestPosts limit:3 %}
+    <div class="col-md-4">
+        <div class="card mb-4 h-100">
+            <div class="card-body px-4 pt-4">
+                <h5 class="card-title">{{ post.data.title }}</h5>
+                <div class="my-2 small text-secondary">
+                    <i class="fa-solid fa-calendar-days me-1"></i> {%- include post/day.html date:post.date -%}
+                </div>
+                {%- if post.data.excerpt -%}{{ post.data.excerpt | md }}{%- else -%}
+                {{ post.data.page.excerpt | md }}{%- endif -%}
+            </div>
+            <div class="px-4 mb-4">
+                <a href="{{ post.url }}" class="stretched-link btn btn-lg btn-outline-stride me-md-2">Read more</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
