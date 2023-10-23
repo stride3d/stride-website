@@ -1,5 +1,5 @@
 ---
-title: "A closer look: Setting private members in the editor"
+title: "A closer look: Diagnostic Analyzers with Roslyn"
 author: joreyk
 popular: false
 image: https://www.jenx.si/wp-content/uploads/2020/10/cs-roslyn-logo.png
