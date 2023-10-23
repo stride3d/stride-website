@@ -2,11 +2,11 @@
 title: "A closer look: Diagnostic Analyzers with Roslyn"
 author: joreyk
 popular: false
-image: https://www.jenx.si/wp-content/uploads/2020/10/cs-roslyn-logo.png
+image: /images/blog/2023-10/cs-roslyn-logo.webp
 tags: ['.NET']
 ---
 
-Let's take a closer look at the DiagnosticAnalyzer added in Stride.Core.CompilerServices
+Let's take a closer look at the `DiagnosticAnalyzer` feature added in `Stride.Core.CompilerServices`. This feature offers real-time code analysis in your IDE, enhancing your workflow.
 
 ---
 
@@ -14,43 +14,32 @@ Table of Contents:
 
 [[TOC]]
 
-Stride advances further in utility and features every week.
-This blog will cover the new `DiagnosticAnalyzer` features in `Stride.Core.CompilerServices`
+Stride continues to evolve, adding new utilities and features every week. This blog post will cover the newly added `DiagnosticAnalyzer` feature in `Stride.Core.CompilerServices`.
 
-## What is a DiagnosticAnalyzer?
+## What is a `DiagnosticAnalyzer`?
 
-A `DiagnosticAnalyzer` is a Roslyn feature to scan your code while you are typing in your IDE.
-C# uses them too, everytime you see a warning or red squiggly lines in your IDE, a `DiagnosticAanalyzer` get's triggered.
-This analyzation has `NOTHING` to do with telemetry.
+A `DiagnosticAnalyzer` is a feature from Roslyn that scans your code while you are typing in your IDE. C# also utilizes this feature; every time you see a warning or red squiggly lines in your IDE, a `DiagnosticAnalyzer` gets triggered. Importantly, this analysis has nothing to do with telemetry.
 
 ## What does it do?
 
-The new `Diagnostics` cover mostly [Serialization](https://doc.stride3d.net/latest/en/manual/scripts/serialization.html), the analyzers will create warnings when code is written that is incompatible with [Strides Serialization Rules of Thumb](https://doc.stride3d.net/latest/en/manual/scripts/serialization.html#rule-of-thumb).
-Each of the error codes follows this format `STRDIAGXXX` where X represents a number digit.
-Clicking on the error codes will open a help page which explains in depth why the `DiagnosticAnalyzer` got triggered and explains how to resolve the warning.
-The error code pages can be found [here](https://doc.stride3d.net/latest/en/diagnostics/)
+The new `Diagnostics` primarily focus on [Serialization](https://doc.stride3d.net/latest/en/manual/scripts/serialization.html). These analyzers generate warnings for code that is incompatible with [Stride's Serialization Rules of Thumb](https://doc.stride3d.net/latest/en/manual/scripts/serialization.html#rule-of-thumb).
 
-## Why?
+Each error code follows this format: `STRDIAGXXX`, where 'X' represents a numerical digit. Clicking on these error codes will open a help page that explains in depth why the `DiagnosticAnalyzer` was triggered and how to resolve the warning. You can find these error code pages [here](https://doc.stride3d.net/latest/en/diagnostics/).
 
-It should reduce the "Why is my property not appearing in the Editor?" moments.
-Often it's unclear why a property is not showing up in the editor.
-The analyzers should help to clarify these situations and help in developing in Stride
+## Why use it?
+
+This feature aims to minimize those "Why is my property not showing up in the [Game Studio](https://doc.stride3d.net/latest/en/manual/game-studio/index.html)?" moments. It's often unclear why certain properties don't appear in the editor. These analyzers are designed to clarify such situations, aiding your development process in Stride.
 
 ## Current State
 
-The PR to add these Analyzers got merged. But there was no release yet which includes them.
-To test them now building the engine from source is an option.
-Else wait until the next release package of Stride. 
+The pull request (PR) to introduce these analyzers has been merged. However, there hasn't been a release that includes them yet. If you're eager to test them out, you can build the engine from the source. Otherwise, you'll have to wait for the next release of Stride's NuGet packages.
 
 ## For Engine Developers
 
-It's easy to add new analyzers to the engine.
-VS has a bug caused by .NET.
-This bug causes VS to only load once Roslyn at start up.
-To fix this after adding a new analyzer, compile the `Stride.Core.CompilerServices` and restart VS.
+Adding new analyzers to the Stride engine is straightforward. However, be aware that Visual Studio (VS) has a bug caused by .NET, which makes VS load Roslyn only once at startup. To work around this, compile `Stride.Core.CompilerServices` and restart VS after adding a new analyzer.
 
 ## Summary
 
-It's a new quality of life feature to easier develop in Stride by getting immediate feedback about problems while coding.
+This is a new quality-of-life feature that simplifies development in Stride by providing immediate feedback on coding issues.
 
 Thank you for reading 📖, and happy coding 💻👩‍💻👨‍💻!
