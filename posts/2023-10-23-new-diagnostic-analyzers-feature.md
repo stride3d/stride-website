@@ -25,7 +25,7 @@ This analyzation has `NOTHING` to do with telemetry.
 
 ## What does it do?
 
-The new `Diagnostics` cover mostly `Serialization`, the analyzers will create warnings when code is written that is incompatible with [Strides Serialization Rules of Thumb](https://github.com/stride3d/stride-docs/blob/master/en/manual/scripts/serialization.md#rule-of-thumb).
+The new `Diagnostics` cover mostly [Serialization](https://doc.stride3d.net/latest/en/manual/scripts/serialization.html), the analyzers will create warnings when code is written that is incompatible with [Strides Serialization Rules of Thumb](https://github.com/stride3d/stride-docs/blob/master/en/manual/scripts/serialization.md#rule-of-thumb).
 Each of the error codes follows this format `STRDIAGXXX` where X represents a number digit.
 Clicking on the error codes will open a help page which explains in depth why the `DiagnosticAnalyzer` got triggered and explains how to resolve the warning.
 The error code pages can be found [here](https://doc.stride3d.net/latest/en/diagnostics/)
