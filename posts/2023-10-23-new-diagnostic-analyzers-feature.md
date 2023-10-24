@@ -18,7 +18,7 @@ Stride continues to evolve, adding new utilities and features every week. This b
 
 ## What is a `DiagnosticAnalyzer`?
 
-A `DiagnosticAnalyzer` is a feature from Roslyn that scans your code while you are typing in your IDE. C# also utilizes this feature; every time you see a warning or red squiggly lines in your IDE, a `DiagnosticAnalyzer` gets triggered. Importantly, this analysis has nothing to do with telemetry.
+A `DiagnosticAnalyzer` is a feature from Roslyn that scans your code while you are typing in your IDE. C# also utilizes this feature; every time you see a warning or red squiggly lines in your IDE, a `DiagnosticAnalyzer` gets triggered. Analyzers are offline tools used by the compiler to assist programmers. They are not used to collect telemetry on how Stride is being used.
 
 ## What does it do?
 
