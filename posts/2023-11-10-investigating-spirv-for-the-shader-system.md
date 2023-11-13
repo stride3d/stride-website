@@ -6,7 +6,7 @@ image: /images/spir.png
 tags: ['.NET', 'Shaders']
 ---
 
-In this first part of a new series of blog posts, we will learn more about Stride's shader system, its limitations and how to make it better thanks to a very useful shader language called SPIR-V! This will be the first step in implementing a new and better shader system.
+In this first part of a new series of blog posts, we will learn more about Stride's shader system, its limitations and how to make it better thanks to a very useful shader language called SPIR-V. This will be the first step in implementing a new and better shader system.
 
 ---
 
@@ -69,6 +69,7 @@ Here's a table of which language is supported by which machine depending on the 
 Note that some APIs are tied to the machine you're developing for, adding more complexity to the shader system, needing to handle GPUs that have very specific features. Vulkan and OpenGL can be used on Mac and iOS but OpenGL is deprecated and Vulkan run on MoltenVK, a Vulkan implementation on top of Metal.
 
 <table class="table table-striped table-sm">
+  <thead>
   <tr>
     <th></th>
     <th>Direct3D</th>
@@ -77,7 +78,7 @@ Note that some APIs are tied to the machine you're developing for, adding more c
     <th>Metal</th>
     <th>PSGL</th>
     <th>NVN</th>
-  </tr>
+  </tr></thead>
   <tr>
     <td>Windows/XBox</td>
     <td>HLSL</td>
@@ -144,7 +145,7 @@ Three things happened in the past 10 years:
 
 * Vulkan was released with a new kind of bytecode shader language called SPIR-V
 * .NET Core introduced a new high-performance feature for operating on slices of array (something that C# is way better at than processing string objects), namely `Span<T>`
-* Most importantly, tools like [SPIRV-Cross](https://github.com/KhronosGroup/SPIRV-Cross) and [Naga](https://github.com/gfx-rs/wgpu/tree/trunk/naga) were created as a means to translate shaders through SPIR-V.
+* Most importantly, tools like [SPIRV-Cross](https://github.com/KhronosGroup/SPIRV-Cross) and [Naga](https://github.com/gfx-rs/wgpu/tree/trunk/naga) were created as a means to translate shaders through SPIR-V
 
 It was clear for everyone that we had to investigate how we could compile SDSL to SPIR-V and use all those very performant tools to transpile SDSL to other languages.
 
