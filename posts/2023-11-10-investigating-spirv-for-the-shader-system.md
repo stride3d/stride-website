@@ -6,7 +6,8 @@ image: /images/spir.png
 tags: ['.NET', 'Shaders']
 ---
 
-Let's investigate how the shader system works in Stride and how to make it better thanks to spirv.
+In this first part of a new series of blog posts, we will learn more about Stride's shader system, its limitations and how to make it better thanks to very useful shader language called spirv!
+This will be the first step in implementing a new and better shader system.
 
 ---
 
