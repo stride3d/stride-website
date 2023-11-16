@@ -71,3 +71,25 @@ Although not directly tied to Release 4.2, we have made some other big changes. 
 - Documentation: [{{site.links.docs-manual-url}}]({{site.links.docs-manual-url}})
 - Twitter: [{{site.links.twitter-url}}]({{site.links.twitter-url}})
 - YouTube: [{{site.links.youtube-url}}]({{site.links.youtube-url}})
+
+
+## Acknowledgements
+We extend our heartfelt gratitude for all the hard work and donations that have been made. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
+
+In particular we want to thanks these donors:
+
+### Long time Stride supporters
+*  {% include sponsor-org.md key:'vvvv' emoji:'🥇' %}
+
+   <a href="https://visualprogramming.net/"><img src="https://images.opencollective.com/vvvv/8ab0acd/logo/256.png?height=72" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
+
+### Platinum Striders
+* {% include sponsor-org.md key:'happenstance' emoji:'🏆' %}
+
+  <a href="http://www.happenstancegames.com/"><img width=64 src="https://www.stride3d.net/images/sponsors/HappenLogo.webp" alt="Happenstance games logo"></a>
+
+### Gold Striders
+
+* {% include sponsor-user.md key:'vaclav' emoji:'🥇' %}
+* {% include sponsor-org.md key:'lucid' emoji:'🥇' %}
+* {% include sponsor-user.md key:'skidvis' emoji:'🥇' %}
