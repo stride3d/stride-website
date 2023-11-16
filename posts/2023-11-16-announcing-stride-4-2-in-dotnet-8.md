@@ -49,6 +49,69 @@ Stride 4.2 includes numerous enhancements and improvements.
 - [Editor - Added the ability to copy imported assets automatically to the Resources dir #1827](https://github.com/stride3d/stride/pull/1827)
   - A prompt has been added to the interface that asks users to copy imported assets to the Resources directory directly from the editor.
 
+## Stride 4.2 Feature Overview
+
+### F# and Visual Basic Integration
+
+A pivotal PR has enabled **F#** and **Visual Basic** support for game development in Stride. This feature is currently limited to a code-only approach. Detailed insights and tutorials will be provided in upcoming blog posts.
+
+We will use the [Stride Community Toolkit [WIP]](https://stride3d.github.io/stride-community-toolkit/), with further details to be covered in a separate post.
+
+Below is a simple example of rendering a capsule using F#:
+
+```fsharp
+open Stride.CommunityToolkit.Engine;
+open Stride.CommunityToolkit.ProceduralModels;
+open Stride.Core.Mathematics;
+open Stride.Engine;
+
+let game = new Game()
+
+let Start rootScene =
+    game.SetupBase3DScene()
+    game.AddProfiler() |> ignore
+
+    let firstBox = game.CreatePrimitive(PrimitiveModelType.Capsule);
+    firstBox.Transform.Position <- new Vector3(0f, 2.5f, 0f)
+    firstBox.Scene <- rootScene
+
+[<EntryPoint>]
+let main argv =
+    game.Run(start = Start)
+    0
+```
+
+{% img 'Example basic 3d scene with a capsule' '/images/blog/2023-11/stride-game-engine-example01-basic-3d-scene.webp' %}
+
+The equivalent Visual Basic example:
+
+```vb
+Imports Stride.CommunityToolkit.Engine
+Imports Stride.CommunityToolkit.ProceduralModels
+Imports Stride.Core.Mathematics
+Imports Stride.Engine
+
+Module Program
+    Private game As New Game()
+
+    Sub Main()
+        GameExtensions.Run(game, Nothing, AddressOf StartGame)
+    End Sub
+
+    Private Sub StartGame(rootScene As Scene)
+        game.SetupBase3DScene()
+        game.AddProfiler()
+
+        Dim entity = game.CreatePrimitive(PrimitiveModelType.Capsule)
+        entity.Transform.Position = New Vector3(0, 8, 0)
+        entity.Scene = rootScene
+    End Sub
+End Module
+
+```
+
+These examples showcase how F# and Visual Basic can be utilized in Stride. The Stride Community Toolkit provides a set of helpers and extensions designed to enhance your experience with the Stride Game Engine.
+
 ## Fixes
 Although there have been [many fixes](**https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10**), we like to point out some of them out
 - [Runtime rasterized fonts are broken #1750](https://github.com/stride3d/stride/issues/1750)
