@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0.21",
+  "version": "2.0.0.23",
   "engine": "Eleventy 2.0",
   "title": "Stride Game Engine",
   "description": "C# Stride Game Engine is a powerful and versatile game development engine that is based on the C# programming language",
@@ -9,9 +9,9 @@
   "alert-banner": false,
   "docs-search": true,
   "google-analytics": true,
-  "download-version": "4.1",
-  "csharp-version": "C# 10",
-  "dotnet-version": ".NET 6",
+  "download-version": "4.2",
+  "csharp-version": "C# 12",
+  "dotnet-version": ".NET 8",
   "url": "https://www.stride3d.net",
   "twitter-username": "stridedotnet",
   "google-analytics-id": "G-Y9CVGC9YV1",
@@ -51,6 +51,12 @@
     "aggror": {
       "name": "Aggror Jorn",
       "github": "Aggror",
+      "linkedin": "",
+      "twitter": ""
+    },
+    "joreyk": {
+      "name": "Martin",
+      "github": "IXLLEGACYIXL",
       "linkedin": "",
       "twitter": ""
     },
