@@ -24,7 +24,7 @@ body {
     margin-top: 62px;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
     color: var(--bs-stride);
 }
 
@@ -226,10 +226,6 @@ svg path.logo-path {
 }
 
 [data-bs-theme=dark] {
-    /*    h1, h2 {
-        color: $link-color-dark;
-    }*/
-
     --logo: url(/images/svg/stride-logo-dark-theme.svg) no-repeat;
 
     .bg-stride-website {
