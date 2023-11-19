@@ -8,7 +8,7 @@
                         <h2 class="mb-3 fw-bold">Recent blog posts</h2>
                         {% assign latestPosts = collections.blog | reverse %}
                         {% for post in latestPosts limit:3 %}
-                        <div class="col-md-4">
+                        <div class="col-md-4 g-3">
                             <div class="card mb-4 h-100">
                                 <div class="card-body px-4 pt-4">
                                     <h5 class="card-title fw-bold">{{ post.data.title }}</h5>
