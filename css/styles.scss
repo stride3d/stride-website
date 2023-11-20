@@ -218,7 +218,7 @@ svg path.logo-path {
         background-image: url(/images/top/svg/bg_dark.svg);
     } */
 
-    .bg-stride-website {
+    .bg-light-stride-website {
         background-image: url(/images/top/svg/bg_light.svg);
         --bs-bg-opacity: 1;
         background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
@@ -233,7 +233,7 @@ svg path.logo-path {
     }
 
     .bg-light-stride-website {
-        --bs-bg-opacity: 0.8;
+        --bs-bg-opacity: 0.9;
         background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
     }
 
