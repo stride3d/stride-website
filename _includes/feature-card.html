@@ -1,7 +1,7 @@
 <div class="col-lg-4 col-md-6">
     <div class="card h-100">
-        <div class="card-body">
-            <h3 class="card-title">{{ feature.title }}</h3>
+        <div class="card-body p-4">
+            <h5 class="card-title fw-bold">{{ feature.title }}</h5>
             {% if feature.type == 'video' %}
             <div id="{{ feature.id }}_popup" class="ratio ratio-16x9 my-3">
                 <video controls loop preload="none" poster="/images/features/{{ name }}/{{ feature.id }}_640.jpg">
