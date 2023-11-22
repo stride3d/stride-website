@@ -11,7 +11,7 @@
                         <div class="col-md-4 g-3">
                             <div class="card mb-4 h-100">
                                 <div class="card-body px-4 pt-4">
-                                    <h5 class="card-title fw-bold">{{ post.data.title }}</h5>
+                                    <h5 class="card-title fw-bold"><a href="{{ post.url }}">{{ post.data.title }}</a></h5>
                                     <div class="mt-2 mb-3 small text-secondary">
                                         <i class="fa-solid fa-calendar-days me-1"></i> {%- include post/day.html date:post.date -%}
                                     </div>
