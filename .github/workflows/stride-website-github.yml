@@ -1,6 +1,6 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build Stride Web in Eleventy - Staging - GitHub
+name: Build Stride Web for GitHub Staging
 
 on:
   workflow_dispatch:
