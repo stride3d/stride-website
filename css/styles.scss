@@ -20,7 +20,15 @@ body {
     }
 }
 
-.header-image {
+.header-image, .alert-banner {
+    margin-top: 62px;
+}
+
+.alert-banner {
+    margin-bottom: -62px;
+}
+
+.alert-banner + .intro-section {
     margin-top: 62px;
 }
 
