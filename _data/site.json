@@ -6,7 +6,7 @@
   "language": "en",
   "author": "Stride Team",
   "dark-mode": true,
-  "alert-banner": false,
+  "alert-banner": true,
   "docs-search": true,
   "google-analytics": true,
   "download-version": "4.2",
