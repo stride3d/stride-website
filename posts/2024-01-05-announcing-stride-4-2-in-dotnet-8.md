@@ -25,10 +25,10 @@ You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) 
 ## What's new in Stride 4.2
 Stride 4.2 includes numerous enhancements and improvements.
 
-- **[.NET 8 Integration](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8/)**: Experience the power and efficiency of the latest .NET version in your game development. 
+- [.NET 8 Integration](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8/): Experience the power and efficiency of the latest .NET version in your game development. 
   - Full compatibility with .NET 8, taking advantage of [improved runtime performance](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)
-  - **[C# 12 features](https://devblogs.microsoft.com/dotnet/announcing-csharp-12/)**: Utilize cutting-edge language features to write more concise and maintainable code, enhancing coding efficiency and reducing boilerplate code
-- **[Changed Assimp binding to Silk.Net.Assimp](https://github.com/stride3d/stride/pull/1158)**
+  - [C# 12 features](https://devblogs.microsoft.com/dotnet/announcing-csharp-12/): Utilize cutting-edge language features to write more concise and maintainable code, enhancing coding efficiency and reducing boilerplate code
+- [Changed Assimp binding to Silk.Net.Assimp](https://github.com/stride3d/stride/pull/1158)
   - This change allows us to remove much of the C++/CLR code used by the asset compiler and brings us one step closer to running the asset compiler on non-windows systems.
 - [Migration NET6+ and more gettextnet#2](https://github.com/stride3d/gettextnet/pull/2)
   - Updated all of gettext.NET to the latest stable version of NET
@@ -126,7 +126,7 @@ Although there have been [many fixes](https://github.com/stride3d/stride/pulls?p
 ## Also good to know
 Although not directly tied to Release 4.2, we have made some other big changes. For instance to our website and documentation. We also had another community meeting to address all those new members.
 - [Website and documentation revamped and build process updated](https://www.stride3d.net/blog/announcing-website-update/)
-- [Contributor section moved to docs](https://doc.stride3d.net/latest/en/contributors/ways-to-contribute.html)
+- [Contributor section moved to docs](https://doc.stride3d.net/latest/en/contributors/index.html)
 - [Community meeting October 2023](https://www.stride3d.net/blog/community-meeting-october-2023/)
 
 
