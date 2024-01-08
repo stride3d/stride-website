@@ -21,6 +21,20 @@ A massive thank you to the open-source Stride community for your dedicated contr
 
 You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
 
+## Unity Licensing Model Impact: A Catalyst for Change
+
+Recent changes in the game development industry, particularly regarding Unity's licensing model, have led to a notable shift in the community's approach to selecting development tools. Stride 4.2 emerges in this context as a viable and compelling alternative, particularly for those seeking a C#-based engine.
+
+### Responding to Industry Needs
+
+In light of these industry changes, we have observed a marked increase in the adoption of Stride. This is reflected in our user statistics, which show a significant uptick in new users turning to Stride for their development needs. We believe this demonstrates the engine's capacity to meet the evolving demands of game developers.
+
+### The Role of Our Community
+
+The development of Stride 4.2 has been a community-driven effort. The contributions from our community have been invaluable in shaping the direction and features of this release. This collaborative effort underlines our commitment to developing a game engine that is not only technically sound but also aligned with the needs and aspirations of our user base.
+
+In the following sections, we will discuss the specific features and improvements that Stride 4.2 brings, offering insights into how they contribute to enhancing the game development experience.
+
 
 ## What's new in Stride 4.2
 Stride 4.2 includes numerous enhancements and improvements.
