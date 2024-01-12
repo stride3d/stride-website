@@ -18,9 +18,9 @@ The party is over. In the last several years, many commercial software companies
 
 ## What is FOSS, and why should I use a FOSS game engine?
 
-As the name suggests, free and open-source software (FOSS) includes two notable characteristics: it is free (libre), and its source code is readily available. Free (or libre) software can be used for any purpose at the user's sole discretion. In other words, the user has complete control over the software. The open-source aspect of FOSS describes how everyone has access to the code that makes up the software.
+As the name suggests, free and open-source software (FOSS) includes two notable characteristics: it is free (libre), and its source code is readily available. Free (or libre) software can be used for any purpose at the user's sole discretion. Most commonly you will hear folks refer to this as something to the effect of: “free as in speech, not free as in beer”. In other words, the user has complete control over the software. The open-source aspect of FOSS describes how everyone has access to the code that makes up the software.
 
-With this in mind, using a FOSS game engine provides several advantages. First and foremost, no licensing fees. While contributors always appreciate donations, none of the notable FOSS game engines expect or require any upfront payment, monthly subscriptions, or ongoing royalties. To that end, FOSS engines provide independence from a single organization. If any unsavory changes are made to a FOSS engine's terms of use, its licensing terms allow the community to stick to the version with the most favorable terms and even fork off [maybe link to an explanation of what this means?] it if they so choose.
+With this in mind, using a FOSS game engine provides several advantages. First and foremost, no licensing fees. While contributors always appreciate donations, none of the notable FOSS game engines expect or require any upfront payment, monthly subscriptions, or ongoing royalties. To that end, FOSS engines provide independence from a single organization. If any unsavory changes are made to a FOSS engine's terms of use, its licensing terms allow the community to stick to the version with the most favorable terms and even fork off [maybe link to an explanation of what this means?] if they so choose.
 
 The community guides the development and growth of their FOSS engine of choice. Many FOSS game engines have active and passionate communities who share their knowledge, advocate for their engine, and help out newcomers. These vibrant and dedicated communities serve as a potent learning resource when working solo or as a small team. Some community members even contribute directly to their engine, ultimately improving the quality of the engine for everyone.
 
@@ -30,8 +30,7 @@ The "open source" in FOSS means game engines can be entirely modified to fit the
 
 Although FOSS game engines have been around for decades, the past several years have seen an explosion in the amount of game engines available, as well as the number of contributors, money, and resources dedicated to them. It would be impossible to cover all the FOSS game engines available now. In fact, if you have a passion for a particular language or framework, more likely than not, someone has some form of game engine written for it.
 
-This post will primarily focus on some of the most significant and notable FOSS game engines currently: Bevy, Godot, Open 3D Engine, and (of course) Stride. To celebrate the wider FOSS game development community, this post will not be a head-to-head comparison of the different engines. Instead, it will serve as an overview of each engine's notable features. No engine is one-size-fits-all and some may be better fits for some tasks out of the box than others. With that out of the way, let’s start.
-
+This post will primarily focus on some of the most significant and notable FOSS game engines currently: Bevy, Godot, Open 3D Engine, and (of course) Stride. This post will not be a head-to-head comparison of the different engines. I really want this to be a celebration of the FOSS game development community and, instead, spotlight each engine's notable features. No engine is one-size-fits-all and some may be better fits for certain tasks out of the box than others. With that out of the way, let’s start.
 
 ### Stride 
 * Written in C#, Supported Languages: C# and F#
@@ -69,10 +68,14 @@ Asset libraries provide a wealth of resources that empower developers to quickly
 * Platforms
     * Development: Windows, Linux
     * Target: Windows, Linux, Mac, iOS, Android
-* Features:
-    * Visual scripting (Script Canvas)
-    * Atom renderer (DX12, Vulkan, real time raytracing)
-    * Gems
+
+Open 3D Engine’s origins can be traced back to Amazon’s foray into game development. Amazon licensed Crytek’s CryEngine 3 and then used it as the foundation for their own game engine: Amazon Lumberyard. In the years that followed, Amazon offered Lumberyard for free to the community with specific terms requiring online features to use Amazon Web Services. By 2021, Amazon overhauled Lumberyard, rebranded it as Open 3D Engine (O3DE), and placed it under the supervision of the Linux Foundation. Now, O3DE is available as a free and open source engine under the Apache License for everyone, no strings attached.
+
+Only a few game engines offer visual scripting out of the box and O3DE is one of them. For folks less inclined to write code, Script Canvas, OD3E’s visual scripting environment, can be an incredibly powerful and approachable tool for getting your game up and running. Visual scripting provides a way to write game logic without needing to write code in C++ or Lua. It presents programming concepts like functions, variables, and events as nodes which can be strung together in a graph. Script Canvas also allows developers to write custom nodes either in C++ or within Script Canvas itself to better fit their workflow. Fortunately, anything written using O3DE’s visual scripting system will not incur any serious performance hits, as the graphs are ultimately converted into Lua scripts by the engine.
+
+Atom renderer (DX12, Vulkan, real time raytracing)
+
+Gems
 
 # What engine should you pick? And other closing thoughts
 
