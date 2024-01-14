@@ -25,7 +25,7 @@ You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) 
 
 Recent changes in the game development industry, particularly regarding Unity's licensing model, have led to a notable shift in the community's approach to selecting development tools. Stride 4.2 emerges in this context as a viable and compelling alternative, particularly for those seeking a C#-based engine.
 
-### Responding to Industry Needs
+### Stride's Increasing Popularity
 
 In light of these industry changes, we have observed a marked increase in the adoption of Stride. This is reflected in our user statistics, which show a significant uptick in new users turning to Stride for their development needs. We believe this demonstrates the engine's capacity to meet the evolving demands of game developers.
 
@@ -33,8 +33,31 @@ In light of these industry changes, we have observed a marked increase in the ad
 
 The development of Stride 4.2 has been a community-driven effort. The contributions from our community have been invaluable in shaping the direction and features of this release. This collaborative effort underlines our commitment to developing a game engine that is not only technically sound but also aligned with the needs and aspirations of our user base.
 
-In the following sections, we will discuss the specific features and improvements that Stride 4.2 brings, offering insights into how they contribute to enhancing the game development experience.
+## Addressing the Pace of Updates in Stride
 
+Understanding the pace at which Stride is updated is key to recognizing the unique nature of our development process and the factors that influence it.
+
+### Nature of the Development Team
+
+Stride's evolution is primarily driven by a dedicated team of developers who contribute in their spare time. This volunteer-based approach reflects the passion and commitment of our community, but also brings certain limitations in terms of the speed at which we can deliver updates. We are grateful for the continued efforts of our contributors, whose dedication makes each version of Stride possible.
+
+### Current Funding and Resource Constraints
+
+The current level of donations and funding directly impacts our capacity for full-time development. While we have been able to engage developers on a per-project basis, the resources available do not yet allow for a sustained full-time development workforce. This financial reality plays a significant role in determining the frequency and scope of our updates.
+
+### Impact on Update Frequency
+
+As a result of these constraints, the pace at which Stride is updated may not match that of other engines with more substantial funding and larger development teams. However, we are committed to ensuring that each update is meaningful and enhances the overall quality and capabilities of the engine.
+
+### Call for Support and Contributions
+
+To accelerate the pace of development and bring more frequent updates, we warmly invite more contributions, both in terms of development support and funding. Donations, big or small, make a significant difference, and we encourage those who can to contribute. Additionally, we are always looking for more contributors, especially those with skills in .NET, Android, and iOS development, to help us expand Stride's capabilities, particularly in mobile development.
+
+### Outlook for the Future
+
+With increased support and contributions, we are optimistic about the future pace of Stride's development. Our goal is to not only maintain Stride's high standards of quality but also to increase the frequency of updates, bringing new features and improvements to our users more regularly.
+
+In the following sections, we will discuss the specific features and improvements that Stride 4.2 brings, offering insights into how they contribute to enhancing the game development experience.
 
 ## What's new in Stride 4.2
 Stride 4.2 includes numerous enhancements and improvements.
@@ -173,4 +196,4 @@ In particular we want to thanks these donors:
 * {% include sponsor-org.md key:'lucid' emoji:'🥇' %}
 * {% include sponsor-user.md key:'skidvis' emoji:'🥇' %}
 
-This article was co-authored by [Aggror Jorn](https://github.com/Aggror).
+This article was co-authored by [Aggror Jorn](https://github.com/Aggror), [Tebjan Halm](https://github.com/tebjan).
