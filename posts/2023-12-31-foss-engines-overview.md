@@ -75,8 +75,8 @@ Only a few game engines offer visual scripting out of the box and O3DE is one of
 
 The transition from Lumberyard to O3DE included a significant rewrite of the engine’s rendering system. Now dubbed the Atom Renderer, it boasts a robust set of features, including raytracing and a multi-render pipeline, as well as support for several high-profile graphical backends (DirectX, Vulkan, and Metal). The Render Pipeline Interface (RPI) and Rendering Hardware Interface (RHI) constitute the primary channels for working with the Atom renderer. The RPI provides the tools necessary for customizing the rendering pipeline and implementing higher-level graphical features such as split screen or additional rendering passes. Meanwhile, the RHI abstracts access to the GPU’s functionality, allowing developers to write lower-level graphics logic without needing to specifically target graphics APIs like DirectX or Vulkan. With Atom, O3DE strives to provide an advanced renderer that is also exceptionally customizable.
 
+O3DE modularizes its engine by breaking down major components into plugins called Gems. Broadly, Gems fall into one of two categories: Code Gems and Asset Gems. Code Gems are packed with code and assets, while Asset Gems exclusively contain content like 3D models, animations, and textures. This is the paradigm through which all of O3DE's major features and plugins are managed. In fact, O3DE provides a library of gems for the community to use, including gems for robotics simulation, navigation, and AWS support. The modularity afforded to O3DE through Gems allows developers to add and remove components of the engine with relative ease– using as many or as few of the features they want and in whatever combination best fits their needs.
 
-Gems
 
 # What engine should you pick? And other closing thoughts
 
