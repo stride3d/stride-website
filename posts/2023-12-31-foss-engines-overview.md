@@ -61,6 +61,8 @@ Asset libraries provide a wealth of resources that empower developers to learn t
     * GDExtensions
     * Nodes (+ signals)
 
+As the most popular modern FOSS game engine to date, Godot encourages developers to shape the engine around their needs. The engine comes with a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, it can even run in a web browser. Godot can meet developers on whatever platform works best for them. And because editor runs on Godot itself, it is possible to tinker with or extend the editor with GDScript, Godot's scripting language, by simply appending @tool (need to format this in md) to the top of the file. For those who are interested in creating utilities and tools like as is common practice in Unity or Unreal Engine, Godot provides the option to customize the editor to your liking.
+
 ### Open 3D Engine
 * Written in C++, Supported Languages: Lua
 * Platforms
