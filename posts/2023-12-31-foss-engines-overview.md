@@ -81,7 +81,11 @@ O3DE modularizes its engine by breaking down major components into plugins calle
 
 # What engine should you pick? And other closing thoughts
 
-Summary will go here. Try the ones that interest you and pick based on your own experiences etc etc.
+There is no one right answer. Be suspicious of anyone who claims otherwise. Here is the truth: the answer lies in whichever one you enjoy using the most. Game development is a process. It requires commitment and discipline. Anyone can do it, but you need to put in the effort. The better your tools fit with your way of working and thinking, the more likely you'll be to commit to your project and put in your full effort.
+
+All these engines are available for free and include active communities ready to help new folks. Pick whichever engines strike your fancy and try them. Maybe one of them has that one specific feature that hits just right. Maybe another has a community you just love hanging out with or integrates well with a tool you're using already. Whatever the case, it's a matter of taste and what works best for you.
+
+Wanting to know if an engine can make a specific type of game is asking the wrong question. People make games in Excel. It's not a trivial task, but you can do it. Make the act of creating rewarding in and of itself. If you enjoy your development environment, you will enjoy the act of making something, no matter what it is or how you go about it. If you do that, creating anything, game or otherwise, will feel immensely satisfying. 
 
 # Acknowledgements
 
