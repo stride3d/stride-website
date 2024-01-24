@@ -85,7 +85,7 @@ There is no one right answer. Be suspicious of anyone who claims otherwise. Here
 
 All these engines are available for free and include active communities ready to help new folks. Pick whichever engines strike your fancy and try them. Maybe one of them has that one specific feature that hits just right. Maybe another has a community you just love hanging out with or integrates well with a tool you're using already. Whatever the case, it's a matter of taste and what works best for you.
 
-Wanting to know if an engine can make a specific type of game is asking the wrong question. People make games in Excel. You can make just about any game in any engine. It's not always a trivial task, but you can do it. Instead, ask yourself which tools you enjoy using the most. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. If you can manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right.
+Wanting to know if an engine can make a specific type of game is asking the wrong question. People make games in Excel. You can make just about any game in any engine. It's not always a trivial task, but you can do it. Instead, ask yourself which tools you enjoy using the most. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. If you can manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right. Be curious and have fun.
 
 # Acknowledgements
 
