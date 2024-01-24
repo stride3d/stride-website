@@ -30,7 +30,7 @@ Open source allows teams or projects to change game engines to fit their needs. 
 
 Although FOSS game engines have been around for decades, the past several years have seen an explosion in the number of game engines available, as well as the number of contributors, money, and resources dedicated to them. It would be impossible to cover all the FOSS game engines available now. In fact, if you have a passion for a particular language or framework, more likely than not, someone has a game engine written for it.
 
-This post will primarily focus on some of the most notable FOSS game engines currently: Bevy, Godot, Open 3D Engine, and (of course) Stride. This post will not be a head-to-head comparison of the different engines. The summaries here are not exhaustive nor meant to highlight features exclusive to each engine. Rather, I really want this to be a celebration of the FOSS game development community and, instead, spotlight each engine's notable features. No engine is one-size-fits-all and some may be better fit for certain tasks than others. With that out of the way, let's start.
+This post will primarily focus on some of the most notable FOSS game engines currently: Stride (of course), Godot, Bevy, and Open 3D Engine. This post will not be a head-to-head comparison of the different engines. The summaries here are not exhaustive nor meant to highlight features exclusive to each engine. Rather, I really want this to be a celebration of the FOSS game development community and, instead, spotlight each engine's notable features. No engine is one-size-fits-all and some may be better fit for certain tasks than others. With that out of the way, let's start.
 
 ### Stride 
 * Written in C#, Supported Languages: C# and F#
@@ -38,32 +38,33 @@ This post will primarily focus on some of the most notable FOSS game engines cur
     * Development: Windows, Linux (Code only)
     * Target: Windows, Linux, Android, iOS
 * Features:
-    * Need to still list these. Want to consult the community first.
-
-### Bevy
-* Written in Rust, Supported Languages: Rust
-* Platforms:
-    * Development (no Editor): Windows, Mac, Linux
-    * Target: Windows, Linux, Mac, iOS, WASM
-As the most popular Rust-based game engine, Bevy offers a rich code-only development environment (an editor is coming eventually) capable of running on all major operating systems (Windows, Mac, and Linux). At the heart of Bevy's vision for game development lies the Entity Component System (ECS) paradigm. While there are other resources available which can explain the benefits of ECS, in a nutshell, the ECS breaks down the code into three core pillars: entities, components, and systems. Entities are composed of components which can then interact with each other using systems. For example, the player character could be an entity with a health component which tracks the player character's health bar. An enemy character could also use that component for the same purpose. ECS encourages modularity and reusability by enabling developers to create components applicable to distinct entities. While other game engines can approximate a similar system, Bevy uniquely makes this part of its core design ethos.
-
-As established with Bevy's use of ECS, the engine's developers care deeply about making modularity. The engine's plugin system accentuates their commitment to that principle in every part of Bevy. Developers can organize the game's systems into discrete plugins. An example of this is organizing all the UI systems code into a UI plugin. From there, developers can slot the plugin into the game's initialization step. This helps organize the code, while also encouraging modularity by allowing the developer to add or remove the plugin based on their needs. This paradigm even applies to the engine's core features, as they are all organized into plugins. It becomes trivial to activate or deactivate any part of the engine—including rendering, audio playback, and event loops—as the developer sees fit.
-
-Asset libraries provide a wealth of resources that empower developers to learn the tools quickly and get their game to a playable state. Unique to Bevy, the community assembled a library of assets available on the official website for the community to use and share. The library includes tutorials, plugins, and templates that address subjects like physics, networking, and input management. Bevy's structure encourages developers to use any of the resources from this library freely as part of the building blocks that will ultimately make up their game.
+    * C#
+    * Graphics Compositor
+    * Editor + Code Only
 
 ### Godot
 * Written in C++, Supported Languages: GDScript, C#
 * Platforms:
     * Development: Windows, Linux, Mac
     * Target: Windows, Linux, Mac, iOS, Android, WASM, HTML5
-* Features:
-    * Lightweight, multiplatform editor (win, linux, mac)
-    * GDExtensions
-    * Nodes (+ signals)
 
 As the most popular modern FOSS game engine to date, Godot encourages developers to shape the engine around their needs. The engine comes with a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, it can even run in a web browser. Godot can meet developers on whatever platform works best for them. For those who are interested in creating utilities and tools like as is common practice in Unity or Unreal Engine, Godot provides the option to customize the editor to your liking. Because the editor runs on Godot itself, it is possible to tinker with or extend the editor with GDScript, Godot's scripting language, by simply appending @tool to the top of the file. The engine encourages using its features to shape the developer experience.
 
 GDScript is Godot's primary programming language. While the prospect of learning a proprietary language may turn you off at first, don't fret! It shares a lot of commonalities with Python and Godot provides detailed documentation on how to use the language. Assuming you already have some experience with object-oriented programming, it won't take long to get going with GDScript. That said, if you would still like to write some code in another language, Godot provides the means to use alternative programming languages by the way of GDExtension. GDExtension theoretically supports any programming language that can interact with its C-based API. The system allows the community to introduce new language bindings to Godot's development ecosystem, including Rust, Python, Lua, and Java. Not all language bindings are feature complete, but many are in active development. With that in mind, it's not necessary to commit to one language for an entire project either, as GDExtension languages can work alongside GDScript. This means developers can, for example, even use GDScript with other languages in the same project.
+
+* Nodes (+ signals)
+
+### Bevy
+* Written in Rust, Supported Languages: Rust
+* Platforms:
+    * Development (no Editor): Windows, Mac, Linux
+    * Target: Windows, Linux, Mac, iOS, WASM
+
+As the most popular Rust-based game engine, Bevy offers a rich code-only development environment (an editor is coming eventually) capable of running on all major operating systems (Windows, Mac, and Linux). At the heart of Bevy's vision for game development lies the Entity Component System (ECS) paradigm. While there are other resources available which can explain the benefits of ECS, in a nutshell, the ECS breaks down the code into three core pillars: entities, components, and systems. Entities are composed of components which can then interact with each other using systems. For example, the player character could be an entity with a health component which tracks the player character's health bar. An enemy character could also use that component for the same purpose. ECS encourages modularity and reusability by enabling developers to create components applicable to distinct entities. While other game engines can approximate a similar system, Bevy uniquely makes this part of its core design ethos.
+
+As established with Bevy's use of ECS, the engine's developers care deeply about making modularity. The engine's plugin system accentuates their commitment to that principle in every part of Bevy. Developers can organize the game's systems into discrete plugins. An example of this is organizing all the UI systems code into a UI plugin. From there, developers can slot the plugin into the game's initialization step. This helps organize the code, while also encouraging modularity by allowing the developer to add or remove the plugin based on their needs. This paradigm even applies to the engine's core features, as they are all organized into plugins. It becomes trivial to activate or deactivate any part of the engine—including rendering, audio playback, and event loops—as the developer sees fit.
+
+Asset libraries provide a wealth of resources that empower developers to learn the tools quickly and get their game to a playable state. Unique to Bevy, the community assembled a library of assets available on the official website for the community to use and share. The library includes tutorials, plugins, and templates that address subjects like physics, networking, and input management. Bevy's structure encourages developers to use any of the resources from this library freely as part of the building blocks that will ultimately make up their game.
 
 ### Open 3D Engine
 * Written in C++, Supported Languages: Lua
