@@ -59,7 +59,7 @@ We’re always excited to welcome new contributors to the Stride family. Whether
 
 We believe that every donation has a substantial impact, perhaps more so than in some other projects. Why? Because C# as a language offers high productivity, and the Stride codebase has a great architecture. This means that every dime you contribute goes a long way.
 
-Consider this: if Stride had the same level of financial support as engines like Godot, we believe our progress would skyrocket. With C#'s productivity and Stride's well-structured code, your donations have the potential to accelerate our development pace significantly. It's not just about keeping the lights on; it's about pushing Stride to new heights, faster and more effectively than many other projects.
+Imagine how much we could do if Stride got as much financial support as other big engines. With C#'s easy productivity and Stride's well-organized code, your donations could help us improve way faster. It's not just about keeping the lights on; it's about making Stride better and faster than many other projects. Your support can take Stride to new heights!
 
 ### Looking Ahead
 
