@@ -33,14 +33,16 @@ Although FOSS game engines have been around for decades, the past several years 
 This post will primarily focus on some of the most notable FOSS game engines currently: Stride (of course), Godot, Bevy, and Open 3D Engine. This post will not be a head-to-head comparison of the different engines. The summaries here are not exhaustive nor meant to highlight features exclusive to each engine. Rather, I really want this to be a celebration of the FOSS game development community and, instead, spotlight each engine's notable features. No engine is one-size-fits-all and some may be better fit for certain tasks than others. With that out of the way, let's start.
 
 ### Stride 
-* Written in C#, Supported Languages: C# and F#
+* Written in C#, Supported Languages: C#, F#, and Visual Basic
 * Platforms:
     * Development: Windows, Linux (Code only)
     * Target: Windows, Linux, Android, iOS
-* Features:
-    * C#
-    * Graphics Compositor
-    * Editor + Code Only
+    
+Stride began life as Xenko (and before that, Paradox): Silicon Studio's premium game engine. After several years of providing Stride to the public through a subscription-based model, Silicon Studio released the engine's source code and editor freely to the community under the MIT license. Among the major FOSS game engines available, it is unique because Silicon Studio completely wrote it in C# from top to bottom. There is no delineation between the language used for the core engine and the language you would write with day-to-day while working on the game. It becomes much easier to override or change any inherent engine behavior when coding in the same language. With that said, the code-only version of Stride supports any language that is part of the .NET family (C#, F#, and Visual Basic), providing some flexibility in language choice. 
+
+Stride offers a pure .NET C# experience that includes many of the advantages inherent to the framework, like hot reloading. Because the engine closely follows the .NET update schedule, you regularly get the most modern and up-to-date implementation of C#. Anything you might expect to do with a C# development environment is possible here. You can seamlessly incorporate almost any C# library or tool available through NuGet, GitHub, or other platforms into Stride, enhancing your workflow. Stride is modular enough that sections of Stride are available as standalone NuGet packages. The engine provides the ability to tailor-make your C# game development experience.
+
+* Graphics Compositor
 
 ### Godot
 * Written in C++, Supported Languages: GDScript, C#
