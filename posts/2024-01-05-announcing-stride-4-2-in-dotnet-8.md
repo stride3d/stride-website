@@ -166,6 +166,8 @@ Although there have been [many fixes](https://github.com/stride3d/stride/pulls?p
 - [C# Beginner Tutorial Build Errors #1652](https://github.com/stride3d/stride/issues/1652)
 - [Can not create "C# Beginner" project #1650](https://github.com/stride3d/stride/issues/1650)
 
+See the full list in the [Release Notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+
 ## Also good to know
 Although not directly tied to Release 4.2, we have made some other big changes. For instance to our website and documentation. We also had another community meeting to address all those new members.
 - [Website and documentation revamped and build process updated](https://www.stride3d.net/blog/announcing-website-update/)
@@ -202,4 +204,4 @@ In particular we want to thanks these donors:
 * {% include sponsor-org.md key:'lucid' emoji:'🥇' %}
 * {% include sponsor-user.md key:'skidvis' emoji:'🥇' %}
 
-This article was co-authored by [Aggror Jorn](https://github.com/Aggror), [Tebjan Halm](https://github.com/tebjan).
+This article was co-authored by [Aggror Jorn](https://github.com/Aggror) and [Tebjan Halm](https://github.com/tebjan).
