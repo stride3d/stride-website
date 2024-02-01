@@ -21,7 +21,7 @@ A massive thank you to the open-source Stride community for your dedicated contr
 
 You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
 
-Make sure you read the [guide to update Stride and projects properly]([text](https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html)).
+Make sure you read the [guide to update Stride and projects properly](https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html).
 
 ## Unity Licensing Model Impact: A Catalyst for Change
 
