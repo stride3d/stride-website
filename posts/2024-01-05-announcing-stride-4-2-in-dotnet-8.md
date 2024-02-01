@@ -37,19 +37,25 @@ What really makes Stride tick is you – the community. Your feedback, contribut
 
 ## Addressing the Pace of Updates in Stride
 
-Let's talk about how often Stride gets updated. We know it's something on your mind, and there's a story behind it.
+Let's talk about how often Stride gets updated. We know it's something on your mind, and that is why we want to explain the dynamics that influence it.
 
 ### The People Behind Stride
 
-Stride is kept alive by a group of passionate developers, much like yourself, who contribute in their free time. This means our pace might not match that of other engines backed by full-time teams, but it also means every update is a labor of love.
+Stride is maintained by a group of passionate developers, much like yourself, who contribute in their free time. This means our pace might not match that of other engines backed by full-time teams. Luckily we still have the original creator and lead of Stride among us to tackle the tricky issues.
 
 ### Facing the Realities: Funding and Resources
 
-Here’s the deal: our funding levels shape how much we can do. We’re grateful for every bit of support we receive, but we’re still on our way to having a full-time development force. This financial reality does affect how fast we can roll out updates.
+Here’s the deal: our funding levels shape how much we can do. We’re grateful for every bit of support we receive, but we’re still on our way to having a full-time development force. This financial reality does affect how fast we can roll out updates. Although we might not be the fastest out there, we focus on making each update meaningful.
 
-### Making Every Update Count
+## Funding and Resource Allocation
 
-Although we might not be the fastest out there, we focus on making each update meaningful. Quality, stability, and usability are what we aim for every time we release a new version of Stride.
+### Challenges in Distribution
+
+The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing morph target capabilities for 3D models, and updating the bindings for the Assimp 3D importer to Silk.NET.
+
+### Call for Skilled Developers
+
+We are actively seeking skilled developers with experience in C#, the .NET ecosystem, mobile, XR, rendering, and game development. If you have these skills or know someone who does, we encourage you to get involved. There are opportunities to contribute to critical areas of Stride's development, supported by available funds.
 
 ### Join Us on This Journey
 
@@ -125,7 +131,7 @@ Nicogos YouTube channel features [some more demo videos](https://www.youtube.com
 Github: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
 
 ### Future Prospects and Discalimer
-Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with with the community's support.
+Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with with the community's support. The pull request can be found here: [[Physics] Bepu integration](https://github.com/stride3d/stride/pull/2131)
 
 ## Also good to know
 Although not directly tied to Release 4.2, we have made some other big changes. For instance to our website and documentation. We also had another community meeting to address all those new members.
