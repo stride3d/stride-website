@@ -41,7 +41,7 @@ Let's talk about how often Stride gets updated. We know it's something on your m
 
 ### The People Behind Stride
 
-Stride is maintained by a group of passionate developers, much like yourself, who contribute in their free time. This means our pace might not match that of other engines backed by full-time teams. Luckily we still have the original creator and lead of Stride among us to tackle the tricky issues.
+Stride is maintained by a group of passionate developers, much like yourself, who contribute in their free time. This means our pace might not match that of other engines backed by full-time teams. Luckily we still have the original creator and lead of Stride among us to tackle tricky issues and infrastructure.
 
 ### Facing the Realities: Funding and Resources
 
@@ -51,11 +51,11 @@ Here’s the deal: our funding levels shape how much we can do. We’re grateful
 
 ### Challenges in Distribution
 
-The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing morph target capabilities for 3D models, and updating the bindings for the Assimp 3D importer to Silk.NET.
+The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing [morph target capabilities for 3D models](https://github.com/stride3d/stride/pull/2136) (aka Blendshapes), and updating the bindings for the Assimp 3D importer to Silk.NET.
 
 ### Call for Skilled Developers
 
-We are actively seeking skilled developers with experience in C#, the .NET ecosystem, mobile, XR, rendering, and game development. If you have these skills or know someone who does, we encourage you to get involved. There are opportunities to contribute to critical areas of Stride's development, supported by available funds.
+We are actively seeking skilled developers with experience in C#, the .NET ecosystem, mobile, XR, rendering, and game development. If you have these skills or know someone who does, we encourage you to get involved. There are [opportunities to contribute](https://opencollective.com/stride3d/projects) to critical areas of Stride's development, supported by available funds.
 
 ### Join Us on This Journey
 
@@ -134,10 +134,20 @@ Github: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.Bep
 Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with with the community's support. The pull request can be found here: [[Physics] Bepu integration](https://github.com/stride3d/stride/pull/2131)
 
 ## Also good to know
-Although not directly tied to Release 4.2, we have made some other big changes. For instance to our website and documentation. We also had another community meeting to address all those new members.
+Although not directly tied to Release 4.2, we have some more big things going on.
+
+For instance to our website and documentation. We also had another community meeting to address all those new members.
 - [Website and documentation revamped and build process updated](https://www.stride3d.net/blog/announcing-website-update/)
 - [Contributor section moved to docs](https://doc.stride3d.net/latest/en/contributors/index.html)
 - [Community meeting October 2023](https://www.stride3d.net/blog/community-meeting-october-2023/)
+
+And last but not least:
+### Cross-Platform Evolution: The Stride Editor and Avalonia
+One of the most ambitious projects for Stride to date has started: The porting of the entire Stride Editor from WPF to Avalonia, a cross-platform C# UI library. This significant endeavor, undertaken by the former Stride developer [Kryptos-FR](https://github.com/Kryptos-FR).
+
+Currently, the project is in the early stages but it not only anticipates making the editor compatible with Linux and MacOS but also aligns with the long-standing community desire for broader platform support and enhanced editor functionality, including a robust plugin system.
+
+More details in thie pull request: [Cross-platform editor rewrite - prototype](https://github.com/stride3d/stride/pull/2034)
 
 ## Links
 - GitHub: [{{site.links.github-stride-url}}]({{site.links.github-stride-url}})
