@@ -29,7 +29,7 @@ The game development world has seen quite a stir with recent changes in Unity's 
 
 ### Stride's Rising Popularity
 
-It's been an exciting time for us. We've noticed more and more developers giving Stride a try, a trend clearly reflected in our growing user numbers. During the carzy unbity days, we were number 3 in the pupularity rankings, just after Godot and Bevy. Also a big shoutout to gamefromscratch for his video "[Stride For Unity Developers](https://www.youtube.com/watch?v=u_ksFlHHXYU)", which definitely helped.
+It's been an exciting time for us. We've noticed more and more developers giving Stride a try, a trend clearly reflected in our growing user numbers. During the carzy unbity days, we were number 3 in the popularity rankings, just after Godot and Bevy. Also a big shoutout to gamefromscratch for his video "[Stride For Unity Developers](https://www.youtube.com/watch?v=u_ksFlHHXYU)", which definitely helped.
 
 ### The Heartbeat of Stride: Our Community
 
