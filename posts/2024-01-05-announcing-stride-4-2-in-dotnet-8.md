@@ -21,7 +21,7 @@ A massive thank you to the open-source Stride community for your dedicated contr
 
 You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
 
-Make sure you read the [guide to update Stride and projects properly]([text](https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html)).
+Make sure you read the [guide to update Stride and projects properly](https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html).
 
 ## Unity Licensing Model Impact: A Catalyst for Change
 
@@ -80,7 +80,7 @@ Stride 4.2 includes numerous enhancements and improvements.
 - [Changed Assimp binding to Silk.Net.Assimp](https://github.com/stride3d/stride/pull/1158)
   - This change allows us to remove much of the C++/CLR code used by the asset compiler and brings us one step closer to running the asset compiler on non-windows systems.
 - [Migration NET6+ and more gettextnet#2](https://github.com/stride3d/gettextnet/pull/2)
-  - Updated all of gettext.NET to the latest stable version of NET
+  - Updated all of gettext&#8203;.NET to the latest stable version of NET
 - [Enable multiple profiler consumers and add a timeline/tracing profiler #1788](https://github.com/stride3d/stride/pull/1788)
   - This feature adds a profiler outputting data in chrome://tracing format and changes Profiler to make that possible.
 - [Feature: Add Support for F# and VB Project Types #1821](https://github.com/stride3d/stride/pull/1821)
@@ -88,7 +88,7 @@ Stride 4.2 includes numerous enhancements and improvements.
     - [F# examples](https://stride3d.github.io/stride-community-toolkit/manual/code-only/examples/basic-examples-fs.html)
     - [Visual Basic examples](https://stride3d.github.io/stride-community-toolkit/manual/code-only/examples/basic-examples-vb.html)
 - [Stride Diagnostics Analyzer #1864](https://github.com/stride3d/stride/pull/1864)
-  - Implements a code analyzer to show helpful warnings in your IDE and at compilation when any of your members or structures are incompatible with the serialization system.
+  - Implements a [code analyzer](https://doc.stride3d.net/latest/en/diagnostics/index.html) to show helpful warnings in your IDE and at compilation when any of your members or structures are incompatible with the serialization system.
 - [OpenVR Handle custom resolution specified by the user through VR settings #2000](https://github.com/stride3d/stride/pull/2000)
 - [Editor - Add dynamic snapping for selected objects #1801](https://github.com/stride3d/stride/pull/1801)
   - Implements a dynamic snapping used while holding down a key (default: Left Shift) on manipulating (rotating/moving/scaling) an object/entity. 
