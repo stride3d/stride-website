@@ -106,12 +106,32 @@ Although there have been [many fixes](https://github.com/stride3d/stride/pulls?p
 
 See the full list in the [Release Notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
 
+## Exciting Development in Stride Physics
+
+Stride 4.2's release isn't just about what's in the box; it's also about what it enables for the future. A standout development in this context is the integration of a new physics package in Stride.
+
+### Introducing Bepu Physics in Stride
+
+Our Discord community is buzzing with the news of Bepu physics, a project initiated by our user [Nicogo1705](https://github.com/Nicogo1705).
+
+[BepuPhysics v2](https://github.com/bepu/bepuphysics2) is a high-performance, multi-threaded physics library, written entirely in C#. Its compatibility with Stride's C# ecosystem offers the perfect alternative to the Bullet 3D physics engine, which relies on C++ Interop.
+
+With additional support from [Doprez](https://github.com/Doprez) and [Eideren](https://github.com/Eideren), the efforts in integrating Bepu physics have already shown impressive results, especially in editor compatibility and performance. As you can see in this video, running on almost 10 year old harware:
+
+{% youtube '1OqtaVqSP78' %}
+
+Nicogos YouTube channel features [some more demo videos](https://www.youtube.com/@Nicogo17/videos).
+
+Github: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
+
+### Future Prospects and Discalimer
+Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with with the community's support.
+
 ## Also good to know
 Although not directly tied to Release 4.2, we have made some other big changes. For instance to our website and documentation. We also had another community meeting to address all those new members.
 - [Website and documentation revamped and build process updated](https://www.stride3d.net/blog/announcing-website-update/)
 - [Contributor section moved to docs](https://doc.stride3d.net/latest/en/contributors/index.html)
 - [Community meeting October 2023](https://www.stride3d.net/blog/community-meeting-october-2023/)
-
 
 ## Links
 - GitHub: [{{site.links.github-stride-url}}]({{site.links.github-stride-url}})
