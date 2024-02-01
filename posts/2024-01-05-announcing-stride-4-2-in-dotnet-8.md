@@ -41,7 +41,7 @@ Let's talk about how often Stride gets updated. We know it's something on your m
 
 ### The People Behind Stride
 
-Stride is brought to life by a group of passionate developers, much like yourself, who contribute in their free time. This means our pace might not match that of other engines backed by full-time teams, but it also means every update is a labor of love.
+Stride is kept alive by a group of passionate developers, much like yourself, who contribute in their free time. This means our pace might not match that of other engines backed by full-time teams, but it also means every update is a labor of love.
 
 ### Facing the Realities: Funding and Resources
 
