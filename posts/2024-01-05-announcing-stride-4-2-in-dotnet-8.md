@@ -51,7 +51,7 @@ Here’s the deal: our funding levels shape how much we can do. We’re grateful
 
 ### Challenges in Distribution
 
-The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing [morph target capabilities for 3D models](https://github.com/stride3d/stride/pull/2136) (aka Blendshapes), and updating the bindings for the Assimp 3D importer to Silk.NET.
+The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing [morph target capabilities for 3D models](https://github.com/stride3d/stride/pull/2136) (aka Blendshapes), and updating the bindings for the Assimp 3D importer to [Silk.NET](https://dotnet.github.io/Silk.NET/).
 
 ### Call for Skilled Developers
 
@@ -147,7 +147,7 @@ One of the most ambitious projects for Stride to date has started: The porting o
 
 Currently, the project is in the early stages but it not only anticipates making the editor compatible with Linux and MacOS but also aligns with the long-standing community desire for broader platform support and enhanced editor functionality, including a robust plugin system.
 
-More details in thie pull request: [Cross-platform editor rewrite - prototype](https://github.com/stride3d/stride/pull/2034)
+More details in this pull request: [Cross-platform editor rewrite - prototype](https://github.com/stride3d/stride/pull/2034)
 
 ## Links
 - GitHub: [{{site.links.github-stride-url}}]({{site.links.github-stride-url}})
