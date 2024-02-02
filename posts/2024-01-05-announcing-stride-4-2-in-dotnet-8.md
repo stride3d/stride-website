@@ -147,7 +147,7 @@ One of the most ambitious projects for Stride to date has started: The porting o
 
 Currently, the project is in the early stages but it not only anticipates making the editor compatible with Linux and MacOS but also aligns with the long-standing community desire for broader platform support and enhanced editor functionality, including a robust plugin system.
 
-More details in thie pull request: [Cross-platform editor rewrite - prototype](https://github.com/stride3d/stride/pull/2034)
+More details in this pull request: [Cross-platform editor rewrite - prototype](https://github.com/stride3d/stride/pull/2034)
 
 ## Links
 - GitHub: [{{site.links.github-stride-url}}]({{site.links.github-stride-url}})
