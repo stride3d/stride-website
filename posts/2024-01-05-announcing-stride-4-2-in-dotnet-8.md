@@ -122,13 +122,13 @@ Our Discord community is buzzing with the news of Bepu physics, a project initia
 
 [BepuPhysics v2](https://github.com/bepu/bepuphysics2) is a high-performance, multi-threaded physics library, written entirely in C#. Its compatibility with Stride's C# ecosystem offers the perfect alternative to the Bullet 3D physics engine, which relies on C++ Interop.
 
-With additional support from [Doprez](https://github.com/Doprez) and [Eideren](https://github.com/Eideren), the efforts in integrating Bepu physics have already shown impressive results, especially in editor compatibility and performance. As you can see in this video, running on almost 10 year old harware:
+With additional support from [Doprez](https://github.com/Doprez) and [Eideren](https://github.com/Eideren), the efforts in integrating Bepu physics have already shown impressive results, especially in editor compatibility and performance. As you can see in this video, running on almost 10 year old hardware:
 
 {% youtube '1OqtaVqSP78' %}
 
 Nicogo's YouTube channel features [some more demo videos](https://www.youtube.com/@Nicogo17/videos).
 
-Github: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
+GitHub: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
 
 ### Future Prospects and Disclaimer
 Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with the community's support. The pull request can be found here: [[Physics] Bepu integration](https://github.com/stride3d/stride/pull/2131)
@@ -143,7 +143,7 @@ For instance to our website and documentation. We also had another community mee
 
 And last but not least:
 ### Cross-Platform Evolution: The Stride Editor and Avalonia
-One of the most ambitious projects for Stride to date has started: The porting of the entire Stride Editor from WPF to Avalonia, a cross-platform C# UI library. This significant endeavor, undertaken by the former Stride developer [Kryptos-FR](https://github.com/Kryptos-FR).
+One of the most ambitious projects for Stride to date has started: The porting of the entire Stride Editor from WPF to Avalonia, a cross-platform C# UI library. This significant endeavour, undertaken by the former Stride developer [Kryptos-FR](https://github.com/Kryptos-FR).
 
 Currently, the project is in the early stages but it not only anticipates making the editor compatible with Linux and MacOS but also aligns with the long-standing community desire for broader platform support and enhanced editor functionality, including a robust plugin system.
 
@@ -158,9 +158,9 @@ More details in this pull request: [Cross-platform editor rewrite - prototype](h
 
 
 ## Acknowledgements
-We extend our heartfelt gratitude for all the hard work and donations that have been made. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
+We extend our heartfelt gratitude for all the hard work and donations we have received. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
 
-In particular we want to thanks these donors:
+In particular we want to thank these donors:
 
 ### Long time Stride supporters
 *  {% include sponsor-org.md key:'vvvv' emoji:'🥇' %}
