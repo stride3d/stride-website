@@ -29,7 +29,7 @@ The game development world has seen quite a stir with recent changes in Unity's 
 
 ### Stride's Rising Popularity
 
-It's been an exciting time for us. We've noticed more and more developers giving Stride a try, a trend clearly reflected in our growing user numbers. During the carzy unbity days, we were number 3 in the popularity rankings, just after Godot and Bevy. Also a big shoutout to gamefromscratch for his video "[Stride For Unity Developers](https://www.youtube.com/watch?v=u_ksFlHHXYU)", which definitely helped.
+It's been an exciting time for us. We've noticed more and more developers giving Stride a try, a trend clearly reflected in our growing user numbers. During the crazy Unity days, we were number 3 in the popularity rankings, just after Godot and Bevy. Also a big shoutout to gamefromscratch for his video "[Stride For Unity Developers](https://www.youtube.com/watch?v=u_ksFlHHXYU)", which definitely helped.
 
 ### The Heartbeat of Stride: Our Community
 
@@ -65,7 +65,7 @@ We’re always excited to welcome new contributors to the Stride family. Whether
 
 We believe that every donation has a substantial impact, perhaps more so than in some other projects. Why? Because C# as a language offers high productivity, and the Stride codebase has a great architecture. This means that every dime you contribute goes a long way.
 
-Imagine how much we could do if Stride got as much financial support as other big engines. With C#'s easy productivity and Stride's well-organized code, your donations could help us improve way faster. It's not just about keeping the lights on; it's about making Stride better and faster than many other projects. Your support can take Stride to new heights!
+Imagine how much we could do if Stride got as much financial support as other big engines. With C#'s easy productivity and Stride's well-organized code, your donations could help us improve much faster. It's not just about keeping the lights on; your support can take Stride to new heights!
 
 ### Looking Ahead
 
@@ -104,7 +104,7 @@ Stride 4.2 includes numerous enhancements and improvements.
 ## Fixes
 Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we like to point out some of them out:
 - [Runtime rasterized fonts are broken #1750](https://github.com/stride3d/stride/issues/1750)
-- [Game Studio doesnt reload sub projects after changes #1703](https://github.com/stride3d/stride/issues/1703)
+- [Game Studio doesn't reload sub projects after changes #1703](https://github.com/stride3d/stride/issues/1703)
 - [Changing the comparison project related and not UPath related #1704](https://github.com/stride3d/stride/pull/1704)
 - [Translations fix #1717](https://github.com/stride3d/stride/pull/1717)
 - [C# Beginner Tutorial Build Errors #1652](https://github.com/stride3d/stride/issues/1652)
@@ -126,11 +126,11 @@ With additional support from [Doprez](https://github.com/Doprez) and [Eideren](h
 
 {% youtube '1OqtaVqSP78' %}
 
-Nicogos YouTube channel features [some more demo videos](https://www.youtube.com/@Nicogo17/videos).
+Nicogo's YouTube channel features [some more demo videos](https://www.youtube.com/@Nicogo17/videos).
 
 Github: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
 
-### Future Prospects and Discalimer
+### Future Prospects and Disclaimer
 Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with with the community's support. The pull request can be found here: [[Physics] Bepu integration](https://github.com/stride3d/stride/pull/2131)
 
 ## Also good to know
