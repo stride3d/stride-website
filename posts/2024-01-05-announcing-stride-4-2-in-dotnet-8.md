@@ -71,38 +71,32 @@ Imagine how much we could do if Stride got as much financial support as other bi
 
 With your support, we’re optimistic about picking up the pace. Our goal is to bring you new features and improvements more regularly, making Stride even better with each release.
 
-## What's new in Stride 4.2
-Stride 4.2 includes numerous enhancements and improvements.
+## What's New in Stride 4.2
+Stride 4.2 includes numerous enhancements and improvements. Here’s what to expect:
 
-- [.NET 8 Integration](https://devblogs.microsoft.com/dotnet/announcing-dotnet-8/): Experience the power and efficiency of the latest .NET version in your game development. 
-  - Full compatibility with .NET 8, taking advantage of [improved runtime performance](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)
-  - [C# 12 features](https://devblogs.microsoft.com/dotnet/announcing-csharp-12/): Utilize cutting-edge language features to write more concise and maintainable code, enhancing coding efficiency and reducing boilerplate code
-- [Changed Assimp binding to Silk.Net.Assimp](https://github.com/stride3d/stride/pull/1158)
-  - This change allows us to remove much of the C++/CLR code used by the asset compiler and brings us one step closer to running the asset compiler on non-windows systems.
-- [Migration NET6+ and more gettextnet#2](https://github.com/stride3d/gettextnet/pull/2)
-  - Updated all of gettext&#8203;.NET to the latest stable version of NET
-- [Enable multiple profiler consumers and add a timeline/tracing profiler #1788](https://github.com/stride3d/stride/pull/1788)
-  - This feature adds a profiler outputting data in chrome://tracing format and changes Profiler to make that possible.
-- [Feature: Add Support for F# and VB Project Types #1821](https://github.com/stride3d/stride/pull/1821)
-  - Currently only for code-only projects
-    - [F# examples](https://stride3d.github.io/stride-community-toolkit/manual/code-only/examples/basic-examples-fs.html)
-    - [Visual Basic examples](https://stride3d.github.io/stride-community-toolkit/manual/code-only/examples/basic-examples-vb.html)
-- [Stride Diagnostics Analyzer #1864](https://github.com/stride3d/stride/pull/1864)
-  - Implements a [code analyzer](https://doc.stride3d.net/latest/en/diagnostics/index.html) to show helpful warnings in your IDE and at compilation when any of your members or structures are incompatible with the serialization system.
-- [OpenVR Handle custom resolution specified by the user through VR settings #2000](https://github.com/stride3d/stride/pull/2000)
-- [Editor - Add dynamic snapping for selected objects #1801](https://github.com/stride3d/stride/pull/1801)
-  - Implements a dynamic snapping used while holding down a key (default: Left Shift) on manipulating (rotating/moving/scaling) an object/entity. 
-  - Adds a new Hotkey Setting for dynamic snapping
-  - Adds a Method to handle dynamic snapping
-- [Editor - Let the user pick which animation stack to import in an fbx #1977](https://github.com/stride3d/stride/pull/1977)
-  - This change introduces a field that users can edit to control which animation the engine should import from the source FBX.
-- [Editor - Added the ability to copy imported assets automatically to the Resources dir #1827](https://github.com/stride3d/stride/pull/1827)
-  - We recommend storing assets within your project's resource directory to avoid issues that may arise when sharing the project or moving files around.
-  - Whenever users import assets that are located outside of the resource directory, they will now be presented with a dialog box asking them whether the file should be copied to that directory.
+- **.NET 8 Integration**: Stride 4.2 is now fully aligned with .NET 8, harnessing its performance improvements and efficiency gains for game development. This means faster execution times, reduced memory footprint, and access to the latest C# features, making your development smoother and more efficient. [Learn more](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)
 
+  - **C# 12 Features**: With C# 12, Stride users can write cleaner, more concise code thanks to new language features. These improvements reduce boilerplate and enhance readability. [Discover C# 12](https://devblogs.microsoft.com/dotnet/announcing-csharp-12/)
+
+- **Changed Assimp Binding to Silk.Net.Assimp**: This update transitions the asset compiler's binding from C++/CLR to Silk.Net.Assimp, a move that not only simplifies the codebase but also paves the way for asset compilation on non-Windows systems, broadening Stride's accessibility. [See the pull request](https://github.com/stride3d/stride/pull/1158)
+
+- **Migration NET6+ and More gettextnet#2**: Stride's commitment to staying current with .NET versions continues, ensuring compatibility and leveraging the stability and features of the latest .NET environment across all aspects of the engine. [Check out the update](https://github.com/stride3d/gettextnet/pull/2)
+
+- **Enable Multiple Profiler Consumers and Add a Timeline/Tracing Profiler**: This enhancement introduces a profiler with chrome://tracing output format, significantly improving the debugging and performance tuning process by allowing for a more granular analysis of game performance. [Explore the feature](https://github.com/stride3d/stride/pull/1788)
+
+- **Feature: Add Support for F# and VB Project Types**: Stride now welcomes developers using F# and Visual Basic, offering support for code-only projects in these languages. This opens up Stride to a broader audience. [Learn about F# and VB support](https://github.com/stride3d/stride/pull/1821)
+
+- **Stride Diagnostics Analyzer**: This new tool provides immediate feedback within your IDE, identifying potential compatibility issues with Stride's serialization system. It's about making your development process smoother and helping you catch and resolve issues faster. [Discover how it works](https://www.stride3d.net/blog/new-diagnostic-analyzers-feature/), [the docs page](https://doc.stride3d.net/latest/en/diagnostics/index.html) and [here is the pull request](https://github.com/stride3d/stride/pull/1864).
+
+- **OpenVR Handle Custom Resolution Specified by the User Through VR Settings**: Enhancing VR development, this update allows developers to specify custom resolutions for VR projects, optimizing performance and visual quality for various VR devices. [See the details](https://github.com/stride3d/stride/pull/2000)
+
+- **Editor Enhancements**:
+  - **Dynamic Snapping for Selected Objects**: This feature introduces dynamic snapping while transforming objects, improving precision and workflow efficiency within the Stride Editor. [Dynamic snapping PR](https://github.com/stride3d/stride/pull/1801)
+  - **Animation Stack Selection for FBX Imports**: Stride now allows you to select specific animations from a stack when importing FBX files, giving you more control over the assets you bring into your projects. [Learn more](https://github.com/stride3d/stride/pull/1977)
+  - **Automatic Asset Copying to Resources Directory**: To streamline asset management, the editor can now automatically copy imported assets to the project's Resources directory, ensuring your assets are always where they need to be. [See how it works](https://github.com/stride3d/stride/pull/1827)
 
 ## Fixes
-Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we like to point out some of them out:
+Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we'd like to point some of them out:
 - [Runtime rasterized fonts are broken #1750](https://github.com/stride3d/stride/issues/1750)
 - [Game Studio doesn't reload sub projects after changes #1703](https://github.com/stride3d/stride/issues/1703)
 - [Changing the comparison project related and not UPath related #1704](https://github.com/stride3d/stride/pull/1704)
@@ -122,7 +116,7 @@ Our Discord community is buzzing with the news of Bepu physics, a project initia
 
 [BepuPhysics v2](https://github.com/bepu/bepuphysics2) is a high-performance, multi-threaded physics library, written entirely in C#. Its compatibility with Stride's C# ecosystem offers the perfect alternative to the Bullet 3D physics engine, which relies on C++ Interop.
 
-With additional support from [Doprez](https://github.com/Doprez) and [Eideren](https://github.com/Eideren), the efforts in integrating Bepu physics have already shown impressive results, especially in editor compatibility and performance. As you can see in this video, running on almost 10 year old hardware:
+With additional support from [Doprez](https://github.com/Doprez) and [Eideren](https://github.com/Eideren), the efforts in integrating Bepu physics have already shown impressive results, especially in editor compatibility and performance. As you can see in this video, running on almost 10 year old hardware (yes, cube fountain included):
 
 {% youtube '1OqtaVqSP78' %}
 
@@ -143,7 +137,7 @@ For instance to our website and documentation. We also had another community mee
 
 And last but not least:
 ### Cross-Platform Evolution: The Stride Editor and Avalonia
-One of the most ambitious projects for Stride to date has started: The porting of the entire Stride Editor from WPF to Avalonia, a cross-platform C# UI library. This significant endeavour, undertaken by the former Stride developer [Kryptos-FR](https://github.com/Kryptos-FR).
+One of the most ambitious projects for Stride to date has started: The porting of the entire Stride Editor from WPF to Avalonia, a cross-platform C# UI library. This significant endeavor, undertaken by [Kryptos-FR](https://github.com/Kryptos-FR), a former Stride developer.
 
 Currently, the project is in the early stages but it not only anticipates making the editor compatible with Linux and MacOS but also aligns with the long-standing community desire for broader platform support and enhanced editor functionality, including a robust plugin system.
 
