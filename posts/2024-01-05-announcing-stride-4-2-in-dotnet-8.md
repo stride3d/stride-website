@@ -102,7 +102,7 @@ Stride 4.2 includes numerous enhancements and improvements.
 
 
 ## Fixes
-Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we like to point out some of them out:
+Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we'd like to point some of them out:
 - [Runtime rasterized fonts are broken #1750](https://github.com/stride3d/stride/issues/1750)
 - [Game Studio doesn't reload sub projects after changes #1703](https://github.com/stride3d/stride/issues/1703)
 - [Changing the comparison project related and not UPath related #1704](https://github.com/stride3d/stride/pull/1704)
