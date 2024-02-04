@@ -86,7 +86,7 @@ Stride 4.2 includes numerous enhancements and improvements. Here’s what to exp
 
 - **Feature: Add Support for F# and VB Project Types**: Stride now welcomes developers using F# and Visual Basic, offering support for code-only projects in these languages. This opens up Stride to a broader audience. [Learn about F# and VB support](https://github.com/stride3d/stride/pull/1821)
 
-- **Stride Diagnostics Analyzer**: This new tool provides immediate feedback within your IDE, identifying potential compatibility issues with Stride's serialization system. It's about making your development process smoother and helping you catch and resolve issues faster. [Discover how it works](https://github.com/stride3d/stride/pull/1864)
+- **Stride Diagnostics Analyzer**: This new tool provides immediate feedback within your IDE, identifying potential compatibility issues with Stride's serialization system. It's about making your development process smoother and helping you catch and resolve issues faster. [Discover how it works](https://www.stride3d.net/blog/new-diagnostic-analyzers-feature/), [the docs page](https://doc.stride3d.net/latest/en/diagnostics/index.html) and [here is the pull request](https://github.com/stride3d/stride/pull/1864).
 
 - **OpenVR Handle Custom Resolution Specified by the User Through VR Settings**: Enhancing VR development, this update allows developers to specify custom resolutions for VR projects, optimizing performance and visual quality for various VR devices. [See the details](https://github.com/stride3d/stride/pull/2000)
 
