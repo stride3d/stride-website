@@ -51,7 +51,7 @@ Here’s the deal: our funding levels shape how much we can do. We’re grateful
 
 ### Challenges in Distribution
 
-The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing [morph target capabilities for 3D models](https://github.com/stride3d/stride/pull/2136) (aka Blendshapes), and updating the bindings for the Assimp 3D importer to Silk.NET.
+The pace at which we distribute funds is often perceived as slow. However, this is not from a lack of willingness but rather the challenge of finding the right talent for the tasks. Nonetheless, we are actively funding projects at this moment, focusing on enhancements in XR, introducing [morph target capabilities for 3D models](https://github.com/stride3d/stride/pull/2136) (aka Blendshapes), and updating the bindings for the Assimp 3D importer to [Silk.NET](https://dotnet.github.io/Silk.NET/).
 
 ### Call for Skilled Developers
 
@@ -96,7 +96,7 @@ Stride 4.2 includes numerous enhancements and improvements. Here’s what to exp
   - **Automatic Asset Copying to Resources Directory**: To streamline asset management, the editor can now automatically copy imported assets to the project's Resources directory, ensuring your assets are always where they need to be. [See how it works](https://github.com/stride3d/stride/pull/1827)
 
 ## Fixes
-Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we like to point out some of them out:
+Although there have been [many fixes](https://github.com/stride3d/stride/pulls?page=2&q=is%3Apr+merged%3A%3E2023-10-10), we'd like to point some of them out:
 - [Runtime rasterized fonts are broken #1750](https://github.com/stride3d/stride/issues/1750)
 - [Game Studio doesn't reload sub projects after changes #1703](https://github.com/stride3d/stride/issues/1703)
 - [Changing the comparison project related and not UPath related #1704](https://github.com/stride3d/stride/pull/1704)
@@ -122,7 +122,7 @@ With additional support from [Doprez](https://github.com/Doprez) and [Eideren](h
 
 Nicogo's YouTube channel features [some more demo videos](https://www.youtube.com/@Nicogo17/videos).
 
-Github: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
+GitHub: [Nicogo1705/Stride.BepuPhysics](https://github.com/Nicogo1705/Stride.BepuPhysics)
 
 ### Future Prospects and Disclaimer
 Currently an independent package, Bepu physics is charting a course towards deeper integration within Stride. While it stands as a potential future replacement for Bullet physics, the package is still evolving. Future updates may necessitate adjustments to projects using its current version. We encourage users to stay updated and adaptable as we continue refining Bepu physics with the community's support. The pull request can be found here: [[Physics] Bepu integration](https://github.com/stride3d/stride/pull/2131)
@@ -152,9 +152,9 @@ More details in this pull request: [Cross-platform editor rewrite - prototype](h
 
 
 ## Acknowledgements
-We extend our heartfelt gratitude for all the hard work and donations that have been made. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
+We extend our heartfelt gratitude for all the hard work and donations we have received. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
 
-In particular we want to thanks these donors:
+In particular we want to thank these donors:
 
 ### Long time Stride supporters
 *  {% include sponsor-org.md key:'vvvv' emoji:'🥇' %}
