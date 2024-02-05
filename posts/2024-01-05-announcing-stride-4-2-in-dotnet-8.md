@@ -94,7 +94,7 @@ Stride now welcomes developers using F# and Visual Basic, offering support for c
 #### Stride Diagnostics Analyzer
 This new tool provides immediate feedback within your IDE, identifying potential compatibility issues with Stride's serialization system. It's about making your development process smoother and helping you catch and resolve issues faster. [Discover how it works](https://www.stride3d.net/blog/new-diagnostic-analyzers-feature/), [the docs page](https://doc.stride3d.net/latest/en/diagnostics/index.html) and [here is the pull request](https://github.com/stride3d/stride/pull/1864).
 
-#### OpenVR Handle Custom Resolution Specified by the User Through VR Settings
+#### OpenVR Custom Resolution Support
 Enhancing VR development, this update allows developers to specify custom resolutions for VR projects, optimizing performance and visual quality for various VR devices. [See the details](https://github.com/stride3d/stride/pull/2000)
 
 ### Editor Enhancements
