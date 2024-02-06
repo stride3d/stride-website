@@ -22,7 +22,7 @@ Simply put, they are typically snippets of code that are run on the GPU, mostly 
 
 When a game has to render on the screen, it starts by preparing the data on the GPU and then sends shaders with commands. The GPU then executes those commands and if everything goes well, the game ends with a lovely picture drawn on the screen. This single call of a GPU is called a `draw call`.
 
-![shader overview](/images/blog/2023-11/shaders-explanation.png)
+{% img-click 'Shader Overview' '/images/blog/2023-11/shaders-explanation.png' %}
 
 It can be simplified to this view. There is a first stage called `Vertex stage` which is meant to compute vertices and make sure they are transformed into data that can be rasterized by your GPU, and a final stage called `Pixel stage` or `Fragment stage` that takes the rasterized output of the rasterizer and computes color for each pixel on the screen based on which triangles they belong to.
 
@@ -68,6 +68,7 @@ Here's a table of which language is supported by which machine depending on the 
 
 Note that some APIs are tied to the machine you're developing for, adding more complexity to the shader system, needing to handle GPUs that have very specific features. Vulkan and OpenGL can be used on Mac and iOS but OpenGL is deprecated and Vulkan run on MoltenVK, a Vulkan implementation on top of Metal.
 
+<div class="table-responsive">
 <table class="table table-striped table-sm">
   <thead>
   <tr>
@@ -134,6 +135,7 @@ Note that some APIs are tied to the machine you're developing for, adding more c
     <td>?</td>
   </tr>
 </table>
+</div>
 
 ### Performance Cost
 
