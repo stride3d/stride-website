@@ -6,13 +6,13 @@ image:
 tags: ['Education']
 ---
 
-Lorem ipsum
+With so many open-source game engines out there, where do you even start? 
 
 ---
 
 Table of Contents:
 
-[[TOC]]
+[TOC]
 
 The party is over. In the last several years, many commercial software companies have reevaluated their payment models and increased prices. Either they offered their products and services at unsustainably low prices, or experienced growing pressure from stakeholders demanding a transition from maximizing growth to maximizing revenue. Now, those dependent on their software must decide between accepting the increased financial burden or switching to alternatives. The video game industry is no exception to this changing tide as major game engine developers explore new ways to monetize their users. While there is never an opportune time to deal with these pricing changes, the rise of free and open-source game engines over the past decade has allowed independent game developers to consider free software for their next project.
 
@@ -52,7 +52,7 @@ Asset libraries provide a wealth of resources that empower developers to learn t
 
 
 ### Godot
-* Written in C++, Supported Languages: GDScript, C#
+* Written in C++, Supported Languages: GDScript and C#
 * Platforms:
     * Development: Windows, Linux, Mac, Web, Android (Experimental)
     * Target: Windows, Linux, Mac, Web, iOS, Android
@@ -67,7 +67,7 @@ Work in an editor for long enough and you will probably want to tinker with it. 
 
 
 ### Open 3D Engine
-* Written in C++, Supported Languages: C++, Lua
+* Written in C++, Supported Languages: C++ and Lua
 * Platforms
     * Development: Windows, Linux
     * Target: Windows, Linux, Mac, iOS, Android
@@ -87,6 +87,7 @@ With Atom Renderer, the engine’s rendering system, O3DE strives to provide an 
     * Development: Windows
     * Target: Windows, Linux, iOS, Android
     
+
 Stride began life as Xenko (and before that, Paradox): Silicon Studio’s premium game engine. After several years of providing Stride to the public through a subscription-based model, Silicon Studio released the engine’s source code and editor freely to the community under the MIT license. Among the major FOSS game engines available, it is unique because Silicon Studio completely wrote it in C# from top to bottom. There is no delineation between the language used for the core engine and the language you would write with day-to-day while working on the game. It becomes much easier to override or change any inherent engine behavior when coding in the same language. No need to develop an interop system to interface with the engine’s core logic. With that said, the code-only version of Stride supports any language that is part of the .NET family (C#, F#, and Visual Basic), providing some flexibility in language choice.
 
 The engine offers a pure .NET experience that includes many of the advantages inherent to the framework, like hot reloading. At the time of writing, Stride runs on .NET 8 (the latest version of the framework) and supports C# 12. Because the engine closely follows the .NET update schedule, you often get the most modern and up-to-date implementation of C#. You can seamlessly incorporate almost any C#-based library or tool available through NuGet, GitHub, or other platforms into Stride, enhancing your workflow. Stride is modular enough that sections of Stride are available as standalone NuGet packages. The engine provides the ability to tailor-make your game development experience.
@@ -94,7 +95,7 @@ The engine offers a pure .NET experience that includes many of the advantages in
 The engine does its best to make sure it does not become a technical bottleneck for your game. A lot of processing within Stride is multithreaded. This means it allows logic to run on multiple threads of execution concurrently. The engine even implements a custom thread pool to maximize engine performance. As a result, Stride takes full advantage of the hardware it is running on, providing players with faster and smoother experiences. All the tools Stride uses to support multi-threading under the hood are also accessible to developers. Nothing is out of reach. An entire library exists within the engine focused on multi-threading that anyone can leverage in their projects. Used with features like the upcoming Bepu physics integration, it becomes possible to have tens of thousands of objects concurrently in a scene with little effort. Stride provides the space to explore multi-threading and have fun with it.
 
 
-# What engine should you pick? And other closing thoughts
+## What engine should you pick? And other closing thoughts
 
 There is no one right answer. Don’t trust anyone who claims otherwise. Here is the truth: the answer lies in whichever one you enjoy using the most. Game development is a process. It requires a healthy level of commitment and discipline. Anyone can do it, but you need to put in the effort. The better your tools fit with your way of working and thinking, the more likely you’ll be to commit to your project and put in your full effort.
 
@@ -107,6 +108,6 @@ When you settle on an engine, remember this: your engine is not your identity. Y
 Remember, you are not simply a Godot developer, Bevy developer, O3DE developer, Stride developer, or whatever else. You are a game developer. The skills you develop with one engine will transfer to another. So pick an engine you enjoy working with the most. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. Once you manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right. Be curious and have fun.
 
 
-# Acknowledgements
+## Acknowledgements
 
 These people helped fact check, etc etc.
