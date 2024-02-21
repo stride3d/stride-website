@@ -23,7 +23,7 @@ If I tried to cover every feature of every modern open-source engine, this would
 
 ## What is FOSS, and why should I use a FOSS game engine?
 
-As the name suggests, free and open-source software (FOSS) includes two notable characteristics: it is free (libre), and its source code is available. You can free (or libre) software for any purpose at your sole discretion. Most commonly you will hear folks refer to this as something to the effect of: “free as in speech, not free as in beer”. The user has complete control over the software. The open-source aspect of FOSS describes how everyone has access to the code that makes up the software.
+As the name suggests, free and open-source software (FOSS) includes two notable characteristics: it is free (libre), and its source code is available. You can use free (or libre) software for any purpose at your sole discretion. Most commonly you will hear folks refer to this as something to the effect of: “free as in speech, not free as in beer”. The user has complete control over the software. The open-source aspect of FOSS describes how everyone has access to the code that makes up the software.
 
 Using a FOSS game engine provides several advantages. Foremost, no licensing fees. While contributors always appreciate donations, none of the notable FOSS game engines expect or require any upfront payment, subscriptions, or ongoing royalties. FOSS engines provide independence from a single organization. If changes to a FOSS engine’s terms upset the community, the engine’s licensing terms allow developers to stick to the version with the most favorable terms and even fork off the project if they choose.
 
@@ -41,8 +41,8 @@ This post will focus on some of the more notable FOSS game engines: Bevy, Godot,
 ### Bevy
 * Written in Rust, Supported Languages: Rust
 * Platforms:
-    * Development (no Editor): Windows, Mac, Linux
-    * Target: Windows, Linux, Mac, iOS, WASM
+    * Development (Code Only): Windows, Mac, Linux
+    * Target: Windows, Linux, Mac, Web, iOS, Android
 
 As the most popular Rust-based game engine, Bevy offers a rich code-only development environment (an editor is coming) capable of running on all major operating systems (Windows, Mac, and Linux). At the heart of Bevy’s vision for game development lies the Entity Component System (ECS) paradigm. While there are other resources available which can explain the benefits of ECS better, in a nutshell, ECS breaks down the code into three core pillars: entities, components, and systems. Entities are composed of components which can then interact with each other using systems. For example, the player character could be an entity with a health component which tracks the player character’s health bar. An enemy character could also use that component for the same purpose. ECS encourages modularity and reusability by enabling developers to create components applicable to distinct entities. While other game engines can approximate a similar system, Bevy makes this part of its core design ethos.
 
@@ -54,20 +54,20 @@ Asset libraries provide a wealth of resources that empower developers to learn t
 ### Godot
 * Written in C++, Supported Languages: GDScript, C#
 * Platforms:
-    * Development: Windows, Linux, Mac
-    * Target: Windows, Linux, Mac, iOS, Android, WASM, HTML5
+    * Development: Windows, Linux, Mac, Web, Android (Experimental)
+    * Target: Windows, Linux, Mac, Web, iOS, Android
 
-Among all the modern FOSS game engines available to date, Godot has the largest and most active community. As the drama around Unity has unfolded, you have more than likely heard mentions of Godot on more than a few occasions. It is not without merit, as Godot encourages developers to shape the engine around their needs. Coming in at only 40 MB, the engine includes a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, you can even use a web-based version, albeit with some constraints. Godot can meet developers on whatever platform works best for them.
+Among all the modern FOSS game engines available to date, Godot has the largest and most active community. As the drama around Unity has unfolded, you have more than likely heard mentions of Godot on more than a few occasions. It is not without merit, as Godot encourages developers to shape the engine around their needs. Coming in at only 40 MB, the engine includes a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, you can even use a web-based or Android version of the editor, albeit with some constraints. Godot can meet developers on whatever platform works best for them.
 
 GDScript is Godot’s primary programming language. While the prospect of learning an engine-specific language may turn you off at first, don’t fret! It shares a lot of commonalities with Python and Godot provides detailed documentation on how to use the language. Assuming you already have some experience with object-oriented programming, it won’t take long to get going with GDScript. You can even also use C# for scripting if that is more up your alley, as it’s the other language officially supported by Godot. That said, if you would still like to write some code in another language entirely, Godot provides the means to use alternative programming languages by the way of GDExtension.
 
-GDExtension theoretically supports any programming language that can interact with its C-based API. While Godot officially supports scripting in GDScript and C#, the system allows the community to introduce new language bindings to Godot’s development ecosystem, including Rust, Python, Lua, and Java. Not all language bindings are feature complete, but many are in active development. With that in mind, it’s unnecessary to commit to one language for an entire project, as GDExtension languages can work alongside GDScript. This means developers can, for example, even use GDScript with other languages in the same project.
+GDExtension theoretically supports any programming language that can interact with its C-based API. While Godot officially supports scripting in GDScript and C#, the system allows the community to introduce new language bindings to Godot’s development ecosystem, including Rust, Python, Swift, Lua, and Java. Not all language bindings are feature complete, but many are in active development. With that in mind, it’s unnecessary to commit to one language for an entire project, as GDExtension languages can work alongside GDScript. This means developers can, for example, even use GDScript with other languages in the same project.
 
 Work in an editor for long enough and you will probably want to tinker with it. For those who are interested in creating utilities and tools like as is common practice in Unity or Unreal Engine, Godot provides the option to customize the editor to your liking. You don’t need to write in C++ and re-compile Godot to create plugins. Because the editor runs on Godot itself, it is possible to tinker with or extend the editor with GDScript, Godot’s scripting language, by simply appending @tool to the top of the file. Writing a plugin becomes as easy as writing code for your game.
 
 
 ### Open 3D Engine
-* Written in C++, Supported Languages: Lua
+* Written in C++, Supported Languages: C++, Lua
 * Platforms
     * Development: Windows, Linux
     * Target: Windows, Linux, Mac, iOS, Android
@@ -84,8 +84,8 @@ With Atom Renderer, the engine’s rendering system, O3DE strives to provide an 
 ### Stride 
 * Written in C#, Supported Languages: C#, F#, and Visual Basic
 * Platforms:
-    * Development: Windows, Linux (Code only)
-    * Target: Windows, Linux, Android, iOS
+    * Development: Windows
+    * Target: Windows, Linux, iOS, Android
     
 Stride began life as Xenko (and before that, Paradox): Silicon Studio’s premium game engine. After several years of providing Stride to the public through a subscription-based model, Silicon Studio released the engine’s source code and editor freely to the community under the MIT license. Among the major FOSS game engines available, it is unique because Silicon Studio completely wrote it in C# from top to bottom. There is no delineation between the language used for the core engine and the language you would write with day-to-day while working on the game. It becomes much easier to override or change any inherent engine behavior when coding in the same language. No need to develop an interop system to interface with the engine’s core logic. With that said, the code-only version of Stride supports any language that is part of the .NET family (C#, F#, and Visual Basic), providing some flexibility in language choice.
 
