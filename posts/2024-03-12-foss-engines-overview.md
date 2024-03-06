@@ -20,7 +20,7 @@ The party is over. In the last several years, many commercial software companies
 
 I want to make this clear from the start: I will not be doing a head-to-head comparison of open-source game engines. The summaries of each engine discussed will not be exhaustive nor specifically highlight exclusive features. This is a celebration of the hard work of the open-source game development community. I want to use this as a platform to get you excited about open-source game development and consider options beyond proprietary engines like Unity or Unreal.
 
-If I tried to cover every feature of every modern open-source engine, this would be at least one book, if not several. For that reason, I identified notable features and characteristics of some handpicked open-source engines I thought would be worth sharing. While reading this, keep in mind that no engine is one-size-fits-all, and, as I’ll explain later, picking an engine is about choosing the right tool for _you_. With that out of the way, let’s start!
+If I tried to cover every feature of every modern open-source engine, this wouldn't be an single article, but an entire book series. For that reason, I identified notable features and characteristics of some handpicked open-source engines I thought would be worth sharing. While reading this, keep in mind that no engine is one-size-fits-all, and, as I’ll explain later, picking an engine is about choosing the right tool for _you_. With that out of the way, let’s start!
 
 ## What is FOSS, and why should I use a FOSS game engine?
 
@@ -69,7 +69,7 @@ Asset libraries provide a wealth of resources that empower developers to learn t
     * Development: Windows, Mac, Linux, Web, Android (Experimental)
     * Target: Windows, Mac, Linux, iOS, Android, Web
 
-Godot has the largest and most active community among all the modern FOSS game engines available to date. As the drama around Unity has unfolded, you have more than likely heard mentions of Godot on more than a few occasions. It is not without merit, as Godot encourages developers to shape the engine around their needs. Coming in at only 40 MB, the engine includes a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, [you can even use a web-based](https://editor.godotengine.org/releases/latest/) or [Android version](https://godotengine.org/download/android/) of the editor, albeit with some constraints. Godot can meet developers on whatever platform works best for them.
+Godot has the largest and most active community among all the modern FOSS game engines available to date. As the drama around Unity has unfolded, you have likely heard mentions of Godot on more than a few occasions. It is not without merit, as Godot encourages developers to shape the engine around their needs. Coming in at only 40 MB, the engine includes a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, [you can even use a web-based](https://editor.godotengine.org/releases/latest/) or [Android version](https://godotengine.org/download/android/) of the editor, albeit with some constraints. Godot can meet developers on whatever platform works best for them.
 
 GDScript is Godot’s primary programming language. While the prospect of learning an engine-specific language may turn you off at first, don’t fret! It shares a lot of commonalities with Python and Godot provides detailed documentation on how to use the language. Assuming you already have some experience with object-oriented programming, it won’t take long to get going with GDScript. You can even use C# for scripting if that is more up your alley, as it’s the other language officially supported by Godot. That said, if you would still like to write some code in another language entirely, Godot provides the means to use alternative programming languages by way of GDExtension.
 
@@ -125,7 +125,9 @@ Wanting to know if an engine can make a specific type of game is asking the wron
 
 When you settle on an engine, remember this: your engine is not your identity. Your tools are a means to creating something, not a core pillar of your very being. I cannot stress this enough. Your tools do not define you. This may sound obvious, but I have seen many, many folks make their engine of choice a centerpiece of who they are and become unnecessarily hostile towards communities of other engines. Please do not do that.
 
-You are not simply a Godot developer, Bevy developer, O3DE developer, Stride developer, or whatever else. You are a game developer. So don’t get hung up on which engine you should pick. Pick the engine you resonate with the most and you’ll quickly learn skills that apply anywhere. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. Once you manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right. Be curious and have fun.
+You are not simply a Godot developer, Bevy developer, O3DE developer, Stride developer, or whatever else. You are a game developer. So don’t get hung up on which engine you should pick. Pick the engine you resonate with the most and you’ll quickly learn skills that apply anywhere. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. Once you manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right. 
+
+Be curious and have fun.
 
 ## Acknowledgments
 
