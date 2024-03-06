@@ -12,7 +12,7 @@ With so many open-source game engines out there, where do you even start?
 
 Table of Contents:
 
-[TOC]
+[[TOC]]
 
 The party is over. In the last several years, many commercial software companies have reevaluated their payment models and increased prices. Either they offered their products and services at unsustainably low prices or experienced growing pressure from stakeholders demanding a transition from maximizing growth to maximizing revenue. Those dependent on their software must now decide between accepting the increased financial burden or switching to alternatives. The video game industry is no exception to this changing tide as major game engine developers explore new ways to monetize their users. While there is never an opportune time to deal with these pricing changes, the rise of free and open-source game engines over the past decade has allowed independent game developers to consider free software for their next project.
 
@@ -37,6 +37,8 @@ Although FOSS game engines have existed for decades, the past several years have
 
 This post will focus on some of the more notable FOSS game engines: Bevy, Godot, Open 3D Engine, and (of course) Stride. This is not an exhaustive list. As I mentioned before, [there are more engines out there than I could ever cover in a single blog post](https://enginesdatabase.com/?software_license=1). Many skilled and dedicated folks have put serious time and effort into making game engines and shared them with the world. I want to encourage you to use this post as a starting point and look at what each community offers.
 
+{% img 'Bevy' '/images/blog/2024-03-12-foss-engines-overview/bevy-logo.webp' %}
+
 ### Bevy
 * Written in Rust, Supported Languages: Rust
 * Platforms:
@@ -48,6 +50,8 @@ As the most popular Rust-based game engine, Bevy offers a rich code-only develop
 As established with Bevy’s use of ECS, the engine’s developers care deeply about modularity. [The engine’s plugin system](https://bevyengine.org/learn/quick-start/getting-started/plugins/) accentuates their commitment to that principle in every part of Bevy. Developers can organize the game’s systems into discrete plugins. An example of this is organizing all the UI systems code into a UI plugin. From there, developers can slot the plugin into the game’s initialization step. The plugin system helps organize the code and encourages modularity by allowing developers to add or remove the plugin based on their needs. This paradigm even applies to the engine’s core features, as they are all organized into plugins. It becomes trivial to activate or deactivate any part of the engine—including rendering, audio playback, and event loops—as the developer sees fit.
 
 Asset libraries provide a wealth of resources that empower developers to learn the tools quickly and get their game to a playable state. [The community assembled a library of assets available on the official website for the community to use and share](https://bevyengine.org/assets/). Bevy’s library includes tutorials, plugins, and templates that address subjects like physics, networking, and input management. Even entire games and applications are available in the asset library to either build on or use as a reference while learning the engine. Bevy’s structure encourages developers to use any of the resources from this library freely as part of the building blocks that will make up their game. In conjunction with Rust’s package manager, there is a strong emphasis on modularity at every level of the engine. 
+
+{% img 'Godot' '/images/blog/2024-03-12-foss-engines-overview/godot-logo.webp' %}
 
 ### Godot
 * Written in C++, Supported Languages: GDScript, C#
@@ -63,6 +67,8 @@ Theoretically, GDExtension supports any programming language that can interact w
 
 Work in an editor long enough and you will probably want to tinker with it. For those interested in creating utilities and tools, as is common practice in Unity or Unreal Engine, [Godot provides the option to customize the editor to your liking](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_plugins.html). You don’t need to write in C++ and re-compile Godot to create plugins. Because the editor runs on Godot itself, it is possible to tinker with or extend the editor with GDScript, Godot’s scripting language, by simply appending @tool to the top of the file. Writing a plugin becomes as easy as writing code for your game.
 
+{% img 'Open 3D Engine' '/images/blog/2024-03-12-foss-engines-overview/o3de-logo.webp' %}
+
 ### Open 3D Engine
 * Written in C++, Supported Languages: C++, Lua
 * Platforms:
@@ -76,6 +82,8 @@ Only a few game engines offer visual scripting out of the box, and O3DE is one o
 O3DE modularizes its engine by breaking down major components into plugins called [Gems](https://www.docs.o3de.org/docs/user-guide/gems/). This is the paradigm through which O3DE manages all its features and plugins. It is possible to swap out features like the physics engine, for example, allowing developers to choose between PhysX 4, PhysX 5, or another solution entirely, custom or commercial. The modularity afforded to O3DE through Gems allows developers to add and remove components of the engine with relative ease–using as many or as few of the features they want and in whatever combination best fits their needs.
 
 With [the Atom Renderer](https://www.docs.o3de.org/docs/atom-guide/), the engine’s rendering system, O3DE strives to provide an advanced renderer that is also exceptionally customizable. The Render Pipeline Interface (RPI) and Rendering Hardware Interface (RHI) constitute the primary channels for working with the Atom renderer. The RPI provides the tools necessary for customizing the rendering pipeline and implementing higher-level graphical features, such as split screen or additional rendering passes. Meanwhile, the RHI abstracts access to the GPU’s functionality, allowing developers to write lower-level graphics logic without needing to target specific graphics APIs like DirectX or Vulkan. In short, the rendering stack provides incredible flexibility to developers.
+
+{% img 'Stride' '/images/blog/2024-03-12-foss-engines-overview/stride-logo.webp' %}
 
 ### Stride
 * Written in C#, Supported Languages: C#, F#, and Visual Basic
