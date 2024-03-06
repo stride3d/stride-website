@@ -104,7 +104,7 @@ With [the Atom Renderer](https://www.docs.o3de.org/docs/atom-guide/), the engine
 </div>
 
 ### Stride
-* Written in C#, Supported Languages: C#, F#, and Visual Basic
+* Written in C#, Supported Languages: C#, F#, Visual Basic
 * Platforms:
     * Development: Windows
     * Target: Windows, Linux, iOS, Android
