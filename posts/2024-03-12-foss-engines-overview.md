@@ -6,7 +6,7 @@ image: /images/blog/2024-03-12-foss-engines-overview/foss-engine-girl.webp
 tags: ['Education']
 ---
 
-With so many open-source game engines out there, where do you even start? 
+With so many open-source game engines out there, where do you even start?
 
 ---
 
@@ -113,4 +113,4 @@ You are not simply a Godot developer, Bevy developer, O3DE developer, Stride dev
 
 As a general practice, I think it’s good to recognize everyone who helps you put something together, no matter how big or small. This article would not have been possible without the input of contributors and users involved in these communities. I appreciate all the folks who were kind and patient enough to fact-check me and provide their feedback, including [Vaclav Elias](https://github.com/VaclavElias), [Joreyk](https://github.com/IXLLEGACYIXL), [Doprez](https://github.com/Doprez/), [Judah Perez](https://www.inconsistent.software/), [Clay John](https://github.com/clayjohn), [Adam Scott](https://github.com/adamscott), [Fredia Huya-Kouadio](https://github.com/m4gr3d), and [Pāvels Nadtočajevs](https://github.com/bruvzg). (tentatively adding more)
 
-Last but not least, thank you to [Melt/Ed](https://twitter.com/meltt_ed) for creating the feature image.
+Last but not least, thank you to [Ed (Meltted)](https://twitter.com/meltt_ed) for creating the feature image.
