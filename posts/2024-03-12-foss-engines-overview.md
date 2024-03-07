@@ -66,7 +66,7 @@ Asset libraries provide a wealth of resources that empower developers to learn t
 ### Godot
 * Written in C++, Supported Languages: GDScript, C#
 * Platforms:
-    * Development: Windows, Mac, Linux, Web, Android (Experimental)
+    * Development: Windows, Mac, Linux, Android (Experimental), Web
     * Target: Windows, Mac, Linux, iOS, Android, Web
 
 Godot has the largest and most active community among all the modern FOSS game engines available to date. As the drama around Unity has unfolded, you have likely heard mentions of Godot on more than a few occasions. It is not without merit, as Godot encourages developers to shape the engine around their needs. Coming in at only 40 MB, the engine includes a lightweight, multi-platform editor capable of running on any major operating system (Windows, Mac, and Linux). In fact, [you can even use a web-based](https://editor.godotengine.org/releases/latest/) or [Android version](https://godotengine.org/download/android/) of the editor, albeit with some constraints. Godot can meet developers on whatever platform works best for them.
