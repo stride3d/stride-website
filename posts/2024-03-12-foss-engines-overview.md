@@ -125,7 +125,7 @@ Wanting to know if an engine can make a specific type of game is asking the wron
 
 When you settle on an engine, remember this: your engine is not your identity. Your tools are a means to creating something, not a core pillar of your very being. I cannot stress this enough. Your tools do not define you. This may sound obvious, but I have seen many, many folks make their engine of choice a centerpiece of who they are and become unnecessarily hostile towards communities of other engines. Please don't do that.
 
-You are not simply a Bevy developer, Godot developer, O3DE developer, Stride developer, or whatever else. You are a game developer. So don’t get hung up on which engine you should pick. Pick the engine that resonates with you the most and you’ll quickly learn skills that apply anywhere. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. Once you manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right.
+You are not simply a Bevy developer, Godot developer, O3DE developer, Stride developer, or whatever else. You are a game developer. So don’t get hung up on which engine you should pick. Choose the engine that resonates with you the most and you’ll quickly learn skills that apply anywhere. Make creating something rewarding in and of itself. If you enjoy working in your environment, you will enjoy the act of development. Once you manage that, creating anything, game or otherwise, will feel immensely satisfying in its own right.
 
 Be curious and have fun.
 
