@@ -115,7 +115,7 @@ The engine offers a pure .NET experience that includes many of the advantages in
 
 The engine does its best to ensure it does not become a technical bottleneck for your game. A lot of processing within Stride is multithreaded. This means it allows logic to run on multiple threads of execution concurrently. The engine even implements a custom thread pool to maximize engine performance. As a result, Stride takes full advantage of the hardware it is running on, providing players with faster and smoother experiences. All the tools Stride uses to support multi-threading under the hood are also accessible to developers. Nothing is out of reach. An entire library exists within the engine focused on multi-threading that anyone can leverage in their projects. Used with features like the [upcoming Bepu physics integration](https://github.com/Nicogo1705/Stride.BepuPhysics), it becomes possible to have tens of thousands of objects concurrently in a scene with little effort. Stride provides the space to explore multi-threading and have fun with it.
 
-## What engine should you pick? And other closing thoughts.
+## What engine should you pick? And other closing thoughts
 
 There is no one right answer. Don’t trust anyone claiming otherwise. Here is the truth: the answer lies in whichever you enjoy using the most. Game development is a process. It requires a healthy level of commitment and discipline. Anyone can do it, but you need to put in the effort. The better your tools fit with your way of working and thinking, the more likely you’ll commit to your project and put in your full effort.
 
