@@ -131,6 +131,6 @@ Be curious and have fun.
 
 ## Acknowledgments
 
-This article would not have been possible without the input of contributors and users involved in these communities. I appreciate all the folks who were kind and patient enough to fact-check me and provide their feedback, including [Vaclav Elias](https://github.com/VaclavElias), [Joreyk](https://github.com/IXLLEGACYIXL), [Doprez](https://github.com/Doprez/), [Judah Perez](https://www.inconsistent.software/), [Clay John](https://github.com/clayjohn), [Adam Scott](https://github.com/adamscott), [Fredia Huya-Kouadio](https://github.com/m4gr3d), and [Pāvels Nadtočajevs](https://github.com/bruvzg). (tentatively adding more)
+This article was only possible with the input of contributors and users involved in these communities. I appreciate all the folks who were kind and patient enough to fact-check me and provide their feedback, including [Vaclav Elias](https://github.com/VaclavElias), [Joreyk](https://github.com/IXLLEGACYIXL), [Doprez](https://github.com/Doprez/), [Judah Perez](https://www.inconsistent.software/), [Clay John](https://github.com/clayjohn), [Adam Scott](https://github.com/adamscott), [Fredia Huya-Kouadio](https://github.com/m4gr3d), and [Pāvels Nadtočajevs](https://github.com/bruvzg). (tentatively adding more)
 
 Last but not least, thank you to [Ed (Meltted)](https://twitter.com/meltt_ed) for creating the feature image.
