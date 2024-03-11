@@ -2,7 +2,7 @@
 title: "Open Worlds: An Exploration of Open-Source Game Engines"
 author: parham
 popular: false
-image: /images/blog/2024-03-12-foss-engines-overview/foss-engine-girl.webp
+image: /images/blog/2024-03-14-foss-engines-overview/foss-engine-girl.webp
 tags: ['Education']
 ---
 
@@ -11,7 +11,7 @@ With so many open-source game engines out there, where do you even start?
 ---
 
 <div align="center">
-    {% img 'Girl thinking about game development' '/images/blog/2024-03-12-foss-engines-overview/foss-engine-girl-banner.webp' %}
+    {% img 'Girl thinking about game development' '/images/blog/2024-03-14-foss-engines-overview/foss-engine-girl-banner.webp' %}
 </div>
 
 Table of Contents:
@@ -45,7 +45,7 @@ This post will focus on some of the more notable modern FOSS game engines: Bevy,
 <br>
 
 <div align="center">
-{% img 'Bevy' '/images/blog/2024-03-12-foss-engines-overview/bevy-logo.webp' %}
+{% img 'Bevy' '/images/blog/2024-03-14-foss-engines-overview/bevy-logo.webp' %}
 </div>
 
 ### Bevy
@@ -64,7 +64,7 @@ Asset libraries provide a wealth of resources that empower developers to learn t
 <br>
 
 <div align="center">
-{% img 'Godot' '/images/blog/2024-03-12-foss-engines-overview/godot-logo.webp' %}
+{% img 'Godot' '/images/blog/2024-03-14-foss-engines-overview/godot-logo.webp' %}
 </div>
 
 ### Godot
@@ -83,7 +83,7 @@ Work in an editor long enough and you will probably want to tinker with it. For 
 
 <br>
 <br>
-{% img 'Open 3D Engine' '/images/blog/2024-03-12-foss-engines-overview/o3de-logo.webp' %}
+{% img 'Open 3D Engine' '/images/blog/2024-03-14-foss-engines-overview/o3de-logo.webp' %}
 </div>
 
 ### Open 3D Engine
@@ -104,7 +104,7 @@ With [the Atom Renderer](https://www.docs.o3de.org/docs/atom-guide/), the engine
 <br>
 
 <div align="center">
-    {% img 'Stride' '/images/blog/2024-03-12-foss-engines-overview/stride-logo.webp' %}
+    {% img 'Stride' '/images/blog/2024-03-14-foss-engines-overview/stride-logo.webp' %}
 </div>
 
 ### Stride
