@@ -1,7 +1,6 @@
 ---
 title: 'Community Meeting February 2022'
 author: aggror
-popular: true
 tags: ['Meeting']
 ---
 
