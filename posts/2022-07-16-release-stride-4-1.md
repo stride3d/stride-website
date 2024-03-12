@@ -1,7 +1,6 @@
 ---
 title: 'Stride 4.1 is Now Live'
 author: aggror
-popular: true
 image: https://i.imgur.com/7GVEiSR.jpg
 tags: ['Physics','Tutorials','Release', 'Graphics']
 ---
