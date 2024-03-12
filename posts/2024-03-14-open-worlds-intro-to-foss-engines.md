@@ -1,12 +1,12 @@
 ---
-title: "Open Worlds: An Exploration of Open-Source Game Engines"
+title: "Open Worlds: An Introduction to Free Open-Source Game Engines"
 author: parham
 popular: false
-image: /images/blog/2024-03-14-foss-engines-overview/foss-engine-girl.webp
+image: /images/blog/2024-03-14-open-worlds-intro-to-foss-engines/foss-engine-girl.webp
 tags: ['Education']
 ---
 
-With so many open-source game engines out there, where do you even start?
+With so many free open-source game engines out there, where do you even start?
 
 ---
 
