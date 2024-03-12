@@ -2,7 +2,7 @@
 title: "Open Worlds: An Introduction to Free Open-Source Game Engines"
 author: parham
 popular: false
-image: /images/blog/2024-03-14-open-worlds-intro-to-foss-engines/foss-engine-girl.webp
+image: /images/blog/2024-03/foss-engine-girl.webp
 tags: ['Education']
 ---
 
@@ -11,7 +11,7 @@ With so many free open-source game engines out there, where do you even start?
 ---
 
 <div align="center">
-    {% img 'Girl thinking about game development' '/images/blog/2024-03-14-foss-engines-overview/foss-engine-girl-banner.webp' %}
+    {% img 'Girl thinking about game development' '/images/blog/2024-03/foss-engine-girl-banner.webp' %}
 </div>
 
 Table of Contents:
@@ -47,7 +47,7 @@ This post will focus on some of the more notable modern FOSS game engines: Bevy,
 <br>
 
 <div align="center">
-{% img 'Bevy' '/images/blog/2024-03-14-foss-engines-overview/bevy-logo.webp' %}
+{% img 'Bevy Logo' '/images/blog/2024-03/bevy-logo.webp' %}
 </div>
 
 ### Bevy
@@ -65,7 +65,7 @@ Asset libraries provide a wealth of resources that empower developers to learn t
 <br>
 
 <div align="center">
-{% img 'Godot' '/images/blog/2024-03-14-foss-engines-overview/godot-logo.webp' %}
+{% img 'Godot Logo' '/images/blog/2024-03/godot-logo.webp' %}
 </div>
 
 ### Godot
@@ -85,7 +85,7 @@ Work in an editor long enough and you will probably want to tinker with it. For 
 <br>
 
 <div align="center">
-{% img 'Open 3D Engine' '/images/blog/2024-03-14-foss-engines-overview/o3de-logo.webp' %}
+{% img 'Open 3D Engine Logo' '/images/blog/2024-03/o3de-logo.webp' %}
 </div>
 
 ### Open 3D Engine
@@ -105,7 +105,7 @@ With the [Atom Renderer](https://www.docs.o3de.org/docs/atom-guide/), the engine
 <br>
 
 <div align="center">
-    {% img 'Stride' '/images/blog/2024-03-14-foss-engines-overview/stride-logo.webp' %}
+    {% img 'Stride Logo' '/images/blog/2024-03/stride-logo.webp' %}
 </div>
 
 ### Stride
@@ -136,4 +136,4 @@ You are not simply a Bevy developer, Godot developer, O3DE developer, Stride dev
 
 This article was only possible with the input of contributors and users involved in these game engines. I appreciate all the folks who were kind and patient enough to fact-check me and provide their feedback, including [Vaclav Elias](https://github.com/VaclavElias), [Joreyk](https://github.com/IXLLEGACYIXL), [Doprez](https://github.com/Doprez/), [Judah Perez](https://www.inconsistent.software/), [Clay John](https://github.com/clayjohn), [Adam Scott](https://github.com/adamscott), [Fredia Huya-Kouadio](https://github.com/m4gr3d), [Pāvels Nadtočajevs](https://github.com/bruvzg), as well as [the Open 3D Foundation and Open 3D Engine contributors](https://o3d.foundation/).
 
-Last but not least, thank you to [Ed (Meltted)](https://twitter.com/meltt_ed) for creating the feature and thumbnail image.
+Last but not least, thank you to [Ed (Meltted)](https://twitter.com/meltt_ed) for creating the feature and thumbnail images.
