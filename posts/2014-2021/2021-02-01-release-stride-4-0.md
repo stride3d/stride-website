@@ -1,7 +1,6 @@
 ---
 title: 'Stride 4.0 is Now Live'
 author: virgile
-popular: true
 tags: ['Release', 'Tutorials']
 ---
 
