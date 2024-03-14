@@ -112,7 +112,7 @@ With the [Atom Renderer](https://www.docs.o3de.org/docs/atom-guide/), the engine
 * Written in C#, Supported Languages: C#, F#, Visual Basic
 * Platforms:
     * Development: Windows
-    * Target: Windows, Linux, iOS, Android
+    * Target: Windows, Mac, Linux, iOS, Android
 
 Stride began life as Xenko (and before that, Paradox): Silicon Studio’s premium game engine. After several years of providing Stride to the public through a subscription-based model, Silicon Studio released the engine’s source code and editor freely to the community under the MIT license. Among the higher profile FOSS game engines available, it is unique because Silicon Studio completely wrote it in C# from top to bottom. There is no delineation between the language used for the core engine and the language you would write with day-to-day while working on the game. It becomes much easier to override or change any inherent engine behavior when coding in the same language. No need to develop an interop system to interface with the engine’s core logic. With that said, [the code-only version of Stride](https://stride3d.github.io/stride-community-toolkit/manual/code-only/index.html) supports any language that is part of the .NET family (C#, F#, and Visual Basic), providing some flexibility in language choice.
 
