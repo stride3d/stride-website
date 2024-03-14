@@ -136,4 +136,4 @@ You are not simply a Bevy developer, Godot developer, O3DE developer, Stride dev
 
 This article was only possible with the input of contributors and users involved in these game engines. I appreciate all the folks who were kind and patient enough to fact-check me and provide their feedback, including [Vaclav Elias](https://github.com/VaclavElias), [Joreyk](https://github.com/IXLLEGACYIXL), [Doprez](https://github.com/Doprez/), [Judah Perez](https://www.inconsistent.software/), [Clay John](https://github.com/clayjohn), [Adam Scott](https://github.com/adamscott), [Fredia Huya-Kouadio](https://github.com/m4gr3d), [Pāvels Nadtočajevs](https://github.com/bruvzg), as well as [the Open 3D Foundation and Open 3D Engine contributors](https://o3d.foundation/).
 
-Last but not least, thank you to [Ed (Meltted)](https://twitter.com/meltt_ed) for creating the feature image.
+Last but not least, thank you to [Ed (Meltted)](https://twitter.com/meltt_ed) for creating the featured image.
