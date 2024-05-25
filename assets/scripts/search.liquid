@@ -74,6 +74,8 @@ permalink: /scripts/search.js
                 return '📝';
             case 'contributors':
                 return '🌟';
+            case 'community-resources':
+                return '🏋🏽';
             default:
                 return '';
         }
@@ -134,7 +136,7 @@ permalink: /scripts/search.js
         var docs = Promise.resolve();
 
         if({{site.docs-search}}) {
-            docs = fetch(`{{site.links.docs-search-url}}`).then(success);
+            docs = fetch(`{{site.links.docs-search-url}}?version={{site.version}}`).then(success);
         }
 
         Promise.all([web, docs])
