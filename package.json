@@ -21,7 +21,7 @@
     "bootstrap": "^5.3.3",
     "lunr": "^2.3.9",
     "markdown-it-anchor": "^9.2.0",
-    "markdown-it-table-of-contents": "^0.7.0",
+    "markdown-it-table-of-contents": "^0.8.0",
     "sass": "^1.77.6"
   }
 }
