@@ -36,7 +36,7 @@ A shader mixin is a building block for shaders in Stride, they are mixed and mer
 
 A quick example for this :
 
-```
+```hlsl
 // Let's define two shader mixins with different fields and simple method
 shader MixinA
 {
@@ -65,7 +65,7 @@ The inheritance is going to reuse the code present in the mixins and mix them to
 
 In this case the MixinC will internally look like :
 
-```
+```hlsl
 shader MixinC : MixinA, MixinB
 {
     // MixinC fields from MixinA and MixinB are copied as is
@@ -162,25 +162,91 @@ Another one was the Nintendo Switch emulator Ryujinx, written in C#,  it can gen
 
 I decided to start from this Ryujinx code and made a little proof of concept by writing a little tool that takes the output of Stride's parser and convert it into shader modules. It only supported a very tiny subset of SDSL but it was enough to prove the compiler can be made, and to remind me that I do not know SDSL nor SPIR-V that well, and the Ryujinx code was not exactly suited for Stride. But then, the most intrusive thought a dev can have just creeped in my mind...
 
-
 #### "I should rewrite it from scratch..."
 
 And make sure it fits our needs, the constraints i've listed in the previous section. The Ryujinx code at the time would do a lot of needless allocation as instructions were represented by classes in a list, something we could have changed by just representing instructions by a struct stored in a list/buffer of integers, these buffers could be rented from a pool etc.
 
 As I went through the code, I started drawing ideas on how to improve things here and there and little by little the Stride SPIR-V took shape.
 
-Let's take a look at the implementation I came up with :
+#### Buffers and instructions
 
-Since SPIR-V is represented by words of integer size, buffers can be `List<int>` or `MemoryOwner<int>`.
+According to the specification, instructions are made out of words/integers, they have a variable size and the size of the instruction is written in the high 16 bits of the first word.
 
-Instructions are slices of these buffers, they have variable sizes specified in the first word of each instruction.
+Instructions would be represented as slices of this buffer and to access those instructions we would need to iterate through this buffer.
 
 ```csharp
-public ref struct RefInstruction
+public class SpirvBuffer : IDisposable
 {
-    public Span<int> Words { get; }
+    public MemoryOwner<int> Words { get; }
+  
+    public ref struct Enumerator(SpirvBuffer buffer)
+    {
+  	int position = 0;
+	public RefInstruction Current => new(buffer.Words.Span[position..(position + buffer.Words.Span[position] >> 16)]);
+
+	public bool MoveNext()
+	{
+	    position += buffer.Words.Span[position] >> 16 < buffer.Words.Length;
+	    return position < buffer.Words.Length;
+	}
+    }
+}
+
+public ref struct RefInstruction(Span<int> words)
+{
+    public Span<int> Words { get; } = words;
     // ...
 }
 ```
 
-Right now, we can't know what these integers really mean, we can only read the size of the instruction by checking the higher bits of the first word, and the kind of instruction with the lower bits. The C# code provided by the SPIR-V headers does not provide information on which instruction has which operands, all this data is in a JSON file. So we have a source generator that reads this JSON file and generates informations for all instructions.
+According to the specification, instructions can have a variable number of operands and each operands can be one or multiple words. The simplest way to extract operand information from this slice is to generate C# source code with information on how to parse each instructions based on its type and size.
+
+And with just that, we can parse SPIR-V and even write our own SPIR-V disassembly tool!
+
+#### Generation
+
+Now that we can load SPIR-V and parse it, the next step is to be able to write instructions. Fortunately for us, the SPIR-V headers repository provide a C# file containing all the enums and constants needed for instructions operands and some JSON files describing instructions and their operands as well as if the operands are optional or have to be passed as an array of values. With a few more, we can generate methods to add or insert instruction in a buffer!
+
+Here's an excerpt from the current unified core grammar of SPIR-V and its corresponding generated C# code :
+
+```json
+{
+      "opname" : "OpFAdd",
+      "class"  : "Arithmetic",
+      "opcode" : 129,
+      "operands" : [
+        { "kind" : "IdResultType" },
+        { "kind" : "IdResult" },
+        { "kind" : "IdRef",        "name" : "'Operand 1'" },
+        { "kind" : "IdRef",        "name" : "'Operand 2'" }
+      ],
+      "version": "1.0"
+}
+```
+
+```csharp
+public static Instruction AddOpFAdd(this SpirvBuffer, IdResultType resultType, IdRef operand1, IdRef operand2)
+{
+    // Extend the buffer and put the data needed
+}
+```
+
+After going through the core and the glsl grammar, we end up with a library that can both parse and assembler SPIR-V.
+
+#### Extending SPIR-V
+
+This one was the easiest step, everything was already there, we just need an additional JSON grammar file specially made for SDSL and the generator will give us the necessary code to add those instruction, there's really nothing else to it!
+
+What was left is creating a little tool that can read those extensions and pre-process many SPIR-V together to generate a valid SPIR-V module that can be consumed by Vulkan, OpenGL, WGPU and soon DirectX 12. I have made a prototype that works quite well but can be improved in the future, it's not a complicated task, it just takes time and efforts.
+
+Finally we can make sure we can generate SPIR-V mixins from the AST generated by the current Stride shader system. This should be easy, right ? RIGHT ?
+
+### The Irony
+
+The current shader parser was made for the specific use case of mixin abstract trees. Modifying the code would be a huge endeavor as would have to dive into what's existing and try my best to understand what i can change without breaking anything, worse than that, the parser was written with Irony, a very good C# library to help anyone parse things in an LALR fashion, but with a lacking documentation and, in my personal opinion, has an "easy to write hard to read" kind of API.
+
+But then... the most intrusive thought a dev can have just creeped in my mind... AGAIN !!! But that's for another blog post, so much happened since last year :D
+
+### Conclusions
+
+Writing this SPIR-V library was very fun, I've learned a lot about SPIR-V and some of the possible use cases for it in the context of Stride. As you might have imagined, this was the easy part of this shader system rewrite. In the next installement we'll see the little adventure I went through to make the most of our shader system!
