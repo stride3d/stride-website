@@ -1,11 +1,10 @@
 ---
 title: 'Open Collective'
 author: aggror
-popular: true
 tags: ['Sponsor']
 ---
 
-Stride has been using Patreon and Github sponsors for a while now. However, in the recent community meeting of october 1st it became apparent that these donation platforms don't really suit all of our needs. Both Github sponsors and Patreon don't really show where the money is going.
+Stride has been using Patreon and GitHub sponsors for a while now. However, in the recent community meeting of october 1st it became apparent that these donation platforms don't really suit all of our needs. Both GitHub sponsors and Patreon don't really show where the money is going.
 
 ---
 
