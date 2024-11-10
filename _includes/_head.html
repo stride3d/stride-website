@@ -4,12 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title != 'Home' %}{{ title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">
+    <meta name="generator" content="Eleventy v3.0.0">
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css?site-version={{site.version}}">
     <link rel="preload" as="font" href="/webfonts/fa-solid-900.woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ description }}{% endif %}">

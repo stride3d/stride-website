@@ -1,16 +1,16 @@
 // Description: Eleventy configuration file for the Stride website
 
 // Import dependencies from node_modules / package.json
-const sass = require("sass");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const path = require("node:path");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItToc = require("markdown-it-table-of-contents");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const eleventyFetch = require("@11ty/eleventy-fetch");
+import * as sass from 'sass';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import path from 'node:path'
+import markdownIt from 'markdown-it'
+import markdownItAnchor from 'markdown-it-anchor'
+import markdownItToc from 'markdown-it-table-of-contents'
+import pluginRss from '@11ty/eleventy-plugin-rss'
+import eleventyFetch from '@11ty/eleventy-fetch'
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 
     // Add plugins
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -178,4 +178,4 @@ module.exports = function (eleventyConfig) {
             layouts: "_layouts"
         }
     };
-};
+}
