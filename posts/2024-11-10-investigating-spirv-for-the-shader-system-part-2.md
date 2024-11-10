@@ -225,10 +225,10 @@ According to the specification, instructions are made out of words/integers, the
 
 Instructions would be represented as slices of this buffer and to access those instructions we would need to iterate through this buffer.
 
-So let's code!
+IT'S CODING TIME!
+
 
 ![onfire](/images/blog/2024-11-10-spirv2/thumbnail_Youness2.png)
-
 
 ```csharp
 public class SpirvBuffer : IDisposable
@@ -308,3 +308,5 @@ But that's for another blog post, so much happened since last year and this blog
 ## Conclusions
 
 Writing this SPIR-V library was very fun, I've learned a lot about SPIR-V and some of the possible use cases for it in the context of Stride. As you might have imagined, this was the easy part of this shader system rewrite. In the next installement we'll see the little adventure I went through to make the most of our shader system!
+
+NB : The code should be available in the [SDSL repository of Stride](https://github.com/stride3D/SDSL). Hopefully it'll be merged in the stride repository itself in the future!
