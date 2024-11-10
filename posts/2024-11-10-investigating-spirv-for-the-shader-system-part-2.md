@@ -17,6 +17,28 @@ This second part is going to dive deeper in how the current SDSL compiler works 
         font-style : italic;
         opacity: 0.75;
     }
+    img[alt=thinking] {
+        max-width: 24rem;
+        max-height: 24rem;
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img[alt=creeping] {
+        max-width: 24rem;
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img[alt=onfire] {
+        max-width: 24rem;
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>
 
 Table of Contents:
@@ -32,6 +54,8 @@ Rewriting the shader system is a complicated tasks in itself. As you may already
 Fortunately we still have some of the original team members helping and answering questions, and the source code is well written and easy to understand, this has helped a lot of contributors to be able to fix issues quite fast.
 
 As for me, I started this project with no prior knowledge on how compiler works and a very faint idea on how shader works. I've learned some things and trying my best, so if you have any ideas, improvements and criticism, I'll be happy to discuss it on our Discord server or in a Github discussion! 😊
+
+Also credit to Felicia Salomone/[@phaelicis](https://www.instagram.com/phaelicis/) for the art!
 
 ## How it works currently
 
@@ -142,7 +166,10 @@ Okay great, what about the goals for it :
 
 </blockquote>
 
-WAIT! What if... we could extend the spec...🤔🤔🤔
+WAIT! What if... we could extend the spec...
+
+![thinking](/images/blog/2024-11-10-spirv2/thumbnail_Youness3.png)
+
 
 <blockquote class="stride-quote">
 
@@ -184,6 +211,8 @@ Another one was the Nintendo Switch emulator Ryujinx, written in C#, it can gene
 
 I decided to start from this Ryujinx code and made a little proof of concept by writing a little tool that takes the output of Stride's parser and convert it into shader modules. It only supported a very tiny subset of SDSL but it was enough to prove the compiler can be made, and to remind me that I do not know SDSL nor SPIR-V that well, and the Ryujinx code was not exactly suited for Stride. But then, the most intrusive thought a dev can have just creeped in my mind...
 
+![creeping](/images/blog/2024-11-10-spirv2/thumbnail_Youness1.png)
+
 ### "I should rewrite it from scratch..."
 
 And make sure it fits our needs, the constraints i've listed in the previous section. The Ryujinx code at the time would do a lot of needless allocation as instructions were represented by classes in a list, something we could have changed by just representing instructions by a struct stored in a list/buffer of integers, these buffers could be rented from a pool etc.
@@ -195,6 +224,11 @@ As I went through the code, I started drawing ideas on how to improve things her
 According to the specification, instructions are made out of words/integers, they have a variable size and the size of the instruction is written in the high 16 bits of the first word.
 
 Instructions would be represented as slices of this buffer and to access those instructions we would need to iterate through this buffer.
+
+So let's code!
+
+![onfire](/images/blog/2024-11-10-spirv2/thumbnail_Youness2.png)
+
 
 ```csharp
 public class SpirvBuffer : IDisposable
