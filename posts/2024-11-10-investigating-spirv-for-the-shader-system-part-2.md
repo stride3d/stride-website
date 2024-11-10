@@ -9,21 +9,31 @@ This second part is going to dive deeper in how the current SDSL compiler works 
 
 ---
 
+<style>
+    .stride-quote {
+        padding : 1rem;
+        border-radius : 0.25rem;
+        border-left : 0.25rem solid lightgray;
+        font-style : italic;
+        opacity: 0.75;
+    }
+</style>
+
 Table of Contents:
 
 [[TOC]]
 
-In the last blog post we've briefly went through the why SPIR-V was an interesting shader format for our new shader compiler. After a year of research on this subject we're coming back with ideas and implementations !
+[In the last blog](/blog/investigating-spirv-for-the-shader-system/) post we've briefly went through the why SPIR-V was an interesting shader format for our new shader compiler. After a year of research on this subject we're coming back with ideas and implementations!
 
-### Preface
+## Preface
 
 Rewriting the shader system is a complicated tasks in itself. As you may already know, Stride was initially a commercial product that was open sourced not long ago, and some of the original devs left. This has led to a difficulty to gather information on the inner working of the engine.
 
 Fortunately we still have some of the original team members helping and answering questions, and the source code is well written and easy to understand, this has helped a lot of contributors to be able to fix issues quite fast.
 
-As for me, I started this project with no prior knowledge on how compiler works and a very faint idea on how shader works. I've learned some things and trying my best, so if you have any ideas, improvements and criticism, I'll be happy to discuss it on our Discord server or in a Github discussion :D
+As for me, I started this project with no prior knowledge on how compiler works and a very faint idea on how shader works. I've learned some things and trying my best, so if you have any ideas, improvements and criticism, I'll be happy to discuss it on our Discord server or in a Github discussion! 😊
 
-### How it works currently
+## How it works currently
 
 There are two components to SDSL :
 
@@ -82,7 +92,7 @@ shader MixinC : MixinA, MixinB
 }
 ```
 
-This system makes it surprisingly easy to add shaders to material parts, say you want to add a shader to compute the emissive component of a material, just create a `CustomAwesomeEmissiveMixin`, inherit `Texturing, ComputeColor`, implement the `float4 ComputeColor()` method and *woopdeedoo* Stride will automatically generate a new permutation of our material shader by adding in the emissive mixin!
+This system makes it surprisingly easy to add shaders to material parts, say you want to add a shader to compute the emissive component of a material, just create a `CustomAwesomeEmissiveMixin`, inherit `Texturing, ComputeColor`, implement the `float4 ComputeColor()` method and 🪄*woopdeedoo*🪄 Stride will automatically generate a new permutation of our material shader by adding in the emissive mixin!
 
 The way it's implemented is exactly what you would expect :
 
@@ -93,22 +103,28 @@ The way it's implemented is exactly what you would expect :
 But this has some issues regarding performance :
 
 * Mixing tree structures together to generate new permutations involves a lot of deep cloning/defensive copies.
-* Reading text is slower than binary information
-* The garbage collector is going to be stressed and have some hiccups here and there
+* Reading text is slower than binary data
+* The garbage collector is going to be stressed and have some stutters here and there
 
 It's important to note that these issues are only about shader permutation generation so far.
 
-### The idea for SPIR-V
+## The idea for SPIR-V
 
-Dealing with tree structure is very rarely the fastest option, especially with programming languages with managed memory. So let's be very pragmatical about it and just decide to cut off the system from the tree processing part, we're left with just a parser that result in an AST.
+Dealing with tree structure is very rarely the fastest option, especially with programming languages with managed memory. So let's be very pragmatical about it and just decide to cut off the tree processing part, we're left with just a parser that result in an AST. We then need to find a way to generate SPIR-V from this AST.
 
-Also what is SPIR-V ? Would it really help ?
+What is SPIR-V? How could it help? 🤔
 
 Let's check the official specification as of today, to understand what it is :
 
-> SPIR-V is a simple binary intermediate language for graphical shaders and compute kernels. A SPIR-V module contains multiple entry points with potentially shared functions in the entry point’s call trees. Each function contains a control-flow graph (CFG) of basic blocks, with optional instructions to express structured control flow. Load/store instructions are used to access declared variables, which includes all input/output (IO). Intermediate results bypassing load/store use static single-assignment (SSA) representation. Data objects are represented logically, with hierarchical type information: There is no flattening of aggregates or assignment to physical register banks, etc. Selectable addressing models establish whether general pointer operations may be used, or if memory access is purely logical.
+<blockquote class="stride-quote">
+
+SPIR-V is a simple binary intermediate language for graphical shaders and compute kernels. A SPIR-V module contains multiple entry points with potentially shared functions in the entry point’s call trees. Each function contains a control-flow graph (CFG) of basic blocks, with optional instructions to express structured control flow. Load/store instructions are used to access declared variables, which includes all input/output (IO). Intermediate results bypassing load/store use static single-assignment (SSA) representation. Data objects are represented logically, with hierarchical type information: There is no flattening of aggregates or assignment to physical register banks, etc. Selectable addressing models establish whether general pointer operations may be used, or if memory access is purely logical.
+
+</blockquote>
 
 Okay great, what about the goals for it :
+
+<blockquote class="stride-quote">
 
 > SPIR-V has the following goals:
 >
@@ -124,7 +140,11 @@ Okay great, what about the goals for it :
 > * Reduce compile time during application run time. (Eliminating most of the compile time during application run time is not a goal of this intermediate language. Target-specific register allocation and scheduling are still expected to take significant time.)
 > * Allow some optimizations to be done offline.
 
-WAIT! What if... we could extend the spec..
+</blockquote>
+
+WAIT! What if... we could extend the spec...🤔🤔🤔
+
+<blockquote class="stride-quote">
 
 > SPIR-V can be extended by multiple vendors or parties simultaneously:
 >
@@ -132,19 +152,21 @@ WAIT! What if... we could extend the spec..
 > * Reserving (registering) ranges of the token values, as described further below.
 > * Aided by instruction skipping, also further described below.
 
-WOW! Now we're cooking!
+</blockquote class="stride-quote">
+
+WOW! Now we're cooking! 🍽️
 
 Here's the main idea :
 
-1. We extend the SPIR-V specification with our own instructions telling Stride how to mix SPIR-V files
+1. We extend the SPIR-V specification with our own instruction set, telling Stride how to mix SPIR-V files together
 2. We produce partial SPIR-V bytecode for those mixins, since mixins only contain partial code
 3. We mix-in together those partial SPIR-V files at runtime, or offline
 
-Using SPIR-V is not going to be any faster than using GLSL or HLSL, those languages already have very performant compilers, but for us, it would make a huge difference. The tree structure manipulation we have is suboptimal and .NET is faster at manipulating buffers anyway, but using SPIR-V would allow us to potentially make all shader front-end processing offline, we would effectively skip the whole front-end written in C# at runtime, huge win for us. Now we just need an ...
+Using SPIR-V is not going to be any faster than using GLSL or HLSL, those languages already have very performant compilers, but for SDSL, it would make a huge difference. The tree structure manipulation we have is suboptimal and .NET is faster at manipulating buffers anyway, but using SPIR-V would make sure we process only binary buffers and allow us to potentially make all shader front-end processing offline, we would effectively skip the whole front-end written in C# at runtime, huge win for us. Now we just need an...
 
-### Implementation
+## Implementation
 
-#### The easy way
+### The easy way
 
 The first instinct I had was to lookup for some libraries to generate SPIR-V bytecode with some constraints :
 
@@ -158,17 +180,17 @@ Searching through the web there are many ways to go about it. The first one I've
 
 Shaderc and SPIR-V Tools have some SPIR-V generation capabilities to some degrees but from C# it would be hard to extend the SPIR-V definition. It has great support nonetheless, and our friends over at Silk.NET have some bindings for these tools.
 
-Another one was the Nintendo Switch emulator Ryujinx, written in C#,  it can generate SPIR-V on the fly to translate/compile the console's shaders. They have generated C# code based on the SPIR-V headers and specification and are using it to assemble some SPIR-V modules.
+Another one was the Nintendo Switch emulator Ryujinx, written in C#, it can generate SPIR-V on the fly to translate/compile the console's shaders. They have generated C# code based on the SPIR-V headers and specification and are using it to assemble some SPIR-V modules.
 
 I decided to start from this Ryujinx code and made a little proof of concept by writing a little tool that takes the output of Stride's parser and convert it into shader modules. It only supported a very tiny subset of SDSL but it was enough to prove the compiler can be made, and to remind me that I do not know SDSL nor SPIR-V that well, and the Ryujinx code was not exactly suited for Stride. But then, the most intrusive thought a dev can have just creeped in my mind...
 
-#### "I should rewrite it from scratch..."
+### "I should rewrite it from scratch..."
 
 And make sure it fits our needs, the constraints i've listed in the previous section. The Ryujinx code at the time would do a lot of needless allocation as instructions were represented by classes in a list, something we could have changed by just representing instructions by a struct stored in a list/buffer of integers, these buffers could be rented from a pool etc.
 
 As I went through the code, I started drawing ideas on how to improve things here and there and little by little the Stride SPIR-V took shape.
 
-#### Buffers and instructions
+### Buffers and instructions
 
 According to the specification, instructions are made out of words/integers, they have a variable size and the size of the instruction is written in the high 16 bits of the first word.
 
@@ -203,7 +225,7 @@ According to the specification, instructions can have a variable number of opera
 
 And with just that, we can parse SPIR-V and even write our own SPIR-V disassembly tool!
 
-#### Generation
+### Generation
 
 Now that we can load SPIR-V and parse it, the next step is to be able to write instructions. Fortunately for us, the SPIR-V headers repository provide a C# file containing all the enums and constants needed for instructions operands and some JSON files describing instructions and their operands as well as if the operands are optional or have to be passed as an array of values. With a few more, we can generate methods to add or insert instruction in a buffer!
 
@@ -233,20 +255,22 @@ public static Instruction AddOpFAdd(this SpirvBuffer, IdResultType resultType, I
 
 After going through the core and the glsl grammar, we end up with a library that can both parse and assembler SPIR-V.
 
-#### Extending SPIR-V
+### Extending SPIR-V
 
 This one was the easiest step, everything was already there, we just need an additional JSON grammar file specially made for SDSL and the generator will give us the necessary code to add those instruction, there's really nothing else to it!
 
 What was left is creating a little tool that can read those extensions and pre-process many SPIR-V together to generate a valid SPIR-V module that can be consumed by Vulkan, OpenGL, WGPU and soon DirectX 12. I have made a prototype that works quite well but can be improved in the future, it's not a complicated task, it just takes time and efforts.
 
-Finally we can make sure we can generate SPIR-V mixins from the AST generated by the current Stride shader system. This should be easy, right ? RIGHT ?
+Finally we can make sure we can generate SPIR-V mixins from the AST generated by the current Stride shader system. This should be easy, right? RIGHT?
 
-### The Irony
+## The Irony
 
 The current shader parser was made for the specific use case of mixin abstract trees. Modifying the code would be a huge endeavor as would have to dive into what's existing and try my best to understand what i can change without breaking anything, worse than that, the parser was written with Irony, a very good C# library to help anyone parse things in an LALR fashion, but with a lacking documentation and, in my personal opinion, has an "easy to write hard to read" kind of API.
 
-But then... the most intrusive thought a dev can have just creeped in my mind... AGAIN !!! But that's for another blog post, so much happened since last year :D
+I started working on updating the abstract syntax tree types as well as the parser, it was becoming painful by the minute, and then... the most intrusive thought a dev can have just creeped in my mind... AGAIN!!!
 
-### Conclusions
+But that's for another blog post, so much happened since last year and this blog pose is getting long. 😀
+
+## Conclusions
 
 Writing this SPIR-V library was very fun, I've learned a lot about SPIR-V and some of the possible use cases for it in the context of Stride. As you might have imagined, this was the easy part of this shader system rewrite. In the next installement we'll see the little adventure I went through to make the most of our shader system!
