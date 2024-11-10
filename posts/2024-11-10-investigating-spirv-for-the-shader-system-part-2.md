@@ -45,15 +45,15 @@ Table of Contents:
 
 [[TOC]]
 
-[In the last blog](/blog/investigating-spirv-for-the-shader-system/) post we've briefly went through the why SPIR-V was an interesting shader format for our new shader compiler. After a year of research on this subject we're coming back with ideas and implementations!
+[In the last blog post](/blog/investigating-spirv-for-the-shader-system/), we've briefly went through the why SPIR-V was an interesting shader format for our new shader compiler. After a year of research on this subject we're coming back with ideas and implementations!
 
 ## Preface
 
-Rewriting the shader system is a complicated tasks in itself. As you may already know, Stride was initially a commercial product that was open sourced not long ago, and some of the original devs left. This has led to a difficulty to gather information on the inner working of the engine.
+Rewriting the shader system is a complicated task in itself. As you may already know, Stride was initially a commercial product that was open-sourced not long ago, and some of the original devs left. This has led to a difficulty to gather information on the inner working of the engine.
 
 Fortunately we still have some of the original team members helping and answering questions, and the source code is well written and easy to understand, this has helped a lot of contributors to be able to fix issues quite fast.
 
-As for me, I started this project with no prior knowledge on how compiler works and a very faint idea on how shader works. I've learned some things and trying my best, so if you have any ideas, improvements and criticism, I'll be happy to discuss it on our Discord server or in a Github discussion! 😊
+As for me, I started this project with no prior knowledge of how compiler works and a very faint idea of how shaders works. I've learned some things and am trying my best, so if you have any ideas, improvements and criticism, I'll be happy to discuss it on our Discord server or in a GitHub discussion! 😊
 
 Also credit to Felicia Salomone/[@phaelicis](https://www.instagram.com/phaelicis/) for the art!
 
@@ -209,7 +209,7 @@ Shaderc and SPIR-V Tools have some SPIR-V generation capabilities to some degree
 
 Another one was the Nintendo Switch emulator Ryujinx, written in C#, it can generate SPIR-V on the fly to translate/compile the console's shaders. They have generated C# code based on the SPIR-V headers and specification and are using it to assemble some SPIR-V modules.
 
-I decided to start from this Ryujinx code and made a little proof of concept by writing a little tool that takes the output of Stride's parser and convert it into shader modules. It only supported a very tiny subset of SDSL but it was enough to prove the compiler can be made, and to remind me that I do not know SDSL nor SPIR-V that well, and the Ryujinx code was not exactly suited for Stride. But then, the most intrusive thought a dev can have just creeped in my mind...
+I decided to start from this Ryujinx code and made a little proof of concept by writing a little tool that takes the output of Stride's parser and convert it into shader modules. It only supported a very tiny subset of SDSL but it was enough to prove the compiler can be made, and to remind me that I do not know SDSL nor SPIR-V that well, and the Ryujinx code was not exactly suited for Stride. But then, the most intrusive thought a dev can have just crept in my mind...
 
 ![creeping](/images/blog/2024-11-10-spirv2/thumbnail_Youness1.png)
 
@@ -231,27 +231,39 @@ IT'S CODING TIME!
 ![onfire](/images/blog/2024-11-10-spirv2/thumbnail_Youness2.png)
 
 ```csharp
-public class SpirvBuffer : IDisposable
-{
-    public MemoryOwner<int> Words { get; }
-  
-    public ref struct Enumerator(SpirvBuffer buffer)
-    {
-  	int position = 0;
-	public RefInstruction Current => new(buffer.Words.Span[position..(position + buffer.Words.Span[position] >> 16)]);
 
-	public bool MoveNext()
-	{
-	    position += buffer.Words.Span[position] >> 16 < buffer.Words.Length;
-	    return position < buffer.Words.Length;
-	}
-    }
-}
-
+// A RefInstruction will hold a Span and some cool methods and tools to extract information from this instruction. 
+// We could also create an Instruction struct containing a Memory<int> and doing the same...
 public ref struct RefInstruction(Span<int> words)
 {
     public Span<int> Words { get; } = words;
     // ...
+}
+
+// A buffer class to represent our SPIR-V buffer, disposable because we're using MemoryOwner from the high performance community toolkit
+public class SpirvBuffer : IDisposable
+{
+    // This will represent words and we'll extract instructions from it by taking Span<int> slices
+    public MemoryOwner<int> Words { get; }
+  
+    public Enumerator GetEnumerator() => new(this);
+
+    // An enumerator for our instructions
+    public ref struct Enumerator(SpirvBuffer buffer)
+    {
+  	    int position = 0;
+        // We're just creating a RefInstruction which wraps a Span<int> to help us process the slice of words
+	    public RefInstruction Current => new(buffer.Words.Span[position..(position + buffer.Words.Span[position] >> 16)]);
+
+        public bool MoveNext()
+        {
+            // A simple advance, we read the size in the high bits, and just skip words based on this size.
+            position += buffer.Words.Span[position] >> 16 < buffer.Words.Length;
+            return position < buffer.Words.Length;
+        }
+    }
+
+    public void Dispose() => Words.Dispose();
 }
 ```
 
@@ -299,14 +311,14 @@ Finally we can make sure we can generate SPIR-V mixins from the AST generated by
 
 ## The Irony
 
-The current shader parser was made for the specific use case of mixin abstract trees. Modifying the code would be a huge endeavor as would have to dive into what's existing and try my best to understand what i can change without breaking anything, worse than that, the parser was written with Irony, a very good C# library to help anyone parse things in an LALR fashion, but with a lacking documentation and, in my personal opinion, has an "easy to write hard to read" kind of API.
+The current shader parser was made for the specific use case of mixin abstract trees. Modifying the code would be a huge endeavor as I would have to dive into what's existing and try my best to understand what i can change without breaking anything, worse than that, the parser was written with Irony, a very good C# library to help anyone parse things in an LALR fashion, but with a lacking documentation and, in my personal opinion, has an "easy to write, hard to read" kind of API.
 
 I started working on updating the abstract syntax tree types as well as the parser, it was becoming painful by the minute, and then... the most intrusive thought a dev can have just creeped in my mind... AGAIN!!!
 
-But that's for another blog post, so much happened since last year and this blog pose is getting long. 😀
+But that's for another blog post, so much happened since last year and this blog post is getting long. 😀
 
 ## Conclusions
 
-Writing this SPIR-V library was very fun, I've learned a lot about SPIR-V and some of the possible use cases for it in the context of Stride. As you might have imagined, this was the easy part of this shader system rewrite. In the next installement we'll see the little adventure I went through to make the most of our shader system!
+Writing this SPIR-V library was very fun, I've learned a lot about SPIR-V and some of the possible use cases for it in the context of Stride. As you might have imagined, this was the easy part of this shader system rewrite. In the next installment we'll see the little adventure I went through to make the most of our shader system!
 
-NB : The code should be available in the [SDSL repository of Stride](https://github.com/stride3D/SDSL). Hopefully it'll be merged in the stride repository itself in the future!
+NB: The code should be available in the [SDSL repository of Stride](https://github.com/stride3D/SDSL). Hopefully it'll be merged in the Stride repository itself in the future!
