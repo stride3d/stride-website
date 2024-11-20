@@ -18,7 +18,7 @@ In this second part we're going to dive deeper in how the current SDSL compiler 
         opacity: 0.75;
     }
     img[alt=thinking] {
-        max-width: 24rem;
+        max-width: 50dvw;
         max-height: 24rem;
         display: block;
         float: none;
@@ -26,22 +26,23 @@ In this second part we're going to dive deeper in how the current SDSL compiler 
         margin-right: auto;
     }
     img[alt=creeping] {
-        max-width: 24rem;
+        max-width: 50dvw;
         display: block;
         float: none;
         margin-left: auto;
         margin-right: auto;
     }
     img[alt=creeping2] {
-        max-width: 12rem;
+        max-width: 50dvw;
+        max-height: 12rem;
         display: block;
         float: none;
         margin-left: auto;
         margin-right: auto;
-        opacity : 60%;
+        opacity : 50%;
     }
     img[alt=onfire] {
-        max-width: 24rem;
+        max-width: 50dvw;
         display: block;
         float: none;
         margin-left: auto;
@@ -245,7 +246,6 @@ IT'S CODING TIME!
 ![onfire](/images/blog/2024-11-10-spirv2/thumbnail_Youness2.png)
 
 ```csharp
-
 // A RefInstruction will hold a Span and some cool methods and tools to extract information from this instruction. 
 // We could also create an Instruction struct containing a Memory<int> and doing the same...
 public ref struct RefInstruction(Span<int> words)
