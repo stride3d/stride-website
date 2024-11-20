@@ -8,6 +8,8 @@ tags: ['.NET', 'Shaders']
 
 In this first part of a new series of blog posts, we will learn more about Stride's shader system, its limitations and how to make it better thanks to a very useful shader language called SPIR-V. This will be the first step in implementing a new and better shader system.
 
+Don't forget to checkout [part 2](/blog/investigating-spirv-for-the-shader-system-part-2/)!
+
 ---
 
 Table of Contents:
