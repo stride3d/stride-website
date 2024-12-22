@@ -20,8 +20,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
   },
   "dependencies": {
-    "@11ty/eleventy-fetch": "^4.0.1",
-    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@11ty/eleventy-fetch": "^5.0.1",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "bootstrap": "^5.3.3",
     "lunr": "^2.3.9",
     "markdown-it-anchor": "^9.2.0",
