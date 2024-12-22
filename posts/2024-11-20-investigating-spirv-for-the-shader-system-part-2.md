@@ -18,30 +18,24 @@ In this second part we're going to dive deeper in how the current SDSL compiler 
         opacity: 0.75;
     }
     img[alt=thinking] {
-        max-width: 24rem;
+        max-width: 50dvw;
         max-height: 24rem;
         display: block;
         float: none;
         margin-left: auto;
         margin-right: auto;
     }
-    img[alt=creeping] {
-        max-width: 24rem;
-        display: block;
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
     img[alt=creeping2] {
-        max-width: 12rem;
+        max-width: 50dvw;
+        max-height: 12rem;
         display: block;
         float: none;
         margin-left: auto;
         margin-right: auto;
-        opacity : 60%;
+        opacity : 50%;
     }
     img[alt=onfire] {
-        max-width: 24rem;
+        max-width: 50dvw;
         display: block;
         float: none;
         margin-left: auto;
@@ -222,7 +216,7 @@ Another one was the Nintendo Switch emulator Ryujinx, written in C#, it can gene
 
 I decided to start from this Ryujinx code and made a little proof of concept by writing a little tool that takes the output of Stride's parser and convert it into shader modules. It only supported a very tiny subset of SDSL but it was enough to prove the compiler can be made, and to remind me that I do not know SDSL nor SPIR-V that well, and the Ryujinx code was not exactly suited for Stride. But then, the most intrusive thought a dev can have just crept in my mind...
 
-![creeping](/images/blog/2024-11-10-spirv2/thumbnail_Youness1.png)
+{% img 'creeping' '/images/blog/2024-11-10-spirv2/thumbnail_Youness1.png' %}
 
 ### "I should rewrite it from scratch..."
 
@@ -245,7 +239,6 @@ IT'S CODING TIME!
 ![onfire](/images/blog/2024-11-10-spirv2/thumbnail_Youness2.png)
 
 ```csharp
-
 // A RefInstruction will hold a Span and some cool methods and tools to extract information from this instruction. 
 // We could also create an Instruction struct containing a Memory<int> and doing the same...
 public ref struct RefInstruction(Span<int> words)
@@ -265,9 +258,9 @@ public class SpirvBuffer : IDisposable
     // An enumerator for our instructions
     public ref struct Enumerator(SpirvBuffer buffer)
     {
-  	    int position = 0;
+        int position = 0;
 
-	    public RefInstruction Current => new(buffer.Words.Span.Slice(position, buffer.Words.Span[position] >> 16));
+        public RefInstruction Current => new(buffer.Words.Span.Slice(position, buffer.Words.Span[position] >> 16));
 
         public bool MoveNext()
         {
