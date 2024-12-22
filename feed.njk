@@ -12,8 +12,8 @@
     <link>{{ site.url }}</link>
     <link>{{ permalink | absoluteUrl(site.url) }}</link>
     <atom:link href="{{ permalink | absoluteUrl(site.url) }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ collections.blog | getNewestCollectionItemDate | dateToRfc822 }}</pubDate>
-    <lastBuildDate>{{ collections.blog | getNewestCollectionItemDate | dateToRfc822 }}</lastBuildDate>
+    <pubDate>{{ collections.blog | getNewestCollectionItemDate | customDateToRfc822 }}</pubDate>
+    <lastBuildDate>{{ collections.blog | getNewestCollectionItemDate | customDateToRfc822 }}</lastBuildDate>
     <generator>{{ site.engine }}</generator>
     {%- for post in collections.blog | reverse %}
     {%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}
@@ -21,7 +21,7 @@
     <item>
       <title>{{ post.data.title | escape  }}</title>
       <description>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</description>
-      <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <pubDate>{{ post.date | customDateToRfc822 }}</pubDate>
       <link>{{ absolutePostUrl }}</link>
       <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
       {%- if post.data.image_thumb -%}
