@@ -9,6 +9,7 @@ import markdownItAnchor from 'markdown-it-anchor'
 import markdownItToc from 'markdown-it-table-of-contents'
 import pluginRss from '@11ty/eleventy-plugin-rss'
 import eleventyFetch from '@11ty/eleventy-fetch'
+import { DateTime } from 'luxon';
 
 export default function (eleventyConfig) {
 
@@ -105,9 +106,15 @@ export default function (eleventyConfig) {
         return text;
     });
 
-    // Add custome filters
     eleventyConfig.addFilter("md", function (content = "") {
         return markdownIt({ html: true }).render(content);
+    });
+
+    eleventyConfig.addFilter("customDateToRfc822", (dateObj) => {
+        const dt = DateTime.fromJSDate(dateObj, { zone: 'utc' });
+        const formattedDate = dt.toFormat("EEE, dd MMM yyyy HH:mm:ss");
+        const offset = dt.toFormat("ZZ").replace(":", "");
+        return `${formattedDate} ${offset}`;
     });
 
     eleventyConfig.addShortcode("img", function (title, url) {
