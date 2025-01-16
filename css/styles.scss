@@ -288,4 +288,70 @@ svg path.logo-path {
     background-size: 50px 50px;
 }
 
+
+// Platform support component
+
+.full-bleed {
+    display: flex;
+    flex-direction: column;
+    background-color: #24292e;
+    border-bottom: solid 12px #49535c;
+    overflow-x: scroll;
+    padding: 60px;
+
+    .grid {
+        display: grid; 
+        grid-template-columns: repeat(6, 1fr);
+        min-width: 970px;
+
+        .main {
+            padding: 15px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px; 
+            border-bottom: solid 3px rgba(255, 0, 0, 0.438);
+            font-size: 1.2rem;
+            color: #abb9c5;
+            
+            &:first-child {
+                border: none;
+            }
+        }        
+
+        .main.center {
+            text-align: center;
+        }
+
+        .secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .secondary.check {
+            > i {
+                color: rgb(89, 218, 164);
+            }
+        }
+
+        .secondary.xmark {
+            > i {
+                color: rgb(196, 63, 63);
+            }
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        overflow-x: hidden;
+        padding: 60px 120px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        padding: 60px 200px;
+    }
+
+    @media screen and (min-width: 1920px) {
+        padding: 60px 240px;
+    }
+}
+
 @import "syntax-highlighting";
