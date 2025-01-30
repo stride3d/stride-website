@@ -1,0 +1,49 @@
+<div class="card mt-5">
+    <div class="oc-sponsors-container">
+        <div class="tier-container">
+            <div class="tier-item gold">GOLD STRIDERS</div>
+            <div class="tier-item"> 
+                {% for sponsor in gold_sponsors %}
+                    <div class="img-container">
+                        {% if sponsor.image %}
+                            <img src={{sponsor.image}} alt={{sponsor.name}} class="gold"/>
+                        {% else %}
+                            <img src="/images/svg/logo.svg" alt={{sponsor.name}} class="gold"/>
+                        {%endif%}
+                        <div>{{sponsor.name}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="tier-container">
+            <div class="tier-item silver">SILVER STRIDERS</div>
+            <div class="tier-item"> 
+                {% for sponsor in silver_sponsors %}
+                    <div class="img-container">
+                        {% if sponsor.image %}
+                            <img src={{sponsor.image}} alt={{sponsor.name}} class="silver"/>
+                        {% else %}
+                            <img src="/images/svg/logo.svg" alt={{sponsor.name}} class="silver"/>
+                        {%endif%}
+                        <div>{{sponsor.name}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="tier-container">
+            <div class="tier-item bronze">BRONZE STRIDERS</div>
+            <div class="tier-item"> 
+                {% for sponsor in bronze_sponsors %}
+                    <div class="img-container">
+                        {% if sponsor.image %}
+                        <img src={{sponsor.image}} alt={{sponsor.name}} class="bronze"/>
+                        {% else %}
+                            <img src="/images/svg/logo.svg" alt={{sponsor.name}} class="bronze"/>
+                        {%endif%}
+                        <div>{{sponsor.name}}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

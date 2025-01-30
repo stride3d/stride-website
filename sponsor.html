@@ -61,24 +61,9 @@ banner:
     {% include sponsor-generic.html %}
 </div>
 {% comment %} The styling is difficult as those widgets are not responsive. We can fix in the future by fetching json and display what we want and how we want. {% endcomment %}
-<div class="card mt-5">
-    <div class="card-body p-4">
-        <div class="row mb-3 mt-4">
-            <div class="col-md-4">
-                <h2 class="text-center">Gold Striders</h2>
-                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/gold-strider.svg?avatarHeight=40&button=false&width=290"></object>
-            </div>
-            <div class="col-md-4">
-                <h2 class="text-center">Silver Striders</h2>
-                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/silver-strider.svg?avatarHeight=40&button=false&width=290"></object>
-            </div>
-            <div class="col-md-4">
-                <h2 class="text-center">Bronze Striders</h2>
-                <object type="image/svg+xml" data="https://opencollective.com/stride3d/tiers/bronze-strider.svg?avatarHeight=40&button=false&width=290"></object>
-            </div>
-        </div>
-    </div>
-</div>
+
+{% include oc_sponsors.njk %}
+
 <div class="card mt-5">
     <div class="card-body p-4">
         <div class="row">

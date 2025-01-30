@@ -1,5 +1,6 @@
 @import "custom-bootstrap";
 @import "/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --main-shadow: 2px 2px 8px #0000001a;
@@ -286,6 +287,77 @@ svg path.logo-path {
     position: relative;
     background: url(../images/top/svg/dot.svg) repeat 0 0 rgba(0, 0, 0, 0.3);
     background-size: 50px 50px;
+}
+
+.oc-sponsors-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .tier-container {
+        display: flex;
+        flex-direction: column;
+        
+        @media screen and (min-width: 1280px) {
+            flex-direction: row;
+        }
+
+        .tier-item {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            font-family: "Kanit", serif;
+            font-weight: 900;
+            font-size: 46px;
+            letter-spacing: -2px;
+            padding: 40px 12px;
+            flex-wrap: wrap;
+        }
+
+        .tier-item.gold {             
+            background-color: rgb(221, 205, 62);
+        }
+
+        .tier-item.silver {
+            background-color: silver;
+        }
+        
+        .tier-item.bronze {
+            background-color: rgb(216, 156, 78);
+        }
+
+        .img-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            font-family: "Segoe UI";
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: normal;
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50px;
+                font-size: 14px;
+                box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+            }
+
+            img.gold {
+                border: solid 3px rgb(221, 205, 62);
+            }
+            img.silver {
+                border: solid 3px silver;
+            }
+            img.bronze {
+                border: solid 3px rgb(216, 156, 78);
+            }
+        }
+    }
 }
 
 @import "syntax-highlighting";
