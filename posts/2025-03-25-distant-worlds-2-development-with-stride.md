@@ -3,7 +3,7 @@ title: "A Look Inside Distant Worlds 2: Developing with the Stride Engine"
 author: vaclav
 popular: true
 image: /images/blog/2025/distant-worlds-image.webp
-tags: ['Game']
+tags: ['Game', 'Strategy', '4X']
 ---
 
 Distant Worlds 2, the sequel to the acclaimed 4X strategy game Distant Worlds: Universe, was developed by Code Force and published by Slitherine. In this blog post, the developers answer key questions from the Stride community, offering insights into their experience using the Stride engine to bring their ambitious galaxy-spanning strategy game to life.
@@ -11,22 +11,20 @@ Distant Worlds 2, the sequel to the acclaimed 4X strategy game Distant Worlds: U
 ---
 
 <div align="center">
-    {% img 'Distnat Worlds 2' '/images/blog/2025/distant-worlds-image-2.gif' %}
+    {% img 'Distnat Worlds 2 Intro Image' '/images/blog/2025/distant-worlds-2-intro-image.webp' %}
 </div>
 
 Table of Contents:
 
 [[TOC]]
 
-https://www.youtube.com/@SlitherineGames/videos
-
 ## Intro
 
 Our Stride community has been eager to learn more about the development of [Distant Worlds 2](https://store.steampowered.com/app/1531540/Distant_Worlds_2/). We reached out to the developers at Code Force to hear about their experience using the Stride engine to create this ambitious 4X strategy game.
 
-We're incredibly grateful to the team for their extraordinary generosity with their time and expertise. The depth and breadth of information they've shared, spanning everything from engine selection to performance optimization. Their willingness to provide such comprehensive insights is truly appreciated by the Stride community.
+We're incredibly grateful to the team for their generosity with both time and expertise. The depth and breadth of information they've shared, spanning everything from engine selection to performance optimization is impressive. Their willingness to provide such comprehensive insights is truly appreciated by the Stride community.
 
-Buckle up and enjoy the ride, as you're about to dive into a huge technical read and maybe learn something along the way!
+Buckle up and enjoy the ride, you're about to dive into a rich technical deep-dive and maybe learn something new along the way!
 
 ## Engine and General Development
 
@@ -98,6 +96,10 @@ We worked quite a bit on getting Stride to handle heavily multi-threaded scenari
 
 ## User Interface
 
+<div align="center">
+    {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-ui.webp' %}
+</div>
+
 #### Which library did you use for UI elements in Distant Worlds 2?
 
 We initially tried out the built-in user interface elements of Xenko. But for various reasons we decided to instead build our own user interface system.
@@ -134,6 +136,10 @@ We use some `SpriteBatch` helper classes to draw the lines and arrows between pr
  
 ## Artists and Asset Creation
 
+<div align="center">
+    {% img 'Distnat Worlds 2' '/images/blog/2025/distant-worlds-image-2.gif' %}
+</div>
+
 #### How did the artists find the asset creation process when working with Stride?
 
 **Elliot:** DW2 uses lots of ship and base models with all of their associated textures. We utilize all the standard material features like Diffuse maps, Normal maps, Metalness maps, Emissive maps, Ambient Occlusion and Gloss maps.
@@ -163,6 +169,11 @@ Early on, it took a bit of digging into the Stride code to figure out what we ne
 **Alex:** When it comes to challenges or limitations with shaders in Stride, I’d say we didn’t run into much. The default shaders were solid and covered all our project needs so far. We haven’t tried adding custom ones yet though. I did give it a shot once using an example shader but it didn’t go well. The editor crashed and I was left scratching my head. I might revisit it later and hope for better luck. From that one try, it felt like adding a custom shader would take way more effort than you’d expect. Maybe I missed something simple but I wish it was less frustrating to bring a custom one into the project.
 
 ## Level Design and Prefabs
+
+<div align="center">
+    {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-prefabs.webp' %}
+</div>
+
 
 #### How was the level creation process using Stride for your team?
 
@@ -245,7 +256,7 @@ The static source data for the game entities is mostly just XML files. Things li
 
 We have some internal tools for editing these files. And we also have auto-generated schema for most of these data types.
 
-For saving and loading games we use low-level binary serialization. So .Net BinaryReader and BinaryWriter with streams. This requires hand-coding all of the serialization, but has big payoffs in performance.
+For saving and loading games we use low-level binary serialization. So .NET `BinaryReader` and `BinaryWriter` with streams. This requires hand-coding all of the serialization, but has big payoffs in performance.
 
 This also allows easier version management as you add new data to the game. You can have conditional loading of new values based on game version.
 
@@ -261,7 +272,7 @@ Logic happens at 3 main levels:
 
 We try to make each entity have sufficient logic to carry out it’s normal tasks and to also be able to respond to unexpected events in a reasonably intelligent manner. So the units can be given missions from a faction-level AI or manually by the player, but they can also assign themselves missions that make sense for the current situation.
 
-This kind of logic forms the bulk of the code in the game. So this logic really *IS* Distant Worlds.
+This kind of logic forms the bulk of the code in the game. So this logic really **IS** Distant Worlds.
 
 In addition we have an extensive advisor system that can provide suggestions on what to do next. These advisors are deeply integrated with the faction- and unit-level logic. When you switch an area of the game to ‘advisor-mode’ then you will get periodic suggestions in that area that you can either approve or reject.
 
@@ -272,3 +283,35 @@ If you instead had the Colonization area fully-automated (no advisor suggestions
 You can fine-tune how each area of game logic works, even when it is fully-automated. These policy settings tweak precisely how the automated decisions are made, allowing you better control over things. This ‘intelligent automation’ is a key feature of Distant Worlds that allows it to scale very large while still being manageable for the player.
 
 The game logic (including the advisors) is constantly being developed and improved. With the very open game style of Distant Worlds, there are endless unexpected situations that can prove challenging for the game logic to handle. So we are always extending the game logic to handle new things.
+
+## Future Use and Recommendations
+
+#### What types of projects do you think the Stride engine is perfectly suited for?
+
+For us, the key strength of Stride is it’s deep integration with the .NET ecosystem, providing easy access to all of its tools and features. This has meant that we can build a standard .NET executable that simply uses Stride for rendering. That flexibility is great.
+
+#### Are you planning to use Stride in the future, beyond maintaining Distant Worlds 2?
+
+We currently have a development roadmap laid out for the next 12-18 months, with no end in sight after that. So Distant Worlds 2 will be keeping us busy for the foreseeable future 🙂. Stride will continue to be a core part of that work.
+
+#### How can the Stride engine be improved to help the modding community?
+
+Each game no doubt has its own unique requirements. But Distant Worlds modders mostly encounter Stride when packaging up assets to use in the game. This typically means creating a new Stride project that just contains static art assets (textures, models, etc). The goal is to generate a Stride bundle file that can then be loaded in the game.
+
+So any improvements to bundle creation and updating are always welcome.
+
+One small pain-point that still exists is renaming the bundle files.
+
+In Stride Game Studio, the normal build process generates the bundle with the name “default.bundle”. This is ok if you put all of your assets in a single project. But when your game gets bigger, that is not viable.
+
+In Distant Worlds we load many different bundles. The models for each faction are contained in their own bundle. We currently have 14 factions, so that means 14 different bundles. We also have other bundles for other parts of the game. Each of these bundles must have different names.
+
+There is currently no way to change the bundle name directly from within Game Studio (that I know of). Instead you have to hand-edit the YAML in the *.sdpkg files, changing the bundle name and adding the appropriate Selectors.
+
+That may sound fairly simple, but it can still be an extra hurdle for modders. Having bundle-renaming built into the Game Studio would make this much easier.
+
+## Links
+
+- Steam: https://store.steampowered.com/app/1531540/Distant_Worlds_2/
+- Forum: https://www.matrixgames.com/forums/viewforum.php?f=10151
+- YouTube: https://www.youtube.com/@SlitherineGames/videos
