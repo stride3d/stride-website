@@ -24,6 +24,8 @@ Our Stride community has been eager to learn more about the development of [Dist
 
 We're incredibly grateful to the team for their generosity with both time and expertise. The depth and breadth of information they've shared, spanning everything from engine selection to performance optimization is impressive. Their willingness to provide such comprehensive insights is truly appreciated by the Stride community.
 
+Some questions were answered by the team collectively, while others were addressed individually by team members: Elliot, the Lead Developer; Kevin, the Lead Artist; and Alex, the 3D Artist.
+
 Buckle up and enjoy the ride, you're about to dive into a rich technical deep-dive and maybe learn something new along the way!
 
 ## Engine and General Development
@@ -102,6 +104,10 @@ We worked quite a bit on getting Stride to handle heavily multi-threaded scenari
 
 #### Which library did you use for UI elements in Distant Worlds 2?
 
+##### What led you to choose the current UI solution over others?
+
+##### Were there any features you found lacking in Stride for UI, and how did you address these gaps?
+
 We initially tried out the built-in user interface elements of Xenko. But for various reasons we decided to instead build our own user interface system.
 
 So for UI rendering we took the `SpriteBatch` class and built some basic controls: buttons, panels, textboxes, etc.
@@ -117,14 +123,6 @@ I think this happens quite frequently in games, because they often have very uni
 For DW2 we also had a requirement that the user interface be completely scalable. This was a major weakness of DW1, where the UI was fixed-size. So in DW1, as screen resolution increased, all the text became smaller and harder to read.
 
 With DW2, building our own UI system allowed us to bake scaling into everything. So you can change UI scale in DW2 from the game settings and everything just automatically resizes and repositions, regardless of resolution.
-
-#### What led you to choose the current UI solution over others?
-
-See above.
-
-#### Were there any features you found lacking in Stride for UI, and how did you address these gaps?
-
-See above.
 
 #### How is the research screen (e.g., item order, dependencies) created? Are these elements procedurally generated, or are they manually crafted?
 
@@ -174,7 +172,6 @@ Early on, it took a bit of digging into the Stride code to figure out what we ne
     {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-prefabs.webp' %}
 </div>
 
-
 #### How was the level creation process using Stride for your team?
 
 DW2 doesn’t use levels in the normal sense. The galaxy is an open-world and is entirely procedurally generated. So we manage view changes and the transition between locations and scenes in code, adding and removing items as needed.
@@ -194,6 +191,10 @@ DW2 is probably not a typical game, so we only use the scene/entity system insid
 Stride Game Studio is really just an asset bundling tool for us.
 
 ## DLC and Content Expansion
+
+<div align="center">
+    {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-dlc.webp' %}
+</div>
 
 #### Could you briefly outline the steps involved in creating a DLC for Distant Worlds 2?
 
@@ -216,6 +217,11 @@ Additionally we also have animated characters for each new faction. These are im
 Each distribution platform has their own mechanism for this. So whether it’s Steam, GOG or something else, we use their inbuilt features to check this. Then we can load the appropriate bundle files with all of the models and textures for that DLC.
 
 ## Performance and Optimization
+
+<div align="center">
+    {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-map.webp' %}
+    <small>Source: Steam - Distant Worlds 2 - <a rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3421104197" target="_blank">Screenshots by Shrikebe</a></small>
+</div>
 
 #### The game achieves impressive performance, especially during large-scale fleet battles. How did you manage to optimize for several simultaneous battles, each with many ships and fighters?
 
@@ -312,6 +318,8 @@ That may sound fairly simple, but it can still be an extra hurdle for modders. H
 
 ## Links
 
-- Steam: https://store.steampowered.com/app/1531540/Distant_Worlds_2/
-- Forum: https://www.matrixgames.com/forums/viewforum.php?f=10151
-- YouTube: https://www.youtube.com/@SlitherineGames/videos
+- Steam: [Distant Worlds 2 on Steam](https://store.steampowered.com/app/1531540/Distant_Worlds_2/)
+- DW2 Forum: [Matrix Games Forum](https://www.matrixgames.com/forums/viewforum.php?f=10151)
+- YouTube: [Slitherine Games on YouTube](https://www.youtube.com/@SlitherineGames/videos)
+- GitHub Stride DW2 Discussion: [GitHub Discussions](https://github.com/stride3d/stride/discussions/2484) 
+- Kevin: You can find him on our [Stride Discord]({{ site.links.discord-url }}) server as @KevinC
