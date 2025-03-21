@@ -20,6 +20,14 @@ Table of Contents:
 
 https://www.youtube.com/@SlitherineGames/videos
 
+## Intro
+
+Our Stride community has been eager to learn more about the development of [Distant Worlds 2](https://store.steampowered.com/app/1531540/Distant_Worlds_2/). We reached out to the developers at Code Force to hear about their experience using the Stride engine to create this ambitious 4X strategy game.
+
+We're incredibly grateful to the team for their extraordinary generosity with their time and expertise. The depth and breadth of information they've shared, spanning everything from engine selection to performance optimization. Their willingness to provide such comprehensive insights is truly appreciated by the Stride community.
+
+Buckle up and enjoy the ride, as you're about to dive into a huge technical read and maybe learn something along the way!
+
 ## Engine and General Development
 
 #### Why did you choose Xenko/Stride over other alternatives for Distant Worlds 2?
@@ -136,5 +144,131 @@ So the artists use Stride Game Studio to simply bundle all the assets together b
 
 **Alex:** The workflow is a lot like Unity or Unreal. It’s pretty simple for making PBR 3D models. The material creation is flexible and easy to pick up if you know Unity. It feels smooth and straightforward overall. I found it quick to get started with and the tools don’t get in your way.
 
+#### What are their thoughts on the physically-based rendering (PBR) pipeline in Stride?
 
+**Elliot:** It’s very nice and produces great looking scenes. It’s pretty easy to understand.
 
+**Kevin:** Works great and again is easy to use. The only issue is there is a marked difference between my editing software (Substance Painter), Stride's asset preview, and in game. Though at least those last 2 items aren't the engine's fault.
+
+**Alex:** I’d say the artists thought it was pretty good. It works well and everything looks just fine in the game. There’s not much to add really. No problems to complain about that we know of. It just does the job nicely!
+
+#### Did you encounter any challenges or limitations with shaders, and how did you address them?
+
+**Elliot:** Initially we had to figure out how we were going to mix our custom procedural environment shaders with the Stride PBR material rendering. But once we had settled on our approach to this, most things were pretty smooth.
+
+Early on, it took a bit of digging into the Stride code to figure out what we needed to do with PipelineStates, EffectInstances and other items. We ended up much as described in the Stride documentation here: [Low-level API](https://doc.stride3d.net/latest/en/manual/graphics/low-level-api/index.html).
+
+**Kevin:** Plenty. Some of it was learning a new engine and some of it was a lack of certain features. A huge bonus for artists would be to be able to have a node-based editor for shader effects. Right now (at least on our current version) things like animated UVs has to be done manually.
+
+**Alex:** When it comes to challenges or limitations with shaders in Stride, I’d say we didn’t run into much. The default shaders were solid and covered all our project needs so far. We haven’t tried adding custom ones yet though. I did give it a shot once using an example shader but it didn’t go well. The editor crashed and I was left scratching my head. I might revisit it later and hope for better luck. From that one try, it felt like adding a custom shader would take way more effort than you’d expect. Maybe I missed something simple but I wish it was less frustrating to bring a custom one into the project.
+
+## Level Design and Prefabs
+
+#### How was the level creation process using Stride for your team?
+
+DW2 doesn’t use levels in the normal sense. The galaxy is an open-world and is entirely procedurally generated. So we manage view changes and the transition between locations and scenes in code, adding and removing items as needed.
+
+#### Was the Prefab system easy to use for level designers, and did it meet your expectations?
+
+We use Stride Prefabs mainly for particle effects. We instantiate particle effect Prefabs for various in-game effects, like weapons fire, hyperdrive effects, explosions, etc.
+
+These work well, allowing our effects artist to create things as he likes them, then package them together as a Prefab in Game Studio.
+
+In code we can then use these effects pretty easily, supplying their in-game world transform to scale and position them where they need to be.
+
+#### Did the component system in Stride prove to be intuitive for designers?
+
+DW2 is probably not a typical game, so we only use the scene/entity system inside the game code itself, dynamically creating and updating scenes as needed.
+
+Stride Game Studio is really just an asset bundling tool for us.
+
+## DLC and Content Expansion
+
+#### Could you briefly outline the steps involved in creating a DLC for Distant Worlds 2?
+
+DW2 DLCs typically involve adding one or more new alien factions into the game.
+
+Each faction has new game features unique to them. They likely also have their own unique government type, which also has new features. So there is a lot of code to support this.
+
+From the art side each new faction involves around 25-30 new ship and base models, each with their own full set of materials and textures.
+
+Ship models in DW2 are quite detailed, with individual meshes for various parts of the ship, e.g. engines, weapon mounts, hangar bays, sensor dishes, etc.
+
+So the models are created as super-sets with all of the meshes that might be used. Then the player can design their own ships using the in-game ship editor. As they add or remove components to the ship, the game enables or disables appropriate meshes.
+
+These models and textures are packaged together into faction-specific Stride bundle files inside Game Studio. We then load these bundles in-game for the new factions and can then show their ships and bases in scenes.
+
+Additionally we also have animated characters for each new faction. These are implemented as 2D texture atlases that are animated using Spine. In-game we can play appropriate mood-based animations for the characters.
+
+#### How do you detect whether a DLC is installed or not for a player?
+
+Each distribution platform has their own mechanism for this. So whether it’s Steam, GOG or something else, we use their inbuilt features to check this. Then we can load the appropriate bundle files with all of the models and textures for that DLC.
+
+## Performance and Optimization
+
+#### The game achieves impressive performance, especially during large-scale fleet battles. How did you manage to optimize for several simultaneous battles, each with many ships and fighters?
+
+Performance optimization has been an ongoing consideration throughout development. As we add new game features we periodically need to profile and improve performance in slow areas.
+
+Large galaxies can have a huge number of individual units and factions, all of which can have extensive logic that needs processing at some minimum level of frequency. We have test games that have more than 250,000 ships, fighters and bases. Individual locations/scenes might have over 3000 units in a single battle.
+
+Most of DWs performance demands are on the logic side, i.e. we are CPU-bound. So there have been 3 basic approaches we have used to improve logic performance:
+
+1. Improve specific algorithms, i.e. find faster ways of calculating something
+2. Cache the outputs of expensive operations as much as possible and only update them periodically
+3. Use multi-threading to parallelize processing across all CPU cores. This requires very good locking, especially when iterating lists. It also requires a lot of defensive coding to check for null references which would never occur in single-threaded situations.
+
+Rendering in DW2 does not generally encounter performance issues in the same way as the game logic does. However there are some optimizations:
+
+- In large scenes we may exclude drawing for small meshes in models as the view zooms out, thus reducing the total number of draw calls
+- We use instancing in a number of areas to handle elements with a high draw count, for example the stars in the galaxy view are drawn using instancing
+
+#### Are there any specific techniques or approaches you'd recommend for simulating large-scale scenarios like fleet battles?
+
+Early on we made the decision to optimize the way weapons are rendered to minimize draw calls. So all weapon blasts in a scene are drawn in a single draw call using a custom shader that handles all of the different textures and animations for all the various weapon types.
+
+The rendering is wrapped into a single vertex buffer with camera-facing billboards for each weapon blast. The shader determines what to draw using a number of texture arrays that allow various rendering features, e.g. flipbook animations, scrolling beams, etc.
+
+This places some definite constraints on what we can render. We can’t just go crazy with expensive particle effects. But it has huge benefits for performance.
+
+Weapon trails are handled in a similar way, where a single vertex buffer contains all of the trail particles, and is rendered with a single draw call per frame.
+ 
+## AI and Game Systems
+
+#### Did you require any kind of editor extensions? How did you implement them?
+
+Our use of the Stride Game Studio is really just as a tool to bundle assets into the game. So we didn’t need this.
+
+#### Which serialization method did you use for saving games? Was it a database, YAML, or a mix?
+
+The static source data for the game entities is mostly just XML files. Things like planet and star definitions, ship components, alien races, government types, research projects, etc.
+
+We have some internal tools for editing these files. And we also have auto-generated schema for most of these data types.
+
+For saving and loading games we use low-level binary serialization. So .Net BinaryReader and BinaryWriter with streams. This requires hand-coding all of the serialization, but has big payoffs in performance.
+
+This also allows easier version management as you add new data to the game. You can have conditional loading of new values based on game version.
+
+#### What AI libraries did you use? What techniques were used for AI, such as for fleet formations, battle decisions, or engage/retreat behaviors? How was diplomacy handled?
+
+All game logic is custom written for each system. We don’t have any 3rd-party AI libraries.
+
+Logic happens at 3 main levels:
+
+- galaxy-wide logic that affects everyone
+- faction-wide logic where each faction makes high-level plans to explore, expand and conquer
+- unit-level logic where each ship decides what mission to select to advance their factions goals
+
+We try to make each entity have sufficient logic to carry out it’s normal tasks and to also be able to respond to unexpected events in a reasonably intelligent manner. So the units can be given missions from a faction-level AI or manually by the player, but they can also assign themselves missions that make sense for the current situation.
+
+This kind of logic forms the bulk of the code in the game. So this logic really *IS* Distant Worlds.
+
+In addition we have an extensive advisor system that can provide suggestions on what to do next. These advisors are deeply integrated with the faction- and unit-level logic. When you switch an area of the game to ‘advisor-mode’ then you will get periodic suggestions in that area that you can either approve or reject.
+
+So for Colonization you will get suggestions about which planets to colonize. Approving the advisor suggestion will build a new colony ship and send it off to claim the new planet as a colony for your faction.
+
+If you instead had the Colonization area fully-automated (no advisor suggestions) then the game logic would simply carry out whatever it thought was best, automatically establishing new colonies.
+
+You can fine-tune how each area of game logic works, even when it is fully-automated. These policy settings tweak precisely how the automated decisions are made, allowing you better control over things. This ‘intelligent automation’ is a key feature of Distant Worlds that allows it to scale very large while still being manageable for the player.
+
+The game logic (including the advisors) is constantly being developed and improved. With the very open game style of Distant Worlds, there are endless unexpected situations that can prove challenging for the game logic to handle. So we are always extending the game logic to handle new things.
