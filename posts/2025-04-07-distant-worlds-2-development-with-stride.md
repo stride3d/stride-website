@@ -316,6 +316,18 @@ There is currently no way to change the bundle name directly from within Game St
 
 That may sound fairly simple, but it can still be an extra hurdle for modders. Having bundle-renaming built into the Game Studio would make this much easier.
 
+## Conclusion
+
+The journey through Distant Worlds 2's development offers valuable insights into what's possible with the Stride engine. Code Force's experience demonstrates how Stride's deep integration with .NET creates a flexible foundation for ambitious projects, allowing developers to focus on crafting unique gameplay experiences rather than wrestling with engine limitations.
+
+What stands out most is how the team leveraged Stride's strengths—particularly its rendering capabilities and open-source nature—while developing custom solutions where needed. Their approach to performance optimization, particularly for large-scale battles involving thousands of units, provides practical lessons for developers working on similarly complex simulations.
+
+We'd like to extend our sincere thanks to the Code Force team for sharing their expertise and experiences so candidly. Their willingness to detail both successes and challenges offers invaluable knowledge to the Stride community and game developers at large.
+
+For those inspired by what you've seen here, we encourage you to explore Stride for your own projects. Whether you're developing strategy games like Distant Worlds 2 or something entirely different, Stride's combination of powerful rendering, C# integration, and flexible architecture provides a solid foundation for bringing your vision to life.
+
+If you're already using Stride for your projects, we'd love to hear about your experiences in our [GitHub discussion]({{ site.links.github-discussions-url }}) or on our [Discord server]({{ site.links.discord-url }}). Your stories and insights help strengthen our growing community of developers.
+
 ## Links
 
 - Steam: [Distant Worlds 2 on Steam](https://store.steampowered.com/app/1531540/Distant_Worlds_2/)
