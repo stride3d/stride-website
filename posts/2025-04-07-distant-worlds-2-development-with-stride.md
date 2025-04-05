@@ -10,7 +10,7 @@ Distant Worlds 2, the sequel to the acclaimed 4X strategy game Distant Worlds: U
 
 ---
 
-<div align="center">
+<div class="text-center">
     {% img 'Distnat Worlds 2 Intro Image' '/images/blog/2025/distant-worlds-2-intro-image.webp' %}
 </div>
 
@@ -98,7 +98,7 @@ We worked quite a bit on getting Stride to handle heavily multi-threaded scenari
 
 ## User Interface
 
-<div align="center">
+<div class="text-center">
     {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-ui.webp' %}
 </div>
 
@@ -134,7 +134,7 @@ We use some `SpriteBatch` helper classes to draw the lines and arrows between pr
  
 ## Artists and Asset Creation
 
-<div align="center">
+<div class="text-center">
     {% img 'Distnat Worlds 2' '/images/blog/2025/distant-worlds-image-2.gif' %}
 </div>
 
@@ -168,7 +168,7 @@ Early on, it took a bit of digging into the Stride code to figure out what we ne
 
 ## Level Design and Prefabs
 
-<div align="center">
+<div class="text-center">
     {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-prefabs.webp' %}
 </div>
 
@@ -192,7 +192,7 @@ Stride Game Studio is really just an asset bundling tool for us.
 
 ## DLC and Content Expansion
 
-<div align="center">
+<div class="text-center">
     {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-dlc.webp' %}
 </div>
 
@@ -218,7 +218,7 @@ Each distribution platform has their own mechanism for this. So whether it’s S
 
 ## Performance and Optimization
 
-<div align="center">
+<div class="text-center mb-3">
     {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-map.webp' %}
     <small>Source: Steam - Distant Worlds 2 - <a rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3421104197" target="_blank">Screenshots by Shrikebe</a></small>
 </div>
@@ -251,6 +251,11 @@ This places some definite constraints on what we can render. We can’t just go 
 Weapon trails are handled in a similar way, where a single vertex buffer contains all of the trail particles, and is rendered with a single draw call per frame.
  
 ## AI and Game Systems
+
+<div class="text-center mb-3">
+    {% img 'Distnat Worlds 2 UI' '/images/blog/2025/distant-worlds-2-settings.webp' %}
+    <small>Source: Steam - Distant Worlds 2 - <a rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3359322910" target="_blank">Screenshots by VoiD</a></small>
+</div>
 
 #### Did you require any kind of editor extensions? How did you implement them?
 
@@ -291,6 +296,10 @@ You can fine-tune how each area of game logic works, even when it is fully-autom
 The game logic (including the advisors) is constantly being developed and improved. With the very open game style of Distant Worlds, there are endless unexpected situations that can prove challenging for the game logic to handle. So we are always extending the game logic to handle new things.
 
 ## Future Use and Recommendations
+
+<div align="center">
+    {% img 'Distnat Worlds Future' '/images/blog/2025/distant-worlds-future.webp' %}
+</div>
 
 #### What types of projects do you think the Stride engine is perfectly suited for?
 
