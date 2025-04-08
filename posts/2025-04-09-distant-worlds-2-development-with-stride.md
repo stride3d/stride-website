@@ -341,6 +341,8 @@ If you're already using Stride for your projects, we'd love to hear about your e
 
 - Steam: [Distant Worlds 2 on Steam](https://store.steampowered.com/app/1531540/Distant_Worlds_2/)
 - DW2 Forum: [Matrix Games Forum](https://www.matrixgames.com/forums/viewforum.php?f=10151)
+- DW2 Discord: [Distant Worlds 2 Discord](https://discord.gg/U9tnSqMH)
 - YouTube: [Slitherine Games on YouTube](https://www.youtube.com/@SlitherineGames/videos)
 - GitHub Stride DW2 Discussion: [GitHub Discussions](https://github.com/stride3d/stride/discussions/2484) 
 - Kevin: You can find him on our [Stride Discord]({{ site.links.discord-url }}) server as @KevinC
+- Elliot: You can find him on [DW2 Discord](https://discord.gg/U9tnSqMH) server as @elliot_333
