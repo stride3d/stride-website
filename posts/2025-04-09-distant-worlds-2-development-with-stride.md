@@ -6,7 +6,7 @@ image: /images/blog/2025/distant-worlds-image.webp
 tags: ['Game', 'Strategy', '4X']
 ---
 
-Distant Worlds 2, the sequel to the acclaimed 4X strategy game Distant Worlds: Universe, was developed by Code Force and published by Slitherine. In this blog post, the developers answer key questions from the Stride community, offering insights into their experience using the Stride engine to bring their ambitious galaxy-spanning strategy game to life.
+[Distant Worlds 2](https://store.steampowered.com/app/1531540/Distant_Worlds_2/), the sequel to the acclaimed 4X strategy game [Distant Worlds: Universe](https://store.steampowered.com/app/261470/Distant_Worlds_Universe/), was developed by Code Force and published by Slitherine. In this blog post, the developers answer key questions from the Stride community, offering insights into their experience using the Stride engine to bring their ambitious galaxy-spanning strategy game to life.
 
 ---
 
@@ -126,7 +126,7 @@ With DW2, building our own UI system allowed us to bake scaling into everything.
 
 #### How is the research screen (e.g., item order, dependencies) created? Are these elements procedurally generated, or are they manually crafted?
 
-How did you create the research graph, including arrows and other visual elements?
+##### How did you create the research graph, including arrows and other visual elements?
 
 The Research screen is custom-rendered. Most of the data in DW2 is heavily moddable, and the tech trees are a big part of this. So the rendering for research projects has to be data-driven.
 
