@@ -1,6 +1,5 @@
 @import "custom-bootstrap";
 @import "/css/all.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --main-shadow: 2px 2px 8px #0000001a;
@@ -297,7 +296,7 @@ svg path.logo-path {
     .tier-container {
         display: flex;
         flex-direction: column;
-        
+
         @media screen and (min-width: 1280px) {
             flex-direction: row;
         }
@@ -309,22 +308,18 @@ svg path.logo-path {
             gap: 20px;
             align-items: center;
             justify-content: center;
-            font-family: "Kanit", serif;
-            font-weight: 900;
-            font-size: 46px;
-            letter-spacing: -2px;
             padding: 40px 12px;
             flex-wrap: wrap;
         }
 
-        .tier-item.gold {             
+        .tier-item.gold {
             background-color: rgb(221, 205, 62);
         }
 
         .tier-item.silver {
             background-color: silver;
         }
-        
+
         .tier-item.bronze {
             background-color: rgb(216, 156, 78);
         }
