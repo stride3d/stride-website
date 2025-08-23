@@ -6,6 +6,14 @@
         try { ELEVENTY = JSON.parse(cfgEl.textContent || '{}'); } catch (e) { ELEVENTY = {}; }
     }
 
+    // Simple tokenizer mirroring Lunr pipeline (lowercase + split on non-word)
+    function tokenize(text) {
+        return String(text || '')
+            .toLowerCase()
+            .split(/[^\p{L}\p{N}]+/u)
+            .filter(Boolean);
+    }
+
     function displaySearchResults(results, store) {
         const searchResults = document.getElementById('search-results');
 
@@ -133,9 +141,12 @@
     function getActiveSources() {
         const container = document.getElementById('source-filters');
         if (!container) return null; // no filters present
-        const checked = Array.from(container.querySelectorAll('input[type="checkbox"]:checked'))
+        const checked = Array.from(container.querySelectorAll('input.form-check-input[type="checkbox"]'))
+            .filter(i => i.checked)
             .map(i => i.value);
-        return new Set(checked);
+        const set = new Set(checked);
+        console.log('[search] active sources:', Array.from(set));
+        return set;
     }
 
     function getItemSource(post) {
@@ -150,11 +161,13 @@
     function filterResults(rawResults) {
         const allowed = getActiveSources();
         if (!allowed || allowed.size === 0) return rawResults;
-        return rawResults.filter(r => {
+        const filtered = rawResults.filter(r => {
             const post = STATE.store[r.ref];
             const src = getItemSource(post);
             return allowed.has(src);
         });
+        console.log(`[search] filtered results: ${filtered.length}/${rawResults.length}`);
+        return filtered;
     }
 
     function renderPagination(totalResults, currentPage, pageSize) {
@@ -225,6 +238,7 @@
         const end = start + STATE.pageSize;
         const pageResults = filtered.slice(start, end);
 
+        console.log('[search] render page', { page: STATE.currentPage, pageSize: STATE.pageSize, total: filtered.length });
         displaySearchResults(pageResults, STATE.store);
         renderPagination(filtered.length, STATE.currentPage, STATE.pageSize);
     }
@@ -238,10 +252,15 @@
         if (!isNaN(page)) renderPage(page);
     });
 
-    // Filter handling
+    // Filter handling (instant apply, no form submit needed)
     document.addEventListener('change', function (e) {
-        if (e.target && e.target.closest && e.target.closest('#source-filters')) {
-            renderPage(1);
+        const filterRoot = e.target && e.target.closest && e.target.closest('#source-filters');
+        if (filterRoot) {
+            // Trigger after checkbox state is updated by the browser
+            setTimeout(() => {
+                console.log('[search] source filter changed');
+                renderPage(1);
+            }, 0);
         }
     });
 
@@ -309,40 +328,45 @@
         return data;
     }
 
-    // Build a Lunr query string supporting AND/OR/NOT and phrases using Lunr's native parser
+    // Build a Lunr query string supporting AND/OR/NOT and phrases (double quotes). Single quotes are ignored.
     function buildLunrQueryString(input) {
         if (!input) return '';
+
         const tokens = [];
         const re = /"([^"]+)"|(\S+)/g; // quoted phrase or non-space
         let m;
         let hasOr = false;
         while ((m = re.exec(input)) !== null) {
             const phrase = m[1];
-            const word = m[2];
-            let tok = '';
+            const rawWord = m[2];
             if (phrase !== undefined) {
-                tok = '"' + phrase + '"';
-            } else if (word !== undefined) {
-                tok = word;
+                const cleaned = phrase.trim();
+                if (cleaned.length > 0) tokens.push('"' + cleaned + '"');
+            } else if (rawWord !== undefined) {
+                // Strip leading/trailing single quotes only
+                let word = rawWord.replace(/^'+|'+$/g, '');
+                if (/^OR$/i.test(word)) {
+                    hasOr = true;
+                    tokens.push('OR');
+                } else if (word.length > 0) {
+                    tokens.push(word);
+                }
             }
-            if (/^OR$/i.test(tok)) {
-                hasOr = true;
-            }
-            tokens.push(tok);
         }
         if (tokens.length === 0) return '';
 
-        // If an explicit OR is present, trust Lunr's native parser and do not force AND
         if (hasOr) {
+            // Pass through, preserving OR and any explicit +/- the user added
             return tokens.join(' ');
         }
 
-        // Otherwise require all terms (AND) unless explicitly prohibited or already required
+        // Enforce AND by prefixing '+' to non-operator tokens
         const mapped = tokens.map(t => {
             if (!t) return t;
-            if (t === 'OR' || t === 'or' || t === 'Or') return t; // shouldn't happen here
+            if (t === 'OR') return t; // shouldn't occur here
             const first = t[0];
-            if (first === '-' || first === '+') return t; // preserve NOT/REQUIRED
+            if (first === '-' || first === '+') return t; // keep user operators
+            // Keep quotes for phrases
             return t.startsWith('"') ? ('+"' + t.slice(1)) : ('+' + t);
         });
         return mapped.join(' ');
@@ -375,7 +399,32 @@
 
         STATE.store = data;
         const queryString = buildLunrQueryString(searchTerm);
-        STATE.results = queryString ? idx.search(queryString) : [];
+        console.log('[search] query:', queryString);
+        try {
+            // If the query is a single phrase (e.g., +"..."), add field scoping to improve matches
+            const isSinglePhrase = /^\+?"[^"]+"$/.test(queryString.trim());
+            if (isSinglePhrase) {
+                STATE.results = idx.query(q => {
+                    const phrase = queryString.replace(/^\+?"|"$/g, '');
+                    const fields = [
+                        { name: 'title', boost: 50 },
+                        { name: 'tags', boost: 10 },
+                        { name: 'excerpt', boost: 5 },
+                        { name: 'content', boost: 1 },
+                    ];
+                    fields.forEach(f => q.term(tokenize(phrase), {
+                        fields: [f.name], presence: lunr.Query.presence.REQUIRED, boost: f.boost, usePipeline: true
+                    }));
+                });
+            } else {
+                STATE.results = queryString ? idx.search(queryString) : [];
+            }
+        } catch (err) {
+            console.warn('[search] lunr query failed, falling back to raw term', err);
+            // Fallback: strip quotes and operators
+            const fallback = (searchTerm || '').replace(/["'+-]/g, ' ').trim();
+            STATE.results = fallback ? idx.search(fallback) : [];
+        }
 
         // Remove spinner now that we have results
         var spinner = document.getElementById('spinner');
