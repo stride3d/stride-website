@@ -8,10 +8,13 @@ banner:
   h1: true
 ---
 <div class="row">
-    <div class="col-lg-9 col-md-8 col-sm-12" id="search-results">
-        <div class="fa-3x">
-            <i id="spinner" class="fa-solid fa-spinner text-stride fa-spin-pulse"></i>
+    <div class="col-lg-9 col-md-8 col-sm-12">
+        <div id="search-results">
+            <div class="fa-3x">
+                <i id="spinner" class="fa-solid fa-spinner text-stride fa-spin-pulse"></i>
+            </div>
         </div>
+        <div id="search-pagination" class="my-3"></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-12">
         <div class="box-style">
@@ -21,4 +24,15 @@ banner:
         </div>
     </div>
 </div>
+
+<script id="search-config" type="application/json">
+{
+  "docsSearch": {{ site.docs-search | jsonify }},
+  "docsSearchUrl": "{{ site.links.docs-search-url }}",
+  "docsBaseUrl": "{{ site.links.docs-url }}",
+  "version": "{{ site.version }}"
+}
+</script>
+
+<script src="/scripts/lunr.min.js"></script>
 <script src="/scripts/search.js?site-version={{site.version}}"></script>

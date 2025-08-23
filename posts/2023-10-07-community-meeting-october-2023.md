@@ -1,7 +1,6 @@
 ---
 title: "Community Meeting October 2023"
 author: aggror
-popular: true
 tags: ['.NET', 'Meeting', 'Avalonia']
 ---
 
