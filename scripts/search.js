@@ -6,14 +6,6 @@
         try { ELEVENTY = JSON.parse(cfgEl.textContent || '{}'); } catch (e) { ELEVENTY = {}; }
     }
 
-    // Simple tokenizer mirroring Lunr pipeline (lowercase + split on non-word)
-    function tokenize(text) {
-        return String(text || '')
-            .toLowerCase()
-            .split(/[^\p{L}\p{N}]+/u)
-            .filter(Boolean);
-    }
-
     function displaySearchResults(results, store) {
         const searchResults = document.getElementById('search-results');
 
@@ -145,7 +137,6 @@
             .filter(i => i.checked)
             .map(i => i.value);
         const set = new Set(checked);
-        console.log('[search] active sources:', Array.from(set));
         return set;
     }
 
@@ -166,7 +157,6 @@
             const src = getItemSource(post);
             return allowed.has(src);
         });
-        console.log(`[search] filtered results: ${filtered.length}/${rawResults.length}`);
         return filtered;
     }
 
@@ -238,7 +228,6 @@
         const end = start + STATE.pageSize;
         const pageResults = filtered.slice(start, end);
 
-        console.log('[search] render page', { page: STATE.currentPage, pageSize: STATE.pageSize, total: filtered.length });
         displaySearchResults(pageResults, STATE.store);
         renderPagination(filtered.length, STATE.currentPage, STATE.pageSize);
     }
@@ -256,9 +245,7 @@
     document.addEventListener('change', function (e) {
         const filterRoot = e.target && e.target.closest && e.target.closest('#source-filters');
         if (filterRoot) {
-            // Trigger after checkbox state is updated by the browser
             setTimeout(() => {
-                console.log('[search] source filter changed');
                 renderPage(1);
             }, 0);
         }
@@ -291,7 +278,6 @@
         })
         .catch(error => console.error(error));
     } else {
-        console.log('No search term found');
         var spinner = document.getElementById('spinner');
         if (spinner) spinner.remove();
     }
@@ -328,46 +314,27 @@
         return data;
     }
 
-    // Build a Lunr query string supporting AND/OR/NOT and phrases (double quotes). Single quotes are ignored.
+    // Build a Lunr query string supporting AND/OR/NOT. Quotes are ignored (no phrase search).
     function buildLunrQueryString(input) {
         if (!input) return '';
-
-        const tokens = [];
-        const re = /"([^"]+)"|(\S+)/g; // quoted phrase or non-space
-        let m;
+        const rawTokens = input.match(/\S+/g) || [];
         let hasOr = false;
-        while ((m = re.exec(input)) !== null) {
-            const phrase = m[1];
-            const rawWord = m[2];
-            if (phrase !== undefined) {
-                const cleaned = phrase.trim();
-                if (cleaned.length > 0) tokens.push('"' + cleaned + '"');
-            } else if (rawWord !== undefined) {
-                // Strip leading/trailing single quotes only
-                let word = rawWord.replace(/^'+|'+$/g, '');
-                if (/^OR$/i.test(word)) {
-                    hasOr = true;
-                    tokens.push('OR');
-                } else if (word.length > 0) {
-                    tokens.push(word);
-                }
-            }
-        }
+        const tokens = rawTokens.map(t => {
+            // Strip surrounding single or double quotes
+            let word = t.replace(/^["']+|["']+$/g, '');
+            if (/^OR$/i.test(word)) { hasOr = true; return 'OR'; }
+            if (/^AND$/i.test(word)) return ''; // ignore AND, we enforce AND by default
+            return word;
+        }).filter(w => w.length > 0);
         if (tokens.length === 0) return '';
-
-        if (hasOr) {
-            // Pass through, preserving OR and any explicit +/- the user added
-            return tokens.join(' ');
-        }
-
-        // Enforce AND by prefixing '+' to non-operator tokens
+        if (hasOr) return tokens.join(' ');
+        // Enforce AND by prefixing '+' to tokens unless they already have +/-
         const mapped = tokens.map(t => {
             if (!t) return t;
-            if (t === 'OR') return t; // shouldn't occur here
+            if (t === 'OR') return t;
             const first = t[0];
-            if (first === '-' || first === '+') return t; // keep user operators
-            // Keep quotes for phrases
-            return t.startsWith('"') ? ('+"' + t.slice(1)) : ('+' + t);
+            if (first === '-' || first === '+') return t;
+            return '+' + t;
         });
         return mapped.join(' ');
     }
@@ -399,29 +366,9 @@
 
         STATE.store = data;
         const queryString = buildLunrQueryString(searchTerm);
-        console.log('[search] query:', queryString);
         try {
-            // If the query is a single phrase (e.g., +"..."), add field scoping to improve matches
-            const isSinglePhrase = /^\+?"[^"]+"$/.test(queryString.trim());
-            if (isSinglePhrase) {
-                STATE.results = idx.query(q => {
-                    const phrase = queryString.replace(/^\+?"|"$/g, '');
-                    const fields = [
-                        { name: 'title', boost: 50 },
-                        { name: 'tags', boost: 10 },
-                        { name: 'excerpt', boost: 5 },
-                        { name: 'content', boost: 1 },
-                    ];
-                    fields.forEach(f => q.term(tokenize(phrase), {
-                        fields: [f.name], presence: lunr.Query.presence.REQUIRED, boost: f.boost, usePipeline: true
-                    }));
-                });
-            } else {
-                STATE.results = queryString ? idx.search(queryString) : [];
-            }
+            STATE.results = queryString ? idx.search(queryString) : [];
         } catch (err) {
-            console.warn('[search] lunr query failed, falling back to raw term', err);
-            // Fallback: strip quotes and operators
             const fallback = (searchTerm || '').replace(/["'+-]/g, ' ').trim();
             STATE.results = fallback ? idx.search(fallback) : [];
         }
