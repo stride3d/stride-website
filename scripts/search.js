@@ -1,9 +1,11 @@
----
-permalink: /scripts/search.js
----
-{% include ./node_modules/lunr/lunr.min.js %}
-
 (function () {
+    // Read Eleventy-provided config from inline JSON
+    let ELEVENTY = {};
+    const cfgEl = document.getElementById('search-config');
+    if (cfgEl) {
+        try { ELEVENTY = JSON.parse(cfgEl.textContent || '{}'); } catch (e) { ELEVENTY = {}; }
+    }
+
     function displaySearchResults(results, store) {
         const searchResults = document.getElementById('search-results');
 
@@ -11,18 +13,16 @@ permalink: /scripts/search.js
             var appendString = '';
 
             for (var i = 0; i < results.length; i++) {
-
                 const post = store[results[i].ref];
 
                 if (post.source === 'web') {
-
-                appendString += `
+                    appendString += `
 <article class="card mb-4 p-4">
     <div class="row justify-content-center">
         <div class="col-12 post-card-header">
             <h4 class="entry-title"><a href="${post.url}">${post.title}</a></h4>
             <p><i class="fa-solid fa-calendar-days me-1"></i> ${getDate(post.date)}</p>
-            <p>${post.author}</p>
+            <p>${post.author ?? ''}</p>
             <p>
                 ${getExcerpt(post)}...
             </p>
@@ -31,22 +31,20 @@ permalink: /scripts/search.js
             </p>
         </div>
     </div>
-</article>
-`
+</article>`;
                 } else if (post.source === 'docs') {
-
-                appendString += `
+                    const docsBase = ELEVENTY.docsBaseUrl || '';
+                    appendString += `
 <article class="card mb-4 p-4">
     <div class="row justify-content-center">
         <div class="col-12 post-card-header">
-            <h4 class="entry-title"><a href="{{site.links.docs-url}}${post.key}" target="_blank" rel="noopener">${getEmoji(post.key)} ${post.title}</a></h4>
+            <h4 class="entry-title"><a href="${docsBase}${post.key}" target="_blank" rel="noopener">${getEmoji(post.key)} ${post.title}</a></h4>
             <p>
                 ${getDocsExcerpt(post)}...
             </p>
         </div>
     </div>
-</article>
-`
+</article>`;
                 }
             }
             searchResults.innerHTML = appendString;
@@ -78,21 +76,24 @@ permalink: /scripts/search.js
     }
 
     function getDate(date) {
-        if (date.length === 0) return '';
-
+        if (!date || (typeof date === 'string' && date.length === 0)) return '';
         return `${date}`;
     }
 
     function getExcerpt(post) {
-        return post.excerpt.length === 0 ? post.content.substring(0, 200) : post.excerpt;
+        const content = post.content || '';
+        const excerpt = post.excerpt || '';
+        return excerpt.length === 0 ? content.substring(0, 200) : excerpt;
     }
 
     function getDocsExcerpt(post) {
-        return htmlEncode(post.content.substring(0, 200));
+        const content = post.content || '';
+        return htmlEncode(content.substring(0, 200));
     }
 
     function getTags(post) {
-        var tags = post.tags.split(', ');
+        const raw = post.tags || '';
+        var tags = raw.split(', ').filter(Boolean);
         return tags.filter(s => s !== 'blog' && s !== 'search').map(s => `<span class="badge text-bg-stride text-stride me-1" style="--bs-bg-opacity: .20;">${s.replace('-', ' ')}</span>`).join('');
     }
 
@@ -102,9 +103,8 @@ permalink: /scripts/search.js
 
         for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i].split('=');
-
             if (pair[0] === variable) {
-                return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
+                return decodeURIComponent((pair[1] || '').replace(/\+/g, '%20'));
             }
         }
     }
@@ -112,7 +112,7 @@ permalink: /scripts/search.js
     function htmlEncode(str) {
       return String(str)
         .replace(/&/g, '&amp;')
-        .replace(/"/g, '&quot;')
+        .replace(/\"/g, '&quot;')
         .replace(/'/g, '&#39;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
@@ -213,7 +213,8 @@ permalink: /scripts/search.js
     var searchTerm = getQueryVariable('query');
 
     if (searchTerm) {
-        document.getElementById('search-result-term').textContent = searchTerm;
+        const termEl = document.getElementById('search-result-term');
+        if (termEl) termEl.textContent = searchTerm;
         var inputEl = document.getElementById('search-input');
         if (inputEl) inputEl.value = searchTerm;
         var formPostEl = document.getElementById('search-form-post');
@@ -224,9 +225,9 @@ permalink: /scripts/search.js
         const web = fetch(`/search.json`).then(success);
 
         var docs = Promise.resolve();
-
-        if({{site.docs-search}}) {
-            docs = fetch(`{{site.links.docs-search-url}}?version={{site.version}}`).then(success);
+        if (ELEVENTY.docsSearch && ELEVENTY.docsSearchUrl) {
+            const url = `${ELEVENTY.docsSearchUrl}?version=${encodeURIComponent(ELEVENTY.version || '')}`;
+            docs = fetch(url).then(success);
         }
 
         Promise.all([web, docs])
@@ -242,7 +243,6 @@ permalink: /scripts/search.js
     }
 
     function mergeSearchData(webData, docsData) {
-
         const data = [];
 
         for (var key in webData) {
@@ -275,8 +275,7 @@ permalink: /scripts/search.js
     }
 
     function search(data) {
-        // Initalize lunr with the fields it will be searching on. I've given title
-        // a boost of 10 to indicate matches on this field are more important.
+        // Initialize lunr index
         var idx = lunr(function () {
             this.field('id');
             this.field('title', { boost: 50 });
@@ -298,13 +297,12 @@ permalink: /scripts/search.js
                     'excerpt': data[key].excerpt
                 });
             }
-
         });
 
         STATE.store = data;
-        STATE.results = idx.search(searchTerm); // Get lunr to perform a search
+        STATE.results = idx.search(searchTerm);
 
-        // If spinner exists, remove it now that we have results
+        // Remove spinner now that we have results
         var spinner = document.getElementById('spinner');
         if (spinner) spinner.remove();
 
