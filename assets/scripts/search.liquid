@@ -8,7 +8,6 @@ permalink: /scripts/search.js
         const searchResults = document.getElementById('search-results');
 
         if (results.length) {
-            const maxResults = 100; // Once paging implemented, then remove this restriction
             var appendString = '';
 
             for (var i = 0; i < results.length; i++) {
@@ -49,9 +48,6 @@ permalink: /scripts/search.js
 </article>
 `
                 }
-
-                if (i > maxResults) break;
-
             }
             searchResults.innerHTML = appendString;
         } else {
@@ -122,12 +118,106 @@ permalink: /scripts/search.js
         .replace(/>/g, '&gt;');
     }
 
+    // Pagination helpers
+    const STATE = {
+        results: [],
+        store: [],
+        currentPage: 1,
+        pageSize: 10,
+    };
+
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
+
+    function renderPagination(totalResults, currentPage, pageSize) {
+        const container = document.getElementById('search-pagination');
+        if (!container) return;
+
+        const totalPages = Math.ceil(totalResults / pageSize);
+        if (totalPages <= 1) {
+            container.innerHTML = '';
+            return;
+        }
+
+        function pageBtn(label, page, disabled, active, ariaLabel) {
+            const aria = ariaLabel ? ` aria-label="${ariaLabel}"` : '';
+            const current = active ? ' aria-current="page"' : '';
+            const disabledClass = disabled ? ' disabled' : '';
+            const tabIndex = disabled ? ' tabindex="-1" aria-disabled="true"' : '';
+            return `
+<li class="page-item${disabledClass}${active ? ' active' : ''}">
+  <a href="#" class="page-link" data-page="${page}"${tabIndex}${aria}${current}>${label}</a>
+</li>`;
+        }
+
+        function ellipsis() {
+            return `<li class="page-item disabled"><span class="page-link">&hellip;</span></li>`;
+        }
+
+        const parts = [];
+        parts.push('<nav aria-label="Search results pages"><ul class="pagination justify-content-center">');
+
+        // Prev
+        parts.push(pageBtn('Previous', currentPage - 1, currentPage === 1, false, 'Previous page'));
+
+        const totalPagesToShow = 7;
+        if (totalPages <= totalPagesToShow) {
+            for (let p = 1; p <= totalPages; p++) parts.push(pageBtn(String(p), p, false, p === currentPage));
+        } else {
+            // First
+            parts.push(pageBtn('1', 1, false, currentPage === 1));
+
+            // Left ellipsis
+            if (currentPage > 4) parts.push(ellipsis());
+
+            const start = Math.max(2, currentPage - 2);
+            const end = Math.min(totalPages - 1, currentPage + 2);
+            for (let p = start; p <= end; p++) parts.push(pageBtn(String(p), p, false, p === currentPage));
+
+            // Right ellipsis
+            if (currentPage < totalPages - 3) parts.push(ellipsis());
+
+            // Last
+            parts.push(pageBtn(String(totalPages), totalPages, false, currentPage === totalPages));
+        }
+
+        // Next
+        parts.push(pageBtn('Next', currentPage + 1, currentPage === totalPages, false, 'Next page'));
+
+        parts.push('</ul></nav>');
+
+        container.innerHTML = parts.join('');
+    }
+
+    function renderPage(page) {
+        const totalPages = Math.ceil(STATE.results.length / STATE.pageSize) || 1;
+        STATE.currentPage = clamp(page, 1, totalPages);
+        const start = (STATE.currentPage - 1) * STATE.pageSize;
+        const end = start + STATE.pageSize;
+        const pageResults = STATE.results.slice(start, end);
+
+        displaySearchResults(pageResults, STATE.store);
+        renderPagination(STATE.results.length, STATE.currentPage, STATE.pageSize);
+    }
+
+    // Pagination click handling (event delegation)
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('#search-pagination a.page-link[data-page]');
+        if (!link) return;
+        e.preventDefault();
+        const page = parseInt(link.getAttribute('data-page'), 10);
+        if (!isNaN(page)) renderPage(page);
+    });
+
     var searchTerm = getQueryVariable('query');
 
     if (searchTerm) {
         document.getElementById('search-result-term').textContent = searchTerm;
-        document.getElementById('search-input').value = searchTerm;
-        document.getElementById('search-form-post').value = searchTerm;
+        var inputEl = document.getElementById('search-input');
+        if (inputEl) inputEl.value = searchTerm;
+        var formPostEl = document.getElementById('search-form-post');
+        if (formPostEl) formPostEl.value = searchTerm;
 
         const success = res => res.ok ? res.json() : Promise.resolve({});
 
@@ -141,17 +231,14 @@ permalink: /scripts/search.js
 
         Promise.all([web, docs])
         .then(([webData, docsData]) => {
-            search(mergeSearchData(webData, docsData))
+            const merged = mergeSearchData(webData, docsData);
+            search(merged)
         })
         .catch(error => console.error(error));
-
-        /*fetch('/search.json')
-        .then(response => response.json())
-        .then(data => search(data))
-        .catch(error => console.log(error));*/
     } else {
         console.log('No search term found');
-        document.getElementById('spinner').remove();
+        var spinner = document.getElementById('spinner');
+        if (spinner) spinner.remove();
     }
 
     function mergeSearchData(webData, docsData) {
@@ -214,7 +301,13 @@ permalink: /scripts/search.js
 
         });
 
-        var results = idx.search(searchTerm); // Get lunr to perform a search
-        displaySearchResults(results, data);
+        STATE.store = data;
+        STATE.results = idx.search(searchTerm); // Get lunr to perform a search
+
+        // If spinner exists, remove it now that we have results
+        var spinner = document.getElementById('spinner');
+        if (spinner) spinner.remove();
+
+        renderPage(1);
     }
 })();
