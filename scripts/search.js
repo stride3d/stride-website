@@ -118,9 +118,9 @@
         .replace(/>/g, '&gt;');
     }
 
-    // Pagination helpers
+    // Pagination + filtering helpers
     const STATE = {
-        results: [],
+        results: [], // raw lunr results
         store: [],
         currentPage: 1,
         pageSize: 10,
@@ -128,6 +128,33 @@
 
     function clamp(value, min, max) {
         return Math.min(Math.max(value, min), max);
+    }
+
+    function getActiveSources() {
+        const container = document.getElementById('source-filters');
+        if (!container) return null; // no filters present
+        const checked = Array.from(container.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(i => i.value);
+        return new Set(checked);
+    }
+
+    function getItemSource(post) {
+        if (post.source === 'web') return 'web';
+        if (post.source === 'docs') {
+            const key = post.key || '';
+            return key.split('/')[0] || 'docs';
+        }
+        return 'unknown';
+    }
+
+    function filterResults(rawResults) {
+        const allowed = getActiveSources();
+        if (!allowed || allowed.size === 0) return rawResults;
+        return rawResults.filter(r => {
+            const post = STATE.store[r.ref];
+            const src = getItemSource(post);
+            return allowed.has(src);
+        });
     }
 
     function renderPagination(totalResults, currentPage, pageSize) {
@@ -191,14 +218,15 @@
     }
 
     function renderPage(page) {
-        const totalPages = Math.ceil(STATE.results.length / STATE.pageSize) || 1;
+        const filtered = filterResults(STATE.results);
+        const totalPages = Math.ceil(filtered.length / STATE.pageSize) || 1;
         STATE.currentPage = clamp(page, 1, totalPages);
         const start = (STATE.currentPage - 1) * STATE.pageSize;
         const end = start + STATE.pageSize;
-        const pageResults = STATE.results.slice(start, end);
+        const pageResults = filtered.slice(start, end);
 
         displaySearchResults(pageResults, STATE.store);
-        renderPagination(STATE.results.length, STATE.currentPage, STATE.pageSize);
+        renderPagination(filtered.length, STATE.currentPage, STATE.pageSize);
     }
 
     // Pagination click handling (event delegation)
@@ -208,6 +236,13 @@
         e.preventDefault();
         const page = parseInt(link.getAttribute('data-page'), 10);
         if (!isNaN(page)) renderPage(page);
+    });
+
+    // Filter handling
+    document.addEventListener('change', function (e) {
+        if (e.target && e.target.closest && e.target.closest('#source-filters')) {
+            renderPage(1);
+        }
     });
 
     var searchTerm = getQueryVariable('query');
@@ -274,6 +309,45 @@
         return data;
     }
 
+    // Build a Lunr query string supporting AND/OR/NOT and phrases using Lunr's native parser
+    function buildLunrQueryString(input) {
+        if (!input) return '';
+        const tokens = [];
+        const re = /"([^"]+)"|(\S+)/g; // quoted phrase or non-space
+        let m;
+        let hasOr = false;
+        while ((m = re.exec(input)) !== null) {
+            const phrase = m[1];
+            const word = m[2];
+            let tok = '';
+            if (phrase !== undefined) {
+                tok = '"' + phrase + '"';
+            } else if (word !== undefined) {
+                tok = word;
+            }
+            if (/^OR$/i.test(tok)) {
+                hasOr = true;
+            }
+            tokens.push(tok);
+        }
+        if (tokens.length === 0) return '';
+
+        // If an explicit OR is present, trust Lunr's native parser and do not force AND
+        if (hasOr) {
+            return tokens.join(' ');
+        }
+
+        // Otherwise require all terms (AND) unless explicitly prohibited or already required
+        const mapped = tokens.map(t => {
+            if (!t) return t;
+            if (t === 'OR' || t === 'or' || t === 'Or') return t; // shouldn't happen here
+            const first = t[0];
+            if (first === '-' || first === '+') return t; // preserve NOT/REQUIRED
+            return t.startsWith('"') ? ('+"' + t.slice(1)) : ('+' + t);
+        });
+        return mapped.join(' ');
+    }
+
     function search(data) {
         // Initialize lunr index
         var idx = lunr(function () {
@@ -300,7 +374,8 @@
         });
 
         STATE.store = data;
-        STATE.results = idx.search(searchTerm);
+        const queryString = buildLunrQueryString(searchTerm);
+        STATE.results = queryString ? idx.search(queryString) : [];
 
         // Remove spinner now that we have results
         var spinner = document.getElementById('spinner');

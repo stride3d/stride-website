@@ -3,5 +3,56 @@
     <div class="mb-3">
         <input class="form-control" id="{{id}}" name="query" type="text" value="" autofocus tabindex="0" aria-label="Search">
     </div>
+
+    {% if page.url == "/search/" %}
+    <fieldset id="source-filters" class="mb-3">
+        <legend class="fs-6 mb-2">Filter sources</legend>
+        <div class="row g-2">
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="manual" id="sf-manual" checked>
+                    <label class="form-check-label" for="sf-manual">Manual</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="tutorials" id="sf-tutorials" checked>
+                    <label class="form-check-label" for="sf-tutorials">Tutorial</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="api" id="sf-api" checked>
+                    <label class="form-check-label" for="sf-api">API</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="ReleaseNotes" id="sf-releasenotes" checked>
+                    <label class="form-check-label" for="sf-releasenotes">Release Notes</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="contributors" id="sf-contributors" checked>
+                    <label class="form-check-label" for="sf-contributors">Contributors</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="community-resources" id="sf-community-resources" checked>
+                    <label class="form-check-label" for="sf-community-resources">Community Resources</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="web" id="sf-web" checked>
+                    <label class="form-check-label" for="sf-web">Website</label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    {% endif %}
+
     <button class="btn btn-stride" name="submit" type="submit" value="Search">Search</button>
 </form>
