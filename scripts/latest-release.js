@@ -32,7 +32,7 @@
     function display(version, publishedAtIso, htmlUrl) {
         var dateStr = formatDate(publishedAtIso);
 
-        if (!version || !dateStr) return; // Show nothing on invalid data
+        if (!version || !dateStr || !htmlUrl) return; // Show nothing on invalid data
 
         // Clear previous content
         el.textContent = '';
