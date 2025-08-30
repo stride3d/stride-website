@@ -29,12 +29,12 @@
         }
     }
 
-    function display(version, publishedAtIso) {
+    function display(version, publishedAtIso, htmlUrl) {
         var dateStr = formatDate(publishedAtIso);
 
         if (!version || !dateStr) return; // Show nothing on invalid data
 
-        el.textContent = 'Latest release: version ' + version + ', released on ' + dateStr + '.';
+        el.innerHTML = 'Latest release: version <a target="_blank" href="' + htmlUrl + '">' + version + '</a>, released on ' + dateStr + '.';
     }
 
     function readCache() {
@@ -45,11 +45,11 @@
 
             var parsed = JSON.parse(raw);
 
-            if (!parsed || !parsed.version || !parsed.publishedAt || !parsed.ts) return null;
+            if (!parsed || !parsed.version || !parsed.publishedAt || !parsed.htmlUrl || !parsed.ts) return null;
 
             var expired = (Date.now() - parsed.ts) > CACHE_TTL_MS;
 
-            return { version: parsed.version, publishedAt: parsed.publishedAt, expired: expired };
+            return { version: parsed.version, publishedAt: parsed.publishedAt, htmlUrl: parsed.htmlUrl, expired: expired };
         } catch (e) {
             console.warn('latest-release: cache read failed', e);
 
@@ -57,9 +57,9 @@
         }
     }
 
-    function writeCache(version, publishedAt) {
+    function writeCache(version, publishedAt, htmlUrl) {
         try {
-            localStorage.setItem(CACHE_KEY, JSON.stringify({ version: version, publishedAt: publishedAt, ts: Date.now() }));
+            localStorage.setItem(CACHE_KEY, JSON.stringify({ version: version, publishedAt: publishedAt, htmlUrl: htmlUrl, ts: Date.now() }));
         } catch (e) {
             console.warn('latest-release: cache write failed', e);
         }
@@ -80,12 +80,13 @@
             var data = await resp.json();
             var version = (data && (data.name || data.tag_name)) || null;
             var publishedAt = (data && data.published_at) || null;
+            var htmlUrl = (data && data.html_url) || null;
 
-            if (!version || !publishedAt) return null;
+            if (!version || !publishedAt || !htmlUrl) return null;
 
-            writeCache(version, publishedAt);
+            writeCache(version, publishedAt, htmlUrl);
 
-            return { version: version, publishedAt: publishedAt };
+            return { version: version, publishedAt: publishedAt, htmlUrl: htmlUrl };
         } catch (e) {
             console.warn('latest-release: fetch failed', e);
             return null;
@@ -96,17 +97,17 @@
         var cached = readCache();
 
         if (cached && !cached.expired) {
-            display(cached.version, cached.publishedAt);
+            display(cached.version, cached.publishedAt, cached.htmlUrl);
             return;
         }
 
         if (cached && cached.expired) {
             // Show stale cache immediately
-            display(cached.version, cached.publishedAt);
+            display(cached.version, cached.publishedAt, cached.htmlUrl);
             // Then try to refresh
             var freshExpired = await fetchLatest();
 
-            if (freshExpired) display(freshExpired.version, freshExpired.publishedAt);
+            if (freshExpired) display(freshExpired.version, freshExpired.publishedAt, freshExpired.htmlUrl);
 
             return;
         }
@@ -114,7 +115,7 @@
         // No cache, try fetch
         var fresh = await fetchLatest();
 
-        if (fresh) display(fresh.version, fresh.publishedAt);
+        if (fresh) display(fresh.version, fresh.publishedAt, fresh.htmlUrl);
     }
 
     if (document.readyState === 'loading') {
