@@ -34,7 +34,19 @@
 
         if (!version || !dateStr) return; // Show nothing on invalid data
 
-        el.innerHTML = 'Latest release: version <a target="_blank" href="' + htmlUrl + '">' + version + '</a>, released on ' + dateStr + '.';
+        // Clear previous content
+        el.textContent = '';
+        // Build: "Latest release: version <a ...>version</a>, released on dateStr."
+        var prefix = document.createTextNode('Latest release: version ');
+        var link = document.createElement('a');
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.href = htmlUrl;
+        link.textContent = version;
+        var infix = document.createTextNode(', released on ' + dateStr + '.');
+        el.appendChild(prefix);
+        el.appendChild(link);
+        el.appendChild(infix);
     }
 
     function readCache() {
