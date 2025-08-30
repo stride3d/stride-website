@@ -306,7 +306,7 @@
             data.push({
                 'key': key,
                 'title': docsData[key].title,
-                'content': docsData[key].keywords,
+                'content': docsData[key].summary,
                 'source': 'docs',
             });
         }
