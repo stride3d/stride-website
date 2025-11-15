@@ -1,7 +1,6 @@
 ---
 title: 'Announcing Stride 4.2'
 author: vaclav
-popular: true
 tags: ['4.2','Release']
 ---
 

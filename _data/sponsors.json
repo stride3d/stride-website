@@ -2,7 +2,7 @@
   "users": {
     "vaclav": {
       "name": "Vašo ( Vaclav )",
-      "url": "https://opencollective.com/vaclav"
+      "url": "https://www.vaclavelias.com/"
     },
     "xen2": {
       "name": "Xen2",
@@ -11,6 +11,18 @@
     "skidvis": {
       "name": "Skid Vis",
       "url": "https://opencollective.com/skidvis"
+    },
+    "widowmakes": {
+      "name": "WidowMakes",
+      "url": "https://opencollective.com/widowmakes"
+    },
+    "norbo": {
+      "name": "Norbo",
+      "url": "https://github.com/bepu/bepuphysics2"
+    },
+    "first-hour": {
+      "name": "First Hour",
+      "url": "https://opencollective.com/first-hour"
     }
   },
   "organizations": {
