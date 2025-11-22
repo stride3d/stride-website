@@ -5,7 +5,7 @@ popular: true
 tags: ['4.3','Release']
 ---
 
-Stride 4.3 brings .NET 10 and C# 14, Bepu Physics, Vulkan compute shaders, custom assets, cross-platform build strides, mesh buffer helpers, Rider/VSCode support, and performance/stability fixes.
+Stride 4.3 brings .NET 10 and C# 14, Bepu Physics, Vulkan compute shaders, custom assets, cross-platform build strides, mesh buffer helpers, Rider/VSCode support, and performance and stability fixes.
 
 ---
 
@@ -41,7 +41,7 @@ The integration is effectively done, with Bepu's feature set now being slightly 
 
 ### Vulkan compute shader support
 
-Vulkan graphics backend has been modified to support compute shaders, the shader compiler has also been modified to support computer shader generation for GLSL.
+The Vulkan graphics backend has been modified to support compute shaders, and the shader compiler has also been modified to support compute shader generation for GLSL.
 
 ### User-defined Assets
 
@@ -51,7 +51,7 @@ The asset compiler also gives you the ability to build more complex systems like
 
 ### Ongoing efforts to build projects *from* Linux and Apple desktops
 
-Stride can build games under Windows to target the different devices we support, but building directly from those devices was not supported up till now.
+Stride can build games on Windows targeting the different devices we support, but building directly on those platforms was not supported until now.
 
 We've introduced a couple of changes to improve on that front:
 - Replacing our custom C++/CLI FBX importer with [Assimp](https://github.com/assimp/assimp)
@@ -60,7 +60,7 @@ We've introduced a couple of changes to improve on that front:
 - Building VHACD for Linux
 - Adjust FreeImage and DirectXTex for all platforms
 
-Some work is still required on this front, but simpler projects can now be built from those platforms.
+Some work is still required on this front, but simpler projects can now be built on those platforms.
 
 ### Efficient API to manipulate meshes
 
@@ -95,7 +95,8 @@ Although there have been [many fixes](https://github.com/stride3d/stride/pulls?p
 
 ### Also good to know
 
-We are already hard at work on a bunch of ongoing projects for version 4.4 and beyond;
+We are already hard at work on a bunch of ongoing projects for version 4.4 and beyond:
+
 - Continuing work to allow for building games *from* other platforms
 - Converting our Windows-only GameStudio to cross-platform through Avalonia
   We welcome anyone willing to contribute to this project over [Here](https://github.com/orgs/stride3d/projects/6) - just have to make sure to add a comment to one of the unassigned issues you want to work on
@@ -125,9 +126,9 @@ We’re always excited to welcome new contributors to the Stride family. Whether
 
 We extend our heartfelt gratitude for all the hard work and donations we have received. Your generous contributions significantly aid in the continuous development and enhancement of the Stride community and projects. Thank you for your support and belief in our collective efforts.
 
-In particular we want to thank these donors:
+In particular, we want to thank these donors:
 
-### Long time Stride supporters
+### Long-time Stride supporters
 *  {% include sponsor-org.md key:'vvvv' emoji:'🥇' %}
 
    <a href="https://visualprogramming.net/"><img src="https://images.opencollective.com/vvvv/8ab0acd/logo/256.png?height=72" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
