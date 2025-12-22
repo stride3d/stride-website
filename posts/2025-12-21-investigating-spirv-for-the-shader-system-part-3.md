@@ -16,7 +16,7 @@ So many things happened since the [the last blog post](/blog/investigating-spirv
 
 ## Preface
 
-Last time we've left on a fun design for a SPIR-V assembler/parser. This time instead of working on the backend side of the compiler, we're going to work on the frontend side, the parser. 
+Last time we went through SPIR-V and how to parse/assemble SPIR-V using C#, this time we'll see how the new SDSL parser was built from the ground up. I'll go through the implementation of a small parser to illustrate the design chosen for SDSL.
 
 We're also keeping the same principles that this project started with : 
 
@@ -28,22 +28,23 @@ Only this time we might break some rules since we're not following any C# church
 
 This post will show much more code, most of it will serve as an example, it won't always compile and might need some tweeking but can be used as a base to understand how the new SDSL parser works. 
 
-## Why writing a parser from scratch and not use a library ?
+## Why not using a library ? 
 
-This is very simple to answer : because we can!
+Why should we ? 🤔 
 
-Parsing a programming language is one of the easiest part of this whole ordeal, there are multiple ways to do it each with they pro and cons. 
+SDSL is not going to change much and we're only maintaining one language so we can write a simple parser that will only work for SDSL. 
 
-The first thing we've tried was using 2 ready made parsing library, all of them were very powerful and easy to use but sacrificing on speed and heap allocation.
+Parsing a programming language is easy, the difficult part comes after parsing a language.
 
-The third experiment with parsing SDSL was with a handmade recursive descent parser, it was the easiest and fastest to implement and apparently used in major compiler frontends (gcc and clangs) but don't quote me on that.
+I've experimented twice with very powerful libraries, they were easy to use and would have us maintain fewer lines of code by sacrificing on speed and heap allocation.
 
-I haven't had the chance of finding a proper (read *idiot proof*) explanation of how to implement a recurisve descent parser but I'd like to mention [Kay Lack's video](https://www.youtube.com/watch?v=ENKT0Z3gldE) which is the clearest explanation I could ever found on this subject. 
+The third experiment with parsing SDSL was with a handmade recursive descent parser, it was the easiest and fastest to implement and apparently used in major compiler frontends [like clang](https://discourse.llvm.org/t/where-can-i-download-the-ebnf-syntax-description-document-for-c-syntax-parser-by-clang/87614).
 
+At the time, I hadn't had the chance of finding a proper (read *idiot proof*) explanation of how to implement a recurisve descent parser but I'd like to mention [Kay Lack's video](https://www.youtube.com/watch?v=ENKT0Z3gldE) which is the clearest explanation I could ever found on this subject. I recommend you give a watch to have a better understanding of what will be written.
 
 ## The 3rd experiment
 
-It started as an expression/statement parser to compare with the current parser. In our case statements are what takes the most processing in SDSL, a low hanging fruit that we can reach fast.
+It started as an expression/statement parser to compare with the current parser. In our case statements are what takes the most processing in SDSL, a low hanging fruit that we can reach fast and benchark against our current shader system.
 
 To avoid allocation, we will avoid creating classes as much as we can except for the abstract syntax tree (AST). 
 
@@ -52,7 +53,6 @@ To avoid allocation, we will avoid creating classes as much as we can except for
 We'll define some basic nodes for our AST, the first will be an abstract node and derive everything from it.
 
 ```csharp
-
 // This struct will retain data of which part of text a node in our AST will represent
 public record struct TextLocation(string Text, Range Range);
 
@@ -100,9 +100,11 @@ public class BinaryExpression(Expression left, Operator operator, Expression rig
 
 ### Scanning code
 
-For our parser we need a construct that will keep track of the position of the parser in the text. Then we'll need to define our rules which, when matched, will advance our position in the text and when not, will reset the position.
+For our parser we need a construct that will keep track of the position of the parser in the text. Then we'll need to define our rules which, when matched, will advance our position in the text and when not, will reset the position. For that we create a scanner object with two parameters, the code being scanned and the position we're at.
 
-For that we create a scanner as a `ref struct` and our rules will be written in plain function. We don't need any abstractions (or maybe a little), functions are reusable enough and we don't allocate anything on the heap by calling a function.
+Our parser rules will be written as plain function, they don't need to be abstracted any other ways as functions are reusable enough and we don't allocate anything on the heap by calling a function.
+
+We should still be mindful of the limitations of recursion!
 
 
 ```csharp
@@ -125,12 +127,11 @@ public ref struct Scanner(string code)
 
 ### Building blocks
 
-Our rules will be functions returning a boolean, taking as parameters the scanner and an `out` reference to a node of the tree.
+For our parser, the rules will be functions returning a boolean, taking as parameters the scanner and an `out` reference to a node of the tree.
 
 Here's an example for the integer parser :
 
 ```csharp
-
 // A utility function that checks if the char is a digit with a specific value or in a range
 
 bool IsDigitValue(char c, int value)
@@ -149,6 +150,7 @@ bool ParseIntegerLiteral(ref Scanner scanner, out IntegerLiteral literal)
     if(IsDigitValue(scanner.Peek(), 0))
     {
         scanner.Position += 1;
+
         literal = new(0, new((int)(scanner.Peek() - '0'), new(scanner.Code, position..scanner.Position)));
         return true;
     }
@@ -157,7 +159,7 @@ bool ParseIntegerLiteral(ref Scanner scanner, out IntegerLiteral literal)
     {
         while(char.IsDigit(scanner.Peek()))
             scanner.Position += 1;
-        
+
         literal = new(0, new(int.Parse(scanner.Code[position..scanner.Position]), new(scanner.Code, position..scanner.Position)));
         return true;
     }
@@ -166,7 +168,7 @@ bool ParseIntegerLiteral(ref Scanner scanner, out IntegerLiteral literal)
     // In some cases this line of code will prove very relevant
     scanner.Position = start;
 
-    // Sometimes in the parse we never allocate any data for the node
+    // In some cases we never allocate the node in the heap because we haven't matched our rules
     // This is perfect for reducing allocation in our case
     literal = null!;
     return false;
@@ -174,7 +176,6 @@ bool ParseIntegerLiteral(ref Scanner scanner, out IntegerLiteral literal)
 
 ```
 
-Of course this implementation is lacking for the sake of simplicity, I leave the details to those who want to implement it themselves!
 
 We can derive this integer parser into a float parser quite easily, each language has its own rules of writing floating point numbers and it's up to the author of the language to decide which one is best.
 
@@ -185,7 +186,6 @@ After implementing the floating point parser we can abstract both those parsers 
 
 
 ```csharp
-
 bool ParseNumberLiteral(ref Scanner scanner, out NumberLiteral number)
 {
     var start = scanner.Position;
@@ -308,7 +308,7 @@ And that's the gist of it! The rest is about adding all the other elements of th
 
 ## The difficult parts
 
-There have been little bumps here and there while writing this parser
+There have been little bumps here and there while writing this parser. This is the first time I've implemented one, especially one that fits in the context of a compiler.
 
 ### C-like languages
 
@@ -328,10 +328,16 @@ This is due to the parser doing lots of backtracking and the solution was to imp
 ### The ambiguity of SDSL
 
 The ideal programming language grammar is context free, all information is gathered through the parsing 
-SDSL has introduced some ambiguity since mixins are considered as types, it's harder to know which identifier corresponds to which type or function. Lots of programming languages are not context free and SDSL is no different, so part of the work was offloaded to the backend
+SDSL has introduced some ambiguity since mixins are considered as types, it's harder to know which identifier corresponds to which type or function. Lots of programming languages are not context free and SDSL is no different, so part of the work was offloaded to the backend.
+
+This is something I've personally struggled while implementing the compiler, knowing which parts can go to syntax analysis, semantic analysis or the assembler itself is challenge in itself for first timers 😅.
 
 ## Conclusions
 
-Writing this SPIR-V library was very fun, I've learned a lot about SPIR-V and some of the possible use cases for it in the context of Stride. As you might have imagined, this was the easy part of this shader system rewrite. In the next installment we'll see the little adventure I went through to make the most of our shader front-end!
+Writing a handmade parser for your programming language is almost always the best decision you could make. There are many ways to write one but recursive descent parsers can be a very helpful start until you have a very specific need for your language.
 
-Thank you for reading!
+I'm excited to show more of SDSL's new compiler progress and writing that parser was a huge endeavor, going through two different implementations before setting to what it is now.
+
+In the next blog post we'll see how bridging the parser with the SPIR-V assembler was done, hopefully with an example of a working version of the compiler.
+
+Thanks for reading!
