@@ -20,12 +20,12 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
   },
   "dependencies": {
-    "@11ty/eleventy-fetch": "^5.1.0",
+    "@11ty/eleventy-fetch": "^5.1.1",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "bootstrap": "^5.3.8",
     "lunr": "^2.3.9",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-table-of-contents": "^1.1.0",
-    "sass": "^1.94.1"
+    "sass": "^1.97.1"
   }
 }
