@@ -5,8 +5,15 @@ popular: false
 image: /images/spir.png
 tags: ['.NET', 'Shaders']
 ---
-In this third part we're going to design a parser for the SDSL language!
+
+In this blog post, we will focus on how the new SDSL parser has been implemented through writing a prototype expression parser as an example. We will see how this can be possible without sacrificing performance and allocating the least amount of memory possible. And finally see how this improved on the current shader parser system in Stride.
+
 ---
+
+If you're interested in the other parts of this blog series :
+  - [Part 1](/blog/investigating-spirv-for-the-shader-system/) An introduction to the project
+  - [Part 2](/blog/investigating-spirv-for-the-shader-system-part-2/) we parse and assemble some SPIR-V
+  
 
 Table of Contents:
 
