@@ -24,8 +24,6 @@ We're also keeping the same principles that this project started with :
 - Low heap allocation
 - Easy to update/modify
 
-Only this time we might break some rules since we're not following any C# churches :D.
-
 This post will show much more code, most of it will serve as an example, it won't always compile and might need some tweeking but can be used as a base to understand how the new SDSL parser works. 
 
 ## Why not using a library ? 
@@ -44,13 +42,13 @@ At the time, I hadn't had the chance of finding a proper (read *idiot proof*) ex
 
 ## The 3rd experiment
 
-It started as an expression/statement parser to compare with the current parser. In our case statements are what takes the most processing in SDSL, a low hanging fruit that we can reach fast and benchark against our current shader system.
+It started as an expression/statement parser to compare with the current parser. In our case statements are what takes the most processing in SDSL, a low hanging fruit that we can reach fast and benchark against our current shader system. It ended up working so well it became the main parser for SDSL !
 
 To avoid allocation, we will avoid creating classes as much as we can except for the abstract syntax tree (AST). 
 
 ### The tree
 
-We'll define some basic nodes for our AST, the first will be an abstract node and derive everything from it.
+We'll define some basic nodes for our AST, the first will be an abstract node and we'll derive everything from it.
 
 ```csharp
 // This struct will retain data of which part of text a node in our AST will represent
@@ -304,39 +302,92 @@ bool Add(ref Scanner scanner, out Expression expression)
 
 ```
 
-And that's the gist of it! The rest is about adding all the other elements of the language.
+The sharpest ones will notice I'm not using recursion for everything, i'm using a while loop. This is a small optimisation called [precedence climbing](https://eli.thegreenplace.net/2012/08/02/parsing-expressions-by-precedence-climbing) to avoid to many recursions when parsing long and complex expressions.
 
-## The difficult parts
+And that's the gist of it! The rest is about adding all the other elements of the language. For SDSL that was about parsing a subset of HLSL, add the SDSL extra features and digging through all of the source code to find any quirks of the language and make sure we can handle them.
 
-There have been little bumps here and there while writing this parser. This is the first time I've implemented one, especially one that fits in the context of a compiler.
+In the future SDSL will be less reliant on HLSL syntax and follow one more similar to C# to avoid any confusion when switching between the two languages.
 
-### C-like languages
+## Benchmarks 
 
-SDSL was originally created as an extension of HLSL, a higher level of HLSL that includes mixin operators making it possible to mix some shader modules together. HLSL is itself very inspired from C/C++ in its syntax, some of the syntax in C were put in HLSL and kept in SDSL and have made it a bit more complicated to parse.
-
-A prime example is the "Declaration follows usage" principles. In C, declaring an array is written the same way it is used (eg : `int myArray[5];` and `myArray[0] = 2;`).
-
-This is confusing when coming from C# and creates some frictions when developping a game with Stride since we're using both C# and SDSL. There is no need to stick to C's syntax and HLSL/SDSL don't have the same memory semantic as C so the new parser supports both the C# and C syntax for array declarations and hopefully in the future SDSL will drop the C syntax and closely ressemble C# while being consistent with SPIR-V/HLSL memory semantic.
-
-### Recursion problem
-
-This was a problem we didn't see through the bits of code I've showed in this blog post but the original experiment had recursion instead of loops for binary operators. This lead the new parser to perform as fast as the previous one in cases where expressions were complex and varied, eg. `a + b * c + d - (3 * (5 + (e / 12)) * 4 * 1 / f)`.
-
-This is due to the parser doing lots of backtracking and the solution was to implement [precedence climing](https://eli.thegreenplace.net/2012/08/02/parsing-expressions-by-precedence-climbing), the while loop present in our `Add` and `Multiply` parsing function we saw a bit earlier in our example 😊.
+It wouldn't mean anything without benchmarks, so let's have a typical SDSL shader to benchmark for.
 
 
-### The ambiguity of SDSL
+```hlsl
+namespace MyNameSpace
+{
+    shader Parent 
+    {
 
-The ideal programming language grammar is context free, all information is gathered through the parsing 
-SDSL has introduced some ambiguity since mixins are considered as types, it's harder to know which identifier corresponds to which type or function. Lots of programming languages are not context free and SDSL is no different, so part of the work was offloaded to the backend.
+        struct MyStruct {
+            int a;
+        };
 
-This is something I've personally struggled while implementing the compiler, knowing which parts can go to syntax analysis, semantic analysis or the assembler itself is challenge in itself for first timers 😅.
+        stream int a;
+
+        stage abstract void DoSomething();
+
+        void Method()
+        {
+            int a = 0;
+            float4 buffer = float4(1,3, float2(1,2));
+            float4x4 a = float4x4(
+                float4(1,2,3,4),
+                float4(1,2,3,4),
+                float4(1,2,3,4),
+                float4(1,2,3,4)
+            );
+            for(;;)
+            {
+                if(i == 5)
+                {
+                    Print(i);
+                }
+            }
+            int b = (a - 10 / 3 ) * 32 +( streams.color.Normalize() + 2);
+            if(a == 2)
+            {
+            }
+        }
+    };
+}
+```
+
+After some text crunching we get these numbers!
+
+DRUM ROLL 🥁 ...
+
+```pwsh
+AMD Ryzen 7 3700X 3.60GHz, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 10.0.101
+  [Host]     : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v3
+
+| Method         | Mean     | Error    | StdDev   | Gen0    | Gen1   | Allocated |
+|--------------- |---------:|---------:|---------:|--------:|-------:|----------:|
+| ParseShaderOld | 151.3 us | 1.490 us |  1.16 us | 22.2168 | 5.1270 | 183.17 KB |
+| ParseShaderNew | 32.28 us | 0.295 us | 0.276 us |  1.6479 |        |  13.78 KB |
+```
+
+We run 5 times faster and allocate 20 times less memory than before. Objects allocated are not promotted to Gen1.
+
+That's exciting news to me! We could theoritically parse 4 more shaders while in a single core without worrying too much about GC pauses. This will surely improve startup times for the Stride engine!
+
 
 ## Conclusions
 
-Writing a handmade parser for your programming language is almost always the best decision you could make. There are many ways to write one but recursive descent parsers can be a very helpful start until you have a very specific need for your language.
+Let's check our goals again ...
 
-I'm excited to show more of SDSL's new compiler progress and writing that parser was a huge endeavor, going through two different implementations before setting to what it is now.
+- ✅ Fast
+    5x faster allows me to stamp that parser with ✨*Blazingly fast*🚀
+- ✅ Low heap allocation
+    20x less allocation is going to help us a lot, especially during runtime compilation
+- ✅ Easy to update/modify
+    Going the functional way has only made it easier to make changes. We also own all our parsing code, nothing is hidden behind API which is great!
+
+I could leave with a very nonchalant "Code speaks for itself" but I have to convince you that writing a handmade parser for your programming language is almost always the best decision you could make, there are many ways to write one but recursive descent parsers can be a very helpful start until you have a very specific need for your language.
+
+I'm excited to show more of SDSL's new compiler progress and writing that parser was a huge endeavor, espcially going through two different implementations before settling to what it is now.
 
 In the next blog post we'll see how bridging the parser with the SPIR-V assembler was done, hopefully with an example of a working version of the compiler.
 
