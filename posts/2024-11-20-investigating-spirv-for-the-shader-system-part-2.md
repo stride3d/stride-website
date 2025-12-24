@@ -43,6 +43,10 @@ In this second part we're going to dive deeper in how the current SDSL compiler 
     }
 </style>
 
+If you're interested in the other parts of this blog series :
+  - [Part 1](/blog/investigating-spirv-for-the-shader-system/) An introduction to the project
+  - [Part 3](/blog/investigating-spirv-for-the-shader-system-part-3/) we write a new parser for SDSL
+
 Table of Contents:
 
 [[TOC]]
