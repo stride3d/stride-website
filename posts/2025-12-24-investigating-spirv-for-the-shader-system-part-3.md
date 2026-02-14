@@ -93,14 +93,9 @@ public enum Operators
     LeftShift,
     RightShift,
     //...
-
 }
 
-
 public class BinaryExpression(Expression left, Operator operator, Expression right, TextLocation location) : Expression(location);
-
-
-
 ```
 
 ### Scanning code
@@ -144,7 +139,6 @@ bool IsDigitValue(char c, int value)
 
 bool IsDigitRange(char c, Range range);
 
-
 bool ParseIntegerLiteral(ref Scanner scanner, out IntegerLiteral literal)
 {
     // We keep track of the position before we match anything
@@ -178,7 +172,6 @@ bool ParseIntegerLiteral(ref Scanner scanner, out IntegerLiteral literal)
     literal = null!;
     return false;
 }
-
 ```
 
 
@@ -209,15 +202,12 @@ bool ParseNumberLiteral(ref Scanner scanner, out NumberLiteral number)
     number = null!;
     return false;
 }
-
 ```
 
 
 We can even go one step higher and use this number parser to create our first binary operation parser :
 
 ```csharp
-
-
 // A utility function that resets the position. We can modify it to catch errors
 bool ExitParser<TNode>(ref Scanner scanner, out TNode node, int position) where TNode : ASTNode;
 
@@ -225,7 +215,6 @@ bool ExitParser<TNode>(ref Scanner scanner, out TNode node, int position) where 
 // Looking ahead is something that happens quite often when parsing SDSL.
 
 bool FollowedByAny(ref Scanner scanner, string chars, out char value, bool withSpaces = false, bool advance = false);
-
 
 bool Spaces(ref Scanner scanner, int min = 0)
 {
@@ -273,7 +262,6 @@ bool Mul(ref Scanner scanner, out Expression expression)
         return true;
     else return ExitParser(ref scanner, result, out expression, position, orError);
 }
-
 ```
 
 We can also write the addition/subtraction parser, following the operator precedence : 
@@ -306,7 +294,6 @@ bool Add(ref Scanner scanner, out Expression expression)
         return true;
     else return ExitParser(ref scanner, result, out expression, position, orError);
 }
-
 ```
 
 The sharpest ones will notice I'm not using recursion for everything, i'm using a while loop. This is a small optimisation called [precedence climbing](https://eli.thegreenplace.net/2012/08/02/parsing-expressions-by-precedence-climbing) to avoid to many recursions when parsing long and complex expressions.
@@ -325,7 +312,6 @@ namespace MyNameSpace
 {
     shader Parent 
     {
-
         struct MyStruct {
             int a;
         };
