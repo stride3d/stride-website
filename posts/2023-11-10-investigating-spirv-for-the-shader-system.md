@@ -13,6 +13,7 @@ In this first part of a new series of blog posts, we will learn more about Strid
 If you're interested in the other parts of this blog series :
   - [Part 2](/blog/investigating-spirv-for-the-shader-system-part-2/) we parse and assemble some SPIR-V
   - [Part 3](/blog/investigating-spirv-for-the-shader-system-part-3/) we write a new parser for SDSL
+  - [Part 4](/blog/investigating-spirv-for-the-shader-system-part-4/) integration in the engine
 
 
 Table of Contents:

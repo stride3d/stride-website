@@ -13,6 +13,7 @@ In this blog post, we will focus on how the new SDSL parser has been implemented
 If you're interested in the other parts of this blog series :
   - [Part 1](/blog/investigating-spirv-for-the-shader-system/) An introduction to the project
   - [Part 2](/blog/investigating-spirv-for-the-shader-system-part-2/) we parse and assemble some SPIR-V
+  - [Part 4](/blog/investigating-spirv-for-the-shader-system-part-4/) integration in the engine
   
 
 Table of Contents:
