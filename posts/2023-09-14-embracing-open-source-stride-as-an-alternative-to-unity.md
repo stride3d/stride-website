@@ -1,7 +1,6 @@
 ---
 title: "Unity's Licensing Changes: Discovering Stride, a Community-Driven Open Source Engine"
 author: vaclav
-popular: true
 image: /images/blog/2023-09-14-embracing-open-source/stride-vs-unity-opening-image-2.webp
 tags: ['.NET']
 ---
@@ -20,7 +19,7 @@ Stride is not just another game engine; it's written entirely in C# and serves a
 
 ## Difference Between Unity and Stride
 
-Unity is developed by a large team and offers a feature-rich experience. On the other hand, [Stride](https://github.com/stride3d) is open-source and built by community contributors. 
+Unity is developed by a large team and offers a feature-rich experience. On the other hand, [Stride](https://github.com/stride3d) is open-source and built by community contributors.
 
 This means that Stride might not have all the features that Unity has, simply because there aren't as many people working on it. However, the open-source nature of Stride allows you to customize it according to your needs and provides a solid foundation for any rendering project.
 
@@ -72,6 +71,7 @@ Stride does not offer built-in multiplayer or Server/Client architecture. Howeve
 You can import some 3D models from the Unity store into Stride. However, scripts will need modification since the two engines differ.
 
 These are the basic [Scripting Differences](https://doc.stride3d.net/latest/en/manual/stride-for-unity-developers/index.html#event-functions-start-update-execute-etc):
+
 - `StartupScript` is a MonoBehaviour without the Update method
 - `SyncScript` is a MonoBehaviour with an Update method that runs every frame
 - `AsyncScript` is unique and runs asynchronously
@@ -87,16 +87,20 @@ commandList.RenderTarget.Save(commandList, stream, ImageFileType.Png);
 ```
 
 ## Shaders Available
+
 SDSL is a shader language written on top of HLSL.
 
 - [Shading language](https://doc.stride3d.net/latest/en/manual/graphics/effects-and-shaders/shading-language/index.html)
 - [ShaderExplorer](https://github.com/tebjan/Stride.ShaderExplorer)
 
 ## Build Automation
+
 Yes, since Stride uses .NET, automating the build process works out-of-the-box.
 
 ## Add-ons and Extensions
+
 You cannot extend the editor in the same way as Unity, but you can create custom code extensions as seen in the following:
+
 - [Terrain add-on](https://github.com/johang88/TR.Stride)
 - [Level editor add-on](https://github.com/Basewq/XenkoProofOfConcepts/tree/master/LevelEditorExtensionExample)
 
@@ -125,18 +129,23 @@ Stride primarily uses **clustered** forward rendering, with some additional feat
 ## Other Q&A
 
 ### What is the Equivalent of a Coroutine in Stride?
+
 Unlike Unity, which uses `IEnumerator` for asynchronous code execution, Stride leverages C#'s built-in `await` and `async` features. This can be accomplished using `AsyncScript`, which essentially acts as a `SyncScript` (the Stride equivalent of Unity's MonoBehaviour) but with asynchronous methods. You can use async methods within sync scripts, the same as standard C#.
 
 ### What is a StartupScript?
+
 A `StartupScript` in Stride includes a `Start` method that is invoked when it's added to the scene tree. This is similar to Unity's `Start` or `Awake` methods. However, `StartupScript` does not contain `Update` methods and therefore doesn't execute code every frame.
 
 ### Using Other Assemblies/Projects in Stride
+
 In Unity, the packaging system is built on top of a `csproj` file, which allows Unity to protect its proprietary source code. Stride, however, grants you full access to your `csproj` and `sln` (Solution) files. This enables you to include any NuGet packages or other C# projects in the usual way, by adding project references. If you add a new subproject to your main project through the Stride editor, it will be correctly configured by default, including folder location and references to the Stride engine.
 
 ### Is There an Asset Store for Stride?
+
 No, Stride does not have a dedicated Asset Store. However, most additional libraries specially designed for Stride can be found on GitHub or NuGet. For easier discovery, a summary has been made available at [Awesome-Stride](https://github.com/Doprez/Awesome-Stride).
 
 ### Null Checking in Stride vs Unity
+
 Does `is null` and `== null` work? Unlike Unity, which has overridden the `Equals` operator to be compatible with its C++ engine, Stride allows you to use `is null` and `== null` to compare the existence of an Entity or Component directly.
 
 ## Where to Start
