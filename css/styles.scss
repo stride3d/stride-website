@@ -18,6 +18,14 @@ body {
     &.navbar-icons {
         font-size: 20px;
     }
+
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown > .dropdown-toggle:active {
+        pointer-events: none;
+    }
 }
 
 .header-image, .alert-banner {

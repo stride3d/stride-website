@@ -10,14 +10,17 @@
             {%- assign menu_current = page.url | remove: '/' -%}
             {%- assign menu_blog = menu_current | slice: 0,4 -%}
             <ul class="navbar-nav navbar-nav--text me-auto mb-2 mb-lg-0 ms-sm-2">
-                <li class="nav-item">
-                    <a class="nav-link{% if menu_current=='features' %} active text-stride{% endif %}" aria-current="page" href="/features/">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link{% if menu_current=='blog' or menu_blog=='blog' %} active text-stride{% endif %}" href="/blog/">Blog</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link{% if menu_current=='features' or menu_current=='blog' or menu_current=='roadmap' or menu_current=='faq' %} active text-stride{% endif %} dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link{% if menu_current=='features' %} active text-stride{% endif %}" aria-current="page" href="/features/">Features</a></li>
+                        <li><a class="nav-link{% if menu_current=='blog' or menu_blog=='blog' %} active text-stride{% endif %}" href="/blog/">Blog</a></li>
+                        <li><a class="nav-link{% if menu_current=='roadmap' %} active text-stride{% endif %}" href="/roadmap/">Roadmap</a></li>
+                        <li><a class="nav-link{% if menu_current=='faq' %} active text-stride{% endif %}" href="/faq/">FAQ</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ site.links.docs-manual-url }}" target="_blank" rel="noopener">📚 Manual (EN)</a></li>
                         <li><a class="dropdown-item" href="{{ site.links.docs-manual-jp-url }}" target="_blank" rel="noopener">📚 Manual (JP)</a></li>
