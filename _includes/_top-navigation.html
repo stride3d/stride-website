@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light-stride-website fixed-top">
+<nav class="navbar navbar-expand-xl bg-light-stride-website fixed-top">
     <div class="container-xxl">
         <a class="navbar-brand" href="/">
             <img id="logo" height="37" width="124" src="/images/svg/stride-logo-light.svg" alt="Stride logo">
@@ -13,9 +13,6 @@
                 <li class="nav-item">
                     <a class="nav-link{% if menu_current=='features' %} active text-stride{% endif %}" aria-current="page" href="/features/">Features</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link{% if menu_current=='blog' or menu_blog=='blog' %} active text-stride{% endif %}" href="/blog/">Blog</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
                     <ul class="dropdown-menu">
@@ -28,8 +25,14 @@
                         <li><a class="dropdown-item" href="{{ site.links.docs-community-resources-url }}" target="_blank" rel="noopener">🏋🏽 Community Resources</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link{% if menu_current=='community' %} active text-stride{% endif %}" href="/community/">Community</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link{% if menu_current=='community' or menu_current=='blog' or menu_current=='roadmap' or menu_current=='faq' %} active text-stride{% endif %} dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item{% if menu_current=='blog' or menu_blog=='blog' %} text-stride{% endif %}" href="/blog/">Blog</a></li>
+                        <li><a class="dropdown-item{% if menu_current=='roadmap' %} text-stride{% endif %}" href="/roadmap/">Roadmap</a></li>
+                        <li><a class="dropdown-item{% if menu_current=='faq' %} text-stride{% endif %}" href="/faq/">FAQ</a></li>
+                        <li><a class="dropdown-item{% if menu_current=='community' %} text-stride{% endif %}" href="/community/">Community</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link{% if menu_current=='download' %} active text-stride{% endif %}" href="/download/">
@@ -81,7 +84,7 @@
                 </li>{% if site.dark-mode %}
                 <li class="nav-item dropdown d-lg-flex align-items-center">
                     <button title="Change theme" class="btn btn-link nav-link dropdown-toggle d-flex align-items-center" id="themeDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                    <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="static" aria-labelledby="themeDropdown">
                         <li>
                             <button class="dropdown-item dropdown-item-theme" id="lightTheme">
                                 <svg data-theme="light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">

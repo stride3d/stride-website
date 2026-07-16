@@ -18,6 +18,18 @@ body {
     &.navbar-icons {
         font-size: 20px;
     }
+
+    /* In case you change "navbar-expand-xl" to something else in /_includes/_top_navigation.html, replace the min-width value accordingly */
+    @media (min-width: 1200px) {
+        /* Automatic dropdown expanding for non-collapsed navbar */
+        .dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown > .dropdown-toggle:active {
+            pointer-events: none;
+        }
+    }
 }
 
 .header-image, .alert-banner {
