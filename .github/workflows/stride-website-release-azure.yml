@@ -10,6 +10,7 @@ on:
     paths-ignore:
       - 'README.md'
       - 'Stride.Web.sln'
+      - 'Stride.Web.slnx'
       - 'wiki/**'
       - '_drafts/**'
       - .gitignore
