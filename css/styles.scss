@@ -5,6 +5,10 @@
     --main-shadow: 2px 2px 8px #0000001a;
 }
 
+html {
+    scroll-padding-top: 8rem;
+}
+
 body {
     background-color: #f4f4f4;
 }
@@ -88,7 +92,8 @@ a {
         background-color: #cbcbcb40;
     }
 
-    div.accordion-item label[aria-expanded="true"] {
+    div.accordion-item label[aria-expanded="true"],
+    div.accordion-item label span[aria-expanded="true"] {
         color: var(--bs-stride);
     }
 }

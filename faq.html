@@ -12,64 +12,29 @@ banner:
 ---
 <div class="container-xxl py-5 px-4 px-sm-5">
     <div class="row g-4">
-        <div class="col-lg-6 col-md-6">
-            <div class="card">
+        <div class="col-md-6">
+            <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="h1 mb-3">General</h2>
                     <div class="accordion">
                         {% capture body %}
-                        <p>You can find the Stride system requirements on the <a href="{{ site.links.docs-requirements-url }}">Requirements</a> page in the Stride manual.</p>
+                        <p>You can find Stride's system requirements on the <a target="_blank" href="{{ site.links.docs-requirements-url }}">Requirements</a> page in the Stride manual.</p>
                         {% endcapture %}
-                        {% include accordion-item-faq.html id:"system-requirements"
-                        title:"What are the Stride system requirements?"
+                        {% include accordion-item-faq.html id:"question-system-requirements"
+                        title:"What are Stride's system requirements?"
                         body:body
                         %}
 
-                        {% include accordion-item-faq.html id:"what-platforms"
-                        title:"What platforms can I make applications for using Stride?"
-                        body:"<p>Stride currently supports <b>Windows</b>. Support for <b>Android</b>, <b>iOS</b>, <b>Linux</b> and <b>macOS</b> are in an experimental state. Stride also supports most popular VR devices.</p>"
-                        %}
-
                         {% capture body %}
-                        <p>You can find information about Stride features on the <a href="/features/" target="_self">Stride features page</a>, in the <a href="{{ site.links.docs-manual-url }}" target="_self">Stride documentation</a>, on the <a href="/blog/" target="_self">Stride blog</a>, and in the <a href="{{ site.links.docs-release-notes-url }}" target="_self">Stride release notes</a>. If you can't find what you're looking for, ask us on the <a href="{{ site.links.github-discussions-url }}" target="_self">Stride GitHub Discussions</a>.</p>
+                        <p>The engine requires at least {{ site.engine-size }} of free space to install.</p>
                         {% endcapture %}
-                        {% include accordion-item-faq.html id:"question-what-features"
-                        title:"What features does Stride support?"
+                        {% include accordion-item-faq.html id:"question-engine-size"
+                        title:"How much disk space does Stride take up?"
                         body:body
                         %}
 
-                        {% include accordion-item-faq.html id:"question-what-application"
-                        title:"What kind of applications can I make with Stride?"
-                        body:"<p>Stride is open-source, highly modular, and super-versatile. You can use it to create PC and VR games, or as a high-end rendering engine for non-gaming applications such as architecture, medical, and engineering visualization software, training simulations, and so on.</p>"
-                        %}
-
                         {% capture body %}
-                        <p>Yes. Stride is free. If you want, you can support the project through the <a href="{{ site.links.open-collective-url }}" target="_blank" rel="noopener">Open Collective</a>.</p>
-                        {% endcapture %}
-                        {% include accordion-item-faq.html id:"is-stride-free"
-                        title:"Is Stride free?"
-                        body:body
-                        %}
-
-                        {% include accordion-item-faq.html id:"question-can-sell"
-                        title:"Can I sell applications made with Stride?"
-                        body:"<p>Yes. You can sell applications made with Stride without restriction.</p>"
-                        %}
-
-                        {% include accordion-item-faq.html id:"question-can-assets"
-                        title:"Can I use assets and code from the Stride samples or templates in my application?"
-                        body:"<p>Yes, you can use Stride sample assets and code in your games.</p>"
-                        %}
-
-                        {% include accordion-item-faq.html id:"question-upgrade"
-                        title:"Do I have to upgrade to new versions of Stride? Will this break my application?"
-                        body:"<p>No, you don't have to upgrade Stride if you don't want to. However, we recommend you upgrade to benefit from new features and bug fixes. Stride automatically upgrades your code and assets when you open a project in a new version. In the case of important API changes, upgrading Stride might break your application. We recommend you make a backup of your project before upgrading it.</p>"
-                        %}
-
-                        {% capture body %}
-                        <p>
-                            You can get support on the Stride <a href="/community/">community platforms</a> or in the documentation <a href="http://doc.stride3d.net/latest/manual/troubleshooting/index.html">troubleshooting section</a>.
-                        </p>
+                        <p>You can get support on our <a href="/community/"> official community platforms</a> or in the documentation's <a target="_blank" href="http://doc.stride3d.net/latest/manual/troubleshooting/index.html">troubleshooting section</a>.</p>
                         {% endcapture %}
                         {% include accordion-item-faq.html id:"question-stride-support"
                         title:"Where can I get support for Stride?"
@@ -86,15 +51,43 @@ banner:
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <div class="card">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="h1 mb-3">Showcase</h2>
+                    <div class="accordion">
+                        {% capture body %}
+                        <p>You can find information about Stride features on the <a href="/features/" target="_self">features page</a>, in the <a target="_blank" href="{{ site.links.docs-manual-url }}">Stride documentation</a>, on the <a href="/blog/" target="_self">Stride blog</a>, and in the <a target="_blank" href="{{ site.links.docs-release-notes-url }}">Stride release notes</a>. If you can't find what you're looking for, ask us on the <a target="_blank" href="{{ site.links.github-discussions-url }}">Stride GitHub Discussions</a>.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-what-features"
+                        title:"What features does Stride support?"
+                        body:body
+                        %}
+
+                        {% capture body %}
+                        <p>Yes! You can check out a showcase of games and projects made by our community in <a target="_blank" href="https://doc.stride3d.net/latest/en/community-resources/index.html">Community Resources</a>.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-games-made-with-stride"
+                        title:"Are there any released games made with Stride?"
+                        body:body
+                        %}
+
+                        {% include accordion-item-faq.html id:"question-what-application"
+                        title:"What kind of applications can I make with Stride?"
+                        body:"<p>Stride is open-source, highly modular, and super-versatile. You can use it to create PC and VR games, or as a high-end rendering engine for non-gaming applications such as architecture, medical, and engineering visualization software, training simulations, and so on.</p>"
+                        %}
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="h1 mb-3">Licensing</h2>
                     <div class="accordion">
-                        {% include accordion-item-faq.html id:"question-do-i-own"
-                        title:"Do I own the content I make with Stride?"
-                        body:"<p>Yes. You own all the content you make with Stride.</p>"
+                        {% capture body %}
+                        <p>Yes! Stride is 100% free, but if you want, you can support the project through the <a target="_blank" href="{{ site.links.open-collective-url }}">Open Collective.</a></p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-is-stride-free"
+                        title:"Is Stride free?"
+                        body:body
                         %}
 
                         {% include accordion-item-faq.html id:"question-royalty"
@@ -102,14 +95,35 @@ banner:
                         body:"<p>No. You can build and distribute applications made with Stride with zero royalty fees.</p>"
                         %}
 
+                        {% capture body %}
+                        <p>Of course. We accept dontations through <a target="_blank" href="{{ site.links.open-collective-url }}">Open Collective</a>, where we allocate funds to specific projects.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-pay-us"
+                        title:"Can I pay you despite there being no fees?"
+                        body:body
+                        %}
+
+                        {% include accordion-item-faq.html id:"question-do-i-own"
+                        title:"Do I own the content I make with Stride?"
+                        body:"<p>Yes. You own all the content you make with Stride.</p>"
+                        %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="h1 mb-3">Modifying the engine</h2>
+                    <div class="accordion">
                         {% include accordion-item-faq.html id:"question-modify-source"
                         title:"Can I modify the Stride source code for my game?"
                         body:"<p>Yes. You can modify Stride as you need without restrictions.</p>"
                         %}
 
                         {% include accordion-item-faq.html id:"question-open-game"
-                        title:"Do I have to open the code of my game if I modify Xenko/Stride?"
-                        body:"<p>No. Xenko 3.x and Stride 4+ are covered by MIT license.</p>"
+                        title:"Do I have to open the code of my game if I modify Stride?"
+                        body:"<p>No. Stride is covered by the MIT license, which allows you to use the engine's code in open and closed source projects.</p>"
                         %}
 
                         {% include accordion-item-faq.html id:"question-share-modified"
@@ -120,6 +134,79 @@ banner:
                         {% include accordion-item-faq.html id:"question-include-parts"
                         title:"Can I include parts of Stride in my own application or engine?"
                         body:"<p>Yes, as long as you comply with the terms of the MIT license.</p>"
+                        %}
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="h1 mb-3">Platforms</h2>
+                    <div class="accordion">
+                        {% capture body %}
+                        <p>Stride currently supports <b>Windows</b>, <b>Linux</b>, <b>macOS</b>, <b>Android</b> and <b>iOS</b>. For more information, check out <a target="_blank" href="https://stride-docs.dockfrankenste.in/4.4/en/manual/platforms/index.html">Platforms</a> in our documentation.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-which-platforms-release"
+                        title:"Which platforms can I release games to?"
+                        body:body
+                        %}
+
+                        {% capture body %}
+                        <p>Currently Stride's editor is only available on <b>Windows</b>. However, you are able to write code and build games on <b>Linux</b> and <b>macOS</b> without it, which makes it possible to create <b>code-only</b> projects using the <a target="_blank" href="{{ site.links.stride-community-toolkit-url }}">community toolkit</a>.</p>
+                        <p>Linux users can also use Game Studio via Proton. For more information, visit our <a target="_blank" href="https://doc.stride3d.net/latest/en/manual/platforms/linux/install-the-editor-using-wine.html">setup guide</a> in the documentation.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-which-platforms-make"
+                        title:"On which platforms can I make games?"
+                        body:body
+                        %}
+
+                        {% include accordion-item-faq.html id:"question-console-support"
+                        title:"Does Stride support consoles such as PS5, Xbox or Nintendo Switch 2?"
+                        body:"<p>Currently, there is no official support for consoles, but due to being open source, you can always fork the engine and add the support yourself.</p>"
+                        %}
+
+                        {% include accordion-item-faq.html id:"question-web-support"
+                        title:"Does Stride support web?"
+                        body:"<p>Currently, Stride does not support deploying games to web, as our focus remains on desktop and mobile.</p>"
+                        %}
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="h1 mb-3">Cross-platform editor rewrite</h2>
+                    <div class="accordion">
+                        {% capture body %}
+                        <p>It's difficult to estimate when the editor will be ready for public use.</p>
+                        <p>Stride is driven by the community and its contributors, who work on the engine <b>in their spare time mostly for free.</b> If you'd like to help with the rewrite, you can either donate to us on <a target="_blank" href="{{ site.links.open-collective-url }}">Open Collective</a> or contribute code to one of the issues listed in the <a target="_blank" href="https://github.com/orgs/stride3d/projects/6">Avalonia Editor Rewrite</a> project on GitHub.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-xplat-when"
+                        title:"When is the cross-platform editor coming?"
+                        body:body
+                        %}
+
+                        {% capture body %}
+                        <p>You can check out the <a target="_blank" href="https://docs.google.com/document/d/1q2nPnmrSfSJ9Njn8yxFPVeQSsJo7T0rvC7b4Q7ddmVY/edit?tab=t.0#heading=h.dr8mbzgu4bsv">white paper</a> and the <a target="_blank" href="https://github.com/orgs/stride3d/projects/6">Avalonia Editor Rewrite</a> project on GitHub for an overview of the rewrite. You can also join our <a target="_blank" href="{{ site.links.discord-url }}">Discord community</a> for latest updates.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-xplat-learn-more"
+                        title:"Where can I learn more about the cross-platform editor rewrite?"
+                        body:body
+                        %}
+
+                        {% capture body %}
+                        <p>You can see the current status of the rewrite in the <a target="_blank" href="https://github.com/orgs/stride3d/projects/6">Avalonia Editor Rewrite</a> project on GitHub or by simply building it from source yourself.</p>
+                        <p>You can also join our <a target="_blank" href="{{ site.links.discord-url }}">Discord community</a> for latest updates from the developers.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-xplat-current-state"
+                        title:"What is the current state of the cross-platform editor rewrite?"
+                        body:body
+                        %}
+
+                        {% capture body %}
+                        <p>You can donate to us on <a target="_blank" href="{{ site.links.open-collective-url }}">Open Collective</a> or pick up one of the issues listed on the <a target="_blank" href="https://github.com/orgs/stride3d/projects/6">Avalonia Editor Rewrite</a> project on GitHub.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-xplat-help"
+                        title:"How can I help with the cross-platform rewrite?"
+                        body:body
                         %}
                     </div>
                 </div>
@@ -135,3 +222,4 @@ banner:
         </div>
     </div>
 </div>
+<script src="/scripts/expand-accordion-from-url.js"></script>
