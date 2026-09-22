@@ -1,17 +1,19 @@
-<p class="d-flex">
-    <span>
+<p class="">
+    <span class="m-1">
         <i class="fa-solid fa-calendar-days me-1"></i> {%- include post/day.html date:post.date -%}
     </span>
 
-<span class="mx-1">•</span>
+    <span class="m-1">•</span>
 
-{%- assign author = site.authors[post.data.author] -%}
-{%- if author -%}
-    {%- if author.github -%}
-    <img class="rounded-circle me-2" alt="author" height="28" width="28" src="https://avatars.githubusercontent.com/{{ author.github }}?size=60">
+    <span class="m-1 text-nowrap">
+    {%- assign author = site.authors[post.data.author] -%}
+    {%- if author -%}
+        {%- if author.github -%}
+        <img class="rounded-circle me-2" alt="author" height="24" width="24" src="https://avatars.githubusercontent.com/{{ author.github }}?size=60">
+        {%- endif -%}
+        {{ author.name }}
+    {%- else -%}
+    Unknown author
     {%- endif -%}
-    {{ author.name }}
-{%- else -%}
-Unknown author
-{%- endif -%}
+    </span>
 </p>

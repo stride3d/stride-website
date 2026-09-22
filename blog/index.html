@@ -13,28 +13,30 @@ description: Stay up-to-date with the latest in game development. Explore the St
         <div class="col-lg-9 col-md-8 col-sm-12" itemscope itemtype="http://schema.org/Blog">
             {%- for post in pagination.items -%}
             <article class="card mb-4 p-4" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-                <div class="row justify-content-center pt-3 pb-1">
-                    <div class="text-center col-lg-4 col-md-12 d-none d-lg-block">
-                        {%- if post.data.image_thumb -%}
-                        <a href="{{ post.url }}">
-                            <img loading="lazy" class="mt-2 px-4 lazyloaded img-fluid" src="{{ post.data.image_thumb }}" alt="{{ post.data.title }}" data-src="{{ post.data.image_thumb }}">
-                        </a>
-                        {%- elsif post.data.image -%}
-                        <a href="{{ post.url }}">
-                            <img loading="lazy" class="mt-2 px-4 lazyloaded img-fluid" src="{{ post.data.image }}" alt="{{ post.data.title }}" data-src="{{ post.data.image }}">
-                        </a>
-                        {%- else -%}
-                        <a href="{{ post.url }}">
-                            <img loading="lazy" class="mt-2 px-4 lazyloaded img-fluid" src="/images/blog/default_thumb.png" alt="Image not found" data-src="/images/blog/default_thumb.png">
-                        </a>
-                        {%- endif -%}
-                    </div>
-                    <div class="col-lg-8 col-md-12 post-card-header">
-                        <h2 class="entry-title h3" itemprop="name"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-                        {%- include post/meta.html -%}
-                        {%- if post.data.excerpt -%}{{ post.data.excerpt | md }}{%- else -%}
-                        {{ post.data.page.excerpt | md }}{%- endif -%}
-                        <p>{%- include tags.html tags: post.data.tags -%}</p>
+                <div class="column">
+                    <div class="row justify-content-center p-3">
+                        <div class="text-center col-lg-5">
+                            {%- if post.data.image_thumb -%}
+                            <a href="{{ post.url }}">
+                                <img style="aspect-ratio: 4/3; object-fit: cover" loading="lazy" class="w-100 lazyloaded img-fluid" src="{{ post.data.image_thumb }}" alt="{{ post.data.title }}" data-src="{{ post.data.image_thumb }}">
+                            </a>
+                            {%- elsif post.data.image -%}
+                            <a href="{{ post.url }}">
+                                <img style="aspect-ratio: 4/3; object-fit: cover" loading="lazy" class="w-100 lazyloaded img-fluid" src="{{ post.data.image }}" alt="{{ post.data.title }}" data-src="{{ post.data.image }}">
+                            </a>
+                            {%- else -%}
+                            <a href="{{ post.url }}">
+                                <img style="aspect-ratio: 4/3; object-fit: cover" loading="lazy" class="w-100 lazyloaded img-fluid" src="/images/blog/default_thumb.png" alt="Image not found" data-src="/images/blog/default_thumb.png">
+                            </a>
+                            {%- endif -%}
+                        </div>
+                        <div class="col-lg-7 post-card-header align-items-center">
+                            <h2 class="entry-title h3" itemprop="name"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                            {%- include post/meta.html -%}
+                            {%- if post.data.excerpt -%}{{ post.data.excerpt | md }}{%- else -%}
+                            {{ post.data.page.excerpt | md }}{%- endif -%}
+                            <p>{%- include tags.html tags: post.data.tags -%}</p>
+                        </div>
                     </div>
                 </div>
             </article>
