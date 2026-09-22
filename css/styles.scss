@@ -96,6 +96,16 @@ a {
     div.accordion-item label span[aria-expanded="true"] {
         color: var(--bs-stride);
     }
+
+    div.accordion-item label {
+        a {
+            display: none;
+        }
+
+        &:hover a {
+            display: inline-block;
+        }
+    }
 }
 
 .accordion-item:hover label {
