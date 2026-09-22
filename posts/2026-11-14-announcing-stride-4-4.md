@@ -33,7 +33,7 @@ Up to this point, Stride has been a Windows-first engine. Other platforms *were*
 
 Stride's graphics API support was similar to platforms, as in you had a lot of options, but there was a clear winner that worked better than the rest. Direct3D 11 was the default API and was mostly feature complete, while Direct3D 12, Vulkan, OpenGL and OpenGLES **were missing a lot of features** and were generally **less stable**. This was especially noticeble on non-Windows platforms, where Direct3D 11 wasn't available.
 
-Stride 4.4 addresses this problem by **completely overhauling Vulkan and Direct3D 12.** You should now expect your projects to all work the same, no matter of your choice of a graphical backend. **OpenGL and OpenGLES have been removed,** as we shift our focus to supporting only modern APIs for easier maintainability. We are also considering removing Direct3D 11 in the next major release.
+Stride 4.4 addresses this problem by **completely overhauling Vulkan and Direct3D 12.** You should now expect your projects to all work the same, no matter of your choice of a graphical backend. **OpenGL and OpenGLES have been removed** as we shift our focus to supporting only modern APIs for easier maintainability. We are also considering removing Direct3D 11 in the next major release.
 
 In addition to all of this, one of the other major changes with Stride 4.4 has been the **overhaul of the SDSL compiler.** Instead of stiching together text files, we now utilize a [SPIRV](https://www.khronos.org/spirv/)-centric pipeline, where each SDSL shaders gets compiled only once and the engine then works with their bytecode directly.
 
@@ -88,7 +88,7 @@ Asset URLs of external packages are now prefixed by a namespace, to ensure that 
 
 ### Other improvements
 
-As mentioned previously, this update is too large to summarize in this blog post. For more information about all the changes, you can read the full writeup in the [release notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+As mentioned previously, this update is too large to summarize in this blog post. For more information about what changed, you can read the full writeup in the [release notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
 
 ## Ongoing work on the engine
 
