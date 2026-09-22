@@ -5,7 +5,7 @@ popular: true
 tags: ['4.4','Release']
 ---
 
-Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improvements to non-Windows platform support, new CLI tool and much more.
+Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improvements to non-Windows platform support, a new CLI tool and much more.
 
 ---
 
@@ -19,11 +19,11 @@ You can download Stride 4.4 today from the [launcher](https://www.stride3d.net/d
 
 ## What's new in this release
 
-Here's a brief version of what has changed. For a more detailed write-up, checkout [release notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+Here are just a few of the most notable changes. For a more detailed write-up, checkout the [full release notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
 
 ### 📱 Platform support
 
-So far, Stride has been a Windows-first engine. Other platforms were supported, but creating and running games on them would often lead to many problems. This update changes that.
+Up to this point, Stride has been a Windows-first engine. Other platforms *were* supported, but creating and running games on them would often lead to many problems. This update changes that.
 
 **All platforms have been brought back into shape** and their test suite has been expanded to make sure they won't fall behind again. Additionally, with changes to the asset compiler, **building projects on Linux and macOS** now works the same **as it does on Windows.**
 
@@ -31,11 +31,11 @@ So far, Stride has been a Windows-first engine. Other platforms were supported, 
 
 ### 🎨 Overhaul of Vulkan, Direct3D 12 and SDSL
 
-Stride's graphics API support was similar to platforms, as in you had a lot of options, but there was a clear winner that worked better than the rest. Direct3D 11 was the default API and was mostly feature complete, while Direct3D12, Vulkan, OpenGL and OpenGLES **were missing a lot of features** and were generally **less stable**. This was especially noticeble on non-Windows platforms, where Direct3D 11 wasn't available.
+Stride's graphics API support was similar to platforms, as in you had a lot of options, but there was a clear winner that worked better than the rest. Direct3D 11 was the default API and was mostly feature complete, while Direct3D 12, Vulkan, OpenGL and OpenGLES **were missing a lot of features** and were generally **less stable**. This was especially noticeble on non-Windows platforms, where Direct3D 11 wasn't available.
 
-Stride 4.4 addresses this problem by **completely overhauling Vulkan and Direct3D 12.** You should now expect your projects to all work the same no matter of your choice of a graphical backend. **OpenGL and OpenGLES have been removed,** as we shift our focus to supporting only modern APIs for easier maintainability. We are also considering removing Direct3D 11 in the next major release.
+Stride 4.4 addresses this problem by **completely overhauling Vulkan and Direct3D 12.** You should now expect your projects to all work the same, no matter of your choice of a graphical backend. **OpenGL and OpenGLES have been removed,** as we shift our focus to supporting only modern APIs for easier maintainability. We are also considering removing Direct3D 11 in the next major release.
 
-In addition to all of this, one of the other major changes with Stride 4.4 has been the **overhaul of the SDSL compiler.** Instead of stiching together text files, we now utilize a [SPIR-V](https://www.khronos.org/spirv/)-centric pipeline where each SDSL shaders gets compiled only once and then the engine works with their bytecode directly to produce standard SPIR-V.
+In addition to all of this, one of the other major changes with Stride 4.4 has been the **overhaul of the SDSL compiler.** Instead of stiching together text files, we now utilize a [SPIRV](https://www.khronos.org/spirv/)-centric pipeline, where each SDSL shaders gets compiled only once and the engine then works with their bytecode directly.
 
 {% img-click 'The new SDSL shader pipeline: many .sdsl shaders are parsed once into per-shader SPIR-S bytecode, .sdfx effects mix and compose them into standard SPIR-V, which feeds Vulkan natively and Direct3D and Metal via SPIRV-Cross.' '/images/blog/release-4.4/sdsl-pipeline.webp' %}
 
@@ -46,9 +46,29 @@ In addition to all of this, one of the other major changes with Stride 4.4 has b
 * Far-better support for advanced features.
 * Easier for us to add modern enhancements in the future, such as ray tracing.
 
+### ⌨️ New `stride` CLI tool
+
+Some tasks that previously required the use of **Game Studio** or the **launcher** can now be done directly **from the command-line!** By using the CLI tool you can install and manage versions of Stride, create new projects and launch Game Studio with simple commands.
+
+For more information, visit the [Stride CLI](../manual/get-started/stride-cli.md) page of our documentation.
+
+```bash
+dotnet tool install -g stride.cli      # Install Stride CLI
+stride sdk install                     # Install the latest version of Stride
+stride new topdownrpg && cd TopDownRPG # Create a project from a template
+stride studio                          # Open it in Game Studio
+```
+
+`dotnet new` templates are also available if you'd rather use the standard .NET tooling directly:
+
+```bash
+dotnet new install Stride.Templates
+dotnet new stride-game -n MyGame
+```
+
 ### 📦 Improved asset workflow
 
-Working with asset paths in code has been made easier by the automatically generated `Assets` class, providing strongly typed URLs for all assets that are available in your project. Now instead of getting runtime "content not found" errors, you'll be able to catch missing assets at compile time.
+Working with asset paths in code has been made easier by the automatically generated `Assets` class, providing strongly typed URLs for all assets that are available in your project. Now instead of getting runtime "content not found" errors, you'll be able to **catch missing assets at compile time.**
 
 ```csharp
 // Old approach
@@ -58,11 +78,11 @@ var playerModel = Content.Load<Model>("Models/Player");
 var playerModel = Content.Load(Assets.Models.Player);
 ```
 
-There have been additional changes to improve support for multi-platform projects and external packages. Adding assets to root now defaults to using the project package that an asset belongs to instead of the current one (like `MyGame.Windows`), ensuring that your assets work the same across different builds. Game Studio now tells you the name of the project package where the asset will be root and allows you to choose from alternatives.
+There have been additional changes to improve support for multi-platform projects and external packages. Adding assets to root now defaults to using the project package that an asset belongs to instead of the current one (like `MyGame.Windows`), ensuring that **your assets work the same across different builds.** Game Studio now tells you the name of the project package where the asset will be root and allows you to choose from alternatives.
 
 TODO: IMAGE
 
-Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also now create replacement assets, which allow you to override assets from external packages or even the engine itself.
+Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also now create [replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets/index.html), which allow you to override assets from external packages or even the engine itself.
 
 {% img-click 'Replacement assets can be used to override the default font used by Stride.' '/images/blog/release-4.4/replacement-assets.webp' %}
 
@@ -74,26 +94,34 @@ As mentioned previously, this update is too large to summarize in this blog post
 
 ### Cross-platform editor rewrite
 
-The cross-platform rewrite of Game Studio is still ongoing. For those unaware, we are currently porting the editor from WPF to Avalonia to enable future support for Linux and macOS. This is a massive endeavour that will take a lot of time and effort, so if you're willing to help, **check out the [white paper](https://docs.google.com/document/d/1q2nPnmrSfSJ9Njn8yxFPVeQSsJo7T0rvC7b4Q7ddmVY/edit?usp=sharing) and the [Avalonia Editor Rewrite project](https://github.com/orgs/stride3d/projects/6/) on GitHub.**
+The cross-platform rewrite of Game Studio is still ongoing. For those unaware, we are currently porting the editor from WPF to Avalonia in order to enable future support for Linux and macOS. This is a massive endeavour that will take a lot of time and effort, so if you're willing to help, **check out the [white paper](https://docs.google.com/document/d/1q2nPnmrSfSJ9Njn8yxFPVeQSsJo7T0rvC7b4Q7ddmVY/edit?usp=sharing) and the [Avalonia Editor Rewrite project](https://github.com/orgs/stride3d/projects/6/) on GitHub.**
+
+As part of this effort, we have recently updated the launcher which is now using Avalonia. Despite not being that different from its predecessor, the new launcher is still a big step for the eventual cross-platform editor support.
+
+TODO: IMAGE
+
+We also have one more announcement for Linux users looking to use the editor on their system today...
 
 #### Game Studio can now run on Linux via Proton
 
-For a while using Game Studio on Linux wasn't possible even when using a compatibility layer. However, this changed in 4.4 after removing some legacy code.
+For a long time, Wine (and Proton) couldn't open Game Studio, due to legacy code that didn't want to play nice with compatibility layers. This has however changed in 4.4, after doing some cleanup in our codebase.
 
 {% img-click 'Game Studio running on Linux.' '/images/blog/release-4.4/stride-proton.webp' %}
 
-This is not a perfect solution and it's not officially supported, but it's still a big step forward for Linux developers trying to use Stride. We have created a step-by-step guide in the documentation that should help you setup the editor on your machine.
+We know that this is not a perfect solution, but it's still a big step forward for Linux developers trying to use Stride. We have created a step-by-step guide in the documentation that should help you setup the editor on your machine.
 
 ### Documentation
 
-Stride's documentation has always been one of its biggest weakpoints. Work on it has mostly been stale with not many people willing to write new pages or update existing content. However, this has recently been changed.
+Stride's documentation has always been one of its biggest weakpoints. Work on it has mostly been stale with not many people willing to write new pages or update existing content. However, this has recently changed.
 
-We are currently working on bringing the documentation up-to-date and restructuring to support future content. So far, we have:
+We are currently working on bringing the documentation up-to-date and restructuring it to support future content. So far, we have:
 
 * Rewritten [Get started](https://doc.stride3d.net/latest/en/manual/get-started/index.html), [Graphics API](https://doc.stride3d.net/latest/en/manual/graphics/graphics-api.html) and [Platforms](https://doc.stride3d.net/latest/en/manual/platforms/index.html).
 * Added new sections [Assets](https://doc.stride3d.net/latest/en/manual/assets/index.html), [Install and update](https://doc.stride3d.net/latest/en/manual/install-and-update/index.html) and [Project](https://doc.stride3d.net/latest/en/manual/files-and-folders/index.html).
-* Created new pages for new features [NativeAOT](../manual/files-and-folders/building-the-game/native-aot.md), [Replacement assets](../manual/assets/replacement-assets.md) and [Stride CLI](../manual/get-started/stride-cli.md?tabs=powershell).
+* Created new pages for new features: [NativeAOT](https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.md), [Replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.md) and [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.md).
 * Removed outdated sections and pages.
+
+We have also started documenting parts of Stride's internal architecture in the main [engine repository](https://github.com/stride3d/stride/tree/master/docs) to help other contributors navigate this large codebase. A copy of these pages is available on the [documentation website](https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.md).
 
 ## Funding and Resource Allocation
 
