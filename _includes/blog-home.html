@@ -10,6 +10,9 @@
                         {% for post in latestPosts limit:3 %}
                         <div class="col-md-4 g-3">
                             <div class="card mb-4 h-100">
+                                <a class="card-image" href="{{ post.url }}">
+                                    {%- include post/image.html -%}
+                                </a>
                                 <div class="card-body px-4 pt-4">
                                     <h3 class="h5 card-title fw-bold">{{ post.data.title }}</h3>
                                     <div class="mt-2 mb-3 small text-secondary">
