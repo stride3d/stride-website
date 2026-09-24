@@ -8,97 +8,97 @@ pagination:
 description: Stay up-to-date with the latest in game development. Explore the Stride game engine blog for expert insights, tutorials, and news on the latest features and updates.
 ---
 {% include banner.html h1:true title:"Stride Blog" sub-title:"Free. Cross-platform. Open source. A game engine for building all your apps." image-url:"/images/backgrounds/download.webp" %}
-<div class="container mt-5">
+<div class="mt-5 container">
     <div class="row">
-        <div class="col-lg-9 col-md-8 col-sm-12" itemscope itemtype="http://schema.org/Blog">
-            {%- for post in pagination.items -%}
-            <article class="card mb-4 p-4" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-                <div class="column">
-                    <div class="row justify-content-center p-3">
-                        <div class="text-center col-lg-5">
+        <div class="col-lg-9">
+            <div class="row" itemscope itemtype="http://schema.org/Blog">
+                {%- for post in pagination.items -%}
+                <article class="col-md-6 mb-4" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+                    <div class="card h-100">
+                        <div class="card-image">
                             <a href="{{ post.url }}">
                                 {%- include post/image.html -%}
                             </a>
                         </div>
-                        <div class="col-lg-7 post-card-header align-items-center">
+                        <div class="post-card-header p-4 col d-flex flex-column">
                             <h2 class="entry-title h3" itemprop="name"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
                             {%- include post/meta.html -%}
                             {%- if post.data.excerpt -%}{{ post.data.excerpt | md }}{%- else -%}
                             {{ post.data.page.excerpt | md }}{%- endif -%}
-                            <p>{%- include tags.html tags: post.data.tags -%}</p>
+                            <p class="mt-auto">{%- include tags.html tags: post.data.tags -%}</p>
                         </div>
                     </div>
-                </div>
-            </article>
-            {%- endfor -%}
-            <nav class="justify-content-center d-flex mb-4">
-                {% assign paginator_divider =  pagination.pages.size | minus:pagination.pageNumber %}
-                <ul class="pagination stride-custom-pagination">
-                    {% if pagination.href.previous %}
-                    <li class="page-item">
-                        <a href="{{ pagination.href.previous }}" class="stride-paginate-arrow-prev page-link">&laquo; Previous</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <span class="stride-paginate-arrow-prev page-link">&laquo; Previous</span>
-                    </li>
-                    {% endif %}
-                    {% if pagination.pageNumber > 0 %}
-                    <li class="page-item">
-                        <a class="page-link" href="/blog">1</a>
-                    </li>
-                    {% endif %}
-                    {% if pagination.pageNumber > 3 %}
-                    <li class="page-item">
-                        <span class="page-link">...</span>
-                    </li>
-                    {% endif %}
-                    {% if pagination.pageNumber > 2 %}
-                    <li class="page-item">
-                        <a class="page-link" href="/blog/{{ pagination.pageNumber | minus:2 }}/">{{ pagination.pageNumber | minus:1 }}</a>
-                    </li>
-                    {% endif %}
-                    {% if pagination.pageNumber > 1 %}
-                    <li class="page-item">
-                        <a class="page-link" href="{{ pagination.href.previous }}">{{ pagination.pageNumber }}</a>
-                    </li>
-                    {% endif %}
-                    <li class="page-item disabled">
-                        <span class="page-link">{{ pagination.pageNumber | plus:1 }}</span>
-                    </li>
-                    {% if paginator_divider > 1 %}
-                    <li class="page-item">
-                        <a class="page-link" href="{{ pagination.href.next }}">{{ pagination.pageNumber | plus:2 }}</a>
-                    </li>
-                    {% endif %}
-                    {% if paginator_divider > 2 %}
-                    <li class="page-item">
-                        <a class="page-link" href="/blog/{{ pagination.pageNumber | plus:2 }}/">{{ pagination.pageNumber | plus:3 }}</a>
-                    </li>
-                    {% endif %}
-                    {% if paginator_divider > 4 %}
-                    <li class="page-item">
-                        <span class="page-link">...</span>
-                    </li>
-                    {% endif %}
-                    {% if paginator_divider > 3 %}
-                    <li class="page-item">
-                        <a class="page-link" href="/blog/{{ pagination.pages.size | minus:1 }}/">{{ pagination.pages.size }}</a>
-                    </li>
-                    {% endif %}
-                    {% if pagination.href.next %}
-                    <li class="page-item">
-                        <a href="{{ pagination.href.next }}" class="stride-paginate-arrow-next page-link">Next &raquo;</a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <span class="stride-paginate-arrow-next page-link">Next &raquo;</span>
-                    </li>
-                    {% endif %}
-                </ul>
-            </nav>
+                </article>
+                {%- endfor -%}
+                <nav class="justify-content-center d-flex mb-4">
+                    {% assign paginator_divider =  pagination.pages.size | minus:pagination.pageNumber %}
+                    <ul class="pagination stride-custom-pagination">
+                        {% if pagination.href.previous %}
+                        <li class="page-item">
+                            <a href="{{ pagination.href.previous }}" class="stride-paginate-arrow-prev page-link">&laquo; Previous</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <span class="stride-paginate-arrow-prev page-link">&laquo; Previous</span>
+                        </li>
+                        {% endif %}
+                        {% if pagination.pageNumber > 0 %}
+                        <li class="page-item">
+                            <a class="page-link" href="/blog">1</a>
+                        </li>
+                        {% endif %}
+                        {% if pagination.pageNumber > 3 %}
+                        <li class="page-item">
+                            <span class="page-link">...</span>
+                        </li>
+                        {% endif %}
+                        {% if pagination.pageNumber > 2 %}
+                        <li class="page-item">
+                            <a class="page-link" href="/blog/{{ pagination.pageNumber | minus:2 }}/">{{ pagination.pageNumber | minus:1 }}</a>
+                        </li>
+                        {% endif %}
+                        {% if pagination.pageNumber > 1 %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ pagination.href.previous }}">{{ pagination.pageNumber }}</a>
+                        </li>
+                        {% endif %}
+                        <li class="page-item disabled">
+                            <span class="page-link">{{ pagination.pageNumber | plus:1 }}</span>
+                        </li>
+                        {% if paginator_divider > 1 %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ pagination.href.next }}">{{ pagination.pageNumber | plus:2 }}</a>
+                        </li>
+                        {% endif %}
+                        {% if paginator_divider > 2 %}
+                        <li class="page-item">
+                            <a class="page-link" href="/blog/{{ pagination.pageNumber | plus:2 }}/">{{ pagination.pageNumber | plus:3 }}</a>
+                        </li>
+                        {% endif %}
+                        {% if paginator_divider > 4 %}
+                        <li class="page-item">
+                            <span class="page-link">...</span>
+                        </li>
+                        {% endif %}
+                        {% if paginator_divider > 3 %}
+                        <li class="page-item">
+                            <a class="page-link" href="/blog/{{ pagination.pages.size | minus:1 }}/">{{ pagination.pages.size }}</a>
+                        </li>
+                        {% endif %}
+                        {% if pagination.href.next %}
+                        <li class="page-item">
+                            <a href="{{ pagination.href.next }}" class="stride-paginate-arrow-next page-link">Next &raquo;</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <span class="stride-paginate-arrow-next page-link">Next &raquo;</span>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-12">
+        <div class="col-lg-3">
             <div class="box-style">
                 <div class="devblogs-widget">
                     {% include blog-aside.html %}
