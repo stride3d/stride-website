@@ -21,8 +21,8 @@ description: Stay up-to-date with the latest in game development. Explore the St
                             </a>
                         </div>
                         <div class="post-card-header p-4 col d-flex flex-column">
-                            <h2 class="entry-title h3" itemprop="name"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
                             {%- include post/meta.html -%}
+                            <h2 class="entry-title h3" itemprop="name"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
                             {%- if post.data.excerpt -%}{{ post.data.excerpt | md }}{%- else -%}
                             {{ post.data.page.excerpt | md }}{%- endif -%}
                             <p class="mt-auto">{%- include tags.html tags: post.data.tags -%}</p>
