@@ -3,6 +3,7 @@ title: 'Announcing Stride 4.3'
 author: vaclav
 popular: true
 tags: ['4.3','Release']
+image: /images/blog/release-4.3/post-cover.webp
 ---
 
 Stride 4.3 brings .NET 10 and C# 14, Bepu Physics, Vulkan compute shaders, custom assets, cross-platform build strides, mesh buffer helpers, Rider/VSCode support, and performance and stability fixes.
