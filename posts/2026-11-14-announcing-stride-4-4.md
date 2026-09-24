@@ -3,6 +3,7 @@ title: 'Announcing Stride 4.4'
 author: ferafiks
 popular: true
 tags: ['4.4','Release']
+image: /images/blog/release-4.4/post-cover.webp
 ---
 
 Stride 4.4 is one of the largest updates the engine has seen in years, with a modernized shader pipeline, overhauled Vulkan and Direct3D APIs, massive improvements to non-Windows platform support, a new CLI tool and much more.
