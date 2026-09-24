@@ -18,8 +18,6 @@
                                     <div class="mt-2 mb-3 small text-secondary">
                                         <i class="fa-solid fa-calendar-days me-1"></i> {%- include post/day.html date:post.date -%}
                                     </div>
-                                    {%- if post.data.excerpt -%}{{ post.data.excerpt | md }}{%- else -%}
-                                    {{ post.data.page.excerpt | md }}{%- endif -%}
                                 </div>
                                 <div class="px-4 mb-4">
                                     <a href="{{ post.url }}" class="btn btn-lg btn-outline-stride me-md-2">Read more</a>
