@@ -51,7 +51,7 @@ In addition to all of this, one of the other major changes with Stride 4.4 has b
 
 Some tasks that previously required the use of **Game Studio** or the **launcher** can now be done directly **from the command-line!** By using the CLI tool you can install and manage versions of Stride, create new projects and launch Game Studio with simple commands.
 
-For more information, visit the [Stride CLI](../manual/get-started/stride-cli.md) page of our documentation.
+For more information, visit the [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html) page of our documentation.
 
 ```bash
 dotnet tool install -g stride.cli      # Install Stride CLI
@@ -119,10 +119,10 @@ We are currently working on bringing the documentation up-to-date and restructur
 
 * Rewritten [Get started](https://doc.stride3d.net/latest/en/manual/get-started/index.html), [Graphics API](https://doc.stride3d.net/latest/en/manual/graphics/graphics-api.html) and [Platforms](https://doc.stride3d.net/latest/en/manual/platforms/index.html).
 * Added new sections [Assets](https://doc.stride3d.net/latest/en/manual/assets/index.html), [Install and update](https://doc.stride3d.net/latest/en/manual/install-and-update/index.html) and [Project](https://doc.stride3d.net/latest/en/manual/files-and-folders/index.html).
-* Created new pages for new features: [NativeAOT](https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.md), [Replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.md) and [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.md).
+* Created new pages for new features: [NativeAOT](https://doc.stride3d.net/latest/en/manual/files-and-folders/building-the-game/native-aot.html), [Replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets.html) and [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html).
 * Removed outdated sections and pages.
 
-We have also started documenting parts of Stride's internal architecture in the main [engine repository](https://github.com/stride3d/stride/tree/master/docs) to help other contributors navigate this large codebase. A copy of these pages is available on the [documentation website](https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.md).
+We have also started documenting parts of Stride's internal architecture in the main [engine repository](https://github.com/stride3d/stride/tree/master/docs) to help other contributors navigate this large codebase. A copy of these pages is available on the [documentation website](https://doc.stride3d.net/latest/en/contributors/engine/architecture/index.html).
 
 ## Funding and Resource Allocation
 
@@ -132,7 +132,7 @@ We are actively seeking skilled developers with experience in C#, the .NET ecosy
 
 ### Join Us on This Journey
 
-We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development on stride in the [documentation](https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html).
+We’re always excited to welcome new contributors to the Stride family. Whether it’s through code or content contributions, spreading the word, or donations, every bit helps us grow stronger. Check out all the ways to support the development in the [documentation](https://stride-docs.dockfrankenste.in/4.4/en/contributors/index.html).
 
 ## Links
 
