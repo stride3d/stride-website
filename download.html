@@ -33,7 +33,7 @@ banner:
                         </a>
                     </div>
                     <p class="small mt-1 mb-0" id="stride-version"></p>
-                    <div class="text-secondary mt-2 small">Note: The installer download is approximately 55 MB. This file will be downloaded directly from our GitHub main repository.</div>
+                    <div class="text-secondary mt-2 small">Note: The installer download is approximately {{ site.installer-size }}. This file will be downloaded directly from our GitHub main repository.</div>
                 </div>
                 <h2>Having doubts on how to install it?</h2>
                 <p class="lead">Check the <a href="{{ site.links.docs-installation-url }}" target="_blank" rel="noopener">installation guide</a>!</p>
@@ -54,9 +54,13 @@ banner:
             <div class="col-lg-7 col-md-6 rt-left">
                 <h2 class="h1 mb-3">Frequently asked questions</h2>
                 <div class="accordion">
-                    {% include accordion-item-faq.html id:"what-platforms"
-                    title:"What platforms can I make applications for using Stride?"
-                    body:"<p>Stride currently supports <b>Windows</b>. Support for <b>Android</b>, <b>iOS</b>, <b>Linux</b> and <b>macOS</b> are in experimental state. Stride also supports most popular VR devices.</p>"
+                    {% capture body %}
+                    <p>Currently Stride's editor is only available on <b>Windows</b>. However, you are able to write code and build games on <b>Linux</b> and <b>macOS</b> without it, which makes it possible to create <b>code-only</b> projects using the <a target="_blank" href="{{ site.links.stride-community-toolkit-url }}">community toolkit</a>.</p>
+                    <p>Linux users can also use Game Studio via Proton. For more information, visit our <a target="_blank" href="https://doc.stride3d.net/latest/en/manual/platforms/linux/install-the-editor-using-wine.html">official Proton setup guide</a> in the documentation.</p>
+                    {% endcapture %}
+                    {% include accordion-item-faq.html id:"question-which-platforms-make"
+                    title:"On which platforms can I make games?"
+                    body:body
                     %}
 
                     {% capture body %}
@@ -67,19 +71,25 @@ banner:
                     body:body
                     %}
 
-                    {% include accordion-item-faq.html id:"question-modify"
-                    title:"Do I have to open the code of my game if I modify Stride/Xenko?"
-                    body:"<p>No. Xenko 3.x and Stride 4+ are covered by MIT license.</p>"
+                    {% capture body %}
+                    <p>Yes! Stride is 100% free, but if you want, you can support the project through <a target="_blank" href="{{ site.links.open-collective-url }}">Open Collective.</a></p>
+                    {% endcapture %}
+                    {% include accordion-item-faq.html id:"question-is-stride-free"
+                    title:"Is Stride free?"
+                    body:body
                     %}
 
                     {% include accordion-item-faq.html id:"question-what-application"
-                    title:"What kinds of application can I make with Stride?"
-                    body:"<p>Stride is open-source, highly modular, and super-versatile. You can use it to create PC and VR games, or as a high-end rendering engine for applications such as training simulations or architecture and engineering software.</p>"
+                    title:"What kind of applications can I make with Stride?"
+                    body:"<p>Stride is open-source, highly modular, and super-versatile. You can use it to create PC and VR games, or as a high-end rendering engine for non-gaming applications such as architecture, medical, and engineering visualization software, training simulations, and so on.</p>"
                     %}
 
-                    {% include accordion-item-faq.html id:"question-content-ownership"
-                    title:"Do I own the content I make with Stride?"
-                    body:"<p>Yes. You own all the content you make with Stride.</p>"
+                    {% capture body %}
+                    <p>Yes! You can check out a showcase of games and projects made by our community in <a target="_blank" href="https://doc.stride3d.net/latest/en/community-resources/games-and-demos.html">Community resources</a>.</p>
+                    {% endcapture %}
+                    {% include accordion-item-faq.html id:"question-games-made-with-stride"
+                    title:"Are there any released games made with Stride?"
+                    body:body
                     %}
                 </div>
                 <p class="lead mt-3">
@@ -95,3 +105,4 @@ banner:
     </div>
 </div>
 <script src="/scripts/latest-release.js?site-version={{site.version}}"></script>
+<script src="/scripts/expand-accordion-from-url.js"></script>
