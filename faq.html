@@ -143,14 +143,6 @@ banner:
                     <h2 class="h1 mb-3">Platforms</h2>
                     <div class="accordion">
                         {% capture body %}
-                        <p>Stride currently supports <b>Windows</b>, <b>Linux</b>, <b>macOS</b>, <b>Android</b> and <b>iOS</b>. For more information, check out <a target="_blank" href="https://stride-docs.dockfrankenste.in/4.4/en/manual/platforms/index.html">Platforms</a> in our documentation.</p>
-                        {% endcapture %}
-                        {% include accordion-item-faq.html id:"question-which-platforms-release"
-                        title:"Which platforms can I release games to?"
-                        body:body
-                        %}
-
-                        {% capture body %}
                         <p>Currently Stride's editor is only available on <b>Windows</b>. However, you are able to write code and build games on <b>Linux</b> and <b>macOS</b> without it, which makes it possible to create <b>code-only</b> projects using the <a target="_blank" href="{{ site.links.stride-community-toolkit-url }}">community toolkit</a>.</p>
                         <p>Linux users can also use Game Studio via Proton. For more information, visit our <a target="_blank" href="https://doc.stride3d.net/latest/en/manual/platforms/linux/install-the-editor-using-wine.html">official Proton setup guide</a> in the documentation.</p>
                         {% endcapture %}
@@ -159,9 +151,12 @@ banner:
                         body:body
                         %}
 
-                        {% include accordion-item-faq.html id:"question-console-support"
-                        title:"Does Stride support consoles such as PS5, Xbox or Nintendo Switch 2?"
-                        body:"<p>Currently, there is no official support for consoles, but due to being open-source, it's possible to fork the engine and add the support yourself.</p>"
+                        {% capture body %}
+                        <p>See the <a href="/features/">Stride features page</a>, the <a href="{{ site.links.docs-manual-url }}" target="_blank" rel="noopener">Stride documentation</a>, the <a href="/blog/">Stride blog</a>, and the <a href="{{ site.links.docs-release-notes-url }}" target="_blank" rel="noopener">Stride release notes</a>. If you can't find what you're looking for, ask on the <a href="{{ site.links.github-discussions-url }}" target="_blank" rel="noopener">Stride GitHub discussions</a>.</p>
+                        {% endcapture %}
+                        {% include accordion-item-faq.html id:"question-features"
+                        title:"Where can I learn about the Stride features?"
+                        body:body
                         %}
 
                         {% include accordion-item-faq.html id:"question-web-support"
