@@ -12,6 +12,8 @@
   "download-version": "4.3",
   "csharp-version": "C# 14",
   "dotnet-version": ".NET 10",
+  "installer-size": "55 MB",
+  "engine-size": "5 GB",
   "url": "https://www.stride3d.net",
   "twitter-username": "stridedotnet",
   "google-analytics-id": "G-Y9CVGC9YV1",
