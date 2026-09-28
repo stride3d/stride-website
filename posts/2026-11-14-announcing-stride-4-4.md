@@ -101,6 +101,9 @@ As part of this effort, we have recently updated the launcher which is now using
 
 {% img-click 'New launcher supports system theme and accent color.' '/images/blog/release-4.4/new-launcher.webp' %}
 
+> [!NOTE]
+> The launcher's color scheme is synchronized with your system.
+
 We also have one more announcement for Linux users looking to use the editor on their system today...
 
 #### Game Studio can now run on Linux via Proton
