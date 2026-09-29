@@ -1,0 +1,9 @@
+{%- assign source = "/images/blog/default_thumb.png" -%}
+
+{%- if post.data.image_thumb -%}
+    {%- assign source = post.data.image_thumb -%}
+{%- elsif post.data.image -%}
+    {%- assign source = post.data.image -%}
+{%- endif -%}
+
+<img style="aspect-ratio: 16/9; object-fit: cover" loading="lazy" class="w-100 lazyloaded img-fluid" src="{{ source }}" alt="{{ post.data.title }}" data-src="{{ source }}">

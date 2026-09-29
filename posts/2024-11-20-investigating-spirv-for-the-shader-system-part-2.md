@@ -2,7 +2,7 @@
 title: "Investigating SPIR-V for the shader system - Part 2"
 author: youness
 popular: false
-image: /images/spir.png
+image: /images/blog/2023-11/investigating-spirv-post-cover.webp
 tags: ['.NET', 'Shaders']
 ---
 In this second part we're going to dive deeper in how the current SDSL compiler works and how we are improving on it for the SPIR-V compiler. This will be a sort of personal log book of my research on the subject.

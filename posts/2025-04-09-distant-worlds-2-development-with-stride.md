@@ -2,7 +2,7 @@
 title: "A Look Inside Distant Worlds 2: Developing with the Stride Engine"
 author: vaclav
 popular: true
-image: /images/blog/2025/distant-worlds-image.webp
+image: /images/blog/2025/distant-worlds-post-cover.webp
 tags: ['Game', 'Strategy', '4X']
 ---
 
