@@ -128,7 +128,7 @@
     {
       "id": "animation",
       "title": "Animation",
-      "description": "Play and blend animations created in 3D modeling tools and animate any property of your game. Storyboard editor coming soon.",
+      "description": "Play and blend animations created in 3D modeling tools and animate any property of your game.",
       "type": "video",
       "enabled": true
     }
