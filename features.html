@@ -133,16 +133,7 @@ image: /images/backgrounds/features_banner.webp
         </div>
     </div>
     <div class="row mt-1 g-4">
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Async Scripting</h3>
-                    <a href="{{ site.links.docs-manual-url }}scripts/types-of-script/async-script.html" title="Stride Async Script" target="_blank" rel="noopener">
-                        <div class="rt-image my-3"><img class="img-fluid" loading="lazy" src="/images/features/scripting/async-script.webp" alt="Stride Async Script"></div>
-                    </a>
-                    <p>Stride utilizes the modern and native C# <a href="{{ site.links.docs-manual-url }}scripts/types-of-script/async-script.html" target="_blank" rel="noopener">async/await feature</a> for handling asynchronous operations, offering a more intuitive and efficient approach to concurrent tasks.</p>
-                </div>
-            </div>
-        </div>
+        {% assign name = 'scripting' %}
+        {% include feature.html %}
     </div>
 </div>
