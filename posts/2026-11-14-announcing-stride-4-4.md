@@ -16,11 +16,11 @@ Table of Contents:
 
 ## Download and Upgrade
 
-You can download Stride 4.4 today from the [launcher](https://www.stride3d.net/download/). Release notes are available [here](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+You can download Stride 4.4 today from the [launcher](https://www.stride3d.net/download/). Release notes are available [here](https://doc.stride3d.net/en/release-notes/4.4.html).
 
 ## What's new in this release
 
-Here are just a few of the most notable changes. For a more detailed write-up, checkout the [full release notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+Here are just a few of the most notable changes. For a more detailed write-up, checkout the [full release notes](https://doc.stride3d.net/en/release-notes/4.4.html).
 
 ### 📱 Platform support
 
@@ -89,7 +89,7 @@ Asset URLs of external packages are now prefixed by a namespace, to ensure that 
 
 ### Other improvements
 
-As mentioned previously, this update is too large to summarize in this blog post. For more information about what changed, you can read the full writeup in the [release notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+As mentioned previously, this update is too large to summarize in this blog post. For more information about what changed, you can read the full writeup in the [release notes](https://doc.stride3d.net/en/release-notes/4.4.html).
 
 ## Ongoing work on the engine
 

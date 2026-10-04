@@ -145,4 +145,4 @@ In order to provide a better experience for users, we've been working hard on va
 
 Also, package size has been almost divided by 3, resulting in much faster download and install time.
 
-For the full release notes, see the dedicated [page](http://doc.stride3d.net/2.0/ReleaseNotes/).
+For the full release notes, see the dedicated [page](https://doc.stride3d.net/en/release-notes/2.0.html).

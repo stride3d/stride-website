@@ -54,8 +54,7 @@
     }
 
     function getEmoji(key) {
-        let splitKey = key.split('/');
-        let firstWord = splitKey[0];
+        let firstWord = getSection(key);
 
         switch(firstWord) {
             case 'manual':
@@ -64,7 +63,7 @@
                 return '🎓';
             case 'api':
                 return '🔧';
-            case 'ReleaseNotes':
+            case 'release-notes':
                 return '📝';
             case 'contributors':
                 return '🌟';
@@ -140,11 +139,16 @@
         return set;
     }
 
+    // Section of a docs search result: the first folder of its path (ReleaseNotes in the docs of 4.3 and older)
+    function getSection(key) {
+        const section = (key || '').split('/')[0];
+        return section === 'ReleaseNotes' ? 'release-notes' : section;
+    }
+
     function getItemSource(post) {
         if (post.source === 'web') return 'web';
         if (post.source === 'docs') {
-            const key = post.key || '';
-            return key.split('/')[0] || 'docs';
+            return getSection(post.key) || 'docs';
         }
         return 'unknown';
     }
