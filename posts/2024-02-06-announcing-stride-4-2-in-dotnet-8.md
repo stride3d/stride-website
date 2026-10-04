@@ -18,7 +18,7 @@ A massive thank you to the open-source Stride community for your dedicated contr
 
 ## Download and Upgrade
 
-You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+You can [download the Stride 4.2 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/en/release-notes/4.2.html).
 
 Make sure you read the [guide to update Stride and projects properly](https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html).
 
@@ -106,7 +106,7 @@ Although there have been [many fixes](https://github.com/stride3d/stride/pulls?p
 - [C# Beginner Tutorial Build Errors #1652](https://github.com/stride3d/stride/issues/1652)
 - [Can not create "C# Beginner" project #1650](https://github.com/stride3d/stride/issues/1650)
 
-See the full list in the [Release Notes](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+See the full list in the [Release Notes](https://doc.stride3d.net/en/release-notes/4.2.html).
 
 ## Exciting Development in Stride Physics
 

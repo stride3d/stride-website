@@ -15,7 +15,7 @@ Table of Contents:
 
 ## Download and Upgrade
 
-You can [download the Stride 4.3 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/latest/en/ReleaseNotes/ReleaseNotes.html).
+You can [download the Stride 4.3 Installer](https://www.stride3d.net/download/) today. Release notes are available [here](https://doc.stride3d.net/en/release-notes/4.3.html).
 
 Make sure you read the [guide to update Stride and projects properly](https://doc.stride3d.net/latest/en/manual/get-started/update-stride.html).
 
