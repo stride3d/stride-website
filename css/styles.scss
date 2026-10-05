@@ -315,6 +315,14 @@ svg path.logo-path {
     background-size: 50px 50px;
 }
 
+$sponsor-tier-colors: (
+    diamond: rgb(185, 242, 255),
+    platinum: rgb(229, 228, 226),
+    gold: rgb(221, 205, 62),
+    silver: silver,
+    bronze: rgb(216, 156, 78)
+);
+
 .oc-sponsors-container {
     display: flex;
     flex-direction: column;
@@ -339,16 +347,10 @@ svg path.logo-path {
             flex-wrap: wrap;
         }
 
-        .tier-item.gold {
-            background-color: rgb(221, 205, 62);
-        }
-
-        .tier-item.silver {
-            background-color: silver;
-        }
-
-        .tier-item.bronze {
-            background-color: rgb(216, 156, 78);
+        @each $tier, $color in $sponsor-tier-colors {
+            .tier-item.#{$tier} {
+                background-color: $color;
+            }
         }
 
         .img-container {
@@ -369,14 +371,10 @@ svg path.logo-path {
                 box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
             }
 
-            img.gold {
-                border: solid 3px rgb(221, 205, 62);
-            }
-            img.silver {
-                border: solid 3px silver;
-            }
-            img.bronze {
-                border: solid 3px rgb(216, 156, 78);
+            @each $tier, $color in $sponsor-tier-colors {
+                img.#{$tier} {
+                    border: solid 3px $color;
+                }
             }
         }
     }
