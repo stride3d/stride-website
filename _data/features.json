@@ -171,7 +171,7 @@
       "title": "Entity component system",
       "description": "On top of standard component-based scripting, Stride also lets you structure your code using ECS for improved performance and maintainability.",
       "type": "image",
-      "image_url": "async-script.webp",
+      "image_url": "ecs.webp",
       "enabled": true
     },
     {
@@ -179,7 +179,7 @@
       "title": "Built-in script editor",
       "description": "You can create games with Stride directly from its editor, without having to juggle multiple applications. The built-in code editor is sufficient enough to accomplish most tasks that typically require an IDE.",
       "type": "image",
-      "image_url": "async-script.webp",
+      "image_url": "code-editor.webp",
       "enabled": true
     },
     {
@@ -187,7 +187,15 @@
       "title": "Command-line ready",
       "description": "Stride CLI lets you install and launch the editor without having to lift your fingers off the keyboard. Additionally, you can build and test your projects using standard .NET tooling directly from the terminal, without a need for additional tools.",
       "type": "image",
-      "image_url": "async-script.webp",
+      "image_url": "cli.webp",
+      "enabled": true
+    },
+    {
+      "id": "csharp-source-code",
+      "title": "C# source code",
+      "description": "If you run into a problem or would want to change how the engine behaves, you can do so without having to learn another programming language. Stride is written in C#, meaning that you can modify and improve the engine using your existing knowledge from making games.",
+      "type": "image",
+      "image_url": "github.webp",
       "enabled": true
     }
   ]
