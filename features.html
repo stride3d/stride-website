@@ -127,22 +127,13 @@ image: /images/backgrounds/features_banner.webp
                     <p class="lead">By utilizing {{ site.csharp-version }} and {{ site.dotnet-version }}, Stride enables developers to employ modern programming concepts and techniques, resulting in robust, efficient, and maintainable game code.</p>
                 </div>
                 <div class="col-lg-5 col-md-6 rt-center feature-block">
-                    <div><img class="img-fluid" src="/images/features/scripting/stride-injecting-services.webp" alt="Injecting Services in Stride"></div>
+                    <div><img class="img-fluid" src="/images/features/scripting/example-code.webp" alt="Injecting Services in Stride"></div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row mt-1 g-4">
-        <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">Async Scripting</h3>
-                    <a href="{{ site.links.docs-manual-url }}scripts/types-of-script.html#asynchronous-scripts" title="Stride Async Script" target="_blank" rel="noopener">
-                        <div class="rt-image my-3"><img class="img-fluid" loading="lazy" src="/images/features/scripting/async-script.webp" alt="Stride Async Script"></div>
-                    </a>
-                    <p>Stride utilizes the modern and native C# <a href="{{ site.links.docs-manual-url }}scripts/types-of-script.html#asynchronous-scripts" target="_blank" rel="noopener">async/await feature</a> for handling asynchronous operations, offering a more intuitive and efficient approach to concurrent tasks.</p>
-                </div>
-            </div>
-        </div>
+        {% assign name = 'scripting' %}
+        {% include feature.html %}
     </div>
 </div>

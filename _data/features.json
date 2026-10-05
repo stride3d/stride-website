@@ -128,7 +128,7 @@
     {
       "id": "animation",
       "title": "Animation",
-      "description": "Play and blend animations created in 3D modeling tools and animate any property of your game. Storyboard editor coming soon.",
+      "description": "Play and blend animations created in 3D modeling tools and animate any property of your game.",
       "type": "video",
       "enabled": true
     }
@@ -159,24 +159,43 @@
   ],
   "scripting": [
     {
-      "id": "startup_scripts",
-      "title": "Startup scripts",
-      "description": "Startup scripts in Stride are executed when the game or a specific scene is loaded, allowing developers to initialize game objects, set up the environment, and prepare any required resources. These scripts can be used to set initial states, configure game settings, or establish connections between game entities. Additionally, startup scripts can be utilized for creating reusable functions, registering event handlers, or setting up custom input systems, ensuring the game is fully prepared and optimized for the player's experience.",
+      "id": "async-scripting",
+      "title": "Async Scripting",
+      "description": "Stride lets you utilize the <a href=\"https://doc.stride3d.net/latest/en/manual/scripts/types-of-script/async-script.html\" target=\"_blank\">async/await pattern</a> in your scripts, offering a more intuitive and efficient approach to running and managing concurrent tasks.",
       "type": "image",
+      "image_url": "async-script.webp",
       "enabled": true
     },
     {
-      "id": "synchronous_scripts",
-      "title": "Synchronous scripts",
-      "description": "Synchronous scripts in Stride run sequentially within the game loop, ensuring that each step of the game logic is executed in a specific order. This type of scripting is particularly useful for character movements, physics simulations, and other aspects of game logic that require precise and predictable execution. Synchronous scripts ensure that the game state remains consistent across each frame, providing a smooth and coherent gameplay experience.",
+      "id": "ecs",
+      "title": "Entity component system",
+      "description": "On top of standard component-based scripting, Stride also lets you structure your code using <a href=\"https://doc.stride3d.net/latest/en/manual/engine/entity-component-system/index.html\" target=\"_blank\">ECS</a> for improved performance and maintainability.",
       "type": "image",
+      "image_url": "ecs.webp",
       "enabled": true
     },
     {
-      "id": "asynchronous_scripts",
-      "title": "Asynchronous scripts",
-      "description": "Asynchronous scripts in Stride allow developers to perform non-blocking operations, such as loading assets or handling network requests, without interrupting the main game loop. By leveraging the async/await pattern in C# 10 and .NET 6, these scripts enable efficient multitasking and help maintain optimal game performance. Asynchronous scripts are particularly useful for managing time-consuming tasks or background processes, ensuring that the game remains responsive and fluid for the player.",
+      "id": "script-editor",
+      "title": "Built-in script editor",
+      "description": "You can create games with Stride directly from its editor, without having to juggle multiple applications. The built-in code editor is sufficient enough to accomplish most tasks that typically require an IDE.",
       "type": "image",
+      "image_url": "code-editor.webp",
+      "enabled": true
+    },
+    {
+      "id": "command-line-ready",
+      "title": "Command-line ready",
+      "description": "<a href=\"https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html\" target=\"_blank\">Stride CLI</a> lets you install and launch the editor without having to lift your fingers off the keyboard. Additionally, you can build and test your projects using standard .NET tooling directly from the terminal, without a need for additional apps.",
+      "type": "image",
+      "image_url": "cli.webp",
+      "enabled": true
+    },
+    {
+      "id": "csharp-source-code",
+      "title": "C# source code",
+      "description": "If you run into a problem or would want to change how the engine behaves, you can do so without having to learn another programming language. Stride is written in C#, meaning that you can modify and improve the engine using your existing knowledge from making games.",
+      "type": "image",
+      "image_url": "github.webp",
       "enabled": true
     }
   ]
