@@ -2,6 +2,7 @@
 title: 'Announcing Stride 4.2'
 author: vaclav
 tags: ['4.2','Release']
+image: /images/blog/release-4.2/post-cover.webp
 ---
 
 Stride contributors are thrilled to announce the release of Stride 4.2, now fully compatible with .NET 8 and leveraging the latest enhancements in C# 12. This release brings significant improvements in performance, stability, and developer experience.

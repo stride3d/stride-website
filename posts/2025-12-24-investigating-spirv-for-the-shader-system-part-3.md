@@ -2,7 +2,7 @@
 title: "Investigating SPIR-V for the shader system - Part 3"
 author: youness
 popular: false
-image: /images/spir.png
+image: /images/blog/2023-11/investigating-spirv-post-cover.webp
 tags: ['.NET', 'Shaders']
 ---
 
