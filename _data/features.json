@@ -169,7 +169,7 @@
     {
       "id": "ecs",
       "title": "Entity component system",
-      "description": "On top of standard component-based scripting, Stride also lets you structure your code using ECS for improved performance and maintainability.",
+      "description": "On top of standard component-based scripting, Stride also lets you structure your code using <a href=\"https://doc.stride3d.net/latest/en/manual/engine/entity-component-system/index.html\" target=\"_blank\">ECS</a> for improved performance and maintainability.",
       "type": "image",
       "image_url": "ecs.webp",
       "enabled": true
@@ -185,7 +185,7 @@
     {
       "id": "command-line-ready",
       "title": "Command-line ready",
-      "description": "Stride CLI lets you install and launch the editor without having to lift your fingers off the keyboard. Additionally, you can build and test your projects using standard .NET tooling directly from the terminal, without a need for additional apps.",
+      "description": "<a href=\"https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html\" target=\"_blank\">Stride CLI</a> lets you install and launch the editor without having to lift your fingers off the keyboard. Additionally, you can build and test your projects using standard .NET tooling directly from the terminal, without a need for additional apps.",
       "type": "image",
       "image_url": "cli.webp",
       "enabled": true
