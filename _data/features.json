@@ -185,7 +185,7 @@
     {
       "id": "command-line-ready",
       "title": "Command-line ready",
-      "description": "Stride CLI lets you install and launch the editor without having to lift your fingers off the keyboard. Additionally, you can build and test your projects using standard .NET tooling directly from the terminal, without a need for additional tools.",
+      "description": "Stride CLI lets you install and launch the editor without having to lift your fingers off the keyboard. Additionally, you can build and test your projects using standard .NET tooling directly from the terminal, without a need for additional apps.",
       "type": "image",
       "image_url": "cli.webp",
       "enabled": true
