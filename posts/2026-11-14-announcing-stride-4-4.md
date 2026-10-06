@@ -160,6 +160,18 @@ In particular, we want to thank these donors:
 
    <a href="https://visualprogramming.net/"><img src="https://images.opencollective.com/vvvv/8ab0acd/logo/256.png?height=72" alt="vvvv. A visual live-programming environment that takes you from rapid prototyping to final production"></a>
 
+### Diamond Striders
+
+<ul>
+<li><a href="https://opencollective.com/scorewarrior">Scorewarrior</a>💎</li>
+</ul>
+
+### Platinum Striders
+
+<ul>
+<li><a href="https://opencollective.com/petr-kharitonov">Petr Kharitonov</a>🏆🏆</li>
+</ul>
+
 ### Gold Striders
 
 * {% include sponsor-org.md key:'happenstance' emoji:'🏆' %}

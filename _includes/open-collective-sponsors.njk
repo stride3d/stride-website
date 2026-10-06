@@ -1,49 +1,17 @@
 <div class="card mt-5">
     <div class="oc-sponsors-container">
-        <div class="tier-container">
-            <div class="tier-item gold fw-bold display-4 text-dark">Gold Striders</div>
-            <div class="tier-item">
-                {% for sponsor in gold_sponsors %}
-                    <div class="img-container">
-                        {% if sponsor.image %}
-                            <img src={{sponsor.image}} alt={{sponsor.name}} class="gold"/>
-                        {% else %}
-                            <img src="/images/svg/logo.svg" alt={{sponsor.name}} class="gold"/>
-                        {%endif%}
-                        <div>{{sponsor.name}}</div>
-                    </div>
-                {% endfor %}
+        {% for tier in sponsor_tiers %}
+            <div class="tier-container">
+                <div class="tier-item {{ tier.id }} fw-bold display-4 text-dark">{{ tier.title }}</div>
+                <div class="tier-item">
+                    {% for sponsor in tier.sponsors %}
+                        <div class="img-container">
+                            <img src="{{ sponsor.image | default: '/images/svg/logo.svg' }}" alt="{{ sponsor.name }}" class="{{ tier.id }}"/>
+                            <div>{{ sponsor.name }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="tier-container">
-            <div class="tier-item silver fw-bold display-4 text-dark">Silver Striders</div>
-            <div class="tier-item">
-                {% for sponsor in silver_sponsors %}
-                    <div class="img-container">
-                        {% if sponsor.image %}
-                            <img src={{sponsor.image}} alt={{sponsor.name}} class="silver"/>
-                        {% else %}
-                            <img src="/images/svg/logo.svg" alt={{sponsor.name}} class="silver"/>
-                        {%endif%}
-                        <div>{{sponsor.name}}</div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="tier-container">
-            <div class="tier-item bronze fw-bold display-4 text-dark">Bronze Striders</div>
-            <div class="tier-item">
-                {% for sponsor in bronze_sponsors %}
-                    <div class="img-container">
-                        {% if sponsor.image %}
-                        <img src={{sponsor.image}} alt={{sponsor.name}} class="bronze"/>
-                        {% else %}
-                            <img src="/images/svg/logo.svg" alt={{sponsor.name}} class="bronze"/>
-                        {%endif%}
-                        <div>{{sponsor.name}}</div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
