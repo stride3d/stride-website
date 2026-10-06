@@ -1,7 +1,7 @@
 ---
 title: 'Announcing Stride 4.3'
 author: vaclav
-popular: true
+popular: false
 tags: ['4.3','Release']
 image: /images/blog/release-4.3/post-cover.webp
 ---
