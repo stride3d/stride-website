@@ -26,6 +26,20 @@
         ? { version: data.tag_name.replace(ENGINE_TAG_PREFIX, '').replace(/^v/i, ''), publishedAt: data.published_at, htmlUrl: data.html_url }
         : null;
 
+    // True when the beta version is ahead of the stable one, e.g. 4.4.0-beta9 > 4.3.0.2507, but 4.4.0-beta9 < 4.4.0
+    function isNewer(beta, stable) {
+        const parts = (version) => version.split('-')[0].split('.').map(Number);
+        const [b, s] = [parts(beta), parts(stable)];
+
+        for (let i = 0; i < Math.max(b.length, s.length); i++) {
+            const diff = (b[i] || 0) - (s[i] || 0);
+
+            if (diff) return diff > 0;
+        }
+
+        return false; // Same base version: the prerelease precedes the stable release
+    }
+
     // Builds: "Label: <a ...>version</a> · date"
     function line(label, { version, publishedAt, htmlUrl }) {
         const link = Object.assign(document.createElement('a'), {
@@ -40,8 +54,8 @@
 
         if (stable) lines.push(line('Latest', stable));
 
-        // Only show the beta while it is newer than the stable release
-        if (SHOW_BETA && beta && (!stable || new Date(beta.publishedAt) > new Date(stable.publishedAt))) lines.push(line('Beta', beta));
+        // Only show the beta while its version is newer than the stable release
+        if (SHOW_BETA && beta && (!stable || isNewer(beta.version, stable.version))) lines.push(line('Beta', beta));
 
         el.replaceChildren(...lines.flatMap((parts, i) => i ? [document.createElement('br'), ...parts] : parts));
     }
