@@ -51,7 +51,7 @@ In addition to all of this, one of the other major changes with Stride 4.4 has b
 
 Some tasks that previously required the use of **Game Studio** or the **launcher** can now be done directly **from the command-line!** By using the CLI tool you can install and manage versions of Stride, create new projects and launch Game Studio with simple commands.
 
-For more information, visit the [Stride CLI](https://doc.stride3d.net/latest/en/manual/get-started/stride-cli.html) page of our documentation.
+For more information, visit the [Stride CLI](https://doc.stride3d.net/4.4/en/manual/get-started/stride-cli.html) page of our documentation.
 
 ```bash
 dotnet tool install -g stride.cli      # Install Stride CLI
@@ -83,7 +83,7 @@ There have been additional changes to improve support for multi-platform project
 
 {% img-click 'New context menu has multiple options of adding assets as root.' '/images/blog/release-4.4/new-include-in-root.webp' %}
 
-Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also create [replacement assets](https://doc.stride3d.net/latest/en/manual/assets/replacement-assets/index.html), which allow you to override assets from external packages or even the engine itself.
+Asset URLs of external packages are now prefixed by a namespace, to ensure that there are no conflicts. You can also create [replacement assets](https://doc.stride3d.net/4.4/en/manual/assets/replacement-assets.html), which allow you to override assets from external packages or even the engine itself.
 
 {% img-click 'Replacement assets can be used to override the default font used by Stride.' '/images/blog/release-4.4/replacement-assets.webp' %}
 
@@ -117,7 +117,7 @@ Stride's documentation has always been one of its biggest weakpoints. Work on it
 
 We are currently working on bringing the documentation up-to-date and restructuring it to support future content. So far, we have:
 
-* Rewritten [Get started](https://doc.stride3d.net/4.4/en/manual/get-started/index.html), [Graphics API](https://doc.stride3d.net/4.4/en/manual/graphics/graphics-api.html) and [Platforms](https://doc.stride3d.net/latest/en/4.4/platforms/index.html)
+* Rewritten [Get started](https://doc.stride3d.net/4.4/en/manual/get-started/index.html), [Graphics API](https://doc.stride3d.net/4.4/en/manual/graphics/graphics-api.html) and [Platforms](https://doc.stride3d.net/4.4/en/manual/platforms/index.html)
 * Added new sections [Assets](https://doc.stride3d.net/4.4/en/manual/assets/index.html), [Install and update](https://doc.stride3d.net/4.4/en/manual/install-and-update/index.html) and [Project](https://doc.stride3d.net/4.4/en/manual/files-and-folders/index.html)
 * Created new pages for new features: [NativeAOT](https://doc.stride3d.net/4.4/en/manual/files-and-folders/building-the-game/native-aot.html), [Replacement assets](https://doc.stride3d.net/4.4/en/manual/assets/replacement-assets.html) and [Stride CLI](https://doc.stride3d.net/4.4/en/manual/get-started/stride-cli.html)
 * Removed outdated sections and pages
