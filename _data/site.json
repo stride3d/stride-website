@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0.38",
+  "version": "2.0.0.39",
   "engine": "Eleventy 3.0",
   "title": "Stride Game Engine",
   "description": "C# Stride Game Engine is a powerful and versatile game development engine that is based on the C# programming language",
@@ -9,7 +9,7 @@
   "alert-banner": true,
   "docs-search": true,
   "google-analytics": true,
-  "download-version": "4.3",
+  "download-version": "4.4",
   "csharp-version": "C# 14",
   "dotnet-version": ".NET 10",
   "installer-size": "55 MB",
