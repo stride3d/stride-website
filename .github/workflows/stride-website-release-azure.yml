@@ -4,17 +4,6 @@
 name: Build Stride Web for Azure Web App Release 🚀
 
 on:
-  push:
-    branches:
-      - release
-    paths-ignore:
-      - 'README.md'
-      - 'Stride.Web.sln'
-      - 'Stride.Web.slnx'
-      - 'wiki/**'
-      - '_drafts/**'
-      - .gitignore
-      - '.github/**'
   workflow_dispatch:
 
 jobs:
