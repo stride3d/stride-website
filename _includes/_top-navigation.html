@@ -13,7 +13,7 @@
                 <li class="nav-item">
                     <a class="nav-link{% if menu_current=='features' %} active text-stride{% endif %}" aria-current="page" href="/features/">Features</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown dropdown-auto-expand">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Learn</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ site.links.docs-manual-url }}" target="_blank" rel="noopener">📚 Manual</a></li>
@@ -24,7 +24,7 @@
                         <li><a class="dropdown-item" href="{{ site.links.docs-community-resources-url }}" target="_blank" rel="noopener">🏋🏽 Community Resources</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown dropdown-auto-expand">
                     <a class="nav-link{% if menu_current=='community' or menu_current=='blog' or menu_blog=='blog' or menu_current=='faq' %} active text-stride{% endif %} dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item{% if menu_current=='blog' or menu_blog=='blog' %} text-stride{% endif %}" href="/blog/">Blog</a></li>
@@ -55,30 +55,6 @@
                     <a class="nav-link py-2 px-0 px-lg-2" href="{{ site.links.github-stride-url }}" target="_blank" rel="noopener" aria-label="GitHub link" title="GitHub">
                         <i class="fa-brands fa-github text-decoration-none"></i>
                         <small class="d-lg-none">GitHub</small>
-                    </a>
-                </li>
-                <li class="nav-item col-6 col-lg-auto">
-                    <a class="nav-link py-2 px-0 px-lg-2" href="{{ site.links.twitter-url }}" target="_blank" rel="noopener" aria-label="Twitter link" title="Twitter">
-                        <i class="fa-brands fa-twitter text-decoration-none"></i>
-                        <small class="d-lg-none">Twitter</small>
-                    </a>
-                </li>
-                <li class="nav-item col-6 col-lg-auto">
-                    <a class="nav-link py-2 px-0 px-lg-2" href="{{ site.links.discord-url }}" target="_blank" rel="noopener" aria-label="Discord link" title="Discord">
-                        <i class="fa-brands fa-discord text-decoration-none"></i>
-                        <small class="d-lg-none">Discord</small>
-                    </a>
-                </li>
-                <li class="nav-item col-6 col-lg-auto">
-                    <a class="nav-link py-2 px-0 px-lg-2" href="{{ site.links.youtube-url }}" target="_blank" rel="noopener" aria-label="YouTube link" title="YouTube">
-                        <i class="fa-brands fa-youtube text-decoration-none"></i>
-                        <small class="d-lg-none">YouTube</small>
-                    </a>
-                </li>
-                <li class="nav-item col-6 col-lg-auto">
-                    <a class="nav-link px-0 px-lg-2" href="{{ site.links.open-collective-url }}" target="_blank" rel="noopener" aria-label="Open Collective link">
-                        {% include svg-icons.html type:'open-collective' size:20 style:'margin-top:-6px' %}
-                        <small class="d-lg-none">Open Collective</small>
                     </a>
                 </li>{% if site.dark-mode %}
                 <li class="nav-item dropdown d-lg-flex align-items-center">
