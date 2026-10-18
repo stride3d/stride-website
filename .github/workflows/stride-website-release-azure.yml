@@ -52,7 +52,8 @@ jobs:
         with:
           app-name: 'stride-website'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0EC7AAA18A5048079220FA310DB3CB04 }}
+          # Secret of the Production environment: the publish profile of the Production slot
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
           package: .
 
       # Azure Front Door caches www.stride3d.net: without a purge, it serves the old images, search.json and sitemap.xml until they expire
