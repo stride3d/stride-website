@@ -30,9 +30,8 @@
                     <h3 {{ text-styling }}>Community</h3>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="{{ site.links.open-collective-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Open Collective</a></li>
-                        <li class="nav-item mb-2"><a href="{{ site.links.discord-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Discord</a></li>
                         <li class="nav-item mb-2"><a href="{{ site.links.github-stride-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">GitHub</a></li>
-                        <li class="nav-item mb-2"><a href="{{ site.links.twitter-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="/community/" class="nav-link p-0 {{ btn-class }}">Social media</a></li>
                         <li class="nav-item mb-2"><a href="/faq/" class="nav-link p-0 {{ btn-class }}">FAQ</a></li>
                         <li class="nav-item mb-2"><a href="/sponsor/" class="nav-link p-0 {{ btn-class }}">Sponsor</a></li>
                         <li class="nav-item mb-2"><a href="{{ site.links.github-discussions-url }}" class="nav-link p-0 {{ btn-class }}" target="_blank" rel="noopener">Discussions</a></li>
@@ -53,20 +52,26 @@
                     <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.discord-url }}" target="_blank" rel="noopener" aria-label="Discord link" title="Discord">
                         <i class="fa-brands fa-xl fa-discord text-decoration-none"></i>
                     </a>
-                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.twitter-url }}" target="_blank" rel="noopener" aria-label="Twitter link" title="Twitter">
-                        <i class="fa-brands fa-xl fa-twitter text-decoration-none"></i>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.twitter-url }}" target="_blank" rel="noopener" aria-label="X link" title="X">
+                        <i class="fa-brands fa-xl fa-x-twitter text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.bluesky-url }}" target="_blank" rel="noopener" aria-label="Bluesky link" title="Bluesky">
+                        <i class="fa-brands fa-xl fa-bluesky text-decoration-none"></i>
+                    </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.mastodon-url }}" target="_blank" rel="noopener" aria-label="Mastodon link" title="Mastodon">
+                        <i class="fa-brands fa-xl fa-mastodon text-decoration-none"></i>
                     </a>
                     <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.open-collective-url }}" target="_blank" rel="noopener" aria-label="Open Collective link">
                         {% include svg-icons.html type:'open-collective' size:26 style:'margin-top:-5px' %}
                     </a>
-                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.facebook-url }}" target="_blank" rel="noopener" aria-label="Facebook link" title="Facebook">
-                        <i class="fa-brands fa-xl fa-facebook text-decoration-none"></i>
-                    </a>
                     <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.youtube-url }}" target="_blank" rel="noopener" aria-label="YouTube link" title="YouTube">
                         <i class="fa-brands fa-xl fa-youtube text-decoration-none"></i>
                     </a>
+                    <a class="{{ social-class }} me-2 text-decoration-none" href="{{ site.links.facebook-url }}" target="_blank" rel="noopener" aria-label="Facebook link" title="Facebook">
+                        <i class="fa-brands fa-xl fa-facebook text-decoration-none"></i>
+                    </a>
                     <a class="{{ social-class }} me-2 text-decoration-none" href="/feed.xml" aria-label="RSS feed link" title="RSS feed">
-                        <i class="fa-solid fa-rss fa-xl text-decoration-none"></i>
+                        <i class="fa-solid fa-lg fa-rss text-decoration-none"></i>
                     </a>
                 </div>
             </div>
