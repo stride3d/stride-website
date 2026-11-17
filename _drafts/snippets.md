@@ -13,6 +13,10 @@
 {% img-click 'title' 'url' %}
 {% img-click 'title' 'url' 'destinationUrl' %}
 
+- Light and dark variants of one image (GitHub's convention): end each URL with `#gh-light-mode-only` or `#gh-dark-mode-only`, and the site shows only the one of the current theme
+  ![Title](/images/blog/.../table.webp#gh-light-mode-only)
+  ![Title](/images/blog/.../table-dark.webp#gh-dark-mode-only)
+
 {% youtube 'id' %}
 {% youtube-playlist 'id' %}
 

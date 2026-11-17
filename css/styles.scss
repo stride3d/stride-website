@@ -248,6 +248,12 @@ svg path.logo-path {
     fill: var(--bs-stride) !important;
 }
 
+// GitHub's convention for theme-matched images: `image.png#gh-light-mode-only` and `image-dark.png#gh-dark-mode-only`
+[data-bs-theme=dark] img[src$="#gh-light-mode-only"],
+[data-bs-theme=light] img[src$="#gh-dark-mode-only"] {
+    display: none;
+}
+
 [data-bs-theme=light] {
 /*     .bg-stride-website {
         background-image: url(/images/top/svg/bg_dark.svg);
